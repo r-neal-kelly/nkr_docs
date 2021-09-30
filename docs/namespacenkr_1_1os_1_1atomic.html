@@ -255,7 +255,7 @@ template&lt;fundamental_tr atom_p&gt; </div>
 <div class="line">                    atom_p random = Random&lt;atom_p&gt;();</div>
 <div class="line">                    CHECK(<a class="code hl_function" href="namespacenkr_1_1os_1_1atomic.html#af849872d2c9a0f6f2fca2d97ffb0c920">Access</a>(random) == random);</div>
 <div class="line">                }</div>
-<div class="ttc" id="anamespacenkr_1_1os_1_1atomic_html_af849872d2c9a0f6f2fca2d97ffb0c920"><div class="ttname"><a href="namespacenkr_1_1os_1_1atomic.html#af849872d2c9a0f6f2fca2d97ffb0c920">nkr::os::atomic::Access</a></div><div class="ttdeci">atom_p Access(const volatile atom_p &amp;atom)</div><div class="ttdoc">Equivalent to (atom)</div><div class="ttdef"><b>Definition:</b> os_def.h:24</div></div>
+<div class="ttc" id="anamespacenkr_1_1os_1_1atomic_html_af849872d2c9a0f6f2fca2d97ffb0c920"><div class="ttname"><a href="namespacenkr_1_1os_1_1atomic.html#af849872d2c9a0f6f2fca2d97ffb0c920">nkr::os::atomic::Access</a></div><div class="ttdeci">atom_p Access(const volatile atom_p &amp;atom)</div><div class="ttdoc">Equivalent to (atom)</div><div class="ttdef"><b>Definition:</b> os_def.h:25</div></div>
 </div><!-- fragment --> <div class="fragment"><div class="line">                TEST_CASE_TEMPLATE(<span class="stringliteral">&quot;should not change the value&quot;</span>, atom_p, atoms)</div>
 <div class="line">                {</div>
 <div class="line">                    <span class="keyword">const</span> atom_p random = Random&lt;atom_p&gt;();</div>
@@ -311,7 +311,7 @@ template&lt;fundamental_tr atom_p, convertible_tr&lt; atom_p &gt; value_p&gt; </
 <div class="line">                    <a class="code hl_function" href="namespacenkr_1_1os_1_1atomic.html#aa13c4028abb59bfd2008ccf37a6ce2fb">Assign</a>(value, random_b);</div>
 <div class="line">                    CHECK(value == random_b);</div>
 <div class="line">                }</div>
-<div class="ttc" id="anamespacenkr_1_1os_1_1atomic_html_aa13c4028abb59bfd2008ccf37a6ce2fb"><div class="ttname"><a href="namespacenkr_1_1os_1_1atomic.html#aa13c4028abb59bfd2008ccf37a6ce2fb">nkr::os::atomic::Assign</a></div><div class="ttdeci">atom_p Assign(volatile atom_p &amp;atom, value_p value)</div><div class="ttdoc">Equivalent to (atom = with)</div><div class="ttdef"><b>Definition:</b> os_def.h:32</div></div>
+<div class="ttc" id="anamespacenkr_1_1os_1_1atomic_html_aa13c4028abb59bfd2008ccf37a6ce2fb"><div class="ttname"><a href="namespacenkr_1_1os_1_1atomic.html#aa13c4028abb59bfd2008ccf37a6ce2fb">nkr::os::atomic::Assign</a></div><div class="ttdeci">atom_p Assign(volatile atom_p &amp;atom, value_p value)</div><div class="ttdoc">Equivalent to (atom = with)</div><div class="ttdef"><b>Definition:</b> os_def.h:34</div></div>
 </div><!-- fragment --> <div class="fragment"><div class="line">                TEST_CASE_TEMPLATE(<span class="stringliteral">&quot;should return the new value&quot;</span>, atom_p, atoms)</div>
 <div class="line">                {</div>
 <div class="line">                    atom_p random_a = Random&lt;atom_p&gt;();</div>
@@ -382,7 +382,7 @@ template&lt;number_tr atom_p, convertible_tr&lt; atom_p &gt; value_p&gt; </div>
 <div class="line">                    }</div>
 <div class="line">                }</div>
 <div class="ttc" id="aconceptnkr_1_1number__tr_html"><div class="ttname"><a href="conceptnkr_1_1number__tr.html">nkr::number_tr</a></div><div class="ttdef"><b>Definition:</b> traits.h:342</div></div>
-<div class="ttc" id="anamespacenkr_1_1os_1_1atomic_html_a7d40879f6d7361a97d7d819e420266c7"><div class="ttname"><a href="namespacenkr_1_1os_1_1atomic.html#a7d40879f6d7361a97d7d819e420266c7">nkr::os::atomic::Assign_Add</a></div><div class="ttdeci">atom_p Assign_Add(volatile atom_p &amp;atom, value_p value)</div><div class="ttdoc">Equivalent to (atom += with) and (++atom)</div><div class="ttdef"><b>Definition:</b> os_def.h:38</div></div>
+<div class="ttc" id="anamespacenkr_1_1os_1_1atomic_html_a7d40879f6d7361a97d7d819e420266c7"><div class="ttname"><a href="namespacenkr_1_1os_1_1atomic.html#a7d40879f6d7361a97d7d819e420266c7">nkr::os::atomic::Assign_Add</a></div><div class="ttdeci">atom_p Assign_Add(volatile atom_p &amp;atom, value_p value)</div><div class="ttdoc">Equivalent to (atom += with) and (++atom)</div><div class="ttdef"><b>Definition:</b> os_def.h:41</div></div>
 </div><!-- fragment --> <div class="fragment"><div class="line">                TEST_CASE_TEMPLATE(<span class="stringliteral">&quot;should return the new value&quot;</span>, atom_p, atoms)</div>
 <div class="line">                {</div>
 <div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptnkr_1_1number__tr.html">number_tr&lt;atom_p&gt;</a>) {</div>
@@ -509,7 +509,7 @@ template&lt;integer_tr atom_p, integer_tr value_p&gt; </div>
 <div class="line">                    }</div>
 <div class="line">                }</div>
 <div class="ttc" id="aconceptnkr_1_1integer__tr_html"><div class="ttname"><a href="conceptnkr_1_1integer__tr.html">nkr::integer_tr</a></div><div class="ttdoc">Either unsigned or signed integers.</div><div class="ttdef"><b>Definition:</b> traits.h:250</div></div>
-<div class="ttc" id="anamespacenkr_1_1os_1_1atomic_html_a0f0d35f7c6cc9fe989d9d2d8a7488b8b"><div class="ttname"><a href="namespacenkr_1_1os_1_1atomic.html#a0f0d35f7c6cc9fe989d9d2d8a7488b8b">nkr::os::atomic::Assign_And</a></div><div class="ttdeci">atom_p Assign_And(volatile atom_p &amp;atom, value_p value)</div><div class="ttdoc">Equivalent to (atom &amp;= with)</div><div class="ttdef"><b>Definition:</b> os_def.h:86</div></div>
+<div class="ttc" id="anamespacenkr_1_1os_1_1atomic_html_a0f0d35f7c6cc9fe989d9d2d8a7488b8b"><div class="ttname"><a href="namespacenkr_1_1os_1_1atomic.html#a0f0d35f7c6cc9fe989d9d2d8a7488b8b">nkr::os::atomic::Assign_And</a></div><div class="ttdeci">atom_p Assign_And(volatile atom_p &amp;atom, value_p value)</div><div class="ttdoc">Equivalent to (atom &amp;= with)</div><div class="ttdef"><b>Definition:</b> os_def.h:97</div></div>
 </div><!-- fragment --> <div class="fragment"><div class="line">                TEST_CASE_TEMPLATE(<span class="stringliteral">&quot;should return the new value&quot;</span>, atom_p, atoms)</div>
 <div class="line">                {</div>
 <div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptnkr_1_1integer__tr.html">integer_tr&lt;atom_p&gt;</a>) {</div>
@@ -572,7 +572,7 @@ template&lt;number_tr atom_p, convertible_tr&lt; atom_p &gt; value_p&gt; </div>
 <div class="line">                        CHECK(value == (random_a /= random_b));</div>
 <div class="line">                    }</div>
 <div class="line">                }</div>
-<div class="ttc" id="anamespacenkr_1_1os_1_1atomic_html_aab213351794bb54505f48d1b8c6a716b"><div class="ttname"><a href="namespacenkr_1_1os_1_1atomic.html#aab213351794bb54505f48d1b8c6a716b">nkr::os::atomic::Assign_Divide</a></div><div class="ttdeci">atom_p Assign_Divide(volatile atom_p &amp;atom, value_p value)</div><div class="ttdoc">Equivalent to (atom /= with)</div><div class="ttdef"><b>Definition:</b> os_def.h:68</div></div>
+<div class="ttc" id="anamespacenkr_1_1os_1_1atomic_html_aab213351794bb54505f48d1b8c6a716b"><div class="ttname"><a href="namespacenkr_1_1os_1_1atomic.html#aab213351794bb54505f48d1b8c6a716b">nkr::os::atomic::Assign_Divide</a></div><div class="ttdeci">atom_p Assign_Divide(volatile atom_p &amp;atom, value_p value)</div><div class="ttdoc">Equivalent to (atom /= with)</div><div class="ttdef"><b>Definition:</b> os_def.h:76</div></div>
 </div><!-- fragment --> <div class="fragment"><div class="line">                TEST_CASE_TEMPLATE(<span class="stringliteral">&quot;should return the new value&quot;</span>, atom_p, atoms)</div>
 <div class="line">                {</div>
 <div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptnkr_1_1number__tr.html">number_tr&lt;atom_p&gt;</a>) {</div>
@@ -652,7 +652,7 @@ template&lt;integer_tr atom_p, integer_tr value_p&gt; </div>
 <div class="line">                        CHECK(value == (random_a &lt;&lt;= random_b));</div>
 <div class="line">                    }</div>
 <div class="line">                }</div>
-<div class="ttc" id="anamespacenkr_1_1os_1_1atomic_html_af6c9b46130bb9ebba4b1af1228f32c74"><div class="ttname"><a href="namespacenkr_1_1os_1_1atomic.html#af6c9b46130bb9ebba4b1af1228f32c74">nkr::os::atomic::Assign_Left_Shift</a></div><div class="ttdeci">atom_p Assign_Left_Shift(volatile atom_p &amp;atom, value_p value)</div><div class="ttdoc">Equivalent to (atom &lt;&lt;= with)</div><div class="ttdef"><b>Definition:</b> os_def.h:98</div></div>
+<div class="ttc" id="anamespacenkr_1_1os_1_1atomic_html_af6c9b46130bb9ebba4b1af1228f32c74"><div class="ttname"><a href="namespacenkr_1_1os_1_1atomic.html#af6c9b46130bb9ebba4b1af1228f32c74">nkr::os::atomic::Assign_Left_Shift</a></div><div class="ttdeci">atom_p Assign_Left_Shift(volatile atom_p &amp;atom, value_p value)</div><div class="ttdoc">Equivalent to (atom &lt;&lt;= with)</div><div class="ttdef"><b>Definition:</b> os_def.h:111</div></div>
 </div><!-- fragment --> <div class="fragment"><div class="line">                TEST_CASE_TEMPLATE(<span class="stringliteral">&quot;should return the new value&quot;</span>, atom_p, atoms)</div>
 <div class="line">                {</div>
 <div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptnkr_1_1integer__tr.html">integer_tr&lt;atom_p&gt;</a>) {</div>
@@ -715,7 +715,7 @@ template&lt;integer_tr atom_p, integer_tr value_p&gt; </div>
 <div class="line">                        CHECK(value == (random_a %= random_b));</div>
 <div class="line">                    }</div>
 <div class="line">                }</div>
-<div class="ttc" id="anamespacenkr_1_1os_1_1atomic_html_a29e5da550544485144e66b96247bccda"><div class="ttname"><a href="namespacenkr_1_1os_1_1atomic.html#a29e5da550544485144e66b96247bccda">nkr::os::atomic::Assign_Modulus</a></div><div class="ttdeci">atom_p Assign_Modulus(volatile atom_p &amp;atom, value_p value)</div><div class="ttdoc">Equivalent to (atom %= with)</div><div class="ttdef"><b>Definition:</b> os_def.h:74</div></div>
+<div class="ttc" id="anamespacenkr_1_1os_1_1atomic_html_a29e5da550544485144e66b96247bccda"><div class="ttname"><a href="namespacenkr_1_1os_1_1atomic.html#a29e5da550544485144e66b96247bccda">nkr::os::atomic::Assign_Modulus</a></div><div class="ttdeci">atom_p Assign_Modulus(volatile atom_p &amp;atom, value_p value)</div><div class="ttdoc">Equivalent to (atom %= with)</div><div class="ttdef"><b>Definition:</b> os_def.h:83</div></div>
 </div><!-- fragment --> <div class="fragment"><div class="line">                TEST_CASE_TEMPLATE(<span class="stringliteral">&quot;should return the new value&quot;</span>, atom_p, atoms)</div>
 <div class="line">                {</div>
 <div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptnkr_1_1integer__tr.html">integer_tr&lt;atom_p&gt;</a>) {</div>
@@ -778,7 +778,7 @@ template&lt;number_tr atom_p, convertible_tr&lt; atom_p &gt; value_p&gt; </div>
 <div class="line">                        CHECK(value == (random_a *= random_b));</div>
 <div class="line">                    }</div>
 <div class="line">                }</div>
-<div class="ttc" id="anamespacenkr_1_1os_1_1atomic_html_a49a85db19caca3248ddc16eca299fdc8"><div class="ttname"><a href="namespacenkr_1_1os_1_1atomic.html#a49a85db19caca3248ddc16eca299fdc8">nkr::os::atomic::Assign_Multiply</a></div><div class="ttdeci">atom_p Assign_Multiply(volatile atom_p &amp;atom, value_p value)</div><div class="ttdoc">Equivalent to (atom *= with)</div><div class="ttdef"><b>Definition:</b> os_def.h:62</div></div>
+<div class="ttc" id="anamespacenkr_1_1os_1_1atomic_html_a49a85db19caca3248ddc16eca299fdc8"><div class="ttname"><a href="namespacenkr_1_1os_1_1atomic.html#a49a85db19caca3248ddc16eca299fdc8">nkr::os::atomic::Assign_Multiply</a></div><div class="ttdeci">atom_p Assign_Multiply(volatile atom_p &amp;atom, value_p value)</div><div class="ttdoc">Equivalent to (atom *= with)</div><div class="ttdef"><b>Definition:</b> os_def.h:69</div></div>
 </div><!-- fragment --> <div class="fragment"><div class="line">                TEST_CASE_TEMPLATE(<span class="stringliteral">&quot;should return the new value&quot;</span>, atom_p, atoms)</div>
 <div class="line">                {</div>
 <div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptnkr_1_1number__tr.html">number_tr&lt;atom_p&gt;</a>) {</div>
@@ -851,7 +851,7 @@ template&lt;integer_tr atom_p, integer_tr value_p&gt; </div>
 <div class="line">                        CHECK(value == (random_a |= random_b));</div>
 <div class="line">                    }</div>
 <div class="line">                }</div>
-<div class="ttc" id="anamespacenkr_1_1os_1_1atomic_html_ad287f39b60f9adb474583a15b31cb42e"><div class="ttname"><a href="namespacenkr_1_1os_1_1atomic.html#ad287f39b60f9adb474583a15b31cb42e">nkr::os::atomic::Assign_Or</a></div><div class="ttdeci">atom_p Assign_Or(volatile atom_p &amp;atom, value_p value)</div><div class="ttdoc">Equivalent to (atom |= with)</div><div class="ttdef"><b>Definition:</b> os_def.h:80</div></div>
+<div class="ttc" id="anamespacenkr_1_1os_1_1atomic_html_ad287f39b60f9adb474583a15b31cb42e"><div class="ttname"><a href="namespacenkr_1_1os_1_1atomic.html#ad287f39b60f9adb474583a15b31cb42e">nkr::os::atomic::Assign_Or</a></div><div class="ttdeci">atom_p Assign_Or(volatile atom_p &amp;atom, value_p value)</div><div class="ttdoc">Equivalent to (atom |= with)</div><div class="ttdef"><b>Definition:</b> os_def.h:90</div></div>
 </div><!-- fragment --> <div class="fragment"><div class="line">                TEST_CASE_TEMPLATE(<span class="stringliteral">&quot;should return the new value&quot;</span>, atom_p, atoms)</div>
 <div class="line">                {</div>
 <div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptnkr_1_1integer__tr.html">integer_tr&lt;atom_p&gt;</a>) {</div>
@@ -911,7 +911,7 @@ template&lt;integer_tr atom_p, integer_tr value_p&gt; </div>
 <div class="line">                        CHECK(value == (random_a &gt;&gt;= random_b));</div>
 <div class="line">                    }</div>
 <div class="line">                }</div>
-<div class="ttc" id="anamespacenkr_1_1os_1_1atomic_html_a505d020efae00ab2c7a890e8c2f13761"><div class="ttname"><a href="namespacenkr_1_1os_1_1atomic.html#a505d020efae00ab2c7a890e8c2f13761">nkr::os::atomic::Assign_Right_Shift</a></div><div class="ttdeci">atom_p Assign_Right_Shift(volatile atom_p &amp;atom, value_p value)</div><div class="ttdoc">Equivalent to (atom &gt;&gt;= with)</div><div class="ttdef"><b>Definition:</b> os_def.h:104</div></div>
+<div class="ttc" id="anamespacenkr_1_1os_1_1atomic_html_a505d020efae00ab2c7a890e8c2f13761"><div class="ttname"><a href="namespacenkr_1_1os_1_1atomic.html#a505d020efae00ab2c7a890e8c2f13761">nkr::os::atomic::Assign_Right_Shift</a></div><div class="ttdeci">atom_p Assign_Right_Shift(volatile atom_p &amp;atom, value_p value)</div><div class="ttdoc">Equivalent to (atom &gt;&gt;= with)</div><div class="ttdef"><b>Definition:</b> os_def.h:118</div></div>
 </div><!-- fragment --> <div class="fragment"><div class="line">                TEST_CASE_TEMPLATE(<span class="stringliteral">&quot;should return the new value&quot;</span>, atom_p, atoms)</div>
 <div class="line">                {</div>
 <div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptnkr_1_1integer__tr.html">integer_tr&lt;atom_p&gt;</a>) {</div>
@@ -972,7 +972,7 @@ template&lt;number_tr atom_p, convertible_tr&lt; atom_p &gt; value_p&gt; </div>
 <div class="line">                        CHECK(value == (random_a -= random_b));</div>
 <div class="line">                    }</div>
 <div class="line">                }</div>
-<div class="ttc" id="anamespacenkr_1_1os_1_1atomic_html_a78a63e1b6bbbb1fdc37cafa5f9436af2"><div class="ttname"><a href="namespacenkr_1_1os_1_1atomic.html#a78a63e1b6bbbb1fdc37cafa5f9436af2">nkr::os::atomic::Assign_Subtract</a></div><div class="ttdeci">atom_p Assign_Subtract(volatile atom_p &amp;atom, value_p value)</div><div class="ttdoc">Equivalent to (atom -= with) and (--atom)</div><div class="ttdef"><b>Definition:</b> os_def.h:50</div></div>
+<div class="ttc" id="anamespacenkr_1_1os_1_1atomic_html_a78a63e1b6bbbb1fdc37cafa5f9436af2"><div class="ttname"><a href="namespacenkr_1_1os_1_1atomic.html#a78a63e1b6bbbb1fdc37cafa5f9436af2">nkr::os::atomic::Assign_Subtract</a></div><div class="ttdeci">atom_p Assign_Subtract(volatile atom_p &amp;atom, value_p value)</div><div class="ttdoc">Equivalent to (atom -= with) and (--atom)</div><div class="ttdef"><b>Definition:</b> os_def.h:55</div></div>
 </div><!-- fragment --> <div class="fragment"><div class="line">                TEST_CASE_TEMPLATE(<span class="stringliteral">&quot;should return the new value&quot;</span>, atom_p, atoms)</div>
 <div class="line">                {</div>
 <div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptnkr_1_1number__tr.html">number_tr&lt;atom_p&gt;</a>) {</div>
@@ -1096,7 +1096,7 @@ template&lt;integer_tr atom_p, integer_tr value_p&gt; </div>
 <div class="line">                        CHECK(value == (random_a ^= random_b));</div>
 <div class="line">                    }</div>
 <div class="line">                }</div>
-<div class="ttc" id="anamespacenkr_1_1os_1_1atomic_html_a2204241465781cd20200f4ca36bbc873"><div class="ttname"><a href="namespacenkr_1_1os_1_1atomic.html#a2204241465781cd20200f4ca36bbc873">nkr::os::atomic::Assign_Xor</a></div><div class="ttdeci">atom_p Assign_Xor(volatile atom_p &amp;atom, value_p value)</div><div class="ttdoc">Equivalent to (atom ^= with)</div><div class="ttdef"><b>Definition:</b> os_def.h:92</div></div>
+<div class="ttc" id="anamespacenkr_1_1os_1_1atomic_html_a2204241465781cd20200f4ca36bbc873"><div class="ttname"><a href="namespacenkr_1_1os_1_1atomic.html#a2204241465781cd20200f4ca36bbc873">nkr::os::atomic::Assign_Xor</a></div><div class="ttdeci">atom_p Assign_Xor(volatile atom_p &amp;atom, value_p value)</div><div class="ttdoc">Equivalent to (atom ^= with)</div><div class="ttdef"><b>Definition:</b> os_def.h:104</div></div>
 </div><!-- fragment --> <div class="fragment"><div class="line">                TEST_CASE_TEMPLATE(<span class="stringliteral">&quot;should return the new value&quot;</span>, atom_p, atoms)</div>
 <div class="line">                {</div>
 <div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptnkr_1_1integer__tr.html">integer_tr&lt;atom_p&gt;</a>) {</div>
@@ -1154,7 +1154,7 @@ template&lt;fundamental_tr atom_p, convertible_tr&lt; atom_p &gt; value_p&gt; </
 <div class="line">                    <a class="code hl_function" href="namespacenkr_1_1os_1_1atomic.html#a17d0b8a47b0c6ba3fe354301c5377994">Exchange</a>(value, random_b);</div>
 <div class="line">                    CHECK(value == random_b);</div>
 <div class="line">                }</div>
-<div class="ttc" id="anamespacenkr_1_1os_1_1atomic_html_a17d0b8a47b0c6ba3fe354301c5377994"><div class="ttname"><a href="namespacenkr_1_1os_1_1atomic.html#a17d0b8a47b0c6ba3fe354301c5377994">nkr::os::atomic::Exchange</a></div><div class="ttdeci">atom_p Exchange(volatile atom_p &amp;atom, value_p value)</div><div class="ttdoc">Equivalent to (original = atom, atom = with, original)</div><div class="ttdef"><b>Definition:</b> os_def.h:112</div></div>
+<div class="ttc" id="anamespacenkr_1_1os_1_1atomic_html_a17d0b8a47b0c6ba3fe354301c5377994"><div class="ttname"><a href="namespacenkr_1_1os_1_1atomic.html#a17d0b8a47b0c6ba3fe354301c5377994">nkr::os::atomic::Exchange</a></div><div class="ttdeci">atom_p Exchange(volatile atom_p &amp;atom, value_p value)</div><div class="ttdoc">Equivalent to (original = atom, atom = with, original)</div><div class="ttdef"><b>Definition:</b> os_def.h:127</div></div>
 </div><!-- fragment --> <div class="fragment"><div class="line">                TEST_CASE_TEMPLATE(<span class="stringliteral">&quot;should return the old value&quot;</span>, atom_p, atoms)</div>
 <div class="line">                {</div>
 <div class="line">                    atom_p random_a = Random&lt;atom_p&gt;();</div>
@@ -1224,7 +1224,7 @@ template&lt;number_tr atom_p, convertible_tr&lt; atom_p &gt; value_p&gt; </div>
 <div class="line">                        CHECK(value == (random_a += random_b));</div>
 <div class="line">                    }</div>
 <div class="line">                }</div>
-<div class="ttc" id="anamespacenkr_1_1os_1_1atomic_html_a21e7ca16d15d035898afc1070f79b1c3"><div class="ttname"><a href="namespacenkr_1_1os_1_1atomic.html#a21e7ca16d15d035898afc1070f79b1c3">nkr::os::atomic::Exchange_Add</a></div><div class="ttdeci">atom_p Exchange_Add(volatile atom_p &amp;atom, value_p value)</div><div class="ttdoc">Equivalent to (original = atom, atom += with, original) and (atom++)</div><div class="ttdef"><b>Definition:</b> os_def.h:149</div></div>
+<div class="ttc" id="anamespacenkr_1_1os_1_1atomic_html_a21e7ca16d15d035898afc1070f79b1c3"><div class="ttname"><a href="namespacenkr_1_1os_1_1atomic.html#a21e7ca16d15d035898afc1070f79b1c3">nkr::os::atomic::Exchange_Add</a></div><div class="ttdeci">atom_p Exchange_Add(volatile atom_p &amp;atom, value_p value)</div><div class="ttdoc">Equivalent to (original = atom, atom += with, original) and (atom++)</div><div class="ttdef"><b>Definition:</b> os_def.h:165</div></div>
 </div><!-- fragment --> <div class="fragment"><div class="line">                TEST_CASE_TEMPLATE(<span class="stringliteral">&quot;should return the old value&quot;</span>, atom_p, atoms)</div>
 <div class="line">                {</div>
 <div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptnkr_1_1number__tr.html">number_tr&lt;atom_p&gt;</a>) {</div>
@@ -1348,7 +1348,7 @@ template&lt;integer_tr atom_p, integer_tr value_p&gt; </div>
 <div class="line">                        CHECK(value == (random_a &amp;= random_b));</div>
 <div class="line">                    }</div>
 <div class="line">                }</div>
-<div class="ttc" id="anamespacenkr_1_1os_1_1atomic_html_ac46310346811c5cb0124cf0bf3c461c1"><div class="ttname"><a href="namespacenkr_1_1os_1_1atomic.html#ac46310346811c5cb0124cf0bf3c461c1">nkr::os::atomic::Exchange_And</a></div><div class="ttdeci">atom_p Exchange_And(volatile atom_p &amp;atom, value_p value)</div><div class="ttdoc">Equivalent to (original = atom, atom &amp;= with, original)</div><div class="ttdef"><b>Definition:</b> os_def.h:349</div></div>
+<div class="ttc" id="anamespacenkr_1_1os_1_1atomic_html_ac46310346811c5cb0124cf0bf3c461c1"><div class="ttname"><a href="namespacenkr_1_1os_1_1atomic.html#ac46310346811c5cb0124cf0bf3c461c1">nkr::os::atomic::Exchange_And</a></div><div class="ttdeci">atom_p Exchange_And(volatile atom_p &amp;atom, value_p value)</div><div class="ttdoc">Equivalent to (original = atom, atom &amp;= with, original)</div><div class="ttdef"><b>Definition:</b> os_def.h:373</div></div>
 </div><!-- fragment --> <div class="fragment"><div class="line">                TEST_CASE_TEMPLATE(<span class="stringliteral">&quot;should return the old value&quot;</span>, atom_p, atoms)</div>
 <div class="line">                {</div>
 <div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptnkr_1_1integer__tr.html">integer_tr&lt;atom_p&gt;</a>) {</div>
@@ -1411,7 +1411,7 @@ template&lt;number_tr atom_p, convertible_tr&lt; atom_p &gt; value_p&gt; </div>
 <div class="line">                        CHECK(value == (random_a /= random_b));</div>
 <div class="line">                    }</div>
 <div class="line">                }</div>
-<div class="ttc" id="anamespacenkr_1_1os_1_1atomic_html_a906642dde2b588103e1a420f20c999f8"><div class="ttname"><a href="namespacenkr_1_1os_1_1atomic.html#a906642dde2b588103e1a420f20c999f8">nkr::os::atomic::Exchange_Divide</a></div><div class="ttdeci">atom_p Exchange_Divide(volatile atom_p &amp;atom, value_p value)</div><div class="ttdoc">Equivalent to (original = atom, atom /= with, original)</div><div class="ttdef"><b>Definition:</b> os_def.h:272</div></div>
+<div class="ttc" id="anamespacenkr_1_1os_1_1atomic_html_a906642dde2b588103e1a420f20c999f8"><div class="ttname"><a href="namespacenkr_1_1os_1_1atomic.html#a906642dde2b588103e1a420f20c999f8">nkr::os::atomic::Exchange_Divide</a></div><div class="ttdeci">atom_p Exchange_Divide(volatile atom_p &amp;atom, value_p value)</div><div class="ttdoc">Equivalent to (original = atom, atom /= with, original)</div><div class="ttdef"><b>Definition:</b> os_def.h:293</div></div>
 </div><!-- fragment --> <div class="fragment"><div class="line">                TEST_CASE_TEMPLATE(<span class="stringliteral">&quot;should return the old value&quot;</span>, atom_p, atoms)</div>
 <div class="line">                {</div>
 <div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptnkr_1_1number__tr.html">number_tr&lt;atom_p&gt;</a>) {</div>
@@ -1451,6 +1451,9 @@ template&lt;number_tr atom_p, convertible_tr&lt; atom_p &gt; value_p&gt; </div>
 <div class="memproto">
 <div class="memtemplate">
 template&lt;fundamental_tr atom_p, convertible_tr&lt; atom_p &gt; value_p&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classnkr_1_1bool__t.html">bool_t</a> nkr::os::atomic::Exchange_If_Equals </td>
@@ -1476,6 +1479,11 @@ template&lt;fundamental_tr atom_p, convertible_tr&lt; atom_p &gt; value_p&gt; </
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Equivalent to <code>(atom == snapshot ? (atom = with, true) : (snapshot = atom, false))</code> </p>
@@ -1488,7 +1496,7 @@ template&lt;fundamental_tr atom_p, convertible_tr&lt; atom_p &gt; value_p&gt; </
 <div class="line">                    <a class="code hl_function" href="namespacenkr_1_1os_1_1atomic.html#ada5679733687db490976abdbbff29a61">Exchange_If_Equals</a>(value, snapshot, random_b);</div>
 <div class="line">                    CHECK(value == random_b);</div>
 <div class="line">                }</div>
-<div class="ttc" id="anamespacenkr_1_1os_1_1atomic_html_ada5679733687db490976abdbbff29a61"><div class="ttname"><a href="namespacenkr_1_1os_1_1atomic.html#ada5679733687db490976abdbbff29a61">nkr::os::atomic::Exchange_If_Equals</a></div><div class="ttdeci">bool_t Exchange_If_Equals(volatile atom_p &amp;atom, atom_p &amp;snapshot, value_p value)</div><div class="ttdoc">Equivalent to (atom == snapshot ? (atom = with, true) : (snapshot = atom, false))</div><div class="ttdef"><b>Definition:</b> os_def.h:453</div></div>
+<div class="ttc" id="anamespacenkr_1_1os_1_1atomic_html_ada5679733687db490976abdbbff29a61"><div class="ttname"><a href="namespacenkr_1_1os_1_1atomic.html#ada5679733687db490976abdbbff29a61">nkr::os::atomic::Exchange_If_Equals</a></div><div class="ttdeci">bool_t Exchange_If_Equals(volatile atom_p &amp;atom, atom_p &amp;snapshot, value_p value)</div><div class="ttdoc">Equivalent to (atom == snapshot ? (atom = with, true) : (snapshot = atom, false))</div><div class="ttdef"><b>Definition:</b> os_def.h:481</div></div>
 </div><!-- fragment --> <div class="fragment"><div class="line">                TEST_CASE_TEMPLATE(<span class="stringliteral">&quot;should return true if it set the new value&quot;</span>, atom_p, atoms)</div>
 <div class="line">                {</div>
 <div class="line">                    atom_p random_a = Random&lt;atom_p&gt;();</div>
@@ -1593,7 +1601,7 @@ template&lt;integer_tr atom_p, integer_tr value_p&gt; </div>
 <div class="line">                        CHECK(value == (random_a &lt;&lt;= random_b));</div>
 <div class="line">                    }</div>
 <div class="line">                }</div>
-<div class="ttc" id="anamespacenkr_1_1os_1_1atomic_html_ae82f1385fc8e4ee8beb4f4a58688c1b5"><div class="ttname"><a href="namespacenkr_1_1os_1_1atomic.html#ae82f1385fc8e4ee8beb4f4a58688c1b5">nkr::os::atomic::Exchange_Left_Shift</a></div><div class="ttdeci">atom_p Exchange_Left_Shift(volatile atom_p &amp;atom, value_p value)</div><div class="ttdoc">Equivalent to (original = atom, atom &lt;&lt;= with, original)</div><div class="ttdef"><b>Definition:</b> os_def.h:407</div></div>
+<div class="ttc" id="anamespacenkr_1_1os_1_1atomic_html_ae82f1385fc8e4ee8beb4f4a58688c1b5"><div class="ttname"><a href="namespacenkr_1_1os_1_1atomic.html#ae82f1385fc8e4ee8beb4f4a58688c1b5">nkr::os::atomic::Exchange_Left_Shift</a></div><div class="ttdeci">atom_p Exchange_Left_Shift(volatile atom_p &amp;atom, value_p value)</div><div class="ttdoc">Equivalent to (original = atom, atom &lt;&lt;= with, original)</div><div class="ttdef"><b>Definition:</b> os_def.h:433</div></div>
 </div><!-- fragment --> <div class="fragment"><div class="line">                TEST_CASE_TEMPLATE(<span class="stringliteral">&quot;should return the old value&quot;</span>, atom_p, atoms)</div>
 <div class="line">                {</div>
 <div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptnkr_1_1integer__tr.html">integer_tr&lt;atom_p&gt;</a>) {</div>
@@ -1656,7 +1664,7 @@ template&lt;integer_tr atom_p, integer_tr value_p&gt; </div>
 <div class="line">                        CHECK(value == (random_a %= random_b));</div>
 <div class="line">                    }</div>
 <div class="line">                }</div>
-<div class="ttc" id="anamespacenkr_1_1os_1_1atomic_html_a3df10e8bafaf4c391eca3c6249c8647b"><div class="ttname"><a href="namespacenkr_1_1os_1_1atomic.html#a3df10e8bafaf4c391eca3c6249c8647b">nkr::os::atomic::Exchange_Modulus</a></div><div class="ttdeci">atom_p Exchange_Modulus(volatile atom_p &amp;atom, value_p value)</div><div class="ttdoc">Equivalent to (original = atom, atom %= with, original)</div><div class="ttdef"><b>Definition:</b> os_def.h:297</div></div>
+<div class="ttc" id="anamespacenkr_1_1os_1_1atomic_html_a3df10e8bafaf4c391eca3c6249c8647b"><div class="ttname"><a href="namespacenkr_1_1os_1_1atomic.html#a3df10e8bafaf4c391eca3c6249c8647b">nkr::os::atomic::Exchange_Modulus</a></div><div class="ttdeci">atom_p Exchange_Modulus(volatile atom_p &amp;atom, value_p value)</div><div class="ttdoc">Equivalent to (original = atom, atom %= with, original)</div><div class="ttdef"><b>Definition:</b> os_def.h:319</div></div>
 </div><!-- fragment --> <div class="fragment"><div class="line">                TEST_CASE_TEMPLATE(<span class="stringliteral">&quot;should return the old value&quot;</span>, atom_p, atoms)</div>
 <div class="line">                {</div>
 <div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptnkr_1_1integer__tr.html">integer_tr&lt;atom_p&gt;</a>) {</div>
@@ -1719,7 +1727,7 @@ template&lt;number_tr atom_p, convertible_tr&lt; atom_p &gt; value_p&gt; </div>
 <div class="line">                        CHECK(value == (random_a *= random_b));</div>
 <div class="line">                    }</div>
 <div class="line">                }</div>
-<div class="ttc" id="anamespacenkr_1_1os_1_1atomic_html_a31e9d79fbf45c456014c16a8246c10b0"><div class="ttname"><a href="namespacenkr_1_1os_1_1atomic.html#a31e9d79fbf45c456014c16a8246c10b0">nkr::os::atomic::Exchange_Multiply</a></div><div class="ttdeci">atom_p Exchange_Multiply(volatile atom_p &amp;atom, value_p value)</div><div class="ttdoc">Equivalent to (original = atom, atom *= with, original)</div><div class="ttdef"><b>Definition:</b> os_def.h:247</div></div>
+<div class="ttc" id="anamespacenkr_1_1os_1_1atomic_html_a31e9d79fbf45c456014c16a8246c10b0"><div class="ttname"><a href="namespacenkr_1_1os_1_1atomic.html#a31e9d79fbf45c456014c16a8246c10b0">nkr::os::atomic::Exchange_Multiply</a></div><div class="ttdeci">atom_p Exchange_Multiply(volatile atom_p &amp;atom, value_p value)</div><div class="ttdoc">Equivalent to (original = atom, atom *= with, original)</div><div class="ttdef"><b>Definition:</b> os_def.h:267</div></div>
 </div><!-- fragment --> <div class="fragment"><div class="line">                TEST_CASE_TEMPLATE(<span class="stringliteral">&quot;should return the old value&quot;</span>, atom_p, atoms)</div>
 <div class="line">                {</div>
 <div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptnkr_1_1number__tr.html">number_tr&lt;atom_p&gt;</a>) {</div>
@@ -1792,7 +1800,7 @@ template&lt;integer_tr atom_p, integer_tr value_p&gt; </div>
 <div class="line">                        CHECK(value == (random_a |= random_b));</div>
 <div class="line">                    }</div>
 <div class="line">                }</div>
-<div class="ttc" id="anamespacenkr_1_1os_1_1atomic_html_a03dc7f5bb68acd362f4b487fcc573020"><div class="ttname"><a href="namespacenkr_1_1os_1_1atomic.html#a03dc7f5bb68acd362f4b487fcc573020">nkr::os::atomic::Exchange_Or</a></div><div class="ttdeci">atom_p Exchange_Or(volatile atom_p &amp;atom, value_p value)</div><div class="ttdoc">Equivalent to (original = atom, atom |= with, original)</div><div class="ttdef"><b>Definition:</b> os_def.h:320</div></div>
+<div class="ttc" id="anamespacenkr_1_1os_1_1atomic_html_a03dc7f5bb68acd362f4b487fcc573020"><div class="ttname"><a href="namespacenkr_1_1os_1_1atomic.html#a03dc7f5bb68acd362f4b487fcc573020">nkr::os::atomic::Exchange_Or</a></div><div class="ttdeci">atom_p Exchange_Or(volatile atom_p &amp;atom, value_p value)</div><div class="ttdoc">Equivalent to (original = atom, atom |= with, original)</div><div class="ttdef"><b>Definition:</b> os_def.h:343</div></div>
 </div><!-- fragment --> <div class="fragment"><div class="line">                TEST_CASE_TEMPLATE(<span class="stringliteral">&quot;should return the old value&quot;</span>, atom_p, atoms)</div>
 <div class="line">                {</div>
 <div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptnkr_1_1integer__tr.html">integer_tr&lt;atom_p&gt;</a>) {</div>
@@ -1852,7 +1860,7 @@ template&lt;integer_tr atom_p, integer_tr value_p&gt; </div>
 <div class="line">                        CHECK(value == (random_a &gt;&gt;= random_b));</div>
 <div class="line">                    }</div>
 <div class="line">                }</div>
-<div class="ttc" id="anamespacenkr_1_1os_1_1atomic_html_a8fa4822ce110d50c57c8a7f8c5fc1380"><div class="ttname"><a href="namespacenkr_1_1os_1_1atomic.html#a8fa4822ce110d50c57c8a7f8c5fc1380">nkr::os::atomic::Exchange_Right_Shift</a></div><div class="ttdeci">atom_p Exchange_Right_Shift(volatile atom_p &amp;atom, value_p value)</div><div class="ttdoc">Equivalent to (original = atom, atom &gt;&gt;= with, original)</div><div class="ttdef"><b>Definition:</b> os_def.h:430</div></div>
+<div class="ttc" id="anamespacenkr_1_1os_1_1atomic_html_a8fa4822ce110d50c57c8a7f8c5fc1380"><div class="ttname"><a href="namespacenkr_1_1os_1_1atomic.html#a8fa4822ce110d50c57c8a7f8c5fc1380">nkr::os::atomic::Exchange_Right_Shift</a></div><div class="ttdeci">atom_p Exchange_Right_Shift(volatile atom_p &amp;atom, value_p value)</div><div class="ttdoc">Equivalent to (original = atom, atom &gt;&gt;= with, original)</div><div class="ttdef"><b>Definition:</b> os_def.h:457</div></div>
 </div><!-- fragment --> <div class="fragment"><div class="line">                TEST_CASE_TEMPLATE(<span class="stringliteral">&quot;should return the old value&quot;</span>, atom_p, atoms)</div>
 <div class="line">                {</div>
 <div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptnkr_1_1integer__tr.html">integer_tr&lt;atom_p&gt;</a>) {</div>
@@ -1913,7 +1921,7 @@ template&lt;number_tr atom_p, convertible_tr&lt; atom_p &gt; value_p&gt; </div>
 <div class="line">                        CHECK(value == (random_a -= random_b));</div>
 <div class="line">                    }</div>
 <div class="line">                }</div>
-<div class="ttc" id="anamespacenkr_1_1os_1_1atomic_html_afe670bb52dfc36eb1350886bdaa26259"><div class="ttname"><a href="namespacenkr_1_1os_1_1atomic.html#afe670bb52dfc36eb1350886bdaa26259">nkr::os::atomic::Exchange_Subtract</a></div><div class="ttdeci">atom_p Exchange_Subtract(volatile atom_p &amp;atom, value_p value)</div><div class="ttdoc">Equivalent to (original = atom, atom -= with, original) and (atom--)</div><div class="ttdef"><b>Definition:</b> os_def.h:198</div></div>
+<div class="ttc" id="anamespacenkr_1_1os_1_1atomic_html_afe670bb52dfc36eb1350886bdaa26259"><div class="ttname"><a href="namespacenkr_1_1os_1_1atomic.html#afe670bb52dfc36eb1350886bdaa26259">nkr::os::atomic::Exchange_Subtract</a></div><div class="ttdeci">atom_p Exchange_Subtract(volatile atom_p &amp;atom, value_p value)</div><div class="ttdoc">Equivalent to (original = atom, atom -= with, original) and (atom--)</div><div class="ttdef"><b>Definition:</b> os_def.h:216</div></div>
 </div><!-- fragment --> <div class="fragment"><div class="line">                TEST_CASE_TEMPLATE(<span class="stringliteral">&quot;should return the old value&quot;</span>, atom_p, atoms)</div>
 <div class="line">                {</div>
 <div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptnkr_1_1number__tr.html">number_tr&lt;atom_p&gt;</a>) {</div>
@@ -2037,7 +2045,7 @@ template&lt;integer_tr atom_p, integer_tr value_p&gt; </div>
 <div class="line">                        CHECK(value == (random_a ^= random_b));</div>
 <div class="line">                    }</div>
 <div class="line">                }</div>
-<div class="ttc" id="anamespacenkr_1_1os_1_1atomic_html_a6e09a9f80f28db8649cab203932a22c1"><div class="ttname"><a href="namespacenkr_1_1os_1_1atomic.html#a6e09a9f80f28db8649cab203932a22c1">nkr::os::atomic::Exchange_Xor</a></div><div class="ttdeci">atom_p Exchange_Xor(volatile atom_p &amp;atom, value_p value)</div><div class="ttdoc">Equivalent to (original = atom, atom ^= with, original)</div><div class="ttdef"><b>Definition:</b> os_def.h:378</div></div>
+<div class="ttc" id="anamespacenkr_1_1os_1_1atomic_html_a6e09a9f80f28db8649cab203932a22c1"><div class="ttname"><a href="namespacenkr_1_1os_1_1atomic.html#a6e09a9f80f28db8649cab203932a22c1">nkr::os::atomic::Exchange_Xor</a></div><div class="ttdeci">atom_p Exchange_Xor(volatile atom_p &amp;atom, value_p value)</div><div class="ttdoc">Equivalent to (original = atom, atom ^= with, original)</div><div class="ttdef"><b>Definition:</b> os_def.h:403</div></div>
 </div><!-- fragment --> <div class="fragment"><div class="line">                TEST_CASE_TEMPLATE(<span class="stringliteral">&quot;should return the old value&quot;</span>, atom_p, atoms)</div>
 <div class="line">                {</div>
 <div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptnkr_1_1integer__tr.html">integer_tr&lt;atom_p&gt;</a>) {</div>

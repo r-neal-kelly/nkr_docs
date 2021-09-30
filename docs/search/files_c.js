@@ -1,9 +1,25 @@
 var searchData=
 [
-  ['traits_2eh_0',['traits.h',['../traits_8h.html',1,'']]],
-  ['traits_5fdox_2eh_1',['traits_dox.h',['../traits__dox_8h.html',1,'']]],
-  ['types_5ft_2eh_2',['types_t.h',['../types__t_8h.html',1,'']]],
-  ['types_5ft_5fdec_2eh_3',['types_t_dec.h',['../types__t__dec_8h.html',1,'']]],
-  ['types_5ft_5fdef_2eh_4',['types_t_def.h',['../types__t__def_8h.html',1,'']]],
-  ['types_5ft_5fdox_2eh_5',['types_t_dox.h',['../types__t__dox_8h.html',1,'']]]
+  ['signed_5fnegative_5ft_2eh_0',['signed_negative_t.h',['../signed__negative__t_8h.html',1,'']]],
+  ['signed_5fnegative_5ft_5fdec_2eh_1',['signed_negative_t_dec.h',['../signed__negative__t__dec_8h.html',1,'']]],
+  ['signed_5fnegative_5ft_5fdef_2eh_2',['signed_negative_t_def.h',['../signed__negative__t__def_8h.html',1,'']]],
+  ['signed_5fnegative_5ft_5fdox_2eh_3',['signed_negative_t_dox.h',['../signed__negative__t__dox_8h.html',1,'']]],
+  ['signed_5fpositive_5ft_2eh_4',['signed_positive_t.h',['../signed__positive__t_8h.html',1,'']]],
+  ['signed_5fpositive_5ft_5fdec_2eh_5',['signed_positive_t_dec.h',['../signed__positive__t__dec_8h.html',1,'']]],
+  ['signed_5fpositive_5ft_5fdef_2eh_6',['signed_positive_t_def.h',['../signed__positive__t__def_8h.html',1,'']]],
+  ['signed_5fpositive_5ft_5fdox_2eh_7',['signed_positive_t_dox.h',['../signed__positive__t__dox_8h.html',1,'']]],
+  ['some_5fi_2eh_8',['some_i.h',['../some__i_8h.html',1,'']]],
+  ['some_5fi_5fdox_2eh_9',['some_i_dox.h',['../some__i__dox_8h.html',1,'']]],
+  ['some_5ft_2eh_10',['some_t.h',['../some__t_8h.html',1,'']]],
+  ['some_5ft_5fdec_2eh_11',['some_t_dec.h',['../some__t__dec_8h.html',1,'']]],
+  ['some_5ft_5fdef_2eh_12',['some_t_def.h',['../some__t__def_8h.html',1,'']]],
+  ['some_5ft_5fdox_2eh_13',['some_t_dox.h',['../some__t__dox_8h.html',1,'']]],
+  ['stack_5ft_2eh_14',['stack_t.h',['../stack__t_8h.html',1,'']]],
+  ['stack_5ft_5fdec_2eh_15',['stack_t_dec.h',['../stack__t__dec_8h.html',1,'']]],
+  ['stack_5ft_5fdef_2eh_16',['stack_t_def.h',['../stack__t__def_8h.html',1,'']]],
+  ['stack_5ft_5fdox_2eh_17',['stack_t_dox.h',['../stack__t__dox_8h.html',1,'']]],
+  ['static_5ft_2eh_18',['static_t.h',['../static__t_8h.html',1,'']]],
+  ['static_5ft_5fdec_2eh_19',['static_t_dec.h',['../static__t__dec_8h.html',1,'']]],
+  ['static_5ft_5fdef_2eh_20',['static_t_def.h',['../static__t__def_8h.html',1,'']]],
+  ['static_5ft_5fdox_2eh_21',['static_t_dox.h',['../static__t__dox_8h.html',1,'']]]
 ];
