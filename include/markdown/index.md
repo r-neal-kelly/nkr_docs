@@ -36,10 +36,11 @@ This library is in the early stages of development, but what better time to star
 #### Enumerations
 - nkr::enumeration::flags_t
 - nkr::enumeration::types_t
+- nkr::enumeration::errors_t
 
 #### Numbers
-- nkr::number::signed_negative_t
-- nkr::number::signed_positive_t
+- nkr::signed_negative_t
+- nkr::signed_positive_t
 
 #### Strings
 - nkr::string::dynamic_t
