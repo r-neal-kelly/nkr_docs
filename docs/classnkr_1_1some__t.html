@@ -50,7 +50,6 @@ var searchBox = new SearchBox("searchBox", "search",'Search','.html');
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="concepts.html"><span>Concepts</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
-      <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -179,7 +178,7 @@ class nkr::some_t&lt; any_p &gt;</div><p >Wraps a type whose object has some val
 </dl>
 <p>This template is an in-code tag for an object which has a value. In other words, it does not equate to <a class="el" href="classnkr_1_1none__t.html" title="A tag used to assign &#39;nothing&#39; to a user-defined type, or to compare it with &#39;nothing&#39;.">nkr::none_t</a>. This is opposed to <a class="el" href="classnkr_1_1maybe__t.html" title="Wraps a type whose object may have a value.">nkr::maybe_t</a> which indicates that an object may or may not have a value.</p>
 <p >This is used as a space efficient means of ensuring that any other interface is being fulfilled properly, including functions and other types. This is opposed to nkr::option_t, which adds a <a class="el" href="classnkr_1_1bool__t.html" title="The default boolean type of this library which replaces nkr::std_bool_t, i.e. bool.">nkr::bool_t</a> to its footprint to indicate nothing.</p>
-<dl class="section note"><dt>Note</dt><dd>Inherits all constructors, the destructor, and all assignment operators in addition to all other members of the base class. Also defines copy and move constructors for the base to ensure that base objects can construct a new instance of this type with the <code>=</code> operator.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Inherits all constructors, the destructor, and all assignment operators in addition to all other members of the base class. This essentailly makes this capable of acting exactly like the base class through use of nkr_DEFINE_INHERITANCE_WRAPPER_CTORS_AND_DTOR macro.</dd></dl>
 <dl class="section user"><dt></dt><dd></dd></dl>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ade541fc9be9738840a6a10e7548fccd1" name="ade541fc9be9738840a6a10e7548fccd1"></a>
@@ -292,9 +291,6 @@ template&lt;some_i any_p&gt; </div>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li>C:/git/nkr/nkr/include/nkr/<a class="el" href="some__t__dec_8h.html">some_t_dec.h</a></li>
-</ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

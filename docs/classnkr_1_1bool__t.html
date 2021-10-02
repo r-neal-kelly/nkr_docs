@@ -50,7 +50,6 @@ var searchBox = new SearchBox("searchBox", "search",'Search','.html');
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="concepts.html"><span>Concepts</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
-      <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -439,11 +438,10 @@ Additional Inherited Members</h2></td></tr>
 
 <p></p>
 <div class="fragment"><div class="line">                <a class="code hl_function" href="classnkr_1_1bool__t.html#a3bd9827b32ce3a1fb7edc4e1c11d2ca8">bool_t</a> other(<span class="keyword">true</span>);</div>
-<div class="line">                CHECK(<a class="code hl_function" href="classnkr_1_1bool__t.html#a3bd9827b32ce3a1fb7edc4e1c11d2ca8">bool_t</a>(<a class="code hl_function" href="namespacenkr.html#a147605e8f99612d473ce3b5e2d6686a5">nkr::Move</a>(other)) == <span class="keyword">true</span>);</div>
+<div class="line">                CHECK(<a class="code hl_function" href="classnkr_1_1bool__t.html#a3bd9827b32ce3a1fb7edc4e1c11d2ca8">bool_t</a>(nkr::Move(other)) == <span class="keyword">true</span>);</div>
 <div class="line">                CHECK(other == <span class="keyword">false</span>);</div>
-<div class="ttc" id="anamespacenkr_html_a147605e8f99612d473ce3b5e2d6686a5"><div class="ttname"><a href="namespacenkr.html#a147605e8f99612d473ce3b5e2d6686a5">nkr::Move</a></div><div class="ttdeci">constexpr auto Move(built_in_tr auto &amp;value) noexcept</div><div class="ttdef"><b>Definition:</b> utils_def.h:13</div></div>
 </div><!-- fragment --> <div class="fragment"><div class="line">                <a class="code hl_function" href="classnkr_1_1bool__t.html#a3bd9827b32ce3a1fb7edc4e1c11d2ca8">bool_t</a> other(<span class="keyword">true</span>);</div>
-<div class="line">                <a class="code hl_function" href="classnkr_1_1bool__t.html#a3bd9827b32ce3a1fb7edc4e1c11d2ca8">bool_t</a> <span class="keywordtype">boolean</span> = <a class="code hl_function" href="namespacenkr.html#a147605e8f99612d473ce3b5e2d6686a5">nkr::Move</a>(other);</div>
+<div class="line">                <a class="code hl_function" href="classnkr_1_1bool__t.html#a3bd9827b32ce3a1fb7edc4e1c11d2ca8">bool_t</a> <span class="keywordtype">boolean</span> = nkr::Move(other);</div>
 <div class="line">                CHECK(<span class="keywordtype">boolean</span> == <span class="keyword">true</span>);</div>
 <div class="line">                CHECK(other == <span class="keyword">false</span>);</div>
 </div><!-- fragment --> 
@@ -475,10 +473,10 @@ Additional Inherited Members</h2></td></tr>
 
 <p></p>
 <div class="fragment"><div class="line">                <span class="keyword">volatile</span> <a class="code hl_function" href="classnkr_1_1bool__t.html#a3bd9827b32ce3a1fb7edc4e1c11d2ca8">bool_t</a> other(<span class="keyword">true</span>);</div>
-<div class="line">                CHECK(<a class="code hl_function" href="classnkr_1_1bool__t.html#a3bd9827b32ce3a1fb7edc4e1c11d2ca8">bool_t</a>(<a class="code hl_function" href="namespacenkr.html#a147605e8f99612d473ce3b5e2d6686a5">nkr::Move</a>(other)) == <span class="keyword">true</span>);</div>
+<div class="line">                CHECK(<a class="code hl_function" href="classnkr_1_1bool__t.html#a3bd9827b32ce3a1fb7edc4e1c11d2ca8">bool_t</a>(nkr::Move(other)) == <span class="keyword">true</span>);</div>
 <div class="line">                CHECK(other == <span class="keyword">false</span>);</div>
 </div><!-- fragment --> <div class="fragment"><div class="line">                <span class="keyword">volatile</span> <a class="code hl_function" href="classnkr_1_1bool__t.html#a3bd9827b32ce3a1fb7edc4e1c11d2ca8">bool_t</a> other(<span class="keyword">true</span>);</div>
-<div class="line">                <span class="keyword">volatile</span> <a class="code hl_function" href="classnkr_1_1bool__t.html#a3bd9827b32ce3a1fb7edc4e1c11d2ca8">bool_t</a> <span class="keywordtype">boolean</span> = <a class="code hl_function" href="namespacenkr.html#a147605e8f99612d473ce3b5e2d6686a5">nkr::Move</a>(other);</div>
+<div class="line">                <span class="keyword">volatile</span> <a class="code hl_function" href="classnkr_1_1bool__t.html#a3bd9827b32ce3a1fb7edc4e1c11d2ca8">bool_t</a> <span class="keywordtype">boolean</span> = nkr::Move(other);</div>
 <div class="line">                CHECK(<span class="keywordtype">boolean</span> == <span class="keyword">true</span>);</div>
 <div class="line">                CHECK(other == <span class="keyword">false</span>);</div>
 </div><!-- fragment --> 
@@ -864,7 +862,7 @@ Additional Inherited Members</h2></td></tr>
 <p></p>
 <div class="fragment"><div class="line">                <a class="code hl_function" href="classnkr_1_1bool__t.html#a3bd9827b32ce3a1fb7edc4e1c11d2ca8">bool_t</a> boolean;</div>
 <div class="line">                <a class="code hl_function" href="classnkr_1_1bool__t.html#a3bd9827b32ce3a1fb7edc4e1c11d2ca8">bool_t</a> other(<span class="keyword">true</span>);</div>
-<div class="line">                <span class="keywordtype">boolean</span> = <a class="code hl_function" href="namespacenkr.html#a147605e8f99612d473ce3b5e2d6686a5">nkr::Move</a>(other);</div>
+<div class="line">                <span class="keywordtype">boolean</span> = nkr::Move(other);</div>
 <div class="line">                CHECK(<span class="keywordtype">boolean</span> == <span class="keyword">true</span>);</div>
 <div class="line">                CHECK(other == <span class="keyword">false</span>);</div>
 </div><!-- fragment --> 
@@ -1075,7 +1073,7 @@ Additional Inherited Members</h2></td></tr>
 <p></p>
 <div class="fragment"><div class="line">                <span class="keyword">volatile</span> <a class="code hl_function" href="classnkr_1_1bool__t.html#a3bd9827b32ce3a1fb7edc4e1c11d2ca8">bool_t</a> boolean;</div>
 <div class="line">                <span class="keyword">volatile</span> <a class="code hl_function" href="classnkr_1_1bool__t.html#a3bd9827b32ce3a1fb7edc4e1c11d2ca8">bool_t</a> other(<span class="keyword">true</span>);</div>
-<div class="line">                <span class="keywordtype">boolean</span> = <a class="code hl_function" href="namespacenkr.html#a147605e8f99612d473ce3b5e2d6686a5">nkr::Move</a>(other);</div>
+<div class="line">                <span class="keywordtype">boolean</span> = nkr::Move(other);</div>
 <div class="line">                CHECK(<span class="keywordtype">boolean</span> == <span class="keyword">true</span>);</div>
 <div class="line">                CHECK(other == <span class="keyword">false</span>);</div>
 </div><!-- fragment --> 
@@ -1243,10 +1241,6 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- fragment --> 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/git/nkr/nkr/include/nkr/<a class="el" href="bool__t__dec_8h.html">bool_t_dec.h</a></li>
-<li>C:/git/nkr/nkr/include/nkr/<a class="el" href="bool__t__def_8h.html">bool_t_def.h</a></li>
-</ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

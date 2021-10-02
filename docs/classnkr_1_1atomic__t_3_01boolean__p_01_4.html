@@ -50,7 +50,6 @@ var searchBox = new SearchBox("searchBox", "search",'Search','.html');
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="concepts.html"><span>Concepts</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
-      <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -98,7 +97,6 @@ var searchBox = new SearchBox("searchBox", "search",'Search','.html');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-types">Public Types</a> &#124;
 <a href="classnkr_1_1atomic__t_3_01boolean__p_01_4-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">nkr::atomic_t&lt; boolean_p &gt; Class Template Reference</div></div>
 </div><!--header-->
@@ -121,17 +119,12 @@ var searchBox = new SearchBox("searchBox", "search",'Search','.html');
   </map>
 </div></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
-Public Types</h2></td></tr>
-<tr class="memitem:a56029914c02a5c92fc0e94a5307c7386"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnkr_1_1atomic__t_3_01boolean__p_01_4.html#a56029914c02a5c92fc0e94a5307c7386">base_t</a> = $atomic_t::boolean_sp&lt; boolean_p &gt;</td></tr>
-<tr class="separator:a56029914c02a5c92fc0e94a5307c7386"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_types_classnkr_1_1_0batomic__t_1_1boolean__sp"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classnkr_1_1_0batomic__t_1_1boolean__sp')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classnkr_1_1_0batomic__t_1_1boolean__sp.html">nkr::$atomic_t::boolean_sp&lt; boolean_p &gt;</a></td></tr>
 <tr class="memitem:ac4c28dc40a357a737e0ab01f394458c0 inherit pub_types_classnkr_1_1_0batomic__t_1_1boolean__sp"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnkr_1_1_0batomic__t_1_1boolean__sp.html#ac4c28dc40a357a737e0ab01f394458c0">value_t</a> = boolean_p</td></tr>
 <tr class="memdesc:ac4c28dc40a357a737e0ab01f394458c0 inherit pub_types_classnkr_1_1_0batomic__t_1_1boolean__sp"><td class="mdescLeft">&#160;</td><td class="mdescRight">The underlying type of this wrapper.  <a href="classnkr_1_1_0batomic__t_1_1boolean__sp.html#ac4c28dc40a357a737e0ab01f394458c0">More...</a><br /></td></tr>
 <tr class="separator:ac4c28dc40a357a737e0ab01f394458c0 inherit pub_types_classnkr_1_1_0batomic__t_1_1boolean__sp"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
-Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_methods_classnkr_1_1_0batomic__t_1_1boolean__sp"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classnkr_1_1_0batomic__t_1_1boolean__sp')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classnkr_1_1_0batomic__t_1_1boolean__sp.html">nkr::$atomic_t::boolean_sp&lt; boolean_p &gt;</a></td></tr>
 <tr class="memitem:a431dbadd03f2dba8ce9ea784b61d0bce inherit pub_methods_classnkr_1_1_0batomic__t_1_1boolean__sp"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnkr_1_1_0batomic__t_1_1boolean__sp.html#a431dbadd03f2dba8ce9ea784b61d0bce">boolean_sp</a> ()</td></tr>
 <tr class="separator:a431dbadd03f2dba8ce9ea784b61d0bce inherit pub_methods_classnkr_1_1_0batomic__t_1_1boolean__sp"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -280,31 +273,11 @@ Additional Inherited Members</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;boolean_tr boolean_p&gt;<br />
 class nkr::atomic_t&lt; boolean_p &gt;</div><p >A wrapper for <a class="el" href="classnkr_1_1_0batomic__t_1_1boolean__sp.html" title="A specialization for booleans to be used atomically.">nkr::$atomic_t::boolean_sp</a>. </p>
-<dl class="section note"><dt>Note</dt><dd>Inherits all constructors, the destructor, and all assignment operators in addition to all other members of the base class. Also defines copy and move constructors for the base to ensure that base objects can construct a new instance of this type with the <code>=</code> operator.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Inherits all constructors, the destructor, and all assignment operators in addition to all other members of the base class. This essentailly makes this capable of acting exactly like the base class through use of nkr_DEFINE_INHERITANCE_WRAPPER_CTORS_AND_DTOR macro.</dd></dl>
 <dl class="section user"><dt></dt><dd></dd></dl>
 <dl class="section note"><dt>Note</dt><dd>See <a class="el" href="index.html#_16d56f49_95ba_456e_a026_706c054cb133">Class Concept Specializations</a> for why we use inheritance to define this specialization.</dd></dl>
 <dl class="section user"><dt></dt><dd></dd></dl>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="a56029914c02a5c92fc0e94a5307c7386" name="a56029914c02a5c92fc0e94a5307c7386"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a56029914c02a5c92fc0e94a5307c7386">&#9670;&nbsp;</a></span>base_t</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;boolean_tr boolean_p&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="classnkr_1_1atomic__t.html">nkr::atomic_t</a>&lt; boolean_p &gt;::<a class="el" href="classnkr_1_1atomic__t_3_01boolean__p_01_4.html#a56029914c02a5c92fc0e94a5307c7386">base_t</a> =  $atomic_t::boolean_sp&lt;boolean_p&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li>C:/git/nkr/nkr/include/nkr/<a class="el" href="atomic__t__dec_8h.html">atomic_t_dec.h</a></li>
-</ul>
-</div><!-- contents -->
+</div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2

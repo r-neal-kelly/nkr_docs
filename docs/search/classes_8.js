@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['none_5ft_0',['none_t',['../classnkr_1_1none__t.html',1,'nkr']]]
+  ['user_5fdefined_5fsp_0',['user_defined_sp',['../classnkr_1_1_0bmaybe__t_1_1user__defined__sp.html',1,'nkr::$maybe_t']]]
 ];

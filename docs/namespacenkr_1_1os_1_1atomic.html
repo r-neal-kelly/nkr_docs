@@ -50,7 +50,6 @@ var searchBox = new SearchBox("searchBox", "search",'Search','.html');
       <li class="current"><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="concepts.html"><span>Concepts</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
-      <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -373,7 +372,7 @@ template&lt;number_tr atom_p, convertible_tr&lt; atom_p &gt; value_p&gt; </div>
 <p >Equivalent to <code>(atom += with)</code> and <code>(++atom)</code></p>
 <div class="fragment"><div class="line">                TEST_CASE_TEMPLATE(<span class="stringliteral">&quot;should set the value to value + passed value&quot;</span>, atom_p, atoms)</div>
 <div class="line">                {</div>
-<div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptnkr_1_1number__tr.html">number_tr&lt;atom_p&gt;</a>) {</div>
+<div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (number_tr&lt;atom_p&gt;) {</div>
 <div class="line">                        atom_p random_a = Random&lt;atom_p&gt;();</div>
 <div class="line">                        atom_p random_b = Random&lt;atom_p&gt;();</div>
 <div class="line">                        atom_p value = random_a;</div>
@@ -381,11 +380,10 @@ template&lt;number_tr atom_p, convertible_tr&lt; atom_p &gt; value_p&gt; </div>
 <div class="line">                        CHECK(value == (random_a += random_b));</div>
 <div class="line">                    }</div>
 <div class="line">                }</div>
-<div class="ttc" id="aconceptnkr_1_1number__tr_html"><div class="ttname"><a href="conceptnkr_1_1number__tr.html">nkr::number_tr</a></div><div class="ttdef"><b>Definition:</b> traits.h:342</div></div>
 <div class="ttc" id="anamespacenkr_1_1os_1_1atomic_html_a7d40879f6d7361a97d7d819e420266c7"><div class="ttname"><a href="namespacenkr_1_1os_1_1atomic.html#a7d40879f6d7361a97d7d819e420266c7">nkr::os::atomic::Assign_Add</a></div><div class="ttdeci">atom_p Assign_Add(volatile atom_p &amp;atom, value_p value)</div><div class="ttdoc">Equivalent to (atom += with) and (++atom)</div><div class="ttdef"><b>Definition:</b> os_def.h:41</div></div>
 </div><!-- fragment --> <div class="fragment"><div class="line">                TEST_CASE_TEMPLATE(<span class="stringliteral">&quot;should return the new value&quot;</span>, atom_p, atoms)</div>
 <div class="line">                {</div>
-<div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptnkr_1_1number__tr.html">number_tr&lt;atom_p&gt;</a>) {</div>
+<div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (number_tr&lt;atom_p&gt;) {</div>
 <div class="line">                        atom_p random_a = Random&lt;atom_p&gt;();</div>
 <div class="line">                        atom_p random_b = Random&lt;atom_p&gt;();</div>
 <div class="line">                        atom_p value = random_a;</div>
@@ -397,7 +395,7 @@ template&lt;number_tr atom_p, convertible_tr&lt; atom_p &gt; value_p&gt; </div>
 <div class="line">                    <span class="keyword">using</span> atom_p = std::tuple_element_t&lt;0, pair_p&gt;;</div>
 <div class="line">                    <span class="keyword">using</span> convertible_p = std::tuple_element_t&lt;1, pair_p&gt;;</div>
 <div class="line"> </div>
-<div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptnkr_1_1number__tr.html">number_tr&lt;atom_p&gt;</a>) {</div>
+<div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (number_tr&lt;atom_p&gt;) {</div>
 <div class="line">                        atom_p random_a = Random&lt;atom_p&gt;();</div>
 <div class="line">                        convertible_p random_b = Random&lt;convertible_p&gt;();</div>
 <div class="line">                        atom_p value = random_a;</div>
@@ -407,7 +405,7 @@ template&lt;number_tr atom_p, convertible_tr&lt; atom_p &gt; value_p&gt; </div>
 <div class="line">                }</div>
 </div><!-- fragment --><div class="fragment"><div class="line">                TEST_CASE_TEMPLATE(<span class="stringliteral">&quot;should set the value to value + passed value&quot;</span>, atom_p, atoms)</div>
 <div class="line">                {</div>
-<div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptnkr_1_1number__tr.html">number_tr&lt;atom_p&gt;</a>) {</div>
+<div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (number_tr&lt;atom_p&gt;) {</div>
 <div class="line">                        atom_p random_a = Random&lt;atom_p&gt;();</div>
 <div class="line">                        atom_p random_b = Random&lt;atom_p&gt;();</div>
 <div class="line">                        atom_p value = random_a;</div>
@@ -417,7 +415,7 @@ template&lt;number_tr atom_p, convertible_tr&lt; atom_p &gt; value_p&gt; </div>
 <div class="line">                }</div>
 </div><!-- fragment --> <div class="fragment"><div class="line">                TEST_CASE_TEMPLATE(<span class="stringliteral">&quot;should return the new value&quot;</span>, atom_p, atoms)</div>
 <div class="line">                {</div>
-<div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptnkr_1_1number__tr.html">number_tr&lt;atom_p&gt;</a>) {</div>
+<div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (number_tr&lt;atom_p&gt;) {</div>
 <div class="line">                        atom_p random_a = Random&lt;atom_p&gt;();</div>
 <div class="line">                        atom_p random_b = Random&lt;atom_p&gt;();</div>
 <div class="line">                        atom_p value = random_a;</div>
@@ -429,7 +427,7 @@ template&lt;number_tr atom_p, convertible_tr&lt; atom_p &gt; value_p&gt; </div>
 <div class="line">                    <span class="keyword">using</span> atom_p = std::tuple_element_t&lt;0, pair_p&gt;;</div>
 <div class="line">                    <span class="keyword">using</span> convertible_p = std::tuple_element_t&lt;1, pair_p&gt;;</div>
 <div class="line"> </div>
-<div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptnkr_1_1number__tr.html">number_tr&lt;atom_p&gt;</a>) {</div>
+<div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (number_tr&lt;atom_p&gt;) {</div>
 <div class="line">                        atom_p random_a = Random&lt;atom_p&gt;();</div>
 <div class="line">                        convertible_p random_b = Random&lt;convertible_p&gt;();</div>
 <div class="line">                        atom_p value = random_a;</div>
@@ -561,7 +559,7 @@ template&lt;number_tr atom_p, convertible_tr&lt; atom_p &gt; value_p&gt; </div>
 <p>Equivalent to <code>(atom /= with)</code> </p>
 <div class="fragment"><div class="line">                TEST_CASE_TEMPLATE(<span class="stringliteral">&quot;should set the value to value / passed value&quot;</span>, atom_p, atoms)</div>
 <div class="line">                {</div>
-<div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptnkr_1_1number__tr.html">number_tr&lt;atom_p&gt;</a>) {</div>
+<div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (number_tr&lt;atom_p&gt;) {</div>
 <div class="line">                        atom_p random_a = Random&lt;atom_p&gt;();</div>
 <div class="line">                        atom_p random_b;</div>
 <div class="line">                        <span class="keywordflow">do</span> {</div>
@@ -575,7 +573,7 @@ template&lt;number_tr atom_p, convertible_tr&lt; atom_p &gt; value_p&gt; </div>
 <div class="ttc" id="anamespacenkr_1_1os_1_1atomic_html_aab213351794bb54505f48d1b8c6a716b"><div class="ttname"><a href="namespacenkr_1_1os_1_1atomic.html#aab213351794bb54505f48d1b8c6a716b">nkr::os::atomic::Assign_Divide</a></div><div class="ttdeci">atom_p Assign_Divide(volatile atom_p &amp;atom, value_p value)</div><div class="ttdoc">Equivalent to (atom /= with)</div><div class="ttdef"><b>Definition:</b> os_def.h:76</div></div>
 </div><!-- fragment --> <div class="fragment"><div class="line">                TEST_CASE_TEMPLATE(<span class="stringliteral">&quot;should return the new value&quot;</span>, atom_p, atoms)</div>
 <div class="line">                {</div>
-<div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptnkr_1_1number__tr.html">number_tr&lt;atom_p&gt;</a>) {</div>
+<div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (number_tr&lt;atom_p&gt;) {</div>
 <div class="line">                        atom_p random_a = Random&lt;atom_p&gt;();</div>
 <div class="line">                        atom_p random_b;</div>
 <div class="line">                        <span class="keywordflow">do</span> {</div>
@@ -590,7 +588,7 @@ template&lt;number_tr atom_p, convertible_tr&lt; atom_p &gt; value_p&gt; </div>
 <div class="line">                    <span class="keyword">using</span> atom_p = std::tuple_element_t&lt;0, pair_p&gt;;</div>
 <div class="line">                    <span class="keyword">using</span> convertible_p = std::tuple_element_t&lt;1, pair_p&gt;;</div>
 <div class="line"> </div>
-<div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptnkr_1_1number__tr.html">number_tr&lt;atom_p&gt;</a>) {</div>
+<div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (number_tr&lt;atom_p&gt;) {</div>
 <div class="line">                        atom_p random_a = Random&lt;atom_p&gt;();</div>
 <div class="line">                        convertible_p random_b;</div>
 <div class="line">                        <span class="keywordflow">do</span> {</div>
@@ -770,7 +768,7 @@ template&lt;number_tr atom_p, convertible_tr&lt; atom_p &gt; value_p&gt; </div>
 <p>Equivalent to <code>(atom *= with)</code> </p>
 <div class="fragment"><div class="line">                TEST_CASE_TEMPLATE(<span class="stringliteral">&quot;should set the value to value * passed value&quot;</span>, atom_p, atoms)</div>
 <div class="line">                {</div>
-<div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptnkr_1_1number__tr.html">number_tr&lt;atom_p&gt;</a>) {</div>
+<div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (number_tr&lt;atom_p&gt;) {</div>
 <div class="line">                        atom_p random_a = Random&lt;atom_p&gt;();</div>
 <div class="line">                        atom_p random_b = Random&lt;atom_p&gt;();</div>
 <div class="line">                        atom_p value = random_a;</div>
@@ -781,7 +779,7 @@ template&lt;number_tr atom_p, convertible_tr&lt; atom_p &gt; value_p&gt; </div>
 <div class="ttc" id="anamespacenkr_1_1os_1_1atomic_html_a49a85db19caca3248ddc16eca299fdc8"><div class="ttname"><a href="namespacenkr_1_1os_1_1atomic.html#a49a85db19caca3248ddc16eca299fdc8">nkr::os::atomic::Assign_Multiply</a></div><div class="ttdeci">atom_p Assign_Multiply(volatile atom_p &amp;atom, value_p value)</div><div class="ttdoc">Equivalent to (atom *= with)</div><div class="ttdef"><b>Definition:</b> os_def.h:69</div></div>
 </div><!-- fragment --> <div class="fragment"><div class="line">                TEST_CASE_TEMPLATE(<span class="stringliteral">&quot;should return the new value&quot;</span>, atom_p, atoms)</div>
 <div class="line">                {</div>
-<div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptnkr_1_1number__tr.html">number_tr&lt;atom_p&gt;</a>) {</div>
+<div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (number_tr&lt;atom_p&gt;) {</div>
 <div class="line">                        atom_p random_a = Random&lt;atom_p&gt;();</div>
 <div class="line">                        atom_p random_b = Random&lt;atom_p&gt;();</div>
 <div class="line">                        atom_p value = random_a;</div>
@@ -793,7 +791,7 @@ template&lt;number_tr atom_p, convertible_tr&lt; atom_p &gt; value_p&gt; </div>
 <div class="line">                    <span class="keyword">using</span> atom_p = std::tuple_element_t&lt;0, pair_p&gt;;</div>
 <div class="line">                    <span class="keyword">using</span> convertible_p = std::tuple_element_t&lt;1, pair_p&gt;;</div>
 <div class="line"> </div>
-<div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptnkr_1_1number__tr.html">number_tr&lt;atom_p&gt;</a>) {</div>
+<div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (number_tr&lt;atom_p&gt;) {</div>
 <div class="line">                        atom_p random_a = Random&lt;atom_p&gt;();</div>
 <div class="line">                        convertible_p random_b = Random&lt;convertible_p&gt;();</div>
 <div class="line">                        atom_p value = random_a;</div>
@@ -964,7 +962,7 @@ template&lt;number_tr atom_p, convertible_tr&lt; atom_p &gt; value_p&gt; </div>
 <p >Equivalent to <code>(atom -= with)</code> and <code>(--atom)</code></p>
 <div class="fragment"><div class="line">                TEST_CASE_TEMPLATE(<span class="stringliteral">&quot;should set the value to value - passed value&quot;</span>, atom_p, atoms)</div>
 <div class="line">                {</div>
-<div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptnkr_1_1number__tr.html">number_tr&lt;atom_p&gt;</a>) {</div>
+<div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (number_tr&lt;atom_p&gt;) {</div>
 <div class="line">                        atom_p random_a = Random&lt;atom_p&gt;();</div>
 <div class="line">                        atom_p random_b = Random&lt;atom_p&gt;();</div>
 <div class="line">                        atom_p value = random_a;</div>
@@ -975,7 +973,7 @@ template&lt;number_tr atom_p, convertible_tr&lt; atom_p &gt; value_p&gt; </div>
 <div class="ttc" id="anamespacenkr_1_1os_1_1atomic_html_a78a63e1b6bbbb1fdc37cafa5f9436af2"><div class="ttname"><a href="namespacenkr_1_1os_1_1atomic.html#a78a63e1b6bbbb1fdc37cafa5f9436af2">nkr::os::atomic::Assign_Subtract</a></div><div class="ttdeci">atom_p Assign_Subtract(volatile atom_p &amp;atom, value_p value)</div><div class="ttdoc">Equivalent to (atom -= with) and (--atom)</div><div class="ttdef"><b>Definition:</b> os_def.h:55</div></div>
 </div><!-- fragment --> <div class="fragment"><div class="line">                TEST_CASE_TEMPLATE(<span class="stringliteral">&quot;should return the new value&quot;</span>, atom_p, atoms)</div>
 <div class="line">                {</div>
-<div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptnkr_1_1number__tr.html">number_tr&lt;atom_p&gt;</a>) {</div>
+<div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (number_tr&lt;atom_p&gt;) {</div>
 <div class="line">                        atom_p random_a = Random&lt;atom_p&gt;();</div>
 <div class="line">                        atom_p random_b = Random&lt;atom_p&gt;();</div>
 <div class="line">                        atom_p value = random_a;</div>
@@ -987,7 +985,7 @@ template&lt;number_tr atom_p, convertible_tr&lt; atom_p &gt; value_p&gt; </div>
 <div class="line">                    <span class="keyword">using</span> atom_p = std::tuple_element_t&lt;0, pair_p&gt;;</div>
 <div class="line">                    <span class="keyword">using</span> convertible_p = std::tuple_element_t&lt;1, pair_p&gt;;</div>
 <div class="line"> </div>
-<div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptnkr_1_1number__tr.html">number_tr&lt;atom_p&gt;</a>) {</div>
+<div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (number_tr&lt;atom_p&gt;) {</div>
 <div class="line">                        atom_p random_a = Random&lt;atom_p&gt;();</div>
 <div class="line">                        convertible_p random_b = Random&lt;convertible_p&gt;();</div>
 <div class="line">                        atom_p value = random_a;</div>
@@ -997,7 +995,7 @@ template&lt;number_tr atom_p, convertible_tr&lt; atom_p &gt; value_p&gt; </div>
 <div class="line">                }</div>
 </div><!-- fragment --><div class="fragment"><div class="line">                TEST_CASE_TEMPLATE(<span class="stringliteral">&quot;should set the value to value - passed value&quot;</span>, atom_p, atoms)</div>
 <div class="line">                {</div>
-<div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptnkr_1_1number__tr.html">number_tr&lt;atom_p&gt;</a>) {</div>
+<div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (number_tr&lt;atom_p&gt;) {</div>
 <div class="line">                        atom_p random_a = Random&lt;atom_p&gt;();</div>
 <div class="line">                        atom_p random_b = Random&lt;atom_p&gt;();</div>
 <div class="line">                        atom_p value = random_a;</div>
@@ -1007,7 +1005,7 @@ template&lt;number_tr atom_p, convertible_tr&lt; atom_p &gt; value_p&gt; </div>
 <div class="line">                }</div>
 </div><!-- fragment --> <div class="fragment"><div class="line">                TEST_CASE_TEMPLATE(<span class="stringliteral">&quot;should return the new value&quot;</span>, atom_p, atoms)</div>
 <div class="line">                {</div>
-<div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptnkr_1_1number__tr.html">number_tr&lt;atom_p&gt;</a>) {</div>
+<div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (number_tr&lt;atom_p&gt;) {</div>
 <div class="line">                        atom_p random_a = Random&lt;atom_p&gt;();</div>
 <div class="line">                        atom_p random_b = Random&lt;atom_p&gt;();</div>
 <div class="line">                        atom_p value = random_a;</div>
@@ -1019,7 +1017,7 @@ template&lt;number_tr atom_p, convertible_tr&lt; atom_p &gt; value_p&gt; </div>
 <div class="line">                    <span class="keyword">using</span> atom_p = std::tuple_element_t&lt;0, pair_p&gt;;</div>
 <div class="line">                    <span class="keyword">using</span> convertible_p = std::tuple_element_t&lt;1, pair_p&gt;;</div>
 <div class="line"> </div>
-<div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptnkr_1_1number__tr.html">number_tr&lt;atom_p&gt;</a>) {</div>
+<div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (number_tr&lt;atom_p&gt;) {</div>
 <div class="line">                        atom_p random_a = Random&lt;atom_p&gt;();</div>
 <div class="line">                        convertible_p random_b = Random&lt;convertible_p&gt;();</div>
 <div class="line">                        atom_p value = random_a;</div>
@@ -1216,7 +1214,7 @@ template&lt;number_tr atom_p, convertible_tr&lt; atom_p &gt; value_p&gt; </div>
 <p >Equivalent to <code>(original = atom, atom += with, original)</code> and <code>(atom++)</code></p>
 <div class="fragment"><div class="line">                TEST_CASE_TEMPLATE(<span class="stringliteral">&quot;should set the value to value + passed value&quot;</span>, atom_p, atoms)</div>
 <div class="line">                {</div>
-<div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptnkr_1_1number__tr.html">number_tr&lt;atom_p&gt;</a>) {</div>
+<div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (number_tr&lt;atom_p&gt;) {</div>
 <div class="line">                        atom_p random_a = Random&lt;atom_p&gt;();</div>
 <div class="line">                        atom_p random_b = Random&lt;atom_p&gt;();</div>
 <div class="line">                        atom_p value = random_a;</div>
@@ -1227,7 +1225,7 @@ template&lt;number_tr atom_p, convertible_tr&lt; atom_p &gt; value_p&gt; </div>
 <div class="ttc" id="anamespacenkr_1_1os_1_1atomic_html_a21e7ca16d15d035898afc1070f79b1c3"><div class="ttname"><a href="namespacenkr_1_1os_1_1atomic.html#a21e7ca16d15d035898afc1070f79b1c3">nkr::os::atomic::Exchange_Add</a></div><div class="ttdeci">atom_p Exchange_Add(volatile atom_p &amp;atom, value_p value)</div><div class="ttdoc">Equivalent to (original = atom, atom += with, original) and (atom++)</div><div class="ttdef"><b>Definition:</b> os_def.h:165</div></div>
 </div><!-- fragment --> <div class="fragment"><div class="line">                TEST_CASE_TEMPLATE(<span class="stringliteral">&quot;should return the old value&quot;</span>, atom_p, atoms)</div>
 <div class="line">                {</div>
-<div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptnkr_1_1number__tr.html">number_tr&lt;atom_p&gt;</a>) {</div>
+<div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (number_tr&lt;atom_p&gt;) {</div>
 <div class="line">                        atom_p random_a = Random&lt;atom_p&gt;();</div>
 <div class="line">                        atom_p random_b = Random&lt;atom_p&gt;();</div>
 <div class="line">                        atom_p value = random_a;</div>
@@ -1239,7 +1237,7 @@ template&lt;number_tr atom_p, convertible_tr&lt; atom_p &gt; value_p&gt; </div>
 <div class="line">                    <span class="keyword">using</span> atom_p = std::tuple_element_t&lt;0, pair_p&gt;;</div>
 <div class="line">                    <span class="keyword">using</span> convertible_p = std::tuple_element_t&lt;1, pair_p&gt;;</div>
 <div class="line"> </div>
-<div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptnkr_1_1number__tr.html">number_tr&lt;atom_p&gt;</a>) {</div>
+<div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (number_tr&lt;atom_p&gt;) {</div>
 <div class="line">                        atom_p random_a = Random&lt;atom_p&gt;();</div>
 <div class="line">                        convertible_p random_b = Random&lt;convertible_p&gt;();</div>
 <div class="line">                        atom_p value = random_a;</div>
@@ -1249,7 +1247,7 @@ template&lt;number_tr atom_p, convertible_tr&lt; atom_p &gt; value_p&gt; </div>
 <div class="line">                }</div>
 </div><!-- fragment --><div class="fragment"><div class="line">                TEST_CASE_TEMPLATE(<span class="stringliteral">&quot;should set the value to value + passed value&quot;</span>, atom_p, atoms)</div>
 <div class="line">                {</div>
-<div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptnkr_1_1number__tr.html">number_tr&lt;atom_p&gt;</a>) {</div>
+<div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (number_tr&lt;atom_p&gt;) {</div>
 <div class="line">                        atom_p random_a = Random&lt;atom_p&gt;();</div>
 <div class="line">                        atom_p random_b = Random&lt;atom_p&gt;();</div>
 <div class="line">                        atom_p value = random_a;</div>
@@ -1259,7 +1257,7 @@ template&lt;number_tr atom_p, convertible_tr&lt; atom_p &gt; value_p&gt; </div>
 <div class="line">                }</div>
 </div><!-- fragment --> <div class="fragment"><div class="line">                TEST_CASE_TEMPLATE(<span class="stringliteral">&quot;should return the old value&quot;</span>, atom_p, atoms)</div>
 <div class="line">                {</div>
-<div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptnkr_1_1number__tr.html">number_tr&lt;atom_p&gt;</a>) {</div>
+<div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (number_tr&lt;atom_p&gt;) {</div>
 <div class="line">                        atom_p random_a = Random&lt;atom_p&gt;();</div>
 <div class="line">                        atom_p random_b = Random&lt;atom_p&gt;();</div>
 <div class="line">                        atom_p value = random_a;</div>
@@ -1271,7 +1269,7 @@ template&lt;number_tr atom_p, convertible_tr&lt; atom_p &gt; value_p&gt; </div>
 <div class="line">                    <span class="keyword">using</span> atom_p = std::tuple_element_t&lt;0, pair_p&gt;;</div>
 <div class="line">                    <span class="keyword">using</span> convertible_p = std::tuple_element_t&lt;1, pair_p&gt;;</div>
 <div class="line"> </div>
-<div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptnkr_1_1number__tr.html">number_tr&lt;atom_p&gt;</a>) {</div>
+<div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (number_tr&lt;atom_p&gt;) {</div>
 <div class="line">                        atom_p random_a = Random&lt;atom_p&gt;();</div>
 <div class="line">                        convertible_p random_b = Random&lt;convertible_p&gt;();</div>
 <div class="line">                        atom_p value = random_a;</div>
@@ -1400,7 +1398,7 @@ template&lt;number_tr atom_p, convertible_tr&lt; atom_p &gt; value_p&gt; </div>
 <p>Equivalent to <code>(original = atom, atom /= with, original)</code> </p>
 <div class="fragment"><div class="line">                TEST_CASE_TEMPLATE(<span class="stringliteral">&quot;should set the value to value / passed value&quot;</span>, atom_p, atoms)</div>
 <div class="line">                {</div>
-<div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptnkr_1_1number__tr.html">number_tr&lt;atom_p&gt;</a>) {</div>
+<div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (number_tr&lt;atom_p&gt;) {</div>
 <div class="line">                        atom_p random_a = Random&lt;atom_p&gt;();</div>
 <div class="line">                        atom_p random_b;</div>
 <div class="line">                        <span class="keywordflow">do</span> {</div>
@@ -1414,7 +1412,7 @@ template&lt;number_tr atom_p, convertible_tr&lt; atom_p &gt; value_p&gt; </div>
 <div class="ttc" id="anamespacenkr_1_1os_1_1atomic_html_a906642dde2b588103e1a420f20c999f8"><div class="ttname"><a href="namespacenkr_1_1os_1_1atomic.html#a906642dde2b588103e1a420f20c999f8">nkr::os::atomic::Exchange_Divide</a></div><div class="ttdeci">atom_p Exchange_Divide(volatile atom_p &amp;atom, value_p value)</div><div class="ttdoc">Equivalent to (original = atom, atom /= with, original)</div><div class="ttdef"><b>Definition:</b> os_def.h:293</div></div>
 </div><!-- fragment --> <div class="fragment"><div class="line">                TEST_CASE_TEMPLATE(<span class="stringliteral">&quot;should return the old value&quot;</span>, atom_p, atoms)</div>
 <div class="line">                {</div>
-<div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptnkr_1_1number__tr.html">number_tr&lt;atom_p&gt;</a>) {</div>
+<div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (number_tr&lt;atom_p&gt;) {</div>
 <div class="line">                        atom_p random_a = Random&lt;atom_p&gt;();</div>
 <div class="line">                        atom_p random_b;</div>
 <div class="line">                        <span class="keywordflow">do</span> {</div>
@@ -1429,7 +1427,7 @@ template&lt;number_tr atom_p, convertible_tr&lt; atom_p &gt; value_p&gt; </div>
 <div class="line">                    <span class="keyword">using</span> atom_p = std::tuple_element_t&lt;0, pair_p&gt;;</div>
 <div class="line">                    <span class="keyword">using</span> convertible_p = std::tuple_element_t&lt;1, pair_p&gt;;</div>
 <div class="line"> </div>
-<div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptnkr_1_1number__tr.html">number_tr&lt;atom_p&gt;</a>) {</div>
+<div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (number_tr&lt;atom_p&gt;) {</div>
 <div class="line">                        atom_p random_a = Random&lt;atom_p&gt;();</div>
 <div class="line">                        convertible_p random_b;</div>
 <div class="line">                        <span class="keywordflow">do</span> {</div>
@@ -1719,7 +1717,7 @@ template&lt;number_tr atom_p, convertible_tr&lt; atom_p &gt; value_p&gt; </div>
 <p>Equivalent to <code>(original = atom, atom *= with, original)</code> </p>
 <div class="fragment"><div class="line">                TEST_CASE_TEMPLATE(<span class="stringliteral">&quot;should set the value to value * passed value&quot;</span>, atom_p, atoms)</div>
 <div class="line">                {</div>
-<div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptnkr_1_1number__tr.html">number_tr&lt;atom_p&gt;</a>) {</div>
+<div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (number_tr&lt;atom_p&gt;) {</div>
 <div class="line">                        atom_p random_a = Random&lt;atom_p&gt;();</div>
 <div class="line">                        atom_p random_b = Random&lt;atom_p&gt;();</div>
 <div class="line">                        atom_p value = random_a;</div>
@@ -1730,7 +1728,7 @@ template&lt;number_tr atom_p, convertible_tr&lt; atom_p &gt; value_p&gt; </div>
 <div class="ttc" id="anamespacenkr_1_1os_1_1atomic_html_a31e9d79fbf45c456014c16a8246c10b0"><div class="ttname"><a href="namespacenkr_1_1os_1_1atomic.html#a31e9d79fbf45c456014c16a8246c10b0">nkr::os::atomic::Exchange_Multiply</a></div><div class="ttdeci">atom_p Exchange_Multiply(volatile atom_p &amp;atom, value_p value)</div><div class="ttdoc">Equivalent to (original = atom, atom *= with, original)</div><div class="ttdef"><b>Definition:</b> os_def.h:267</div></div>
 </div><!-- fragment --> <div class="fragment"><div class="line">                TEST_CASE_TEMPLATE(<span class="stringliteral">&quot;should return the old value&quot;</span>, atom_p, atoms)</div>
 <div class="line">                {</div>
-<div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptnkr_1_1number__tr.html">number_tr&lt;atom_p&gt;</a>) {</div>
+<div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (number_tr&lt;atom_p&gt;) {</div>
 <div class="line">                        atom_p random_a = Random&lt;atom_p&gt;();</div>
 <div class="line">                        atom_p random_b = Random&lt;atom_p&gt;();</div>
 <div class="line">                        atom_p value = random_a;</div>
@@ -1742,7 +1740,7 @@ template&lt;number_tr atom_p, convertible_tr&lt; atom_p &gt; value_p&gt; </div>
 <div class="line">                    <span class="keyword">using</span> atom_p = std::tuple_element_t&lt;0, pair_p&gt;;</div>
 <div class="line">                    <span class="keyword">using</span> convertible_p = std::tuple_element_t&lt;1, pair_p&gt;;</div>
 <div class="line"> </div>
-<div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptnkr_1_1number__tr.html">number_tr&lt;atom_p&gt;</a>) {</div>
+<div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (number_tr&lt;atom_p&gt;) {</div>
 <div class="line">                        atom_p random_a = Random&lt;atom_p&gt;();</div>
 <div class="line">                        convertible_p random_b = Random&lt;convertible_p&gt;();</div>
 <div class="line">                        atom_p value = random_a;</div>
@@ -1913,7 +1911,7 @@ template&lt;number_tr atom_p, convertible_tr&lt; atom_p &gt; value_p&gt; </div>
 <p >Equivalent to <code>(original = atom, atom -= with, original)</code> and <code>(atom--)</code></p>
 <div class="fragment"><div class="line">                TEST_CASE_TEMPLATE(<span class="stringliteral">&quot;should set the value to value - passed value&quot;</span>, atom_p, atoms)</div>
 <div class="line">                {</div>
-<div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptnkr_1_1number__tr.html">number_tr&lt;atom_p&gt;</a>) {</div>
+<div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (number_tr&lt;atom_p&gt;) {</div>
 <div class="line">                        atom_p random_a = Random&lt;atom_p&gt;();</div>
 <div class="line">                        atom_p random_b = Random&lt;atom_p&gt;();</div>
 <div class="line">                        atom_p value = random_a;</div>
@@ -1924,7 +1922,7 @@ template&lt;number_tr atom_p, convertible_tr&lt; atom_p &gt; value_p&gt; </div>
 <div class="ttc" id="anamespacenkr_1_1os_1_1atomic_html_afe670bb52dfc36eb1350886bdaa26259"><div class="ttname"><a href="namespacenkr_1_1os_1_1atomic.html#afe670bb52dfc36eb1350886bdaa26259">nkr::os::atomic::Exchange_Subtract</a></div><div class="ttdeci">atom_p Exchange_Subtract(volatile atom_p &amp;atom, value_p value)</div><div class="ttdoc">Equivalent to (original = atom, atom -= with, original) and (atom--)</div><div class="ttdef"><b>Definition:</b> os_def.h:216</div></div>
 </div><!-- fragment --> <div class="fragment"><div class="line">                TEST_CASE_TEMPLATE(<span class="stringliteral">&quot;should return the old value&quot;</span>, atom_p, atoms)</div>
 <div class="line">                {</div>
-<div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptnkr_1_1number__tr.html">number_tr&lt;atom_p&gt;</a>) {</div>
+<div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (number_tr&lt;atom_p&gt;) {</div>
 <div class="line">                        atom_p random_a = Random&lt;atom_p&gt;();</div>
 <div class="line">                        atom_p random_b = Random&lt;atom_p&gt;();</div>
 <div class="line">                        atom_p value = random_a;</div>
@@ -1936,7 +1934,7 @@ template&lt;number_tr atom_p, convertible_tr&lt; atom_p &gt; value_p&gt; </div>
 <div class="line">                    <span class="keyword">using</span> atom_p = std::tuple_element_t&lt;0, pair_p&gt;;</div>
 <div class="line">                    <span class="keyword">using</span> convertible_p = std::tuple_element_t&lt;1, pair_p&gt;;</div>
 <div class="line"> </div>
-<div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptnkr_1_1number__tr.html">number_tr&lt;atom_p&gt;</a>) {</div>
+<div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (number_tr&lt;atom_p&gt;) {</div>
 <div class="line">                        atom_p random_a = Random&lt;atom_p&gt;();</div>
 <div class="line">                        convertible_p random_b = Random&lt;convertible_p&gt;();</div>
 <div class="line">                        atom_p value = random_a;</div>
@@ -1946,7 +1944,7 @@ template&lt;number_tr atom_p, convertible_tr&lt; atom_p &gt; value_p&gt; </div>
 <div class="line">                }</div>
 </div><!-- fragment --><div class="fragment"><div class="line">                TEST_CASE_TEMPLATE(<span class="stringliteral">&quot;should set the value to value - passed value&quot;</span>, atom_p, atoms)</div>
 <div class="line">                {</div>
-<div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptnkr_1_1number__tr.html">number_tr&lt;atom_p&gt;</a>) {</div>
+<div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (number_tr&lt;atom_p&gt;) {</div>
 <div class="line">                        atom_p random_a = Random&lt;atom_p&gt;();</div>
 <div class="line">                        atom_p random_b = Random&lt;atom_p&gt;();</div>
 <div class="line">                        atom_p value = random_a;</div>
@@ -1956,7 +1954,7 @@ template&lt;number_tr atom_p, convertible_tr&lt; atom_p &gt; value_p&gt; </div>
 <div class="line">                }</div>
 </div><!-- fragment --> <div class="fragment"><div class="line">                TEST_CASE_TEMPLATE(<span class="stringliteral">&quot;should return the old value&quot;</span>, atom_p, atoms)</div>
 <div class="line">                {</div>
-<div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptnkr_1_1number__tr.html">number_tr&lt;atom_p&gt;</a>) {</div>
+<div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (number_tr&lt;atom_p&gt;) {</div>
 <div class="line">                        atom_p random_a = Random&lt;atom_p&gt;();</div>
 <div class="line">                        atom_p random_b = Random&lt;atom_p&gt;();</div>
 <div class="line">                        atom_p value = random_a;</div>
@@ -1968,7 +1966,7 @@ template&lt;number_tr atom_p, convertible_tr&lt; atom_p &gt; value_p&gt; </div>
 <div class="line">                    <span class="keyword">using</span> atom_p = std::tuple_element_t&lt;0, pair_p&gt;;</div>
 <div class="line">                    <span class="keyword">using</span> convertible_p = std::tuple_element_t&lt;1, pair_p&gt;;</div>
 <div class="line"> </div>
-<div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptnkr_1_1number__tr.html">number_tr&lt;atom_p&gt;</a>) {</div>
+<div class="line">                    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (number_tr&lt;atom_p&gt;) {</div>
 <div class="line">                        atom_p random_a = Random&lt;atom_p&gt;();</div>
 <div class="line">                        convertible_p random_b = Random&lt;convertible_p&gt;();</div>
 <div class="line">                        atom_p value = random_a;</div>

@@ -50,7 +50,6 @@ var searchBox = new SearchBox("searchBox", "search",'Search','.html');
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="concepts.html"><span>Concepts</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
-      <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -88,12 +87,14 @@ var searchBox = new SearchBox("searchBox", "search",'Search','.html');
   <div class="headertitle"><div class="title">Overview </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p ><a class="anchor" id="mainpage"></a> This library is in the early stages of development, but what better time to start end-user documentation?</p>
+<div class="textblock"><p ><a class="anchor" id="mainpage"></a>This is my C++20 library which makes heavy usage of <code>concept</code> templates. The purpose of the library is primarily to exercise my abilities to create an extremely robust and well-defined system. Therefore every type should be critically tested and fully capable of fulfilling its purpose. Additionally, we're trying to avoid using the standard C++ library as an exercise in building the system from the ground-up and also to avoid the faults that come with the standard library.</p>
+<p >This library avoids using exceptions and instead favors a much simpler yet still helpful error-code system. Firstly, there are few error-codes to speak of as the <code>assert</code> is the most commonly used error-prevention method. However for those errors that often go beyond the programmer's code, such as allocating memory, our error-codes provide a similar yet far-less intrusive and more efficient method of helping to remind the programmer to check for the potential error.</p>
+<p >This library is in the early stages of development, but what better time to start end-user documentation? For this reason many parts of the library remain undocumented as I am still designing them.</p>
 <h3><a class="anchor" id="autotoc_md0"></a>
 Basics</h3>
 <ul>
 <li><a class="el" href="classnkr_1_1bool__t.html" title="The default boolean type of this library which replaces nkr::std_bool_t, i.e. bool.">nkr::bool_t</a></li>
-<li><a class="el" href="classnkr_1_1pointer__t.html">nkr::pointer_t</a></li>
+<li><a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer and the number of units that the pointer points to.">nkr::pointer_t</a></li>
 <li><a class="el" href="classnkr_1_1atomic__t.html" title="The default template for nkr::atomic_t, which invalidates types not matching any specialization.">nkr::atomic_t</a></li>
 </ul>
 <h3><a class="anchor" id="autotoc_md1"></a>
@@ -109,63 +110,75 @@ Maybes</h3>
 <h3><a class="anchor" id="autotoc_md2"></a>
 Allocators</h3>
 <ul>
-<li><a class="el" href="conceptnkr_1_1allocator__i.html">nkr::allocator_i</a></li>
-<li><a class="el" href="classnkr_1_1allocator_1_1heap__t.html">nkr::allocator::heap_t</a></li>
-<li><a class="el" href="classnkr_1_1allocator_1_1heap__zeros__t.html">nkr::allocator::heap_zeros_t</a></li>
+<li>nkr::allocator_i</li>
+<li>nkr::allocator::heap_t</li>
+<li>nkr::allocator::heap_zeros_t</li>
 </ul>
 <h3><a class="anchor" id="autotoc_md3"></a>
 Arrays</h3>
 <ul>
-<li><a class="el" href="conceptnkr_1_1array__i.html">nkr::array_i</a></li>
-<li><a class="el" href="classnkr_1_1array_1_1dynamic__t.html">nkr::array::dynamic_t</a></li>
-<li><a class="el" href="classnkr_1_1array_1_1instant__t.html">nkr::array::instant_t</a></li>
-<li><a class="el" href="classnkr_1_1array_1_1stack__t.html">nkr::array::stack_t</a></li>
+<li>nkr::array_i</li>
+<li>nkr::array::dynamic_t</li>
+<li>nkr::array::instant_t</li>
+<li><a class="el" href="classnkr_1_1array_1_1stack__t.html" title="Allocates an array on the stack with many helper functions.">nkr::array::stack_t</a></li>
 </ul>
 <h3><a class="anchor" id="autotoc_md4"></a>
 Charcoders</h3>
 <ul>
-<li><a class="el" href="conceptnkr_1_1charcoder__i.html">nkr::charcoder_i</a></li>
-<li><a class="el" href="classnkr_1_1charcoder_1_1ascii__t.html">nkr::charcoder::ascii_t</a></li>
-<li><a class="el" href="classnkr_1_1charcoder_1_1utf__8__t.html">nkr::charcoder::utf_8_t</a></li>
-<li><a class="el" href="classnkr_1_1charcoder_1_1utf__16__t.html">nkr::charcoder::utf_16_t</a></li>
-<li><a class="el" href="classnkr_1_1charcoder_1_1utf__32__t.html">nkr::charcoder::utf_32_t</a></li>
+<li>nkr::charcoder_i</li>
+<li>nkr::charcoder::ascii_t</li>
+<li>nkr::charcoder::utf_8_t</li>
+<li>nkr::charcoder::utf_16_t</li>
+<li>nkr::charcoder::utf_32_t</li>
 </ul>
 <h3><a class="anchor" id="autotoc_md5"></a>
 Enumerations</h3>
 <ul>
-<li><a class="el" href="classnkr_1_1enumeration_1_1flags__t.html">nkr::enumeration::flags_t</a></li>
-<li><a class="el" href="classnkr_1_1enumeration_1_1types__t.html">nkr::enumeration::types_t</a></li>
-<li><a class="el" href="classnkr_1_1enumeration_1_1errors__t.html">nkr::enumeration::errors_t</a></li>
+<li>nkr::enumeration::flags_t</li>
+<li>nkr::enumeration::types_t</li>
+<li>nkr::enumeration::errors_t</li>
 </ul>
 <h3><a class="anchor" id="autotoc_md6"></a>
 Numbers</h3>
 <ul>
-<li><a class="el" href="classnkr_1_1signed__negative__t.html">nkr::signed_negative_t</a></li>
-<li><a class="el" href="classnkr_1_1signed__positive__t.html">nkr::signed_positive_t</a></li>
+<li>nkr::signed_negative_t</li>
+<li>nkr::signed_positive_t</li>
 </ul>
 <h3><a class="anchor" id="autotoc_md7"></a>
 Strings</h3>
 <ul>
-<li><a class="el" href="classnkr_1_1string_1_1dynamic__t.html">nkr::string::dynamic_t</a></li>
-<li><a class="el" href="classnkr_1_1string_1_1static__t.html">nkr::string::static_t</a></li>
+<li>nkr::string::dynamic_t</li>
+<li>nkr::string::static_t</li>
 </ul>
 <h3><a class="anchor" id="autotoc_md8"></a>
 Namespaced Functions</h3>
 <ul>
-<li><a class="el" href="namespacenkr_1_1math.html">nkr::math</a></li>
+<li>nkr::math</li>
 <li><a class="el" href="namespacenkr_1_1os.html" title="Short for &quot;Operating System&quot;, this contains several wrappers for otherwise platform specific function...">nkr::os</a></li>
 </ul>
 <h3><a class="anchor" id="autotoc_md9"></a>
 Global nkr Definitions</h3>
 <ul>
-<li><a class="el" href="fors_8h.html">fors.h</a></li>
-<li><a class="el" href="intrinsics_8h.html">intrinsics.h</a></li>
-<li><a class="el" href="macros_8h.html">macros.h</a></li>
-<li><a class="el" href="traits_8h.html">traits.h</a></li>
-<li><a class="el" href="utils_8h.html">utils.h</a></li>
+<li>fors.h</li>
+<li>intrinsics.h</li>
+<li>macros.h</li>
+<li>traits.h</li>
+<li>utils.h</li>
 </ul>
 <h1><a class="anchor" id="autotoc_md10"></a>
 Designs</h1>
+<h2><a class="anchor" id="autotoc_md11"></a>
+Data Labels</h2>
+<p >There are a number of postfixes tacked unto labels to differentiate them from various kinds of data that work upon the same concept. For example, "example_t" is for "example type", "example_i" for "example interface", "example_tr" for "example trait", "example_err" for "example error", just to name a few. Because these all havae the same name except the postfix, it's implied that each of these different kinds of data relate and are interconnected.</p>
+<h2><a class="anchor" id="autotoc_md12"></a>
+File Hierarchy</h2>
+<p >Files include the postfix of whatever it is they declare or define. For example, types have "_t" in the name of the file: e.g. "pointer_t.h", "bool_t.cpp". This is to make them distinct from other kinds of data that have the same name but a different postfix. In addition, post-postfixes are added to the names of files to make them distinct from the kinds of files that make up the program, e.g. "pointer_t_dec.h" for "pointer_t declaration" and "bool_t_def.h" for "bool_t definition". There is yet another that is used to decouple comments from the code, e.g. "pointer_t_dox.h" for "pointer_t documents".</p>
+<h2><a class="anchor" id="autotoc_md13"></a>
+Templates</h2>
+<p >This is pretty much a template library. Therefore this library sacrifices compilation speed for runtime speed. For that reason, I have begun implementing the option to pre-define common templated types if you find you should need them in your project. However any project that is 100,000 or so lines long should not have any significant slow-downs. Getting into the millions is much harder to speak about, but knowing C++ and its slow compilation speeds, it's probably not going to be great compilation times. However, take note that the ridiculously slow parts of the meta-language are not typically not used, especially things like iterating tuples. Very rarely is there any meta-recursion (or recursion generally) however the examples of recursion that do exist are opt-in and completely avoidable. (See <a class="el" href="classnkr_1_1array_1_1stack__t.html" title="Allocates an array on the stack with many helper functions.">nkr::array::stack_t</a> and its Push methods.)</p>
+<h2><a class="anchor" id="autotoc_md14"></a>
+Full Definitions</h2>
+<p >As much as possible, one of my goals for this library is to create complete types as much as possible. Therefore almost every type has all sensible methods available for <code>const</code>, <code>volatile</code>, and <code>const volatile</code> versions of the type, in addition to the the unqualified variety.</p>
 <h2><a class="anchor" id="_16d56f49_95ba_456e_a026_706c054cb133"></a>
 Class Concept Specializations</h2>
 <p >Because we are using the C++20 concepts feature, which is not fully implemented in all compilers, we do have to work around a couple of bugs that currently exist in two of the big compilers to varying degrees. In order to use out-of-body class definitions, we use a pattern of concept specialization that has the specializations inherit all of their members from a different class, including methods, ctors, dtor, and assignment operators. This effectively makes the specialization the same class as the base. We put these in a name space one step interior to the namespace where the type lives, and it's named after the type with an additional "$" prefixing it. We also put no members in the default class and only use the specializations. This is to avoid yet another bug that currently exists in one of the big compilers:</p>
@@ -201,18 +214,6 @@ Class Concept Specializations</h2>
 <div class="line">    <span class="keyword">public</span>:</div>
 <div class="line">        <span class="keyword">using</span> $class_t::integer_sp&lt;integer_p&gt;::integer_sp;</div>
 <div class="line">        <span class="keyword">using</span> $class_t::integer_sp&lt;integer_p&gt;::operator =;</div>
-<div class="line"> </div>
-<div class="line">    <span class="keyword">public</span>:</div>
-<div class="line">        <span class="comment">// it&#39;s important to define these in-body, which we need for a certain ctor condition</span></div>
-<div class="line">        class_t(<span class="keyword">const</span> $class_t::integer_sp&lt;integer_p&gt;&amp; other) :</div>
-<div class="line">            $class_t::integer_sp&lt;integer_p&gt;(other)</div>
-<div class="line">        {</div>
-<div class="line">        }</div>
-<div class="line"> </div>
-<div class="line">        class_t($class_t::integer_sp&lt;integer_p&gt;&amp;&amp; other) noexcept :</div>
-<div class="line">            $class_t::integer_sp&lt;integer_p&gt;(<a class="code hl_function" href="namespacenkr.html#a147605e8f99612d473ce3b5e2d6686a5">nkr::Move</a>(other))</div>
-<div class="line">        {</div>
-<div class="line">        }</div>
 <div class="line">    };</div>
 <div class="line"> </div>
 <div class="line">    <span class="keyword">template</span> &lt;po<span class="keywordtype">int</span>er_tr po<span class="keywordtype">int</span>er_p&gt;</div>
@@ -222,22 +223,10 @@ Class Concept Specializations</h2>
 <div class="line">    <span class="keyword">public</span>:</div>
 <div class="line">        <span class="keyword">using</span> $class_t::pointer_sp&lt;pointer_p&gt;::pointer_sp;</div>
 <div class="line">        <span class="keyword">using</span> $class_t::pointer_sp&lt;pointer_p&gt;::operator =;</div>
-<div class="line"> </div>
-<div class="line">    <span class="keyword">public</span>:</div>
-<div class="line">        class_t(<span class="keyword">const</span> $class_t::pointer_sp&lt;pointer_p&gt;&amp; other) :</div>
-<div class="line">            $class_t::pointer_sp&lt;pointer_p&gt;(other)</div>
-<div class="line">        {</div>
-<div class="line">        }</div>
-<div class="line"> </div>
-<div class="line">        class_t($class_t::pointer_sp&lt;pointer_p&gt;&amp;&amp; other) noexcept :</div>
-<div class="line">            $class_t::pointer_sp&lt;pointer_p&gt;(<a class="code hl_function" href="namespacenkr.html#a147605e8f99612d473ce3b5e2d6686a5">nkr::Move</a>(other))</div>
-<div class="line">        {</div>
-<div class="line">        }</div>
 <div class="line">    };</div>
 <div class="line"> </div>
 <div class="line">}</div>
-<div class="ttc" id="anamespacenkr_html"><div class="ttname"><a href="namespacenkr.html">nkr</a></div><div class="ttdoc">With the exception of &quot;nkr_&quot; prefixed macros, all other nkr entities are defined in this namespace.</div><div class="ttdef"><b>Definition:</b> heap_t_dec.h:13</div></div>
-<div class="ttc" id="anamespacenkr_html_a147605e8f99612d473ce3b5e2d6686a5"><div class="ttname"><a href="namespacenkr.html#a147605e8f99612d473ce3b5e2d6686a5">nkr::Move</a></div><div class="ttdeci">constexpr auto Move(built_in_tr auto &amp;value) noexcept</div><div class="ttdef"><b>Definition:</b> utils_def.h:13</div></div>
+<div class="ttc" id="anamespacenkr_html"><div class="ttname"><a href="namespacenkr.html">nkr</a></div><div class="ttdoc">With the exception of &quot;nkr_&quot; prefixed macros, all other nkr entities are defined in this namespace.</div><div class="ttdef"><b>Definition:</b> heap_t_dec.h:15</div></div>
 </div><!-- fragment --><p ><a href="https://stackoverflow.com/questions/68589314/how-to-define-a-specialized-class-method-outside-of-class-body-in-c">Read about this on stackoverflow.</a> </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
