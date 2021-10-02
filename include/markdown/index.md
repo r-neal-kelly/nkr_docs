@@ -3,7 +3,7 @@ This is my C++20 library which makes heavy usage of `concept` templates. The pur
 
 This library avoids using exceptions and instead favors a much simpler yet still helpful error-code system. Firstly, there are few error-codes to speak of as the `assert` is the most commonly used error-prevention method. However for those errors that often go beyond the programmer's code, such as allocating memory, our error-codes provide a similar yet far-less intrusive and more efficient method of helping to remind the programmer to check for the potential error.
 
-This library is in the early stages of development, but what better time to start end-user documentation? For this reason many parts of the library remain undocumented as I am still designing them.
+This library is in the early stages of development, but what better time to start end-user documentation? For this reason many parts of the library remain undocumented as I am still designing them, but almost everything in the following list has an implementation although it has not been fully documented. For implementation, please visit the open source code [here on GitHub.](https://github.com/r-neal-kelly/nkr)
 
 #### Basics
 - nkr::bool_t
@@ -63,7 +63,7 @@ This library is in the early stages of development, but what better time to star
 # Designs
 
 ## Data Labels
-There are a number of postfixes tacked unto labels to differentiate them from various kinds of data that work upon the same concept. For example, "example_t" is for "example type", "example_i" for "example interface", "example_tr" for "example trait", "example_err" for "example error", just to name a few. Because these all havae the same name except the postfix, it's implied that each of these different kinds of data relate and are interconnected.
+There are a number of postfixes tacked unto labels to differentiate them from various kinds of data that work upon the same concept. For example, "example_t" is for "example type", "example_i" for "example interface", "example_tr" for "example trait", "example_err" for "example error", just to name a few. Because these all have the same name excepting the postfix, it's implied that each of these different kinds of data relate and are interconnected, all at a glance.
 
 ## File Hierarchy
 Files include the postfix of whatever it is they declare or define. For example, types have "_t" in the name of the file: e.g. "pointer_t.h", "bool_t.cpp". This is to make them distinct from other kinds of data that have the same name but a different postfix. In addition, post-postfixes are added to the names of files to make them distinct from the kinds of files that make up the program, e.g. "pointer_t_dec.h" for "pointer_t declaration" and "bool_t_def.h" for "bool_t definition". There is yet another that is used to decouple comments from the code, e.g. "pointer_t_dox.h" for "pointer_t documents".
