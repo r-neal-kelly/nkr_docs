@@ -102,7 +102,7 @@ var searchBox = new SearchBox("searchBox", "search",'Search','.html');
 </div><!--header-->
 <div class="contents">
 
-<p>A wrapper for the <a class="el" href="namespacenkr_1_1os_1_1heap.html" title="Functions that interface with memory located on the heap. Primarily, this is an extension of the stan...">nkr::os::heap</a> allocators, often used by other types around the library as the default allocator.  
+<p>A wrapper for the <a class="el" href="namespacenkr_1_1os_1_1heap.html" title="Functions that interface with memory located on the heap. Primarily, this is an extension of the stan...">nkr::os::heap</a> allocator, often used by other types around the library as the default allocator.  
  <a href="classnkr_1_1allocator_1_1heap__t.html#details">More...</a></p>
 
 <p><code>#include &quot;heap_t_dec.h&quot;</code></p>
@@ -124,7 +124,7 @@ var searchBox = new SearchBox("searchBox", "search",'Search','.html');
 <tr><td class="ititle" colspan="2"><p ><a class="anchor" id="amgrp8c3f72e9294cec463e684a83536b8c09"></a></p>
 </td></tr>
 <tr class="memitem:a52e688b3bdafbc14968d98df8a8c9feb"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="group__intrinsics__contextuals.html#ga962bdb5ad1c5bc05d87739e09df6082b">count_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnkr_1_1allocator_1_1heap__t.html#a52e688b3bdafbc14968d98df8a8c9feb">Min_Unit_Count</a> ()</td></tr>
-<tr class="memdesc:a52e688b3bdafbc14968d98df8a8c9feb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Not used by this particular allocator. Always equals 0.  <a href="classnkr_1_1allocator_1_1heap__t.html#a52e688b3bdafbc14968d98df8a8c9feb">More...</a><br /></td></tr>
+<tr class="memdesc:a52e688b3bdafbc14968d98df8a8c9feb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Not used by this particular allocator. Always equals to 0.  <a href="classnkr_1_1allocator_1_1heap__t.html#a52e688b3bdafbc14968d98df8a8c9feb">More...</a><br /></td></tr>
 <tr class="separator:a52e688b3bdafbc14968d98df8a8c9feb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c77d45a11cb4487b21a96d2aa4b6629"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="group__intrinsics__contextuals.html#ga962bdb5ad1c5bc05d87739e09df6082b">count_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnkr_1_1allocator_1_1heap__t.html#a0c77d45a11cb4487b21a96d2aa4b6629">Max_Unit_Count</a> ()</td></tr>
 <tr class="memdesc:a0c77d45a11cb4487b21a96d2aa4b6629"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the maximum number of objects which space can be allocated for.  <a href="classnkr_1_1allocator_1_1heap__t.html#a0c77d45a11cb4487b21a96d2aa4b6629">More...</a><br /></td></tr>
@@ -141,7 +141,7 @@ var searchBox = new SearchBox("searchBox", "search",'Search','.html');
 <tr class="separator:affe9d3d9505148cd1ae4daefddf84c8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">objects</h2></td></tr>
-<tr><td class="ititle" colspan="2"><p ><a class="anchor" id="amgrp5891da2d64975cae48d175d1e001f5da"></a>Because this is a static allocator, that is it doesn't need its own memory footprint, all of these are simply here to fulfill the nkr::allocator_i and do not do anything.</p>
+<tr><td class="ititle" colspan="2"><p ><a class="anchor" id="amgrp5891da2d64975cae48d175d1e001f5da"></a>Because this is a static allocator and it doesn't need its own memory footprint, all of these are simply here to fulfill the nkr::allocator_i and do not do anything.</p>
 </td></tr>
 <tr class="memitem:a931f6bd0663a5452688b15081e65edff"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnkr_1_1allocator_1_1heap__t.html#a931f6bd0663a5452688b15081e65edff">heap_t</a> ()=default</td></tr>
 <tr class="separator:a931f6bd0663a5452688b15081e65edff"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -176,53 +176,47 @@ var searchBox = new SearchBox("searchBox", "search",'Search','.html');
 <tr><td class="ititle" colspan="2"><p ><a class="anchor" id="amgrpa9ac5a6cc3cbe84f9c18323af2b9007f"></a></p>
 </td></tr>
 <tr class="memitem:a4dea6283a09029b9c85892dd1ff24218"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classnkr_1_1maybe__t.html">maybe_t</a>&lt; allocator_err &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnkr_1_1allocator_1_1heap__t.html#a4dea6283a09029b9c85892dd1ff24218">Allocate</a> (is_any_non_const_tr&lt; <a class="el" href="classnkr_1_1allocator_1_1heap__t.html#aaf8d87d62b8d22b78e06211a5db68178">units_t</a> &gt; auto &amp;units, <a class="el" href="group__intrinsics__contextuals.html#ga962bdb5ad1c5bc05d87739e09df6082b">count_t</a> unit_count) const</td></tr>
+<tr class="memdesc:a4dea6283a09029b9c85892dd1ff24218"><td class="mdescLeft">&#160;</td><td class="mdescRight">A wrapper for <a class="el" href="namespacenkr_1_1os_1_1heap.html#a3aa3054fcc1b5577c0bcfd8f81c8f3e4" title="Gives you memory to use until you deallocate it or your program exits.">nkr::os::heap::Allocate</a>.  <a href="classnkr_1_1allocator_1_1heap__t.html#a4dea6283a09029b9c85892dd1ff24218">More...</a><br /></td></tr>
 <tr class="separator:a4dea6283a09029b9c85892dd1ff24218"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2778f2bee6d0959f87149e96e6806f59"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classnkr_1_1maybe__t.html">maybe_t</a>&lt; allocator_err &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnkr_1_1allocator_1_1heap__t.html#a2778f2bee6d0959f87149e96e6806f59">Allocate</a> (is_any_non_const_tr&lt; <a class="el" href="classnkr_1_1allocator_1_1heap__t.html#aaf8d87d62b8d22b78e06211a5db68178">units_t</a> &gt; auto &amp;units, <a class="el" href="group__intrinsics__contextuals.html#ga962bdb5ad1c5bc05d87739e09df6082b">count_t</a> unit_count) const volatile</td></tr>
+<tr class="memdesc:a2778f2bee6d0959f87149e96e6806f59"><td class="mdescLeft">&#160;</td><td class="mdescRight">A wrapper for <a class="el" href="namespacenkr_1_1os_1_1heap.html#a3aa3054fcc1b5577c0bcfd8f81c8f3e4" title="Gives you memory to use until you deallocate it or your program exits.">nkr::os::heap::Allocate</a>.  <a href="classnkr_1_1allocator_1_1heap__t.html#a2778f2bee6d0959f87149e96e6806f59">More...</a><br /></td></tr>
 <tr class="separator:a2778f2bee6d0959f87149e96e6806f59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a60d663a87ea939c03b67adaa998b9d5d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classnkr_1_1maybe__t.html">maybe_t</a>&lt; allocator_err &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnkr_1_1allocator_1_1heap__t.html#a60d663a87ea939c03b67adaa998b9d5d">Allocate</a> (is_any_non_const_tr&lt; <a class="el" href="classnkr_1_1allocator_1_1heap__t.html#a3ed2dcc75aaf1f828b639e74b684bece">pointer_t</a> &gt; auto &amp;units, <a class="el" href="group__intrinsics__contextuals.html#ga962bdb5ad1c5bc05d87739e09df6082b">count_t</a> unit_count) const</td></tr>
+<tr class="memdesc:a60d663a87ea939c03b67adaa998b9d5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">A wrapper for <a class="el" href="namespacenkr_1_1os_1_1heap.html#a3aa3054fcc1b5577c0bcfd8f81c8f3e4" title="Gives you memory to use until you deallocate it or your program exits.">nkr::os::heap::Allocate</a>, but it can handle a <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer and the number of units that the pointer points to.">nkr::pointer_t</a>.  <a href="classnkr_1_1allocator_1_1heap__t.html#a60d663a87ea939c03b67adaa998b9d5d">More...</a><br /></td></tr>
 <tr class="separator:a60d663a87ea939c03b67adaa998b9d5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a48d6c43f2755c218091b7f0aa60f3f1f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classnkr_1_1maybe__t.html">maybe_t</a>&lt; allocator_err &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnkr_1_1allocator_1_1heap__t.html#a48d6c43f2755c218091b7f0aa60f3f1f">Allocate</a> (is_any_non_const_tr&lt; <a class="el" href="classnkr_1_1allocator_1_1heap__t.html#a3ed2dcc75aaf1f828b639e74b684bece">pointer_t</a> &gt; auto &amp;units, <a class="el" href="group__intrinsics__contextuals.html#ga962bdb5ad1c5bc05d87739e09df6082b">count_t</a> unit_count) const volatile</td></tr>
+<tr class="memdesc:a48d6c43f2755c218091b7f0aa60f3f1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">A wrapper for <a class="el" href="namespacenkr_1_1os_1_1heap.html#a3aa3054fcc1b5577c0bcfd8f81c8f3e4" title="Gives you memory to use until you deallocate it or your program exits.">nkr::os::heap::Allocate</a>, but it can handle a <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer and the number of units that the pointer points to.">nkr::pointer_t</a>.  <a href="classnkr_1_1allocator_1_1heap__t.html#a48d6c43f2755c218091b7f0aa60f3f1f">More...</a><br /></td></tr>
 <tr class="separator:a48d6c43f2755c218091b7f0aa60f3f1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8c77fe6d4d5c50f18540e44fe88dd064"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classnkr_1_1maybe__t.html">maybe_t</a>&lt; allocator_err &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnkr_1_1allocator_1_1heap__t.html#a8c77fe6d4d5c50f18540e44fe88dd064">Reallocate</a> (is_any_non_const_tr&lt; <a class="el" href="classnkr_1_1allocator_1_1heap__t.html#aaf8d87d62b8d22b78e06211a5db68178">units_t</a> &gt; auto &amp;units, <a class="el" href="group__intrinsics__contextuals.html#ga962bdb5ad1c5bc05d87739e09df6082b">count_t</a> new_unit_count) const</td></tr>
+<tr class="memdesc:a8c77fe6d4d5c50f18540e44fe88dd064"><td class="mdescLeft">&#160;</td><td class="mdescRight">A wrapper for <a class="el" href="namespacenkr_1_1os_1_1heap.html#a52065c5bdf7e1f414f00b31e7e671be9" title="Gives you more memory without loosing any of the previously allocated memory.">nkr::os::heap::Reallocate</a>.  <a href="classnkr_1_1allocator_1_1heap__t.html#a8c77fe6d4d5c50f18540e44fe88dd064">More...</a><br /></td></tr>
 <tr class="separator:a8c77fe6d4d5c50f18540e44fe88dd064"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaa580a5b9af98bdb7d75b310e9b727e5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classnkr_1_1maybe__t.html">maybe_t</a>&lt; allocator_err &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnkr_1_1allocator_1_1heap__t.html#aaa580a5b9af98bdb7d75b310e9b727e5">Reallocate</a> (is_any_non_const_tr&lt; <a class="el" href="classnkr_1_1allocator_1_1heap__t.html#aaf8d87d62b8d22b78e06211a5db68178">units_t</a> &gt; auto &amp;units, <a class="el" href="group__intrinsics__contextuals.html#ga962bdb5ad1c5bc05d87739e09df6082b">count_t</a> new_unit_count) const volatile</td></tr>
+<tr class="memdesc:aaa580a5b9af98bdb7d75b310e9b727e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">A wrapper for <a class="el" href="namespacenkr_1_1os_1_1heap.html#a52065c5bdf7e1f414f00b31e7e671be9" title="Gives you more memory without loosing any of the previously allocated memory.">nkr::os::heap::Reallocate</a>.  <a href="classnkr_1_1allocator_1_1heap__t.html#aaa580a5b9af98bdb7d75b310e9b727e5">More...</a><br /></td></tr>
 <tr class="separator:aaa580a5b9af98bdb7d75b310e9b727e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a268a87a0e195d6fef52c0257b76e1aa9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classnkr_1_1maybe__t.html">maybe_t</a>&lt; allocator_err &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnkr_1_1allocator_1_1heap__t.html#a268a87a0e195d6fef52c0257b76e1aa9">Reallocate</a> (is_any_non_const_tr&lt; <a class="el" href="classnkr_1_1allocator_1_1heap__t.html#a3ed2dcc75aaf1f828b639e74b684bece">pointer_t</a> &gt; auto &amp;units, <a class="el" href="group__intrinsics__contextuals.html#ga962bdb5ad1c5bc05d87739e09df6082b">count_t</a> new_unit_count) const</td></tr>
+<tr class="memdesc:a268a87a0e195d6fef52c0257b76e1aa9"><td class="mdescLeft">&#160;</td><td class="mdescRight">A wrapper for <a class="el" href="namespacenkr_1_1os_1_1heap.html#a52065c5bdf7e1f414f00b31e7e671be9" title="Gives you more memory without loosing any of the previously allocated memory.">nkr::os::heap::Reallocate</a>, but it can handle a <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer and the number of units that the pointer points to.">nkr::pointer_t</a>.  <a href="classnkr_1_1allocator_1_1heap__t.html#a268a87a0e195d6fef52c0257b76e1aa9">More...</a><br /></td></tr>
 <tr class="separator:a268a87a0e195d6fef52c0257b76e1aa9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4db378e8ef1139336c613782c6726193"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classnkr_1_1maybe__t.html">maybe_t</a>&lt; allocator_err &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnkr_1_1allocator_1_1heap__t.html#a4db378e8ef1139336c613782c6726193">Reallocate</a> (is_any_non_const_tr&lt; <a class="el" href="classnkr_1_1allocator_1_1heap__t.html#a3ed2dcc75aaf1f828b639e74b684bece">pointer_t</a> &gt; auto &amp;units, <a class="el" href="group__intrinsics__contextuals.html#ga962bdb5ad1c5bc05d87739e09df6082b">count_t</a> new_unit_count) const volatile</td></tr>
+<tr class="memdesc:a4db378e8ef1139336c613782c6726193"><td class="mdescLeft">&#160;</td><td class="mdescRight">A wrapper for <a class="el" href="namespacenkr_1_1os_1_1heap.html#a52065c5bdf7e1f414f00b31e7e671be9" title="Gives you more memory without loosing any of the previously allocated memory.">nkr::os::heap::Reallocate</a>, but t can handle a <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer and the number of units that the pointer points to.">nkr::pointer_t</a>.  <a href="classnkr_1_1allocator_1_1heap__t.html#a4db378e8ef1139336c613782c6726193">More...</a><br /></td></tr>
 <tr class="separator:a4db378e8ef1139336c613782c6726193"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a34766fe49b9b672b74d92dadc0dc36f0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__intrinsics__primitives.html#ga034482d2e50c6d0448a7953d24860fe9">void_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnkr_1_1allocator_1_1heap__t.html#a34766fe49b9b672b74d92dadc0dc36f0">Deallocate</a> (is_any_non_const_tr&lt; <a class="el" href="classnkr_1_1allocator_1_1heap__t.html#aaf8d87d62b8d22b78e06211a5db68178">units_t</a> &gt; auto &amp;units) const</td></tr>
+<tr class="memdesc:a34766fe49b9b672b74d92dadc0dc36f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">A wrapper for <a class="el" href="namespacenkr_1_1os_1_1heap.html#ad27c431dc437f08ed8e3ad901ea31ba3" title="Takes back memory you no longer need so it can be reused later.">nkr::os::heap::Deallocate</a>.  <a href="classnkr_1_1allocator_1_1heap__t.html#a34766fe49b9b672b74d92dadc0dc36f0">More...</a><br /></td></tr>
 <tr class="separator:a34766fe49b9b672b74d92dadc0dc36f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad62b9b7704286d2d5a2c7959c8a1f864"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__intrinsics__primitives.html#ga034482d2e50c6d0448a7953d24860fe9">void_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnkr_1_1allocator_1_1heap__t.html#ad62b9b7704286d2d5a2c7959c8a1f864">Deallocate</a> (is_any_non_const_tr&lt; <a class="el" href="classnkr_1_1allocator_1_1heap__t.html#aaf8d87d62b8d22b78e06211a5db68178">units_t</a> &gt; auto &amp;units) const volatile</td></tr>
+<tr class="memdesc:ad62b9b7704286d2d5a2c7959c8a1f864"><td class="mdescLeft">&#160;</td><td class="mdescRight">A wrapper for <a class="el" href="namespacenkr_1_1os_1_1heap.html#ad27c431dc437f08ed8e3ad901ea31ba3" title="Takes back memory you no longer need so it can be reused later.">nkr::os::heap::Deallocate</a>.  <a href="classnkr_1_1allocator_1_1heap__t.html#ad62b9b7704286d2d5a2c7959c8a1f864">More...</a><br /></td></tr>
 <tr class="separator:ad62b9b7704286d2d5a2c7959c8a1f864"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adbf0a01454d652fe3e82363bf344bd0d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__intrinsics__primitives.html#ga034482d2e50c6d0448a7953d24860fe9">void_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnkr_1_1allocator_1_1heap__t.html#adbf0a01454d652fe3e82363bf344bd0d">Deallocate</a> (is_any_non_const_tr&lt; <a class="el" href="classnkr_1_1allocator_1_1heap__t.html#a3ed2dcc75aaf1f828b639e74b684bece">pointer_t</a> &gt; auto &amp;units) const</td></tr>
+<tr class="memdesc:adbf0a01454d652fe3e82363bf344bd0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">A wrapper for <a class="el" href="namespacenkr_1_1os_1_1heap.html#ad27c431dc437f08ed8e3ad901ea31ba3" title="Takes back memory you no longer need so it can be reused later.">nkr::os::heap::Deallocate</a>, but it can handle a <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer and the number of units that the pointer points to.">nkr::pointer_t</a>.  <a href="classnkr_1_1allocator_1_1heap__t.html#adbf0a01454d652fe3e82363bf344bd0d">More...</a><br /></td></tr>
 <tr class="separator:adbf0a01454d652fe3e82363bf344bd0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a750bafa3d38653b02e0a7e4b6f29915a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__intrinsics__primitives.html#ga034482d2e50c6d0448a7953d24860fe9">void_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnkr_1_1allocator_1_1heap__t.html#a750bafa3d38653b02e0a7e4b6f29915a">Deallocate</a> (is_any_non_const_tr&lt; <a class="el" href="classnkr_1_1allocator_1_1heap__t.html#a3ed2dcc75aaf1f828b639e74b684bece">pointer_t</a> &gt; auto &amp;units) const volatile</td></tr>
+<tr class="memdesc:a750bafa3d38653b02e0a7e4b6f29915a"><td class="mdescLeft">&#160;</td><td class="mdescRight">A wrapper for <a class="el" href="namespacenkr_1_1os_1_1heap.html#ad27c431dc437f08ed8e3ad901ea31ba3" title="Takes back memory you no longer need so it can be reused later.">nkr::os::heap::Deallocate</a>, but it can handle a <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer and the number of units that the pointer points to.">nkr::pointer_t</a>.  <a href="classnkr_1_1allocator_1_1heap__t.html#a750bafa3d38653b02e0a7e4b6f29915a">More...</a><br /></td></tr>
 <tr class="separator:a750bafa3d38653b02e0a7e4b6f29915a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;any_type_tr unit_p&gt;<br />
-class nkr::allocator::heap_t&lt; unit_p &gt;</div><p >A wrapper for the <a class="el" href="namespacenkr_1_1os_1_1heap.html" title="Functions that interface with memory located on the heap. Primarily, this is an extension of the stan...">nkr::os::heap</a> allocators, often used by other types around the library as the default allocator. </p>
+class nkr::allocator::heap_t&lt; unit_p &gt;</div><p >A wrapper for the <a class="el" href="namespacenkr_1_1os_1_1heap.html" title="Functions that interface with memory located on the heap. Primarily, this is an extension of the stan...">nkr::os::heap</a> allocator, often used by other types around the library as the default allocator. </p>
 <p >In addition to working directly with C pointers, in order to satisfy the nkr::allocator_i this also handles <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer and the number of units that the pointer points to.">nkr::pointer_t</a> objects, correctly setting their unit counts after operating upon them. The primary purpose of this type and others like it is to provide an interchangable set of allocators with which to use with other types around the library, for example nkr::array::dynamic_t. </p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="a3ed2dcc75aaf1f828b639e74b684bece" name="a3ed2dcc75aaf1f828b639e74b684bece"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3ed2dcc75aaf1f828b639e74b684bece">&#9670;&nbsp;</a></span>pointer_t</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;any_type_tr unit_p&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="classnkr_1_1allocator_1_1heap__t.html">nkr::allocator::heap_t</a>&lt; unit_p &gt;::<a class="el" href="classnkr_1_1allocator_1_1heap__t.html#a3ed2dcc75aaf1f828b639e74b684bece">pointer_t</a> =  <a class="el" href="classnkr_1_1allocator_1_1heap__t.html#a3ed2dcc75aaf1f828b639e74b684bece">pointer_t</a>&lt;unit_p&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>The <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer and the number of units that the pointer points to.">pointer_t</a> which works with this allocator. </p>
-
-</div>
-</div>
 <a id="a5c30b02946b76ad8f35b800510ca8358" name="a5c30b02946b76ad8f35b800510ca8358"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5c30b02946b76ad8f35b800510ca8358">&#9670;&nbsp;</a></span>unit_t</h2>
 
@@ -256,6 +250,24 @@ template&lt;any_type_tr unit_p&gt; </div>
 </div><div class="memdoc">
 
 <p>The standard C pointer of unit_t which works with this allocator. </p>
+
+</div>
+</div>
+<a id="a3ed2dcc75aaf1f828b639e74b684bece" name="a3ed2dcc75aaf1f828b639e74b684bece"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ed2dcc75aaf1f828b639e74b684bece">&#9670;&nbsp;</a></span>pointer_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;any_type_tr unit_p&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classnkr_1_1allocator_1_1heap__t.html">nkr::allocator::heap_t</a>&lt; unit_p &gt;::<a class="el" href="classnkr_1_1allocator_1_1heap__t.html#a3ed2dcc75aaf1f828b639e74b684bece">pointer_t</a> =  <a class="el" href="classnkr_1_1allocator_1_1heap__t.html#a3ed2dcc75aaf1f828b639e74b684bece">pointer_t</a>&lt;unit_p&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer and the number of units that the pointer points to.">pointer_t</a> which works with this allocator. </p>
 
 </div>
 </div>
@@ -439,8 +451,8 @@ template&lt;any_type_tr unit_p&gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a60d663a87ea939c03b67adaa998b9d5d" name="a60d663a87ea939c03b67adaa998b9d5d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a60d663a87ea939c03b67adaa998b9d5d">&#9670;&nbsp;</a></span>Allocate() <span class="overload">[1/4]</span></h2>
+<a id="a52e688b3bdafbc14968d98df8a8c9feb" name="a52e688b3bdafbc14968d98df8a8c9feb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52e688b3bdafbc14968d98df8a8c9feb">&#9670;&nbsp;</a></span>Min_Unit_Count()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -451,271 +463,17 @@ template&lt;any_type_tr unit_p&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classnkr_1_1maybe__t.html">maybe_t</a>&lt; allocator_err &gt; <a class="el" href="classnkr_1_1allocator_1_1heap__t.html">nkr::allocator::heap_t</a>&lt; unit_p &gt;::Allocate </td>
-          <td>(</td>
-          <td class="paramtype">is_any_non_const_tr&lt; <a class="el" href="classnkr_1_1allocator_1_1heap__t.html#a3ed2dcc75aaf1f828b639e74b684bece">pointer_t</a> &gt; auto &amp;&#160;</td>
-          <td class="paramname"><em>units</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="group__intrinsics__contextuals.html#ga962bdb5ad1c5bc05d87739e09df6082b">count_t</a>&#160;</td>
-          <td class="paramname"><em>unit_count</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> const</td>
+          <td class="memname">constexpr <a class="el" href="group__intrinsics__contextuals.html#ga962bdb5ad1c5bc05d87739e09df6082b">count_t</a> <a class="el" href="classnkr_1_1allocator_1_1heap__t.html">nkr::allocator::heap_t</a>&lt; unit_p &gt;::Min_Unit_Count</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p></p>
-
-</div>
-</div>
-<a id="a48d6c43f2755c218091b7f0aa60f3f1f" name="a48d6c43f2755c218091b7f0aa60f3f1f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a48d6c43f2755c218091b7f0aa60f3f1f">&#9670;&nbsp;</a></span>Allocate() <span class="overload">[2/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;any_type_tr unit_p&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classnkr_1_1maybe__t.html">maybe_t</a>&lt; allocator_err &gt; <a class="el" href="classnkr_1_1allocator_1_1heap__t.html">nkr::allocator::heap_t</a>&lt; unit_p &gt;::Allocate </td>
-          <td>(</td>
-          <td class="paramtype">is_any_non_const_tr&lt; <a class="el" href="classnkr_1_1allocator_1_1heap__t.html#a3ed2dcc75aaf1f828b639e74b684bece">pointer_t</a> &gt; auto &amp;&#160;</td>
-          <td class="paramname"><em>units</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="group__intrinsics__contextuals.html#ga962bdb5ad1c5bc05d87739e09df6082b">count_t</a>&#160;</td>
-          <td class="paramname"><em>unit_count</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> const volatile</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p></p>
-
-</div>
-</div>
-<a id="a4dea6283a09029b9c85892dd1ff24218" name="a4dea6283a09029b9c85892dd1ff24218"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4dea6283a09029b9c85892dd1ff24218">&#9670;&nbsp;</a></span>Allocate() <span class="overload">[3/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;any_type_tr unit_p&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classnkr_1_1maybe__t.html">maybe_t</a>&lt; allocator_err &gt; <a class="el" href="classnkr_1_1allocator_1_1heap__t.html">nkr::allocator::heap_t</a>&lt; unit_p &gt;::Allocate </td>
-          <td>(</td>
-          <td class="paramtype">is_any_non_const_tr&lt; <a class="el" href="classnkr_1_1allocator_1_1heap__t.html#aaf8d87d62b8d22b78e06211a5db68178">units_t</a> &gt; auto &amp;&#160;</td>
-          <td class="paramname"><em>units</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="group__intrinsics__contextuals.html#ga962bdb5ad1c5bc05d87739e09df6082b">count_t</a>&#160;</td>
-          <td class="paramname"><em>unit_count</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p></p>
-
-</div>
-</div>
-<a id="a2778f2bee6d0959f87149e96e6806f59" name="a2778f2bee6d0959f87149e96e6806f59"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2778f2bee6d0959f87149e96e6806f59">&#9670;&nbsp;</a></span>Allocate() <span class="overload">[4/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;any_type_tr unit_p&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classnkr_1_1maybe__t.html">maybe_t</a>&lt; allocator_err &gt; <a class="el" href="classnkr_1_1allocator_1_1heap__t.html">nkr::allocator::heap_t</a>&lt; unit_p &gt;::Allocate </td>
-          <td>(</td>
-          <td class="paramtype">is_any_non_const_tr&lt; <a class="el" href="classnkr_1_1allocator_1_1heap__t.html#aaf8d87d62b8d22b78e06211a5db68178">units_t</a> &gt; auto &amp;&#160;</td>
-          <td class="paramname"><em>units</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="group__intrinsics__contextuals.html#ga962bdb5ad1c5bc05d87739e09df6082b">count_t</a>&#160;</td>
-          <td class="paramname"><em>unit_count</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> const volatile</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p></p>
-
-</div>
-</div>
-<a id="adbf0a01454d652fe3e82363bf344bd0d" name="adbf0a01454d652fe3e82363bf344bd0d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adbf0a01454d652fe3e82363bf344bd0d">&#9670;&nbsp;</a></span>Deallocate() <span class="overload">[1/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;any_type_tr unit_p&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__intrinsics__primitives.html#ga034482d2e50c6d0448a7953d24860fe9">void_t</a> <a class="el" href="classnkr_1_1allocator_1_1heap__t.html">nkr::allocator::heap_t</a>&lt; unit_p &gt;::Deallocate </td>
-          <td>(</td>
-          <td class="paramtype">is_any_non_const_tr&lt; <a class="el" href="classnkr_1_1allocator_1_1heap__t.html#a3ed2dcc75aaf1f828b639e74b684bece">pointer_t</a> &gt; auto &amp;&#160;</td>
-          <td class="paramname"><em>units</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p></p>
-
-</div>
-</div>
-<a id="a750bafa3d38653b02e0a7e4b6f29915a" name="a750bafa3d38653b02e0a7e4b6f29915a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a750bafa3d38653b02e0a7e4b6f29915a">&#9670;&nbsp;</a></span>Deallocate() <span class="overload">[2/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;any_type_tr unit_p&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__intrinsics__primitives.html#ga034482d2e50c6d0448a7953d24860fe9">void_t</a> <a class="el" href="classnkr_1_1allocator_1_1heap__t.html">nkr::allocator::heap_t</a>&lt; unit_p &gt;::Deallocate </td>
-          <td>(</td>
-          <td class="paramtype">is_any_non_const_tr&lt; <a class="el" href="classnkr_1_1allocator_1_1heap__t.html#a3ed2dcc75aaf1f828b639e74b684bece">pointer_t</a> &gt; auto &amp;&#160;</td>
-          <td class="paramname"><em>units</em></td><td>)</td>
-          <td> const volatile</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p></p>
-
-</div>
-</div>
-<a id="a34766fe49b9b672b74d92dadc0dc36f0" name="a34766fe49b9b672b74d92dadc0dc36f0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a34766fe49b9b672b74d92dadc0dc36f0">&#9670;&nbsp;</a></span>Deallocate() <span class="overload">[3/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;any_type_tr unit_p&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__intrinsics__primitives.html#ga034482d2e50c6d0448a7953d24860fe9">void_t</a> <a class="el" href="classnkr_1_1allocator_1_1heap__t.html">nkr::allocator::heap_t</a>&lt; unit_p &gt;::Deallocate </td>
-          <td>(</td>
-          <td class="paramtype">is_any_non_const_tr&lt; <a class="el" href="classnkr_1_1allocator_1_1heap__t.html#aaf8d87d62b8d22b78e06211a5db68178">units_t</a> &gt; auto &amp;&#160;</td>
-          <td class="paramname"><em>units</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p></p>
-
-</div>
-</div>
-<a id="ad62b9b7704286d2d5a2c7959c8a1f864" name="ad62b9b7704286d2d5a2c7959c8a1f864"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad62b9b7704286d2d5a2c7959c8a1f864">&#9670;&nbsp;</a></span>Deallocate() <span class="overload">[4/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;any_type_tr unit_p&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__intrinsics__primitives.html#ga034482d2e50c6d0448a7953d24860fe9">void_t</a> <a class="el" href="classnkr_1_1allocator_1_1heap__t.html">nkr::allocator::heap_t</a>&lt; unit_p &gt;::Deallocate </td>
-          <td>(</td>
-          <td class="paramtype">is_any_non_const_tr&lt; <a class="el" href="classnkr_1_1allocator_1_1heap__t.html#aaf8d87d62b8d22b78e06211a5db68178">units_t</a> &gt; auto &amp;&#160;</td>
-          <td class="paramname"><em>units</em></td><td>)</td>
-          <td> const volatile</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p></p>
+<p>Not used by this particular allocator. Always equals to 0. </p>
 
 </div>
 </div>
@@ -742,33 +500,7 @@ template&lt;any_type_tr unit_p&gt; </div>
 </div><div class="memdoc">
 
 <p>This is the maximum number of objects which space can be allocated for. </p>
-<p >This limitation exists due to the size of the word_t of the machine and the physical limits of memory address space. Very improbable to reach with a 64-bit processor but 32-bit is a different story, with limitations of just under 4 gigabytes of allocatable space. For convenience, the unit_t is the unit of the metric rather than bytes. </p>
-
-</div>
-</div>
-<a id="a52e688b3bdafbc14968d98df8a8c9feb" name="a52e688b3bdafbc14968d98df8a8c9feb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a52e688b3bdafbc14968d98df8a8c9feb">&#9670;&nbsp;</a></span>Min_Unit_Count()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;any_type_tr unit_p&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr <a class="el" href="group__intrinsics__contextuals.html#ga962bdb5ad1c5bc05d87739e09df6082b">count_t</a> <a class="el" href="classnkr_1_1allocator_1_1heap__t.html">nkr::allocator::heap_t</a>&lt; unit_p &gt;::Min_Unit_Count</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Not used by this particular allocator. Always equals 0. </p>
+<p >This limitation exists due to the size of the word_t of the machine and the physical limits of memory address space. Very improbable to reach with a 64-bit processor but 32-bit is a different story, with limitations of just under 4 gigabytes of allocatable space. For convenience, the unit_t is the basis of the metric rather than bytes. </p>
 
 </div>
 </div>
@@ -979,6 +711,8 @@ template&lt;any_type_tr unit_p&gt; </div>
 </div><div class="memdoc">
 
 <p></p>
+<dl class="section note"><dt>Note</dt><dd>This uses a templated assignment operator in order to avoid an overload resolution conflict with the move unqualified assignment operator. This allows you to assign either a volatile or an unqualified object of this type without any issue.</dd></dl>
+<dl class="section user"><dt></dt><dd></dd></dl>
 
 </div>
 </div>
@@ -1009,11 +743,13 @@ template&lt;any_type_tr unit_p&gt; </div>
 </div><div class="memdoc">
 
 <p></p>
+<dl class="section note"><dt>Note</dt><dd>This uses a templated assignment operator in order to avoid an overload resolution conflict with the move unqualified assignment operator. This allows you to assign either a volatile or an unqualified object of this type without any issue.</dd></dl>
+<dl class="section user"><dt></dt><dd></dd></dl>
 
 </div>
 </div>
-<a id="a268a87a0e195d6fef52c0257b76e1aa9" name="a268a87a0e195d6fef52c0257b76e1aa9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a268a87a0e195d6fef52c0257b76e1aa9">&#9670;&nbsp;</a></span>Reallocate() <span class="overload">[1/4]</span></h2>
+<a id="a4dea6283a09029b9c85892dd1ff24218" name="a4dea6283a09029b9c85892dd1ff24218"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4dea6283a09029b9c85892dd1ff24218">&#9670;&nbsp;</a></span>Allocate() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1024,16 +760,16 @@ template&lt;any_type_tr unit_p&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classnkr_1_1maybe__t.html">maybe_t</a>&lt; allocator_err &gt; <a class="el" href="classnkr_1_1allocator_1_1heap__t.html">nkr::allocator::heap_t</a>&lt; unit_p &gt;::Reallocate </td>
+          <td class="memname"><a class="el" href="classnkr_1_1maybe__t.html">maybe_t</a>&lt; allocator_err &gt; <a class="el" href="classnkr_1_1allocator_1_1heap__t.html">nkr::allocator::heap_t</a>&lt; unit_p &gt;::Allocate </td>
           <td>(</td>
-          <td class="paramtype">is_any_non_const_tr&lt; <a class="el" href="classnkr_1_1allocator_1_1heap__t.html#a3ed2dcc75aaf1f828b639e74b684bece">pointer_t</a> &gt; auto &amp;&#160;</td>
+          <td class="paramtype">is_any_non_const_tr&lt; <a class="el" href="classnkr_1_1allocator_1_1heap__t.html#aaf8d87d62b8d22b78e06211a5db68178">units_t</a> &gt; auto &amp;&#160;</td>
           <td class="paramname"><em>units</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="group__intrinsics__contextuals.html#ga962bdb5ad1c5bc05d87739e09df6082b">count_t</a>&#160;</td>
-          <td class="paramname"><em>new_unit_count</em>&#160;</td>
+          <td class="paramname"><em>unit_count</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1048,12 +784,22 @@ template&lt;any_type_tr unit_p&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p></p>
+<p>A wrapper for <a class="el" href="namespacenkr_1_1os_1_1heap.html#a3aa3054fcc1b5577c0bcfd8f81c8f3e4" title="Gives you memory to use until you deallocate it or your program exits.">nkr::os::heap::Allocate</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">units</td><td>should be a non const pointer that this function can write a new address to. The qualification of the unit_t itself does not matter. Must be equal to <a class="el" href="classnkr_1_1none__t.html" title="A tag used to assign &#39;nothing&#39; to a user-defined type, or to compare it with &#39;nothing&#39;.">none_t</a> or it will assert. See <a class="el" href="namespacenkr_1_1os_1_1heap.html#a3aa3054fcc1b5577c0bcfd8f81c8f3e4" title="Gives you memory to use until you deallocate it or your program exits.">nkr::os::heap::Allocate</a> for more information.</td></tr>
+    <tr><td class="paramname">unit_count</td><td>is the number of unit_t objects for which to allocate space. If this number is more than <a class="el" href="classnkr_1_1allocator_1_1heap__t.html#a0c77d45a11cb4487b21a96d2aa4b6629" title="This is the maximum number of objects which space can be allocated for.">nkr::allocator::heap_t::Max_Unit_Count</a>, it will assert. See <a class="el" href="namespacenkr_1_1os_1_1heap.html#a3aa3054fcc1b5577c0bcfd8f81c8f3e4" title="Gives you memory to use until you deallocate it or your program exits.">nkr::os::heap::Allocate</a> for more information.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a moved nkr::allocator_err::NONE if it succeeds.</dd>
+<dd>
+a moved nkr::allocator_err::OUT_OF_MEMORY if it fails. </dd></dl>
 
 </div>
 </div>
-<a id="a4db378e8ef1139336c613782c6726193" name="a4db378e8ef1139336c613782c6726193"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4db378e8ef1139336c613782c6726193">&#9670;&nbsp;</a></span>Reallocate() <span class="overload">[2/4]</span></h2>
+<a id="a2778f2bee6d0959f87149e96e6806f59" name="a2778f2bee6d0959f87149e96e6806f59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2778f2bee6d0959f87149e96e6806f59">&#9670;&nbsp;</a></span>Allocate() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1064,16 +810,16 @@ template&lt;any_type_tr unit_p&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classnkr_1_1maybe__t.html">maybe_t</a>&lt; allocator_err &gt; <a class="el" href="classnkr_1_1allocator_1_1heap__t.html">nkr::allocator::heap_t</a>&lt; unit_p &gt;::Reallocate </td>
+          <td class="memname"><a class="el" href="classnkr_1_1maybe__t.html">maybe_t</a>&lt; allocator_err &gt; <a class="el" href="classnkr_1_1allocator_1_1heap__t.html">nkr::allocator::heap_t</a>&lt; unit_p &gt;::Allocate </td>
           <td>(</td>
-          <td class="paramtype">is_any_non_const_tr&lt; <a class="el" href="classnkr_1_1allocator_1_1heap__t.html#a3ed2dcc75aaf1f828b639e74b684bece">pointer_t</a> &gt; auto &amp;&#160;</td>
+          <td class="paramtype">is_any_non_const_tr&lt; <a class="el" href="classnkr_1_1allocator_1_1heap__t.html#aaf8d87d62b8d22b78e06211a5db68178">units_t</a> &gt; auto &amp;&#160;</td>
           <td class="paramname"><em>units</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="group__intrinsics__contextuals.html#ga962bdb5ad1c5bc05d87739e09df6082b">count_t</a>&#160;</td>
-          <td class="paramname"><em>new_unit_count</em>&#160;</td>
+          <td class="paramname"><em>unit_count</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1088,12 +834,122 @@ template&lt;any_type_tr unit_p&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p></p>
+<p>A wrapper for <a class="el" href="namespacenkr_1_1os_1_1heap.html#a3aa3054fcc1b5577c0bcfd8f81c8f3e4" title="Gives you memory to use until you deallocate it or your program exits.">nkr::os::heap::Allocate</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">units</td><td>should be a non const pointer that this function can write a new address to. The qualification of the unit_t itself does not matter. Must be equal to <a class="el" href="classnkr_1_1none__t.html" title="A tag used to assign &#39;nothing&#39; to a user-defined type, or to compare it with &#39;nothing&#39;.">none_t</a> or it will assert. See <a class="el" href="namespacenkr_1_1os_1_1heap.html#a3aa3054fcc1b5577c0bcfd8f81c8f3e4" title="Gives you memory to use until you deallocate it or your program exits.">nkr::os::heap::Allocate</a> for more information.</td></tr>
+    <tr><td class="paramname">unit_count</td><td>is the number of unit_t objects for which to allocate space. If this number is more than <a class="el" href="classnkr_1_1allocator_1_1heap__t.html#a0c77d45a11cb4487b21a96d2aa4b6629" title="This is the maximum number of objects which space can be allocated for.">nkr::allocator::heap_t::Max_Unit_Count</a>, it will assert. See <a class="el" href="namespacenkr_1_1os_1_1heap.html#a3aa3054fcc1b5577c0bcfd8f81c8f3e4" title="Gives you memory to use until you deallocate it or your program exits.">nkr::os::heap::Allocate</a> for more information.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a moved nkr::allocator_err::NONE if it succeeds.</dd>
+<dd>
+a moved nkr::allocator_err::OUT_OF_MEMORY if it fails. </dd></dl>
+
+</div>
+</div>
+<a id="a60d663a87ea939c03b67adaa998b9d5d" name="a60d663a87ea939c03b67adaa998b9d5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60d663a87ea939c03b67adaa998b9d5d">&#9670;&nbsp;</a></span>Allocate() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;any_type_tr unit_p&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classnkr_1_1maybe__t.html">maybe_t</a>&lt; allocator_err &gt; <a class="el" href="classnkr_1_1allocator_1_1heap__t.html">nkr::allocator::heap_t</a>&lt; unit_p &gt;::Allocate </td>
+          <td>(</td>
+          <td class="paramtype">is_any_non_const_tr&lt; <a class="el" href="classnkr_1_1allocator_1_1heap__t.html#a3ed2dcc75aaf1f828b639e74b684bece">pointer_t</a> &gt; auto &amp;&#160;</td>
+          <td class="paramname"><em>units</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__intrinsics__contextuals.html#ga962bdb5ad1c5bc05d87739e09df6082b">count_t</a>&#160;</td>
+          <td class="paramname"><em>unit_count</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A wrapper for <a class="el" href="namespacenkr_1_1os_1_1heap.html#a3aa3054fcc1b5577c0bcfd8f81c8f3e4" title="Gives you memory to use until you deallocate it or your program exits.">nkr::os::heap::Allocate</a>, but it can handle a <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer and the number of units that the pointer points to.">nkr::pointer_t</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">units</td><td>should be a non const <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer and the number of units that the pointer points to.">nkr::pointer_t</a> that this function can write a new address and unit count to. The qualification of the unit_t itself does not matter. Must be equal to <a class="el" href="classnkr_1_1none__t.html" title="A tag used to assign &#39;nothing&#39; to a user-defined type, or to compare it with &#39;nothing&#39;.">none_t</a> or it will assert. See <a class="el" href="namespacenkr_1_1os_1_1heap.html#a3aa3054fcc1b5577c0bcfd8f81c8f3e4" title="Gives you memory to use until you deallocate it or your program exits.">nkr::os::heap::Allocate</a> for more information.</td></tr>
+    <tr><td class="paramname">unit_count</td><td>is the number of unit_t objects for which to allocate space. If this number is more than <a class="el" href="classnkr_1_1allocator_1_1heap__t.html#a0c77d45a11cb4487b21a96d2aa4b6629" title="This is the maximum number of objects which space can be allocated for.">nkr::allocator::heap_t::Max_Unit_Count</a>, it will assert. See <a class="el" href="namespacenkr_1_1os_1_1heap.html#a3aa3054fcc1b5577c0bcfd8f81c8f3e4" title="Gives you memory to use until you deallocate it or your program exits.">nkr::os::heap::Allocate</a> for more information.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a moved nkr::allocator_err::NONE if it succeeds.</dd>
+<dd>
+a moved nkr::allocator_err::OUT_OF_MEMORY if it fails. </dd></dl>
+
+</div>
+</div>
+<a id="a48d6c43f2755c218091b7f0aa60f3f1f" name="a48d6c43f2755c218091b7f0aa60f3f1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48d6c43f2755c218091b7f0aa60f3f1f">&#9670;&nbsp;</a></span>Allocate() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;any_type_tr unit_p&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classnkr_1_1maybe__t.html">maybe_t</a>&lt; allocator_err &gt; <a class="el" href="classnkr_1_1allocator_1_1heap__t.html">nkr::allocator::heap_t</a>&lt; unit_p &gt;::Allocate </td>
+          <td>(</td>
+          <td class="paramtype">is_any_non_const_tr&lt; <a class="el" href="classnkr_1_1allocator_1_1heap__t.html#a3ed2dcc75aaf1f828b639e74b684bece">pointer_t</a> &gt; auto &amp;&#160;</td>
+          <td class="paramname"><em>units</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__intrinsics__contextuals.html#ga962bdb5ad1c5bc05d87739e09df6082b">count_t</a>&#160;</td>
+          <td class="paramname"><em>unit_count</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const volatile</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A wrapper for <a class="el" href="namespacenkr_1_1os_1_1heap.html#a3aa3054fcc1b5577c0bcfd8f81c8f3e4" title="Gives you memory to use until you deallocate it or your program exits.">nkr::os::heap::Allocate</a>, but it can handle a <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer and the number of units that the pointer points to.">nkr::pointer_t</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">units</td><td>should be a non const <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer and the number of units that the pointer points to.">nkr::pointer_t</a> that this function can write a new address and unit count to. The qualification of the unit_t itself does not matter. Must be equal to <a class="el" href="classnkr_1_1none__t.html" title="A tag used to assign &#39;nothing&#39; to a user-defined type, or to compare it with &#39;nothing&#39;.">none_t</a> or it will assert. See <a class="el" href="namespacenkr_1_1os_1_1heap.html#a3aa3054fcc1b5577c0bcfd8f81c8f3e4" title="Gives you memory to use until you deallocate it or your program exits.">nkr::os::heap::Allocate</a> for more information.</td></tr>
+    <tr><td class="paramname">unit_count</td><td>is the number of unit_t objects for which to allocate space. If this number is more than <a class="el" href="classnkr_1_1allocator_1_1heap__t.html#a0c77d45a11cb4487b21a96d2aa4b6629" title="This is the maximum number of objects which space can be allocated for.">nkr::allocator::heap_t::Max_Unit_Count</a>, it will assert. See <a class="el" href="namespacenkr_1_1os_1_1heap.html#a3aa3054fcc1b5577c0bcfd8f81c8f3e4" title="Gives you memory to use until you deallocate it or your program exits.">nkr::os::heap::Allocate</a> for more information.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a moved nkr::allocator_err::NONE if it succeeds.</dd>
+<dd>
+a moved nkr::allocator_err::OUT_OF_MEMORY if it fails. </dd></dl>
 
 </div>
 </div>
 <a id="a8c77fe6d4d5c50f18540e44fe88dd064" name="a8c77fe6d4d5c50f18540e44fe88dd064"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8c77fe6d4d5c50f18540e44fe88dd064">&#9670;&nbsp;</a></span>Reallocate() <span class="overload">[3/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c77fe6d4d5c50f18540e44fe88dd064">&#9670;&nbsp;</a></span>Reallocate() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1128,12 +984,15 @@ template&lt;any_type_tr unit_p&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p></p>
+<p>A wrapper for <a class="el" href="namespacenkr_1_1os_1_1heap.html#a52065c5bdf7e1f414f00b31e7e671be9" title="Gives you more memory without loosing any of the previously allocated memory.">nkr::os::heap::Reallocate</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>nkr::allocator_err::NONE if it succeeds.</dd>
+<dd>
+nkr::allocator_err::OUT_OF_MEMORY if it fails. </dd></dl>
 
 </div>
 </div>
 <a id="aaa580a5b9af98bdb7d75b310e9b727e5" name="aaa580a5b9af98bdb7d75b310e9b727e5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaa580a5b9af98bdb7d75b310e9b727e5">&#9670;&nbsp;</a></span>Reallocate() <span class="overload">[4/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa580a5b9af98bdb7d75b310e9b727e5">&#9670;&nbsp;</a></span>Reallocate() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1168,13 +1027,15 @@ template&lt;any_type_tr unit_p&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p></p>
+<p>A wrapper for <a class="el" href="namespacenkr_1_1os_1_1heap.html#a52065c5bdf7e1f414f00b31e7e671be9" title="Gives you more memory without loosing any of the previously allocated memory.">nkr::os::heap::Reallocate</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>nkr::allocator_err::NONE if it succeeds.</dd>
+<dd>
+nkr::allocator_err::OUT_OF_MEMORY if it fails. </dd></dl>
 
 </div>
 </div>
-<h2 class="groupheader">Friends And Related Function Documentation</h2>
-<a id="affe9d3d9505148cd1ae4daefddf84c8b" name="affe9d3d9505148cd1ae4daefddf84c8b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#affe9d3d9505148cd1ae4daefddf84c8b">&#9670;&nbsp;</a></span>operator!=</h2>
+<a id="a268a87a0e195d6fef52c0257b76e1aa9" name="a268a87a0e195d6fef52c0257b76e1aa9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a268a87a0e195d6fef52c0257b76e1aa9">&#9670;&nbsp;</a></span>Reallocate() <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1185,7 +1046,214 @@ template&lt;any_type_tr unit_p&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classnkr_1_1bool__t.html">bool_t</a> operator!= </td>
+          <td class="memname"><a class="el" href="classnkr_1_1maybe__t.html">maybe_t</a>&lt; allocator_err &gt; <a class="el" href="classnkr_1_1allocator_1_1heap__t.html">nkr::allocator::heap_t</a>&lt; unit_p &gt;::Reallocate </td>
+          <td>(</td>
+          <td class="paramtype">is_any_non_const_tr&lt; <a class="el" href="classnkr_1_1allocator_1_1heap__t.html#a3ed2dcc75aaf1f828b639e74b684bece">pointer_t</a> &gt; auto &amp;&#160;</td>
+          <td class="paramname"><em>units</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__intrinsics__contextuals.html#ga962bdb5ad1c5bc05d87739e09df6082b">count_t</a>&#160;</td>
+          <td class="paramname"><em>new_unit_count</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A wrapper for <a class="el" href="namespacenkr_1_1os_1_1heap.html#a52065c5bdf7e1f414f00b31e7e671be9" title="Gives you more memory without loosing any of the previously allocated memory.">nkr::os::heap::Reallocate</a>, but it can handle a <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer and the number of units that the pointer points to.">nkr::pointer_t</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>nkr::allocator_err::NONE if it succeeds.</dd>
+<dd>
+nkr::allocator_err::OUT_OF_MEMORY if it fails. </dd></dl>
+
+</div>
+</div>
+<a id="a4db378e8ef1139336c613782c6726193" name="a4db378e8ef1139336c613782c6726193"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4db378e8ef1139336c613782c6726193">&#9670;&nbsp;</a></span>Reallocate() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;any_type_tr unit_p&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classnkr_1_1maybe__t.html">maybe_t</a>&lt; allocator_err &gt; <a class="el" href="classnkr_1_1allocator_1_1heap__t.html">nkr::allocator::heap_t</a>&lt; unit_p &gt;::Reallocate </td>
+          <td>(</td>
+          <td class="paramtype">is_any_non_const_tr&lt; <a class="el" href="classnkr_1_1allocator_1_1heap__t.html#a3ed2dcc75aaf1f828b639e74b684bece">pointer_t</a> &gt; auto &amp;&#160;</td>
+          <td class="paramname"><em>units</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__intrinsics__contextuals.html#ga962bdb5ad1c5bc05d87739e09df6082b">count_t</a>&#160;</td>
+          <td class="paramname"><em>new_unit_count</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const volatile</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A wrapper for <a class="el" href="namespacenkr_1_1os_1_1heap.html#a52065c5bdf7e1f414f00b31e7e671be9" title="Gives you more memory without loosing any of the previously allocated memory.">nkr::os::heap::Reallocate</a>, but t can handle a <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer and the number of units that the pointer points to.">nkr::pointer_t</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>nkr::allocator_err::NONE if it succeeds.</dd>
+<dd>
+nkr::allocator_err::OUT_OF_MEMORY if it fails. </dd></dl>
+
+</div>
+</div>
+<a id="a34766fe49b9b672b74d92dadc0dc36f0" name="a34766fe49b9b672b74d92dadc0dc36f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34766fe49b9b672b74d92dadc0dc36f0">&#9670;&nbsp;</a></span>Deallocate() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;any_type_tr unit_p&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__intrinsics__primitives.html#ga034482d2e50c6d0448a7953d24860fe9">void_t</a> <a class="el" href="classnkr_1_1allocator_1_1heap__t.html">nkr::allocator::heap_t</a>&lt; unit_p &gt;::Deallocate </td>
+          <td>(</td>
+          <td class="paramtype">is_any_non_const_tr&lt; <a class="el" href="classnkr_1_1allocator_1_1heap__t.html#aaf8d87d62b8d22b78e06211a5db68178">units_t</a> &gt; auto &amp;&#160;</td>
+          <td class="paramname"><em>units</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A wrapper for <a class="el" href="namespacenkr_1_1os_1_1heap.html#ad27c431dc437f08ed8e3ad901ea31ba3" title="Takes back memory you no longer need so it can be reused later.">nkr::os::heap::Deallocate</a>. </p>
+
+</div>
+</div>
+<a id="ad62b9b7704286d2d5a2c7959c8a1f864" name="ad62b9b7704286d2d5a2c7959c8a1f864"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad62b9b7704286d2d5a2c7959c8a1f864">&#9670;&nbsp;</a></span>Deallocate() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;any_type_tr unit_p&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__intrinsics__primitives.html#ga034482d2e50c6d0448a7953d24860fe9">void_t</a> <a class="el" href="classnkr_1_1allocator_1_1heap__t.html">nkr::allocator::heap_t</a>&lt; unit_p &gt;::Deallocate </td>
+          <td>(</td>
+          <td class="paramtype">is_any_non_const_tr&lt; <a class="el" href="classnkr_1_1allocator_1_1heap__t.html#aaf8d87d62b8d22b78e06211a5db68178">units_t</a> &gt; auto &amp;&#160;</td>
+          <td class="paramname"><em>units</em></td><td>)</td>
+          <td> const volatile</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A wrapper for <a class="el" href="namespacenkr_1_1os_1_1heap.html#ad27c431dc437f08ed8e3ad901ea31ba3" title="Takes back memory you no longer need so it can be reused later.">nkr::os::heap::Deallocate</a>. </p>
+
+</div>
+</div>
+<a id="adbf0a01454d652fe3e82363bf344bd0d" name="adbf0a01454d652fe3e82363bf344bd0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbf0a01454d652fe3e82363bf344bd0d">&#9670;&nbsp;</a></span>Deallocate() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;any_type_tr unit_p&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__intrinsics__primitives.html#ga034482d2e50c6d0448a7953d24860fe9">void_t</a> <a class="el" href="classnkr_1_1allocator_1_1heap__t.html">nkr::allocator::heap_t</a>&lt; unit_p &gt;::Deallocate </td>
+          <td>(</td>
+          <td class="paramtype">is_any_non_const_tr&lt; <a class="el" href="classnkr_1_1allocator_1_1heap__t.html#a3ed2dcc75aaf1f828b639e74b684bece">pointer_t</a> &gt; auto &amp;&#160;</td>
+          <td class="paramname"><em>units</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A wrapper for <a class="el" href="namespacenkr_1_1os_1_1heap.html#ad27c431dc437f08ed8e3ad901ea31ba3" title="Takes back memory you no longer need so it can be reused later.">nkr::os::heap::Deallocate</a>, but it can handle a <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer and the number of units that the pointer points to.">nkr::pointer_t</a>. </p>
+
+</div>
+</div>
+<a id="a750bafa3d38653b02e0a7e4b6f29915a" name="a750bafa3d38653b02e0a7e4b6f29915a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a750bafa3d38653b02e0a7e4b6f29915a">&#9670;&nbsp;</a></span>Deallocate() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;any_type_tr unit_p&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__intrinsics__primitives.html#ga034482d2e50c6d0448a7953d24860fe9">void_t</a> <a class="el" href="classnkr_1_1allocator_1_1heap__t.html">nkr::allocator::heap_t</a>&lt; unit_p &gt;::Deallocate </td>
+          <td>(</td>
+          <td class="paramtype">is_any_non_const_tr&lt; <a class="el" href="classnkr_1_1allocator_1_1heap__t.html#a3ed2dcc75aaf1f828b639e74b684bece">pointer_t</a> &gt; auto &amp;&#160;</td>
+          <td class="paramname"><em>units</em></td><td>)</td>
+          <td> const volatile</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A wrapper for <a class="el" href="namespacenkr_1_1os_1_1heap.html#ad27c431dc437f08ed8e3ad901ea31ba3" title="Takes back memory you no longer need so it can be reused later.">nkr::os::heap::Deallocate</a>, but it can handle a <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer and the number of units that the pointer points to.">nkr::pointer_t</a>. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Friends And Related Function Documentation</h2>
+<a id="a1aae4bf469928b2883177e7ceba11ed8" name="a1aae4bf469928b2883177e7ceba11ed8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1aae4bf469928b2883177e7ceba11ed8">&#9670;&nbsp;</a></span>operator==</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;any_type_tr unit_p&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classnkr_1_1bool__t.html">bool_t</a> operator== </td>
           <td>(</td>
           <td class="paramtype">is_any_tr&lt; <a class="el" href="classnkr_1_1allocator_1_1heap__t.html">heap_t</a>&lt; unit_p &gt; &gt; auto&#160;</td>
           <td class="paramname"><em>a</em>, </td>
@@ -1213,8 +1281,8 @@ template&lt;any_type_tr unit_p&gt; </div>
 
 </div>
 </div>
-<a id="a1aae4bf469928b2883177e7ceba11ed8" name="a1aae4bf469928b2883177e7ceba11ed8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1aae4bf469928b2883177e7ceba11ed8">&#9670;&nbsp;</a></span>operator==</h2>
+<a id="affe9d3d9505148cd1ae4daefddf84c8b" name="affe9d3d9505148cd1ae4daefddf84c8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#affe9d3d9505148cd1ae4daefddf84c8b">&#9670;&nbsp;</a></span>operator!=</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1225,7 +1293,7 @@ template&lt;any_type_tr unit_p&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classnkr_1_1bool__t.html">bool_t</a> operator== </td>
+          <td class="memname"><a class="el" href="classnkr_1_1bool__t.html">bool_t</a> operator!= </td>
           <td>(</td>
           <td class="paramtype">is_any_tr&lt; <a class="el" href="classnkr_1_1allocator_1_1heap__t.html">heap_t</a>&lt; unit_p &gt; &gt; auto&#160;</td>
           <td class="paramname"><em>a</em>, </td>

@@ -557,8 +557,8 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a7dfe801234a23bcb590797df1e364ad6" name="a7dfe801234a23bcb590797df1e364ad6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7dfe801234a23bcb590797df1e364ad6">&#9670;&nbsp;</a></span>operator const volatile word_t &amp;()</h2>
+<a id="afd0176a8c7560da9a976018cd65f2f83" name="afd0176a8c7560da9a976018cd65f2f83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd0176a8c7560da9a976018cd65f2f83">&#9670;&nbsp;</a></span>operator=() <span class="overload">[1/10]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -567,31 +567,31 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">nkr::bool_t::operator const volatile <a class="el" href="group__intrinsics__contextuals.html#ga6938f0fd61eac987b89d3207836a458b">word_t</a> &amp; </td>
+          <td class="memname"><a class="el" href="classnkr_1_1bool__t.html">bool_t</a> &amp; nkr::bool_t::operator= </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const volatile</td>
+          <td class="paramtype">const <a class="el" href="classnkr_1_1bool__t.html">bool_t</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p></p>
-<div class="fragment"><div class="line">                <span class="keyword">const</span> <span class="keyword">volatile</span> <a class="code hl_function" href="classnkr_1_1bool__t.html#a3bd9827b32ce3a1fb7edc4e1c11d2ca8">bool_t</a> boolean(<span class="keyword">true</span>);</div>
-<div class="line">                CHECK(<a class="code hl_typedef" href="group__intrinsics__contextuals.html#ga6938f0fd61eac987b89d3207836a458b">word_t</a>(<span class="keywordtype">boolean</span>) == 1);</div>
-<div class="line"> </div>
-<div class="line">                <a class="code hl_typedef" href="group__intrinsics__contextuals.html#ga6938f0fd61eac987b89d3207836a458b">word_t</a> word = <span class="keyword">static_cast&lt;</span><a class="code hl_typedef" href="group__intrinsics__contextuals.html#ga6938f0fd61eac987b89d3207836a458b">word_t</a><span class="keyword">&gt;</span>(boolean);</div>
-<div class="line">                <span class="keyword">const</span> <span class="keyword">volatile</span> <a class="code hl_typedef" href="group__intrinsics__contextuals.html#ga6938f0fd61eac987b89d3207836a458b">word_t</a>&amp; word_ref = <span class="keyword">static_cast&lt;</span><span class="keyword">const </span><span class="keyword">volatile </span><a class="code hl_typedef" href="group__intrinsics__contextuals.html#ga6938f0fd61eac987b89d3207836a458b">word_t</a>&amp;<span class="keyword">&gt;</span>(boolean);</div>
-<div class="line">                CHECK(word == 1 &amp;&amp; word_ref == 1);</div>
+<div class="fragment"><div class="line">                <a class="code hl_function" href="classnkr_1_1bool__t.html#a3bd9827b32ce3a1fb7edc4e1c11d2ca8">bool_t</a> boolean;</div>
+<div class="line">                <a class="code hl_function" href="classnkr_1_1bool__t.html#a3bd9827b32ce3a1fb7edc4e1c11d2ca8">bool_t</a> other(<span class="keyword">true</span>);</div>
+<div class="line">                <span class="keywordtype">boolean</span> = other;</div>
+<div class="line">                CHECK(<span class="keywordtype">boolean</span> == <span class="keyword">true</span>);</div>
+<div class="line">                CHECK(other == <span class="keyword">true</span>);</div>
 </div><!-- fragment --> 
 </div>
 </div>
-<a id="afbf479730e54b8d52c4b3efe01ef5eb3" name="afbf479730e54b8d52c4b3efe01ef5eb3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afbf479730e54b8d52c4b3efe01ef5eb3">&#9670;&nbsp;</a></span>operator const word_t &amp;()</h2>
+<a id="a1c03b9ccd663055f451ac6af87d74944" name="a1c03b9ccd663055f451ac6af87d74944"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c03b9ccd663055f451ac6af87d74944">&#9670;&nbsp;</a></span>operator=() <span class="overload">[2/10]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -600,26 +600,204 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">nkr::bool_t::operator const <a class="el" href="group__intrinsics__contextuals.html#ga6938f0fd61eac987b89d3207836a458b">word_t</a> &amp; </td>
+          <td class="memname">volatile <a class="el" href="classnkr_1_1bool__t.html">bool_t</a> &amp; nkr::bool_t::operator= </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
+          <td class="paramtype">const <a class="el" href="classnkr_1_1bool__t.html">bool_t</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td> volatile</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p></p>
-<div class="fragment"><div class="line">                <span class="keyword">const</span> <a class="code hl_function" href="classnkr_1_1bool__t.html#a3bd9827b32ce3a1fb7edc4e1c11d2ca8">bool_t</a> boolean(<span class="keyword">true</span>);</div>
-<div class="line">                CHECK(<a class="code hl_typedef" href="group__intrinsics__contextuals.html#ga6938f0fd61eac987b89d3207836a458b">word_t</a>(<span class="keywordtype">boolean</span>) == 1);</div>
-<div class="line"> </div>
-<div class="line">                <a class="code hl_typedef" href="group__intrinsics__contextuals.html#ga6938f0fd61eac987b89d3207836a458b">word_t</a> word = <span class="keyword">static_cast&lt;</span><a class="code hl_typedef" href="group__intrinsics__contextuals.html#ga6938f0fd61eac987b89d3207836a458b">word_t</a><span class="keyword">&gt;</span>(boolean);</div>
-<div class="line">                <span class="keyword">const</span> <a class="code hl_typedef" href="group__intrinsics__contextuals.html#ga6938f0fd61eac987b89d3207836a458b">word_t</a>&amp; word_ref = <span class="keyword">static_cast&lt;</span><span class="keyword">const </span><a class="code hl_typedef" href="group__intrinsics__contextuals.html#ga6938f0fd61eac987b89d3207836a458b">word_t</a>&amp;<span class="keyword">&gt;</span>(boolean);</div>
-<div class="line">                CHECK(word == 1 &amp;&amp; word_ref == 1);</div>
+
+</div>
+</div>
+<a id="a00acea824887ed0faed2c32fd71e4cb3" name="a00acea824887ed0faed2c32fd71e4cb3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00acea824887ed0faed2c32fd71e4cb3">&#9670;&nbsp;</a></span>operator=() <span class="overload">[3/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classnkr_1_1bool__t.html">bool_t</a> &amp; nkr::bool_t::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const volatile <a class="el" href="classnkr_1_1bool__t.html">bool_t</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+
+</div>
+</div>
+<a id="a16cbaeb3dd265d3e2a74396e107d30d6" name="a16cbaeb3dd265d3e2a74396e107d30d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16cbaeb3dd265d3e2a74396e107d30d6">&#9670;&nbsp;</a></span>operator=() <span class="overload">[4/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile <a class="el" href="classnkr_1_1bool__t.html">bool_t</a> &amp; nkr::bool_t::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const volatile <a class="el" href="classnkr_1_1bool__t.html">bool_t</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td> volatile</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+<div class="fragment"><div class="line">                <span class="keyword">volatile</span> <a class="code hl_function" href="classnkr_1_1bool__t.html#a3bd9827b32ce3a1fb7edc4e1c11d2ca8">bool_t</a> boolean;</div>
+<div class="line">                <span class="keyword">volatile</span> <a class="code hl_function" href="classnkr_1_1bool__t.html#a3bd9827b32ce3a1fb7edc4e1c11d2ca8">bool_t</a> other(<span class="keyword">true</span>);</div>
+<div class="line">                <span class="keywordtype">boolean</span> = other;</div>
+<div class="line">                CHECK(<span class="keywordtype">boolean</span> == <span class="keyword">true</span>);</div>
+<div class="line">                CHECK(other == <span class="keyword">true</span>);</div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="a7179e7d682341c7c22c3580429663aef" name="a7179e7d682341c7c22c3580429663aef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7179e7d682341c7c22c3580429663aef">&#9670;&nbsp;</a></span>operator=() <span class="overload">[5/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classnkr_1_1bool__t.html">bool_t</a> &amp; nkr::bool_t::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classnkr_1_1bool__t.html">bool_t</a> &amp;&amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+<div class="fragment"><div class="line">                <a class="code hl_function" href="classnkr_1_1bool__t.html#a3bd9827b32ce3a1fb7edc4e1c11d2ca8">bool_t</a> boolean;</div>
+<div class="line">                <a class="code hl_function" href="classnkr_1_1bool__t.html#a3bd9827b32ce3a1fb7edc4e1c11d2ca8">bool_t</a> other(<span class="keyword">true</span>);</div>
+<div class="line">                <span class="keywordtype">boolean</span> = nkr::Move(other);</div>
+<div class="line">                CHECK(<span class="keywordtype">boolean</span> == <span class="keyword">true</span>);</div>
+<div class="line">                CHECK(other == <span class="keyword">false</span>);</div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="a9cf4bf6a4e240ef8cf3d394c24db997e" name="a9cf4bf6a4e240ef8cf3d394c24db997e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9cf4bf6a4e240ef8cf3d394c24db997e">&#9670;&nbsp;</a></span>operator=() <span class="overload">[6/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile <a class="el" href="classnkr_1_1bool__t.html">bool_t</a> &amp; nkr::bool_t::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classnkr_1_1bool__t.html">bool_t</a> &amp;&amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td> volatile</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+
+</div>
+</div>
+<a id="ab34544aa0d47b15f4076ae1b82246d9a" name="ab34544aa0d47b15f4076ae1b82246d9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab34544aa0d47b15f4076ae1b82246d9a">&#9670;&nbsp;</a></span>operator=() <span class="overload">[7/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classnkr_1_1bool__t.html">bool_t</a> &amp; nkr::bool_t::operator= </td>
+          <td>(</td>
+          <td class="paramtype">is_just_volatile_tr&lt; <a class="el" href="classnkr_1_1bool__t.html">bool_t</a> &gt; auto &amp;&amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+
+</div>
+</div>
+<a id="a4350e2d930d5e84a93c80514e0888af7" name="a4350e2d930d5e84a93c80514e0888af7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4350e2d930d5e84a93c80514e0888af7">&#9670;&nbsp;</a></span>operator=() <span class="overload">[8/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile <a class="el" href="classnkr_1_1bool__t.html">bool_t</a> &amp; nkr::bool_t::operator= </td>
+          <td>(</td>
+          <td class="paramtype">is_just_volatile_tr&lt; <a class="el" href="classnkr_1_1bool__t.html">bool_t</a> &gt; auto &amp;&amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td> volatile</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+<div class="fragment"><div class="line">                <span class="keyword">volatile</span> <a class="code hl_function" href="classnkr_1_1bool__t.html#a3bd9827b32ce3a1fb7edc4e1c11d2ca8">bool_t</a> boolean;</div>
+<div class="line">                <span class="keyword">volatile</span> <a class="code hl_function" href="classnkr_1_1bool__t.html#a3bd9827b32ce3a1fb7edc4e1c11d2ca8">bool_t</a> other(<span class="keyword">true</span>);</div>
+<div class="line">                <span class="keywordtype">boolean</span> = nkr::Move(other);</div>
+<div class="line">                CHECK(<span class="keywordtype">boolean</span> == <span class="keyword">true</span>);</div>
+<div class="line">                CHECK(other == <span class="keyword">false</span>);</div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -699,44 +877,6 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- fragment --> 
 </div>
 </div>
-<a id="ac593f73f47b05f6ed182a0fa6dcca3f7" name="ac593f73f47b05f6ed182a0fa6dcca3f7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac593f73f47b05f6ed182a0fa6dcca3f7">&#9670;&nbsp;</a></span>operator volatile word_t &amp;()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">nkr::bool_t::operator volatile <a class="el" href="group__intrinsics__contextuals.html#ga6938f0fd61eac987b89d3207836a458b">word_t</a> &amp; </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> volatile</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p></p>
-<p >Use this only if you need to change the value directly. This is provided so that <code>reinterpret_cast</code> need not be used, which in the event that the footprint for this type changes, could potentially end up breaking code. There are legitimate uses for this, such as with <a class="el" href="classnkr_1_1atomic__t.html" title="The default template for nkr::atomic_t, which invalidates types not matching any specialization.">nkr::atomic_t</a>, which must treat the underlying type for what it is. Use with care.</p>
-<div class="fragment"><div class="line">                <span class="keyword">volatile</span> <a class="code hl_function" href="classnkr_1_1bool__t.html#a3bd9827b32ce3a1fb7edc4e1c11d2ca8">bool_t</a> boolean(<span class="keyword">true</span>);</div>
-<div class="line">                CHECK(<a class="code hl_typedef" href="group__intrinsics__contextuals.html#ga6938f0fd61eac987b89d3207836a458b">word_t</a>(<span class="keywordtype">boolean</span>) == 1);</div>
-<div class="line"> </div>
-<div class="line">                <a class="code hl_typedef" href="group__intrinsics__contextuals.html#ga6938f0fd61eac987b89d3207836a458b">word_t</a> word = <span class="keyword">static_cast&lt;</span><a class="code hl_typedef" href="group__intrinsics__contextuals.html#ga6938f0fd61eac987b89d3207836a458b">word_t</a><span class="keyword">&gt;</span>(boolean);</div>
-<div class="line">                <span class="keyword">volatile</span> <a class="code hl_typedef" href="group__intrinsics__contextuals.html#ga6938f0fd61eac987b89d3207836a458b">word_t</a>&amp; word_ref = <span class="keyword">static_cast&lt;</span><span class="keyword">volatile </span><a class="code hl_typedef" href="group__intrinsics__contextuals.html#ga6938f0fd61eac987b89d3207836a458b">word_t</a>&amp;<span class="keyword">&gt;</span>(boolean);</div>
-<div class="line">                CHECK(word == 1 &amp;&amp; word_ref == 1);</div>
-<div class="line"> </div>
-<div class="line">                CHECK(<span class="keywordtype">boolean</span> == <span class="keyword">true</span>);</div>
-<div class="line">                word_ref = 0;</div>
-<div class="line">                CHECK(<span class="keywordtype">boolean</span> == <span class="keyword">false</span>);</div>
-</div><!-- fragment --> 
-</div>
-</div>
 <a id="a9f7039c593cc6ba558fe82e995df3f96" name="a9f7039c593cc6ba558fe82e995df3f96"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9f7039c593cc6ba558fe82e995df3f96">&#9670;&nbsp;</a></span>operator word_t &amp;()</h2>
 
@@ -775,8 +915,8 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- fragment --> 
 </div>
 </div>
-<a id="a93aa6f72e772650cc7f80acb089d5a05" name="a93aa6f72e772650cc7f80acb089d5a05"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a93aa6f72e772650cc7f80acb089d5a05">&#9670;&nbsp;</a></span>operator!=() <span class="overload">[1/2]</span></h2>
+<a id="afbf479730e54b8d52c4b3efe01ef5eb3" name="afbf479730e54b8d52c4b3efe01ef5eb3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afbf479730e54b8d52c4b3efe01ef5eb3">&#9670;&nbsp;</a></span>operator const word_t &amp;()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -785,30 +925,31 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classnkr_1_1bool__t.html">bool_t</a> nkr::bool_t::operator!= </td>
+          <td class="memname">nkr::bool_t::operator const <a class="el" href="group__intrinsics__contextuals.html#ga6938f0fd61eac987b89d3207836a458b">word_t</a> &amp; </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classnkr_1_1none__t.html">none_t</a>&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p></p>
-<div class="fragment"><div class="line">                <a class="code hl_function" href="classnkr_1_1bool__t.html#a3bd9827b32ce3a1fb7edc4e1c11d2ca8">bool_t</a> <span class="keywordtype">boolean</span> = <span class="keyword">true</span>;</div>
-<div class="line">                CHECK(<span class="keywordtype">boolean</span> != none_t());</div>
-<div class="line">                <span class="keywordtype">boolean</span> = none_t();</div>
-<div class="line">                CHECK(!(<span class="keywordtype">boolean</span> != none_t()));</div>
+<div class="fragment"><div class="line">                <span class="keyword">const</span> <a class="code hl_function" href="classnkr_1_1bool__t.html#a3bd9827b32ce3a1fb7edc4e1c11d2ca8">bool_t</a> boolean(<span class="keyword">true</span>);</div>
+<div class="line">                CHECK(<a class="code hl_typedef" href="group__intrinsics__contextuals.html#ga6938f0fd61eac987b89d3207836a458b">word_t</a>(<span class="keywordtype">boolean</span>) == 1);</div>
+<div class="line"> </div>
+<div class="line">                <a class="code hl_typedef" href="group__intrinsics__contextuals.html#ga6938f0fd61eac987b89d3207836a458b">word_t</a> word = <span class="keyword">static_cast&lt;</span><a class="code hl_typedef" href="group__intrinsics__contextuals.html#ga6938f0fd61eac987b89d3207836a458b">word_t</a><span class="keyword">&gt;</span>(boolean);</div>
+<div class="line">                <span class="keyword">const</span> <a class="code hl_typedef" href="group__intrinsics__contextuals.html#ga6938f0fd61eac987b89d3207836a458b">word_t</a>&amp; word_ref = <span class="keyword">static_cast&lt;</span><span class="keyword">const </span><a class="code hl_typedef" href="group__intrinsics__contextuals.html#ga6938f0fd61eac987b89d3207836a458b">word_t</a>&amp;<span class="keyword">&gt;</span>(boolean);</div>
+<div class="line">                CHECK(word == 1 &amp;&amp; word_ref == 1);</div>
 </div><!-- fragment --> 
 </div>
 </div>
-<a id="aa020add37e29ae3515a25ae718c77230" name="aa020add37e29ae3515a25ae718c77230"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa020add37e29ae3515a25ae718c77230">&#9670;&nbsp;</a></span>operator!=() <span class="overload">[2/2]</span></h2>
+<a id="ac593f73f47b05f6ed182a0fa6dcca3f7" name="ac593f73f47b05f6ed182a0fa6dcca3f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac593f73f47b05f6ed182a0fa6dcca3f7">&#9670;&nbsp;</a></span>operator volatile word_t &amp;()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -817,265 +958,64 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classnkr_1_1bool__t.html">bool_t</a> nkr::bool_t::operator!= </td>
+          <td class="memname">nkr::bool_t::operator volatile <a class="el" href="group__intrinsics__contextuals.html#ga6938f0fd61eac987b89d3207836a458b">word_t</a> &amp; </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classnkr_1_1none__t.html">none_t</a>&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> volatile</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+<p >Use this only if you need to change the value directly. This is provided so that <code>reinterpret_cast</code> need not be used, which in the event that the footprint for this type changes, could potentially end up breaking code. There are legitimate uses for this, such as with <a class="el" href="classnkr_1_1atomic__t.html" title="The default template for nkr::atomic_t, which invalidates types not matching any specialization.">nkr::atomic_t</a>, which must treat the underlying type for what it is. Use with care.</p>
+<div class="fragment"><div class="line">                <span class="keyword">volatile</span> <a class="code hl_function" href="classnkr_1_1bool__t.html#a3bd9827b32ce3a1fb7edc4e1c11d2ca8">bool_t</a> boolean(<span class="keyword">true</span>);</div>
+<div class="line">                CHECK(<a class="code hl_typedef" href="group__intrinsics__contextuals.html#ga6938f0fd61eac987b89d3207836a458b">word_t</a>(<span class="keywordtype">boolean</span>) == 1);</div>
+<div class="line"> </div>
+<div class="line">                <a class="code hl_typedef" href="group__intrinsics__contextuals.html#ga6938f0fd61eac987b89d3207836a458b">word_t</a> word = <span class="keyword">static_cast&lt;</span><a class="code hl_typedef" href="group__intrinsics__contextuals.html#ga6938f0fd61eac987b89d3207836a458b">word_t</a><span class="keyword">&gt;</span>(boolean);</div>
+<div class="line">                <span class="keyword">volatile</span> <a class="code hl_typedef" href="group__intrinsics__contextuals.html#ga6938f0fd61eac987b89d3207836a458b">word_t</a>&amp; word_ref = <span class="keyword">static_cast&lt;</span><span class="keyword">volatile </span><a class="code hl_typedef" href="group__intrinsics__contextuals.html#ga6938f0fd61eac987b89d3207836a458b">word_t</a>&amp;<span class="keyword">&gt;</span>(boolean);</div>
+<div class="line">                CHECK(word == 1 &amp;&amp; word_ref == 1);</div>
+<div class="line"> </div>
+<div class="line">                CHECK(<span class="keywordtype">boolean</span> == <span class="keyword">true</span>);</div>
+<div class="line">                word_ref = 0;</div>
+<div class="line">                CHECK(<span class="keywordtype">boolean</span> == <span class="keyword">false</span>);</div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="a7dfe801234a23bcb590797df1e364ad6" name="a7dfe801234a23bcb590797df1e364ad6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7dfe801234a23bcb590797df1e364ad6">&#9670;&nbsp;</a></span>operator const volatile word_t &amp;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">nkr::bool_t::operator const volatile <a class="el" href="group__intrinsics__contextuals.html#ga6938f0fd61eac987b89d3207836a458b">word_t</a> &amp; </td>
+          <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const volatile</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p></p>
-
-</div>
-</div>
-<a id="a7179e7d682341c7c22c3580429663aef" name="a7179e7d682341c7c22c3580429663aef"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7179e7d682341c7c22c3580429663aef">&#9670;&nbsp;</a></span>operator=() <span class="overload">[1/10]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classnkr_1_1bool__t.html">bool_t</a> &amp; nkr::bool_t::operator= </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classnkr_1_1bool__t.html">bool_t</a> &amp;&amp;&#160;</td>
-          <td class="paramname"><em>other</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p></p>
-<div class="fragment"><div class="line">                <a class="code hl_function" href="classnkr_1_1bool__t.html#a3bd9827b32ce3a1fb7edc4e1c11d2ca8">bool_t</a> boolean;</div>
-<div class="line">                <a class="code hl_function" href="classnkr_1_1bool__t.html#a3bd9827b32ce3a1fb7edc4e1c11d2ca8">bool_t</a> other(<span class="keyword">true</span>);</div>
-<div class="line">                <span class="keywordtype">boolean</span> = nkr::Move(other);</div>
-<div class="line">                CHECK(<span class="keywordtype">boolean</span> == <span class="keyword">true</span>);</div>
-<div class="line">                CHECK(other == <span class="keyword">false</span>);</div>
-</div><!-- fragment --> 
-</div>
-</div>
-<a id="a9cf4bf6a4e240ef8cf3d394c24db997e" name="a9cf4bf6a4e240ef8cf3d394c24db997e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9cf4bf6a4e240ef8cf3d394c24db997e">&#9670;&nbsp;</a></span>operator=() <span class="overload">[2/10]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile <a class="el" href="classnkr_1_1bool__t.html">bool_t</a> &amp; nkr::bool_t::operator= </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classnkr_1_1bool__t.html">bool_t</a> &amp;&amp;&#160;</td>
-          <td class="paramname"><em>other</em></td><td>)</td>
-          <td> volatile</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p></p>
-
-</div>
-</div>
-<a id="afd0176a8c7560da9a976018cd65f2f83" name="afd0176a8c7560da9a976018cd65f2f83"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afd0176a8c7560da9a976018cd65f2f83">&#9670;&nbsp;</a></span>operator=() <span class="overload">[3/10]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classnkr_1_1bool__t.html">bool_t</a> &amp; nkr::bool_t::operator= </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classnkr_1_1bool__t.html">bool_t</a> &amp;&#160;</td>
-          <td class="paramname"><em>other</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p></p>
-<div class="fragment"><div class="line">                <a class="code hl_function" href="classnkr_1_1bool__t.html#a3bd9827b32ce3a1fb7edc4e1c11d2ca8">bool_t</a> boolean;</div>
-<div class="line">                <a class="code hl_function" href="classnkr_1_1bool__t.html#a3bd9827b32ce3a1fb7edc4e1c11d2ca8">bool_t</a> other(<span class="keyword">true</span>);</div>
-<div class="line">                <span class="keywordtype">boolean</span> = other;</div>
-<div class="line">                CHECK(<span class="keywordtype">boolean</span> == <span class="keyword">true</span>);</div>
-<div class="line">                CHECK(other == <span class="keyword">true</span>);</div>
-</div><!-- fragment --> 
-</div>
-</div>
-<a id="a1c03b9ccd663055f451ac6af87d74944" name="a1c03b9ccd663055f451ac6af87d74944"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1c03b9ccd663055f451ac6af87d74944">&#9670;&nbsp;</a></span>operator=() <span class="overload">[4/10]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile <a class="el" href="classnkr_1_1bool__t.html">bool_t</a> &amp; nkr::bool_t::operator= </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classnkr_1_1bool__t.html">bool_t</a> &amp;&#160;</td>
-          <td class="paramname"><em>other</em></td><td>)</td>
-          <td> volatile</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p></p>
-
-</div>
-</div>
-<a id="a00acea824887ed0faed2c32fd71e4cb3" name="a00acea824887ed0faed2c32fd71e4cb3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a00acea824887ed0faed2c32fd71e4cb3">&#9670;&nbsp;</a></span>operator=() <span class="overload">[5/10]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classnkr_1_1bool__t.html">bool_t</a> &amp; nkr::bool_t::operator= </td>
-          <td>(</td>
-          <td class="paramtype">const volatile <a class="el" href="classnkr_1_1bool__t.html">bool_t</a> &amp;&#160;</td>
-          <td class="paramname"><em>other</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p></p>
-
-</div>
-</div>
-<a id="a16cbaeb3dd265d3e2a74396e107d30d6" name="a16cbaeb3dd265d3e2a74396e107d30d6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a16cbaeb3dd265d3e2a74396e107d30d6">&#9670;&nbsp;</a></span>operator=() <span class="overload">[6/10]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile <a class="el" href="classnkr_1_1bool__t.html">bool_t</a> &amp; nkr::bool_t::operator= </td>
-          <td>(</td>
-          <td class="paramtype">const volatile <a class="el" href="classnkr_1_1bool__t.html">bool_t</a> &amp;&#160;</td>
-          <td class="paramname"><em>other</em></td><td>)</td>
-          <td> volatile</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p></p>
-<div class="fragment"><div class="line">                <span class="keyword">volatile</span> <a class="code hl_function" href="classnkr_1_1bool__t.html#a3bd9827b32ce3a1fb7edc4e1c11d2ca8">bool_t</a> boolean;</div>
-<div class="line">                <span class="keyword">volatile</span> <a class="code hl_function" href="classnkr_1_1bool__t.html#a3bd9827b32ce3a1fb7edc4e1c11d2ca8">bool_t</a> other(<span class="keyword">true</span>);</div>
-<div class="line">                <span class="keywordtype">boolean</span> = other;</div>
-<div class="line">                CHECK(<span class="keywordtype">boolean</span> == <span class="keyword">true</span>);</div>
-<div class="line">                CHECK(other == <span class="keyword">true</span>);</div>
-</div><!-- fragment --> 
-</div>
-</div>
-<a id="ab34544aa0d47b15f4076ae1b82246d9a" name="ab34544aa0d47b15f4076ae1b82246d9a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab34544aa0d47b15f4076ae1b82246d9a">&#9670;&nbsp;</a></span>operator=() <span class="overload">[7/10]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classnkr_1_1bool__t.html">bool_t</a> &amp; nkr::bool_t::operator= </td>
-          <td>(</td>
-          <td class="paramtype">is_just_volatile_tr&lt; <a class="el" href="classnkr_1_1bool__t.html">bool_t</a> &gt; auto &amp;&amp;&#160;</td>
-          <td class="paramname"><em>other</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p></p>
-
-</div>
-</div>
-<a id="a4350e2d930d5e84a93c80514e0888af7" name="a4350e2d930d5e84a93c80514e0888af7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4350e2d930d5e84a93c80514e0888af7">&#9670;&nbsp;</a></span>operator=() <span class="overload">[8/10]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile <a class="el" href="classnkr_1_1bool__t.html">bool_t</a> &amp; nkr::bool_t::operator= </td>
-          <td>(</td>
-          <td class="paramtype">is_just_volatile_tr&lt; <a class="el" href="classnkr_1_1bool__t.html">bool_t</a> &gt; auto &amp;&amp;&#160;</td>
-          <td class="paramname"><em>other</em></td><td>)</td>
-          <td> volatile</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p></p>
-<div class="fragment"><div class="line">                <span class="keyword">volatile</span> <a class="code hl_function" href="classnkr_1_1bool__t.html#a3bd9827b32ce3a1fb7edc4e1c11d2ca8">bool_t</a> boolean;</div>
-<div class="line">                <span class="keyword">volatile</span> <a class="code hl_function" href="classnkr_1_1bool__t.html#a3bd9827b32ce3a1fb7edc4e1c11d2ca8">bool_t</a> other(<span class="keyword">true</span>);</div>
-<div class="line">                <span class="keywordtype">boolean</span> = nkr::Move(other);</div>
-<div class="line">                CHECK(<span class="keywordtype">boolean</span> == <span class="keyword">true</span>);</div>
-<div class="line">                CHECK(other == <span class="keyword">false</span>);</div>
+<div class="fragment"><div class="line">                <span class="keyword">const</span> <span class="keyword">volatile</span> <a class="code hl_function" href="classnkr_1_1bool__t.html#a3bd9827b32ce3a1fb7edc4e1c11d2ca8">bool_t</a> boolean(<span class="keyword">true</span>);</div>
+<div class="line">                CHECK(<a class="code hl_typedef" href="group__intrinsics__contextuals.html#ga6938f0fd61eac987b89d3207836a458b">word_t</a>(<span class="keywordtype">boolean</span>) == 1);</div>
+<div class="line"> </div>
+<div class="line">                <a class="code hl_typedef" href="group__intrinsics__contextuals.html#ga6938f0fd61eac987b89d3207836a458b">word_t</a> word = <span class="keyword">static_cast&lt;</span><a class="code hl_typedef" href="group__intrinsics__contextuals.html#ga6938f0fd61eac987b89d3207836a458b">word_t</a><span class="keyword">&gt;</span>(boolean);</div>
+<div class="line">                <span class="keyword">const</span> <span class="keyword">volatile</span> <a class="code hl_typedef" href="group__intrinsics__contextuals.html#ga6938f0fd61eac987b89d3207836a458b">word_t</a>&amp; word_ref = <span class="keyword">static_cast&lt;</span><span class="keyword">const </span><span class="keyword">volatile </span><a class="code hl_typedef" href="group__intrinsics__contextuals.html#ga6938f0fd61eac987b89d3207836a458b">word_t</a>&amp;<span class="keyword">&gt;</span>(boolean);</div>
+<div class="line">                CHECK(word == 1 &amp;&amp; word_ref == 1);</div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -1182,6 +1122,66 @@ Additional Inherited Members</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classnkr_1_1bool__t.html">bool_t</a> nkr::bool_t::operator== </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classnkr_1_1none__t.html">none_t</a>&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const volatile</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+
+</div>
+</div>
+<a id="a93aa6f72e772650cc7f80acb089d5a05" name="a93aa6f72e772650cc7f80acb089d5a05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93aa6f72e772650cc7f80acb089d5a05">&#9670;&nbsp;</a></span>operator!=() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classnkr_1_1bool__t.html">bool_t</a> nkr::bool_t::operator!= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classnkr_1_1none__t.html">none_t</a>&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+<div class="fragment"><div class="line">                <a class="code hl_function" href="classnkr_1_1bool__t.html#a3bd9827b32ce3a1fb7edc4e1c11d2ca8">bool_t</a> <span class="keywordtype">boolean</span> = <span class="keyword">true</span>;</div>
+<div class="line">                CHECK(<span class="keywordtype">boolean</span> != none_t());</div>
+<div class="line">                <span class="keywordtype">boolean</span> = none_t();</div>
+<div class="line">                CHECK(!(<span class="keywordtype">boolean</span> != none_t()));</div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="aa020add37e29ae3515a25ae718c77230" name="aa020add37e29ae3515a25ae718c77230"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa020add37e29ae3515a25ae718c77230">&#9670;&nbsp;</a></span>operator!=() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classnkr_1_1bool__t.html">bool_t</a> nkr::bool_t::operator!= </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classnkr_1_1none__t.html">none_t</a>&#160;</td>
           <td class="paramname"></td><td>)</td>

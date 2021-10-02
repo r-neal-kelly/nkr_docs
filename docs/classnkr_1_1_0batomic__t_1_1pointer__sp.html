@@ -290,8 +290,8 @@ var searchBox = new SearchBox("searchBox", "search",'Search','.html');
 class nkr::$atomic_t::pointer_sp&lt; pointer_p &gt;</div><p >A specialization for pointers to be used atomically. </p>
 <dl class="section note"><dt>Note</dt><dd><a class="el" href="classnkr_1_1_0batomic__t_1_1void__pointer__sp.html" title="A specialization for nkr::void_t* to be used atomically.">nkr::$atomic_t::void_pointer_sp</a> is closely related to this specialization. </dd></dl>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="ab1f8a07af7489e46395627fb7c642855" name="ab1f8a07af7489e46395627fb7c642855"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab1f8a07af7489e46395627fb7c642855">&#9670;&nbsp;</a></span>unit_t</h2>
+<a id="aa7fc23760980b203d95153b5e366c430" name="aa7fc23760980b203d95153b5e366c430"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7fc23760980b203d95153b5e366c430">&#9670;&nbsp;</a></span>value_t</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -299,14 +299,13 @@ class nkr::$atomic_t::pointer_sp&lt; pointer_p &gt;</div><p >A specialization fo
 template&lt;pointer_tr pointer_p&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">nkr::$atomic_t::pointer_sp</a>&lt; pointer_p &gt;::<a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html#ab1f8a07af7489e46395627fb7c642855">unit_t</a> =  std::remove_pointer_t&lt;pointer_p&gt;</td>
+          <td class="memname">using <a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">nkr::$atomic_t::pointer_sp</a>&lt; pointer_p &gt;::<a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html#aa7fc23760980b203d95153b5e366c430">value_t</a> =  pointer_p</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>The underlying type pointed to by this pointer wrapper. </p>
-<p >This <a class="el" href="classnkr_1_1atomic__t.html" title="The default template for nkr::atomic_t, which invalidates types not matching any specialization.">nkr::atomic_t</a> specialization is a partial pointer wrapper and thus unit_t is useful in the same way it is on <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer and the number of units that the pointer points to.">nkr::pointer_t</a>.</p>
-<div class="fragment"></div><!-- fragment --> 
+<p>The underlying type of this wrapper. </p>
+<div class="fragment"></div><!-- fragment --><div class="fragment"></div><!-- fragment --> 
 </div>
 </div>
 <a id="a2429ba8a11b219641924200de3a2bcb0" name="a2429ba8a11b219641924200de3a2bcb0"></a>
@@ -328,8 +327,8 @@ template&lt;pointer_tr pointer_p&gt; </div>
 <div class="fragment"></div><!-- fragment --> 
 </div>
 </div>
-<a id="aa7fc23760980b203d95153b5e366c430" name="aa7fc23760980b203d95153b5e366c430"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa7fc23760980b203d95153b5e366c430">&#9670;&nbsp;</a></span>value_t</h2>
+<a id="ab1f8a07af7489e46395627fb7c642855" name="ab1f8a07af7489e46395627fb7c642855"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1f8a07af7489e46395627fb7c642855">&#9670;&nbsp;</a></span>unit_t</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -337,13 +336,14 @@ template&lt;pointer_tr pointer_p&gt; </div>
 template&lt;pointer_tr pointer_p&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">nkr::$atomic_t::pointer_sp</a>&lt; pointer_p &gt;::<a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html#aa7fc23760980b203d95153b5e366c430">value_t</a> =  pointer_p</td>
+          <td class="memname">using <a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">nkr::$atomic_t::pointer_sp</a>&lt; pointer_p &gt;::<a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html#ab1f8a07af7489e46395627fb7c642855">unit_t</a> =  std::remove_pointer_t&lt;pointer_p&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>The underlying type of this wrapper. </p>
-<div class="fragment"></div><!-- fragment --><div class="fragment"></div><!-- fragment --> 
+<p>The underlying type pointed to by this pointer wrapper. </p>
+<p >This <a class="el" href="classnkr_1_1atomic__t.html" title="The default template for nkr::atomic_t, which invalidates types not matching any specialization.">nkr::atomic_t</a> specialization is a partial pointer wrapper and thus unit_t is useful in the same way it is on <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer and the number of units that the pointer points to.">nkr::pointer_t</a>.</p>
+<div class="fragment"></div><!-- fragment --> 
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -585,6 +585,248 @@ template&lt;pointer_tr pointer_p&gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a1b903d28b04217b96e722be61880ca77" name="a1b903d28b04217b96e722be61880ca77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b903d28b04217b96e722be61880ca77">&#9670;&nbsp;</a></span>operator=() <span class="overload">[1/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;pointer_tr pointer_p&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">pointer_sp</a>&lt; pointer_p &gt; &amp; <a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">nkr::$atomic_t::pointer_sp</a>&lt; pointer_p &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">pointer_sp</a>&lt; pointer_p &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+<p >Accesses the other atomically and assigns to itself atomically.</p>
+<div class="fragment"></div><!-- fragment --> <div class="fragment"></div><!-- fragment --> <div class="fragment"></div><!-- fragment --> 
+</div>
+</div>
+<a id="a682764c892704070435039cbc3c61dd6" name="a682764c892704070435039cbc3c61dd6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a682764c892704070435039cbc3c61dd6">&#9670;&nbsp;</a></span>operator=() <span class="overload">[2/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;pointer_tr pointer_p&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile <a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">pointer_sp</a>&lt; pointer_p &gt; &amp; <a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">nkr::$atomic_t::pointer_sp</a>&lt; pointer_p &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">pointer_sp</a>&lt; pointer_p &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td> volatile</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+
+</div>
+</div>
+<a id="ad85a6ad560aa817ac816c67a68148b8a" name="ad85a6ad560aa817ac816c67a68148b8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad85a6ad560aa817ac816c67a68148b8a">&#9670;&nbsp;</a></span>operator=() <span class="overload">[3/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;pointer_tr pointer_p&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">pointer_sp</a>&lt; pointer_p &gt; &amp; <a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">nkr::$atomic_t::pointer_sp</a>&lt; pointer_p &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const volatile <a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">pointer_sp</a>&lt; pointer_p &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+
+</div>
+</div>
+<a id="a316ff8d54e1ac61fac45e781dd1142d4" name="a316ff8d54e1ac61fac45e781dd1142d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a316ff8d54e1ac61fac45e781dd1142d4">&#9670;&nbsp;</a></span>operator=() <span class="overload">[4/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;pointer_tr pointer_p&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile <a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">pointer_sp</a>&lt; pointer_p &gt; &amp; <a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">nkr::$atomic_t::pointer_sp</a>&lt; pointer_p &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const volatile <a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">pointer_sp</a>&lt; pointer_p &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td> volatile</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+
+</div>
+</div>
+<a id="ae06ab1133c06c943393f78022b41d2bf" name="ae06ab1133c06c943393f78022b41d2bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae06ab1133c06c943393f78022b41d2bf">&#9670;&nbsp;</a></span>operator=() <span class="overload">[5/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;pointer_tr pointer_p&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">pointer_sp</a>&lt; pointer_p &gt; &amp; <a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">nkr::$atomic_t::pointer_sp</a>&lt; pointer_p &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">pointer_sp</a>&lt; pointer_p &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+<p >Exchanges the other with the default value atomically and assigns to itself atomically.</p>
+<div class="fragment"></div><!-- fragment --> <div class="fragment"></div><!-- fragment --> <div class="fragment"></div><!-- fragment --> 
+</div>
+</div>
+<a id="a9c8226fc4335a54ce94da6c181d7786d" name="a9c8226fc4335a54ce94da6c181d7786d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c8226fc4335a54ce94da6c181d7786d">&#9670;&nbsp;</a></span>operator=() <span class="overload">[6/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;pointer_tr pointer_p&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile <a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">pointer_sp</a>&lt; pointer_p &gt; &amp; <a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">nkr::$atomic_t::pointer_sp</a>&lt; pointer_p &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">pointer_sp</a>&lt; pointer_p &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td> volatile</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+
+</div>
+</div>
+<a id="acbd143399ae3a6b2fd85a117e3dab74b" name="acbd143399ae3a6b2fd85a117e3dab74b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acbd143399ae3a6b2fd85a117e3dab74b">&#9670;&nbsp;</a></span>operator=() <span class="overload">[7/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;pointer_tr pointer_p&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">pointer_sp</a>&lt; pointer_p &gt; &amp; <a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">nkr::$atomic_t::pointer_sp</a>&lt; pointer_p &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype">is_just_volatile_tr&lt; <a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">pointer_sp</a>&lt; pointer_p &gt; &gt; auto &amp;&amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+
+</div>
+</div>
+<a id="a004d1e9d1eac368ca25cffd3dd046215" name="a004d1e9d1eac368ca25cffd3dd046215"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a004d1e9d1eac368ca25cffd3dd046215">&#9670;&nbsp;</a></span>operator=() <span class="overload">[8/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;pointer_tr pointer_p&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile <a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">pointer_sp</a>&lt; pointer_p &gt; &amp; <a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">nkr::$atomic_t::pointer_sp</a>&lt; pointer_p &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype">is_just_volatile_tr&lt; <a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">pointer_sp</a>&lt; pointer_p &gt; &gt; auto &amp;&amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td> volatile</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+
+</div>
+</div>
 <a id="a0f806bef92669e1c8b6a8fe253394bf3" name="a0f806bef92669e1c8b6a8fe253394bf3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0f806bef92669e1c8b6a8fe253394bf3">&#9670;&nbsp;</a></span>Access() <span class="overload">[1/2]</span></h2>
 
@@ -937,6 +1179,66 @@ template&lt;pointer_tr pointer_p&gt; </div>
 
 </div>
 </div>
+<a id="ad245008a9bb55bd17b20f3568c7b44a2" name="ad245008a9bb55bd17b20f3568c7b44a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad245008a9bb55bd17b20f3568c7b44a2">&#9670;&nbsp;</a></span>Exchange_Subtract() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;pointer_tr pointer_p&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">pointer_sp</a>&lt; pointer_p &gt;::<a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html#aa7fc23760980b203d95153b5e366c430">value_t</a> <a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">nkr::$atomic_t::pointer_sp</a>&lt; pointer_p &gt;::Exchange_Subtract </td>
+          <td>(</td>
+          <td class="paramtype">integer_tr auto&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+<div class="fragment"></div><!-- fragment --> <div class="fragment"></div><!-- fragment --> 
+</div>
+</div>
+<a id="a148e056be90ab871afba284a7b4c7d63" name="a148e056be90ab871afba284a7b4c7d63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a148e056be90ab871afba284a7b4c7d63">&#9670;&nbsp;</a></span>Exchange_Subtract() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;pointer_tr pointer_p&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">pointer_sp</a>&lt; pointer_p &gt;::<a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html#aa7fc23760980b203d95153b5e366c430">value_t</a> <a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">nkr::$atomic_t::pointer_sp</a>&lt; pointer_p &gt;::Exchange_Subtract </td>
+          <td>(</td>
+          <td class="paramtype">integer_tr auto&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td> volatile</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+
+</div>
+</div>
 <a id="a75ed136429fb7ddf3c1574847193e632" name="a75ed136429fb7ddf3c1574847193e632"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a75ed136429fb7ddf3c1574847193e632">&#9670;&nbsp;</a></span>Exchange_If_Equals() <span class="overload">[1/2]</span></h2>
 
@@ -1017,66 +1319,6 @@ template&lt;pointer_tr pointer_p&gt; </div>
 
 </div>
 </div>
-<a id="ad245008a9bb55bd17b20f3568c7b44a2" name="ad245008a9bb55bd17b20f3568c7b44a2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad245008a9bb55bd17b20f3568c7b44a2">&#9670;&nbsp;</a></span>Exchange_Subtract() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;pointer_tr pointer_p&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">pointer_sp</a>&lt; pointer_p &gt;::<a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html#aa7fc23760980b203d95153b5e366c430">value_t</a> <a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">nkr::$atomic_t::pointer_sp</a>&lt; pointer_p &gt;::Exchange_Subtract </td>
-          <td>(</td>
-          <td class="paramtype">integer_tr auto&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p></p>
-<div class="fragment"></div><!-- fragment --> <div class="fragment"></div><!-- fragment --> 
-</div>
-</div>
-<a id="a148e056be90ab871afba284a7b4c7d63" name="a148e056be90ab871afba284a7b4c7d63"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a148e056be90ab871afba284a7b4c7d63">&#9670;&nbsp;</a></span>Exchange_Subtract() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;pointer_tr pointer_p&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">pointer_sp</a>&lt; pointer_p &gt;::<a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html#aa7fc23760980b203d95153b5e366c430">value_t</a> <a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">nkr::$atomic_t::pointer_sp</a>&lt; pointer_p &gt;::Exchange_Subtract </td>
-          <td>(</td>
-          <td class="paramtype">integer_tr auto&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td> volatile</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p></p>
-
-</div>
-</div>
 <a id="a9c5b69fa97e427d26ad0126dc8b69e47" name="a9c5b69fa97e427d26ad0126dc8b69e47"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9c5b69fa97e427d26ad0126dc8b69e47">&#9670;&nbsp;</a></span>operator value_t() <span class="overload">[1/2]</span></h2>
 
@@ -1116,67 +1358,6 @@ template&lt;pointer_tr pointer_p&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">nkr::$atomic_t::pointer_sp</a>&lt; pointer_p &gt;::operator <a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html#aa7fc23760980b203d95153b5e366c430">value_t</a></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p></p>
-
-</div>
-</div>
-<a id="a4949a7b13a2c1c9359087c3dbb3af88e" name="a4949a7b13a2c1c9359087c3dbb3af88e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4949a7b13a2c1c9359087c3dbb3af88e">&#9670;&nbsp;</a></span>operator!=() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;pointer_tr pointer_p&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classnkr_1_1bool__t.html">bool_t</a> <a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">nkr::$atomic_t::pointer_sp</a>&lt; pointer_p &gt;::operator!= </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classnkr_1_1none__t.html">none_t</a>&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p></p>
-<p >Checks if a cast of its value to <a class="el" href="classnkr_1_1bool__t.html" title="The default boolean type of this library which replaces nkr::std_bool_t, i.e. bool.">nkr::bool_t</a> equals <code>true</code>.</p>
-<div class="fragment"></div><!-- fragment --> <div class="fragment"></div><!-- fragment --> <div class="fragment"></div><!-- fragment --> 
-</div>
-</div>
-<a id="a66d5058bb69f4007eaddd6cf400702bb" name="a66d5058bb69f4007eaddd6cf400702bb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a66d5058bb69f4007eaddd6cf400702bb">&#9670;&nbsp;</a></span>operator!=() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;pointer_tr pointer_p&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classnkr_1_1bool__t.html">bool_t</a> <a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">nkr::$atomic_t::pointer_sp</a>&lt; pointer_p &gt;::operator!= </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classnkr_1_1none__t.html">none_t</a>&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const volatile</td>
         </tr>
       </table>
   </td>
@@ -1242,8 +1423,8 @@ template&lt;pointer_tr pointer_p&gt; </div>
 
 </div>
 </div>
-<a id="ad0fe980eb4fd6258fe3f929cecc089b3" name="ad0fe980eb4fd6258fe3f929cecc089b3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad0fe980eb4fd6258fe3f929cecc089b3">&#9670;&nbsp;</a></span>operator*() <span class="overload">[1/2]</span></h2>
+<a id="a5f9375b8240b9c08ea7411d06a5d8a1f" name="a5f9375b8240b9c08ea7411d06a5d8a1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f9375b8240b9c08ea7411d06a5d8a1f">&#9670;&nbsp;</a></span>operator+=() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1254,7 +1435,11 @@ template&lt;pointer_tr pointer_p&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">pointer_sp</a>&lt; pointer_p &gt;::<a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html#ab1f8a07af7489e46395627fb7c642855">unit_t</a> &amp; <a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">nkr::$atomic_t::pointer_sp</a>&lt; pointer_p &gt;::operator*</td>
+          <td class="memname"><a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">pointer_sp</a>&lt; pointer_p &gt;::<a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html#aa7fc23760980b203d95153b5e366c430">value_t</a> <a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">nkr::$atomic_t::pointer_sp</a>&lt; pointer_p &gt;::operator+= </td>
+          <td>(</td>
+          <td class="paramtype">integer_tr auto&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
   </td>
@@ -1265,11 +1450,11 @@ template&lt;pointer_tr pointer_p&gt; </div>
 </div><div class="memdoc">
 
 <p></p>
-<div class="fragment"></div><!-- fragment --> <div class="fragment"></div><!-- fragment --> <div class="fragment"></div><!-- fragment --> 
+<div class="fragment"></div><!-- fragment --> <div class="fragment"></div><!-- fragment --> 
 </div>
 </div>
-<a id="a35fd4a4d7d9d808b3ddd5f77d569f121" name="a35fd4a4d7d9d808b3ddd5f77d569f121"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a35fd4a4d7d9d808b3ddd5f77d569f121">&#9670;&nbsp;</a></span>operator*() <span class="overload">[2/2]</span></h2>
+<a id="a5100a7826ae32c72b3061706b6d56873" name="a5100a7826ae32c72b3061706b6d56873"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5100a7826ae32c72b3061706b6d56873">&#9670;&nbsp;</a></span>operator+=() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1280,7 +1465,71 @@ template&lt;pointer_tr pointer_p&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">pointer_sp</a>&lt; pointer_p &gt;::<a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html#ab1f8a07af7489e46395627fb7c642855">unit_t</a> &amp; <a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">nkr::$atomic_t::pointer_sp</a>&lt; pointer_p &gt;::operator*</td>
+          <td class="memname"><a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">pointer_sp</a>&lt; pointer_p &gt;::<a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html#aa7fc23760980b203d95153b5e366c430">value_t</a> <a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">nkr::$atomic_t::pointer_sp</a>&lt; pointer_p &gt;::operator+= </td>
+          <td>(</td>
+          <td class="paramtype">integer_tr auto&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td> volatile</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+
+</div>
+</div>
+<a id="a8780e5a0382ac14444a14d5daea7b347" name="a8780e5a0382ac14444a14d5daea7b347"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8780e5a0382ac14444a14d5daea7b347">&#9670;&nbsp;</a></span>operator-=() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;pointer_tr pointer_p&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">pointer_sp</a>&lt; pointer_p &gt;::<a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html#aa7fc23760980b203d95153b5e366c430">value_t</a> <a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">nkr::$atomic_t::pointer_sp</a>&lt; pointer_p &gt;::operator-= </td>
+          <td>(</td>
+          <td class="paramtype">integer_tr auto&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+<div class="fragment"></div><!-- fragment --> <div class="fragment"></div><!-- fragment --> 
+</div>
+</div>
+<a id="abf33ce95055b2869b28ddabc7e37255d" name="abf33ce95055b2869b28ddabc7e37255d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf33ce95055b2869b28ddabc7e37255d">&#9670;&nbsp;</a></span>operator-=() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;pointer_tr pointer_p&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">pointer_sp</a>&lt; pointer_p &gt;::<a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html#aa7fc23760980b203d95153b5e366c430">value_t</a> <a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">nkr::$atomic_t::pointer_sp</a>&lt; pointer_p &gt;::operator-= </td>
+          <td>(</td>
+          <td class="paramtype">integer_tr auto&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td> volatile</td>
         </tr>
       </table>
   </td>
@@ -1392,66 +1641,6 @@ template&lt;pointer_tr pointer_p&gt; </div>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"></td><td>)</td>
-          <td> volatile</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p></p>
-
-</div>
-</div>
-<a id="a5f9375b8240b9c08ea7411d06a5d8a1f" name="a5f9375b8240b9c08ea7411d06a5d8a1f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5f9375b8240b9c08ea7411d06a5d8a1f">&#9670;&nbsp;</a></span>operator+=() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;pointer_tr pointer_p&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">pointer_sp</a>&lt; pointer_p &gt;::<a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html#aa7fc23760980b203d95153b5e366c430">value_t</a> <a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">nkr::$atomic_t::pointer_sp</a>&lt; pointer_p &gt;::operator+= </td>
-          <td>(</td>
-          <td class="paramtype">integer_tr auto&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p></p>
-<div class="fragment"></div><!-- fragment --> <div class="fragment"></div><!-- fragment --> 
-</div>
-</div>
-<a id="a5100a7826ae32c72b3061706b6d56873" name="a5100a7826ae32c72b3061706b6d56873"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5100a7826ae32c72b3061706b6d56873">&#9670;&nbsp;</a></span>operator+=() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;pointer_tr pointer_p&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">pointer_sp</a>&lt; pointer_p &gt;::<a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html#aa7fc23760980b203d95153b5e366c430">value_t</a> <a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">nkr::$atomic_t::pointer_sp</a>&lt; pointer_p &gt;::operator+= </td>
-          <td>(</td>
-          <td class="paramtype">integer_tr auto&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
           <td> volatile</td>
         </tr>
       </table>
@@ -1578,66 +1767,6 @@ template&lt;pointer_tr pointer_p&gt; </div>
 
 </div>
 </div>
-<a id="a8780e5a0382ac14444a14d5daea7b347" name="a8780e5a0382ac14444a14d5daea7b347"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8780e5a0382ac14444a14d5daea7b347">&#9670;&nbsp;</a></span>operator-=() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;pointer_tr pointer_p&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">pointer_sp</a>&lt; pointer_p &gt;::<a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html#aa7fc23760980b203d95153b5e366c430">value_t</a> <a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">nkr::$atomic_t::pointer_sp</a>&lt; pointer_p &gt;::operator-= </td>
-          <td>(</td>
-          <td class="paramtype">integer_tr auto&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p></p>
-<div class="fragment"></div><!-- fragment --> <div class="fragment"></div><!-- fragment --> 
-</div>
-</div>
-<a id="abf33ce95055b2869b28ddabc7e37255d" name="abf33ce95055b2869b28ddabc7e37255d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abf33ce95055b2869b28ddabc7e37255d">&#9670;&nbsp;</a></span>operator-=() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;pointer_tr pointer_p&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">pointer_sp</a>&lt; pointer_p &gt;::<a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html#aa7fc23760980b203d95153b5e366c430">value_t</a> <a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">nkr::$atomic_t::pointer_sp</a>&lt; pointer_p &gt;::operator-= </td>
-          <td>(</td>
-          <td class="paramtype">integer_tr auto&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td> volatile</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p></p>
-
-</div>
-</div>
 <a id="a2af7c3eb65f84b99abafcdbd4530f010" name="a2af7c3eb65f84b99abafcdbd4530f010"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2af7c3eb65f84b99abafcdbd4530f010">&#9670;&nbsp;</a></span>operator-&gt;() <span class="overload">[1/2]</span></h2>
 
@@ -1690,8 +1819,8 @@ template&lt;pointer_tr pointer_p&gt; </div>
 
 </div>
 </div>
-<a id="a1b903d28b04217b96e722be61880ca77" name="a1b903d28b04217b96e722be61880ca77"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1b903d28b04217b96e722be61880ca77">&#9670;&nbsp;</a></span>operator=() <span class="overload">[1/10]</span></h2>
+<a id="ad0fe980eb4fd6258fe3f929cecc089b3" name="ad0fe980eb4fd6258fe3f929cecc089b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0fe980eb4fd6258fe3f929cecc089b3">&#9670;&nbsp;</a></span>operator*() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1702,11 +1831,7 @@ template&lt;pointer_tr pointer_p&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">pointer_sp</a>&lt; pointer_p &gt; &amp; <a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">nkr::$atomic_t::pointer_sp</a>&lt; pointer_p &gt;::operator= </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">pointer_sp</a>&lt; pointer_p &gt; &amp;&#160;</td>
-          <td class="paramname"><em>other</em></td><td>)</td>
-          <td></td>
+          <td class="memname"><a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">pointer_sp</a>&lt; pointer_p &gt;::<a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html#ab1f8a07af7489e46395627fb7c642855">unit_t</a> &amp; <a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">nkr::$atomic_t::pointer_sp</a>&lt; pointer_p &gt;::operator*</td>
         </tr>
       </table>
   </td>
@@ -1717,12 +1842,11 @@ template&lt;pointer_tr pointer_p&gt; </div>
 </div><div class="memdoc">
 
 <p></p>
-<p >Accesses the other atomically and assigns to itself atomically.</p>
 <div class="fragment"></div><!-- fragment --> <div class="fragment"></div><!-- fragment --> <div class="fragment"></div><!-- fragment --> 
 </div>
 </div>
-<a id="a682764c892704070435039cbc3c61dd6" name="a682764c892704070435039cbc3c61dd6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a682764c892704070435039cbc3c61dd6">&#9670;&nbsp;</a></span>operator=() <span class="overload">[2/10]</span></h2>
+<a id="a35fd4a4d7d9d808b3ddd5f77d569f121" name="a35fd4a4d7d9d808b3ddd5f77d569f121"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35fd4a4d7d9d808b3ddd5f77d569f121">&#9670;&nbsp;</a></span>operator*() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1733,11 +1857,7 @@ template&lt;pointer_tr pointer_p&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">volatile <a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">pointer_sp</a>&lt; pointer_p &gt; &amp; <a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">nkr::$atomic_t::pointer_sp</a>&lt; pointer_p &gt;::operator= </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">pointer_sp</a>&lt; pointer_p &gt; &amp;&#160;</td>
-          <td class="paramname"><em>other</em></td><td>)</td>
-          <td> volatile</td>
+          <td class="memname"><a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">pointer_sp</a>&lt; pointer_p &gt;::<a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html#ab1f8a07af7489e46395627fb7c642855">unit_t</a> &amp; <a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">nkr::$atomic_t::pointer_sp</a>&lt; pointer_p &gt;::operator*</td>
         </tr>
       </table>
   </td>
@@ -1751,8 +1871,8 @@ template&lt;pointer_tr pointer_p&gt; </div>
 
 </div>
 </div>
-<a id="ad85a6ad560aa817ac816c67a68148b8a" name="ad85a6ad560aa817ac816c67a68148b8a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad85a6ad560aa817ac816c67a68148b8a">&#9670;&nbsp;</a></span>operator=() <span class="overload">[3/10]</span></h2>
+<a id="aa5db49cfca1d9fbf52c6f598568db11f" name="aa5db49cfca1d9fbf52c6f598568db11f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5db49cfca1d9fbf52c6f598568db11f">&#9670;&nbsp;</a></span>operator[]() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1763,11 +1883,11 @@ template&lt;pointer_tr pointer_p&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">pointer_sp</a>&lt; pointer_p &gt; &amp; <a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">nkr::$atomic_t::pointer_sp</a>&lt; pointer_p &gt;::operator= </td>
+          <td class="memname"><a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">pointer_sp</a>&lt; pointer_p &gt;::<a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html#ab1f8a07af7489e46395627fb7c642855">unit_t</a> &amp; <a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">nkr::$atomic_t::pointer_sp</a>&lt; pointer_p &gt;::operator[] </td>
           <td>(</td>
-          <td class="paramtype">const volatile <a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">pointer_sp</a>&lt; pointer_p &gt; &amp;&#160;</td>
-          <td class="paramname"><em>other</em></td><td>)</td>
-          <td></td>
+          <td class="paramtype">integer_tr auto&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -1778,11 +1898,11 @@ template&lt;pointer_tr pointer_p&gt; </div>
 </div><div class="memdoc">
 
 <p></p>
-
+<div class="fragment"></div><!-- fragment --> <div class="fragment"></div><!-- fragment --> <div class="fragment"></div><!-- fragment --> 
 </div>
 </div>
-<a id="a316ff8d54e1ac61fac45e781dd1142d4" name="a316ff8d54e1ac61fac45e781dd1142d4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a316ff8d54e1ac61fac45e781dd1142d4">&#9670;&nbsp;</a></span>operator=() <span class="overload">[4/10]</span></h2>
+<a id="a431401d929d70698dcd1241b3796bfdb" name="a431401d929d70698dcd1241b3796bfdb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a431401d929d70698dcd1241b3796bfdb">&#9670;&nbsp;</a></span>operator[]() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1793,76 +1913,16 @@ template&lt;pointer_tr pointer_p&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">volatile <a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">pointer_sp</a>&lt; pointer_p &gt; &amp; <a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">nkr::$atomic_t::pointer_sp</a>&lt; pointer_p &gt;::operator= </td>
+          <td class="memname"><a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">pointer_sp</a>&lt; pointer_p &gt;::<a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html#ab1f8a07af7489e46395627fb7c642855">unit_t</a> &amp; <a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">nkr::$atomic_t::pointer_sp</a>&lt; pointer_p &gt;::operator[] </td>
           <td>(</td>
-          <td class="paramtype">const volatile <a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">pointer_sp</a>&lt; pointer_p &gt; &amp;&#160;</td>
-          <td class="paramname"><em>other</em></td><td>)</td>
-          <td> volatile</td>
+          <td class="paramtype">integer_tr auto&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td> const volatile</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
 <span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p></p>
-
-</div>
-</div>
-<a id="acbd143399ae3a6b2fd85a117e3dab74b" name="acbd143399ae3a6b2fd85a117e3dab74b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acbd143399ae3a6b2fd85a117e3dab74b">&#9670;&nbsp;</a></span>operator=() <span class="overload">[5/10]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;pointer_tr pointer_p&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">pointer_sp</a>&lt; pointer_p &gt; &amp; <a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">nkr::$atomic_t::pointer_sp</a>&lt; pointer_p &gt;::operator= </td>
-          <td>(</td>
-          <td class="paramtype">is_just_volatile_tr&lt; <a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">pointer_sp</a>&lt; pointer_p &gt; &gt; auto &amp;&amp;&#160;</td>
-          <td class="paramname"><em>other</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p></p>
-
-</div>
-</div>
-<a id="a004d1e9d1eac368ca25cffd3dd046215" name="a004d1e9d1eac368ca25cffd3dd046215"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a004d1e9d1eac368ca25cffd3dd046215">&#9670;&nbsp;</a></span>operator=() <span class="overload">[6/10]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;pointer_tr pointer_p&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile <a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">pointer_sp</a>&lt; pointer_p &gt; &amp; <a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">nkr::$atomic_t::pointer_sp</a>&lt; pointer_p &gt;::operator= </td>
-          <td>(</td>
-          <td class="paramtype">is_just_volatile_tr&lt; <a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">pointer_sp</a>&lt; pointer_p &gt; &gt; auto &amp;&amp;&#160;</td>
-          <td class="paramname"><em>other</em></td><td>)</td>
-          <td> volatile</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1872,7 +1932,7 @@ template&lt;pointer_tr pointer_p&gt; </div>
 </div>
 </div>
 <a id="a9e03f4d13193461b48ce62f0514466d3" name="a9e03f4d13193461b48ce62f0514466d3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9e03f4d13193461b48ce62f0514466d3">&#9670;&nbsp;</a></span>operator=() <span class="overload">[7/10]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e03f4d13193461b48ce62f0514466d3">&#9670;&nbsp;</a></span>operator=() <span class="overload">[9/10]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1903,7 +1963,7 @@ template&lt;pointer_tr pointer_p&gt; </div>
 </div>
 </div>
 <a id="a03369b054aa4d8bd65d358a24352082e" name="a03369b054aa4d8bd65d358a24352082e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a03369b054aa4d8bd65d358a24352082e">&#9670;&nbsp;</a></span>operator=() <span class="overload">[8/10]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a03369b054aa4d8bd65d358a24352082e">&#9670;&nbsp;</a></span>operator=() <span class="overload">[10/10]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1924,67 +1984,6 @@ template&lt;pointer_tr pointer_p&gt; </div>
   </td>
   <td class="mlabels-right">
 <span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p></p>
-
-</div>
-</div>
-<a id="ae06ab1133c06c943393f78022b41d2bf" name="ae06ab1133c06c943393f78022b41d2bf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae06ab1133c06c943393f78022b41d2bf">&#9670;&nbsp;</a></span>operator=() <span class="overload">[9/10]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;pointer_tr pointer_p&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">pointer_sp</a>&lt; pointer_p &gt; &amp; <a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">nkr::$atomic_t::pointer_sp</a>&lt; pointer_p &gt;::operator= </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">pointer_sp</a>&lt; pointer_p &gt; &amp;&amp;&#160;</td>
-          <td class="paramname"><em>other</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p></p>
-<p >Exchanges the other with the default value atomically and assigns to itself atomically.</p>
-<div class="fragment"></div><!-- fragment --> <div class="fragment"></div><!-- fragment --> <div class="fragment"></div><!-- fragment --> 
-</div>
-</div>
-<a id="a9c8226fc4335a54ce94da6c181d7786d" name="a9c8226fc4335a54ce94da6c181d7786d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9c8226fc4335a54ce94da6c181d7786d">&#9670;&nbsp;</a></span>operator=() <span class="overload">[10/10]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;pointer_tr pointer_p&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile <a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">pointer_sp</a>&lt; pointer_p &gt; &amp; <a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">nkr::$atomic_t::pointer_sp</a>&lt; pointer_p &gt;::operator= </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">pointer_sp</a>&lt; pointer_p &gt; &amp;&amp;&#160;</td>
-          <td class="paramname"><em>other</em></td><td>)</td>
-          <td> volatile</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -2054,8 +2053,8 @@ template&lt;pointer_tr pointer_p&gt; </div>
 
 </div>
 </div>
-<a id="aa5db49cfca1d9fbf52c6f598568db11f" name="aa5db49cfca1d9fbf52c6f598568db11f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa5db49cfca1d9fbf52c6f598568db11f">&#9670;&nbsp;</a></span>operator[]() <span class="overload">[1/2]</span></h2>
+<a id="a4949a7b13a2c1c9359087c3dbb3af88e" name="a4949a7b13a2c1c9359087c3dbb3af88e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4949a7b13a2c1c9359087c3dbb3af88e">&#9670;&nbsp;</a></span>operator!=() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2066,10 +2065,10 @@ template&lt;pointer_tr pointer_p&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">pointer_sp</a>&lt; pointer_p &gt;::<a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html#ab1f8a07af7489e46395627fb7c642855">unit_t</a> &amp; <a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">nkr::$atomic_t::pointer_sp</a>&lt; pointer_p &gt;::operator[] </td>
+          <td class="memname"><a class="el" href="classnkr_1_1bool__t.html">bool_t</a> <a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">nkr::$atomic_t::pointer_sp</a>&lt; pointer_p &gt;::operator!= </td>
           <td>(</td>
-          <td class="paramtype">integer_tr auto&#160;</td>
-          <td class="paramname"><em>index</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="classnkr_1_1none__t.html">none_t</a>&#160;</td>
+          <td class="paramname"></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -2081,11 +2080,12 @@ template&lt;pointer_tr pointer_p&gt; </div>
 </div><div class="memdoc">
 
 <p></p>
+<p >Checks if a cast of its value to <a class="el" href="classnkr_1_1bool__t.html" title="The default boolean type of this library which replaces nkr::std_bool_t, i.e. bool.">nkr::bool_t</a> equals <code>true</code>.</p>
 <div class="fragment"></div><!-- fragment --> <div class="fragment"></div><!-- fragment --> <div class="fragment"></div><!-- fragment --> 
 </div>
 </div>
-<a id="a431401d929d70698dcd1241b3796bfdb" name="a431401d929d70698dcd1241b3796bfdb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a431401d929d70698dcd1241b3796bfdb">&#9670;&nbsp;</a></span>operator[]() <span class="overload">[2/2]</span></h2>
+<a id="a66d5058bb69f4007eaddd6cf400702bb" name="a66d5058bb69f4007eaddd6cf400702bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66d5058bb69f4007eaddd6cf400702bb">&#9670;&nbsp;</a></span>operator!=() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2096,10 +2096,10 @@ template&lt;pointer_tr pointer_p&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">pointer_sp</a>&lt; pointer_p &gt;::<a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html#ab1f8a07af7489e46395627fb7c642855">unit_t</a> &amp; <a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">nkr::$atomic_t::pointer_sp</a>&lt; pointer_p &gt;::operator[] </td>
+          <td class="memname"><a class="el" href="classnkr_1_1bool__t.html">bool_t</a> <a class="el" href="classnkr_1_1_0batomic__t_1_1pointer__sp.html">nkr::$atomic_t::pointer_sp</a>&lt; pointer_p &gt;::operator!= </td>
           <td>(</td>
-          <td class="paramtype">integer_tr auto&#160;</td>
-          <td class="paramname"><em>index</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="classnkr_1_1none__t.html">none_t</a>&#160;</td>
+          <td class="paramname"></td><td>)</td>
           <td> const volatile</td>
         </tr>
       </table>

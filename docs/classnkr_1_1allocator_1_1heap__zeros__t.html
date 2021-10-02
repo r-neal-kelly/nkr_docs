@@ -196,24 +196,6 @@ var searchBox = new SearchBox("searchBox", "search",'Search','.html');
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;any_type_tr unit_p&gt;<br />
 class nkr::allocator::heap_zeros_t&lt; unit_p &gt;</div></div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="a40be358524f145400052e40d386f12d0" name="a40be358524f145400052e40d386f12d0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a40be358524f145400052e40d386f12d0">&#9670;&nbsp;</a></span>pointer_t</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;any_type_tr unit_p&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="classnkr_1_1allocator_1_1heap__zeros__t.html">nkr::allocator::heap_zeros_t</a>&lt; unit_p &gt;::<a class="el" href="classnkr_1_1allocator_1_1heap__zeros__t.html#a40be358524f145400052e40d386f12d0">pointer_t</a> =  <a class="el" href="classnkr_1_1allocator_1_1heap__zeros__t.html#a40be358524f145400052e40d386f12d0">pointer_t</a>&lt;unit_p&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p></p>
-
-</div>
-</div>
 <a id="a41726f642eb620d38d6800946e89a15a" name="a41726f642eb620d38d6800946e89a15a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a41726f642eb620d38d6800946e89a15a">&#9670;&nbsp;</a></span>unit_t</h2>
 
@@ -242,6 +224,24 @@ template&lt;any_type_tr unit_p&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classnkr_1_1allocator_1_1heap__zeros__t.html">nkr::allocator::heap_zeros_t</a>&lt; unit_p &gt;::<a class="el" href="classnkr_1_1allocator_1_1heap__zeros__t.html#a3f059ce989869148ec4edf78d0e52bce">units_t</a> =  unit_p*</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p></p>
+
+</div>
+</div>
+<a id="a40be358524f145400052e40d386f12d0" name="a40be358524f145400052e40d386f12d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40be358524f145400052e40d386f12d0">&#9670;&nbsp;</a></span>pointer_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;any_type_tr unit_p&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classnkr_1_1allocator_1_1heap__zeros__t.html">nkr::allocator::heap_zeros_t</a>&lt; unit_p &gt;::<a class="el" href="classnkr_1_1allocator_1_1heap__zeros__t.html#a40be358524f145400052e40d386f12d0">pointer_t</a> =  <a class="el" href="classnkr_1_1allocator_1_1heap__zeros__t.html#a40be358524f145400052e40d386f12d0">pointer_t</a>&lt;unit_p&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -430,8 +430,8 @@ template&lt;any_type_tr unit_p&gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ad8cbaa33d5c703e00b48d5413a9a1707" name="ad8cbaa33d5c703e00b48d5413a9a1707"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad8cbaa33d5c703e00b48d5413a9a1707">&#9670;&nbsp;</a></span>Allocate() <span class="overload">[1/4]</span></h2>
+<a id="a8dd4aedd178b20287895ecd6963f57fe" name="a8dd4aedd178b20287895ecd6963f57fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8dd4aedd178b20287895ecd6963f57fe">&#9670;&nbsp;</a></span>Min_Unit_Count()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -442,266 +442,12 @@ template&lt;any_type_tr unit_p&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classnkr_1_1maybe__t.html">maybe_t</a>&lt; allocator_err &gt; <a class="el" href="classnkr_1_1allocator_1_1heap__zeros__t.html">nkr::allocator::heap_zeros_t</a>&lt; unit_p &gt;::Allocate </td>
-          <td>(</td>
-          <td class="paramtype">is_any_non_const_tr&lt; <a class="el" href="classnkr_1_1allocator_1_1heap__zeros__t.html#a40be358524f145400052e40d386f12d0">pointer_t</a> &gt; auto &amp;&#160;</td>
-          <td class="paramname"><em>units</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="group__intrinsics__contextuals.html#ga962bdb5ad1c5bc05d87739e09df6082b">count_t</a>&#160;</td>
-          <td class="paramname"><em>unit_count</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> const</td>
+          <td class="memname">constexpr <a class="el" href="group__intrinsics__contextuals.html#ga962bdb5ad1c5bc05d87739e09df6082b">count_t</a> <a class="el" href="classnkr_1_1allocator_1_1heap__zeros__t.html">nkr::allocator::heap_zeros_t</a>&lt; unit_p &gt;::Min_Unit_Count</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p></p>
-
-</div>
-</div>
-<a id="a0f0dda9a9d0ca986a96a7ef2dcdc30d9" name="a0f0dda9a9d0ca986a96a7ef2dcdc30d9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0f0dda9a9d0ca986a96a7ef2dcdc30d9">&#9670;&nbsp;</a></span>Allocate() <span class="overload">[2/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;any_type_tr unit_p&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classnkr_1_1maybe__t.html">maybe_t</a>&lt; allocator_err &gt; <a class="el" href="classnkr_1_1allocator_1_1heap__zeros__t.html">nkr::allocator::heap_zeros_t</a>&lt; unit_p &gt;::Allocate </td>
-          <td>(</td>
-          <td class="paramtype">is_any_non_const_tr&lt; <a class="el" href="classnkr_1_1allocator_1_1heap__zeros__t.html#a40be358524f145400052e40d386f12d0">pointer_t</a> &gt; auto &amp;&#160;</td>
-          <td class="paramname"><em>units</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="group__intrinsics__contextuals.html#ga962bdb5ad1c5bc05d87739e09df6082b">count_t</a>&#160;</td>
-          <td class="paramname"><em>unit_count</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> const volatile</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p></p>
-
-</div>
-</div>
-<a id="abc0e79bed13b4836172f2e7e5482b68a" name="abc0e79bed13b4836172f2e7e5482b68a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abc0e79bed13b4836172f2e7e5482b68a">&#9670;&nbsp;</a></span>Allocate() <span class="overload">[3/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;any_type_tr unit_p&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classnkr_1_1maybe__t.html">maybe_t</a>&lt; allocator_err &gt; <a class="el" href="classnkr_1_1allocator_1_1heap__zeros__t.html">nkr::allocator::heap_zeros_t</a>&lt; unit_p &gt;::Allocate </td>
-          <td>(</td>
-          <td class="paramtype">is_any_non_const_tr&lt; <a class="el" href="classnkr_1_1allocator_1_1heap__zeros__t.html#a3f059ce989869148ec4edf78d0e52bce">units_t</a> &gt; auto &amp;&#160;</td>
-          <td class="paramname"><em>units</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="group__intrinsics__contextuals.html#ga962bdb5ad1c5bc05d87739e09df6082b">count_t</a>&#160;</td>
-          <td class="paramname"><em>unit_count</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p></p>
-
-</div>
-</div>
-<a id="a1d98e6a0dcac0c9bdc4b5e3de86d486f" name="a1d98e6a0dcac0c9bdc4b5e3de86d486f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1d98e6a0dcac0c9bdc4b5e3de86d486f">&#9670;&nbsp;</a></span>Allocate() <span class="overload">[4/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;any_type_tr unit_p&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classnkr_1_1maybe__t.html">maybe_t</a>&lt; allocator_err &gt; <a class="el" href="classnkr_1_1allocator_1_1heap__zeros__t.html">nkr::allocator::heap_zeros_t</a>&lt; unit_p &gt;::Allocate </td>
-          <td>(</td>
-          <td class="paramtype">is_any_non_const_tr&lt; <a class="el" href="classnkr_1_1allocator_1_1heap__zeros__t.html#a3f059ce989869148ec4edf78d0e52bce">units_t</a> &gt; auto &amp;&#160;</td>
-          <td class="paramname"><em>units</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="group__intrinsics__contextuals.html#ga962bdb5ad1c5bc05d87739e09df6082b">count_t</a>&#160;</td>
-          <td class="paramname"><em>unit_count</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> const volatile</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p></p>
-
-</div>
-</div>
-<a id="a39397559afa83e04f1d42da565e2be42" name="a39397559afa83e04f1d42da565e2be42"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a39397559afa83e04f1d42da565e2be42">&#9670;&nbsp;</a></span>Deallocate() <span class="overload">[1/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;any_type_tr unit_p&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__intrinsics__primitives.html#ga034482d2e50c6d0448a7953d24860fe9">void_t</a> <a class="el" href="classnkr_1_1allocator_1_1heap__zeros__t.html">nkr::allocator::heap_zeros_t</a>&lt; unit_p &gt;::Deallocate </td>
-          <td>(</td>
-          <td class="paramtype">is_any_non_const_tr&lt; <a class="el" href="classnkr_1_1allocator_1_1heap__zeros__t.html#a40be358524f145400052e40d386f12d0">pointer_t</a> &gt; auto &amp;&#160;</td>
-          <td class="paramname"><em>units</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p></p>
-
-</div>
-</div>
-<a id="a70b7d338ba39c323ff9feea6e1829c05" name="a70b7d338ba39c323ff9feea6e1829c05"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a70b7d338ba39c323ff9feea6e1829c05">&#9670;&nbsp;</a></span>Deallocate() <span class="overload">[2/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;any_type_tr unit_p&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__intrinsics__primitives.html#ga034482d2e50c6d0448a7953d24860fe9">void_t</a> <a class="el" href="classnkr_1_1allocator_1_1heap__zeros__t.html">nkr::allocator::heap_zeros_t</a>&lt; unit_p &gt;::Deallocate </td>
-          <td>(</td>
-          <td class="paramtype">is_any_non_const_tr&lt; <a class="el" href="classnkr_1_1allocator_1_1heap__zeros__t.html#a40be358524f145400052e40d386f12d0">pointer_t</a> &gt; auto &amp;&#160;</td>
-          <td class="paramname"><em>units</em></td><td>)</td>
-          <td> const volatile</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p></p>
-
-</div>
-</div>
-<a id="ae27d65bd4390f5dc5f64f2d3df9c16d6" name="ae27d65bd4390f5dc5f64f2d3df9c16d6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae27d65bd4390f5dc5f64f2d3df9c16d6">&#9670;&nbsp;</a></span>Deallocate() <span class="overload">[3/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;any_type_tr unit_p&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__intrinsics__primitives.html#ga034482d2e50c6d0448a7953d24860fe9">void_t</a> <a class="el" href="classnkr_1_1allocator_1_1heap__zeros__t.html">nkr::allocator::heap_zeros_t</a>&lt; unit_p &gt;::Deallocate </td>
-          <td>(</td>
-          <td class="paramtype">is_any_non_const_tr&lt; <a class="el" href="classnkr_1_1allocator_1_1heap__zeros__t.html#a3f059ce989869148ec4edf78d0e52bce">units_t</a> &gt; auto &amp;&#160;</td>
-          <td class="paramname"><em>units</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p></p>
-
-</div>
-</div>
-<a id="ae493ed1abf72d04761af3a4cfd416798" name="ae493ed1abf72d04761af3a4cfd416798"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae493ed1abf72d04761af3a4cfd416798">&#9670;&nbsp;</a></span>Deallocate() <span class="overload">[4/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;any_type_tr unit_p&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__intrinsics__primitives.html#ga034482d2e50c6d0448a7953d24860fe9">void_t</a> <a class="el" href="classnkr_1_1allocator_1_1heap__zeros__t.html">nkr::allocator::heap_zeros_t</a>&lt; unit_p &gt;::Deallocate </td>
-          <td>(</td>
-          <td class="paramtype">is_any_non_const_tr&lt; <a class="el" href="classnkr_1_1allocator_1_1heap__zeros__t.html#a3f059ce989869148ec4edf78d0e52bce">units_t</a> &gt; auto &amp;&#160;</td>
-          <td class="paramname"><em>units</em></td><td>)</td>
-          <td> const volatile</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -723,32 +469,6 @@ template&lt;any_type_tr unit_p&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">constexpr <a class="el" href="group__intrinsics__contextuals.html#ga962bdb5ad1c5bc05d87739e09df6082b">count_t</a> <a class="el" href="classnkr_1_1allocator_1_1heap__zeros__t.html">nkr::allocator::heap_zeros_t</a>&lt; unit_p &gt;::Max_Unit_Count</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p></p>
-
-</div>
-</div>
-<a id="a8dd4aedd178b20287895ecd6963f57fe" name="a8dd4aedd178b20287895ecd6963f57fe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8dd4aedd178b20287895ecd6963f57fe">&#9670;&nbsp;</a></span>Min_Unit_Count()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;any_type_tr unit_p&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr <a class="el" href="group__intrinsics__contextuals.html#ga962bdb5ad1c5bc05d87739e09df6082b">count_t</a> <a class="el" href="classnkr_1_1allocator_1_1heap__zeros__t.html">nkr::allocator::heap_zeros_t</a>&lt; unit_p &gt;::Min_Unit_Count</td>
         </tr>
       </table>
   </td>
@@ -1002,8 +722,8 @@ template&lt;any_type_tr unit_p&gt; </div>
 
 </div>
 </div>
-<a id="acc4640ca104847eca155dd0ec3366a4e" name="acc4640ca104847eca155dd0ec3366a4e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acc4640ca104847eca155dd0ec3366a4e">&#9670;&nbsp;</a></span>Reallocate() <span class="overload">[1/4]</span></h2>
+<a id="abc0e79bed13b4836172f2e7e5482b68a" name="abc0e79bed13b4836172f2e7e5482b68a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc0e79bed13b4836172f2e7e5482b68a">&#9670;&nbsp;</a></span>Allocate() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1014,16 +734,16 @@ template&lt;any_type_tr unit_p&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classnkr_1_1maybe__t.html">maybe_t</a>&lt; allocator_err &gt; <a class="el" href="classnkr_1_1allocator_1_1heap__zeros__t.html">nkr::allocator::heap_zeros_t</a>&lt; unit_p &gt;::Reallocate </td>
+          <td class="memname"><a class="el" href="classnkr_1_1maybe__t.html">maybe_t</a>&lt; allocator_err &gt; <a class="el" href="classnkr_1_1allocator_1_1heap__zeros__t.html">nkr::allocator::heap_zeros_t</a>&lt; unit_p &gt;::Allocate </td>
           <td>(</td>
-          <td class="paramtype">is_any_non_const_tr&lt; <a class="el" href="classnkr_1_1allocator_1_1heap__zeros__t.html#a40be358524f145400052e40d386f12d0">pointer_t</a> &gt; auto &amp;&#160;</td>
+          <td class="paramtype">is_any_non_const_tr&lt; <a class="el" href="classnkr_1_1allocator_1_1heap__zeros__t.html#a3f059ce989869148ec4edf78d0e52bce">units_t</a> &gt; auto &amp;&#160;</td>
           <td class="paramname"><em>units</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="group__intrinsics__contextuals.html#ga962bdb5ad1c5bc05d87739e09df6082b">count_t</a>&#160;</td>
-          <td class="paramname"><em>new_unit_count</em>&#160;</td>
+          <td class="paramname"><em>unit_count</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1042,8 +762,8 @@ template&lt;any_type_tr unit_p&gt; </div>
 
 </div>
 </div>
-<a id="a2dcb1f62265be5660fc12e646afff035" name="a2dcb1f62265be5660fc12e646afff035"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2dcb1f62265be5660fc12e646afff035">&#9670;&nbsp;</a></span>Reallocate() <span class="overload">[2/4]</span></h2>
+<a id="a1d98e6a0dcac0c9bdc4b5e3de86d486f" name="a1d98e6a0dcac0c9bdc4b5e3de86d486f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d98e6a0dcac0c9bdc4b5e3de86d486f">&#9670;&nbsp;</a></span>Allocate() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1054,7 +774,47 @@ template&lt;any_type_tr unit_p&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classnkr_1_1maybe__t.html">maybe_t</a>&lt; allocator_err &gt; <a class="el" href="classnkr_1_1allocator_1_1heap__zeros__t.html">nkr::allocator::heap_zeros_t</a>&lt; unit_p &gt;::Reallocate </td>
+          <td class="memname"><a class="el" href="classnkr_1_1maybe__t.html">maybe_t</a>&lt; allocator_err &gt; <a class="el" href="classnkr_1_1allocator_1_1heap__zeros__t.html">nkr::allocator::heap_zeros_t</a>&lt; unit_p &gt;::Allocate </td>
+          <td>(</td>
+          <td class="paramtype">is_any_non_const_tr&lt; <a class="el" href="classnkr_1_1allocator_1_1heap__zeros__t.html#a3f059ce989869148ec4edf78d0e52bce">units_t</a> &gt; auto &amp;&#160;</td>
+          <td class="paramname"><em>units</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__intrinsics__contextuals.html#ga962bdb5ad1c5bc05d87739e09df6082b">count_t</a>&#160;</td>
+          <td class="paramname"><em>unit_count</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const volatile</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+
+</div>
+</div>
+<a id="ad8cbaa33d5c703e00b48d5413a9a1707" name="ad8cbaa33d5c703e00b48d5413a9a1707"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8cbaa33d5c703e00b48d5413a9a1707">&#9670;&nbsp;</a></span>Allocate() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;any_type_tr unit_p&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classnkr_1_1maybe__t.html">maybe_t</a>&lt; allocator_err &gt; <a class="el" href="classnkr_1_1allocator_1_1heap__zeros__t.html">nkr::allocator::heap_zeros_t</a>&lt; unit_p &gt;::Allocate </td>
           <td>(</td>
           <td class="paramtype">is_any_non_const_tr&lt; <a class="el" href="classnkr_1_1allocator_1_1heap__zeros__t.html#a40be358524f145400052e40d386f12d0">pointer_t</a> &gt; auto &amp;&#160;</td>
           <td class="paramname"><em>units</em>, </td>
@@ -1063,7 +823,47 @@ template&lt;any_type_tr unit_p&gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="group__intrinsics__contextuals.html#ga962bdb5ad1c5bc05d87739e09df6082b">count_t</a>&#160;</td>
-          <td class="paramname"><em>new_unit_count</em>&#160;</td>
+          <td class="paramname"><em>unit_count</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+
+</div>
+</div>
+<a id="a0f0dda9a9d0ca986a96a7ef2dcdc30d9" name="a0f0dda9a9d0ca986a96a7ef2dcdc30d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f0dda9a9d0ca986a96a7ef2dcdc30d9">&#9670;&nbsp;</a></span>Allocate() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;any_type_tr unit_p&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classnkr_1_1maybe__t.html">maybe_t</a>&lt; allocator_err &gt; <a class="el" href="classnkr_1_1allocator_1_1heap__zeros__t.html">nkr::allocator::heap_zeros_t</a>&lt; unit_p &gt;::Allocate </td>
+          <td>(</td>
+          <td class="paramtype">is_any_non_const_tr&lt; <a class="el" href="classnkr_1_1allocator_1_1heap__zeros__t.html#a40be358524f145400052e40d386f12d0">pointer_t</a> &gt; auto &amp;&#160;</td>
+          <td class="paramname"><em>units</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__intrinsics__contextuals.html#ga962bdb5ad1c5bc05d87739e09df6082b">count_t</a>&#160;</td>
+          <td class="paramname"><em>unit_count</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1083,7 +883,7 @@ template&lt;any_type_tr unit_p&gt; </div>
 </div>
 </div>
 <a id="a98a47f918f6cf356c532a89e6ab28f7b" name="a98a47f918f6cf356c532a89e6ab28f7b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a98a47f918f6cf356c532a89e6ab28f7b">&#9670;&nbsp;</a></span>Reallocate() <span class="overload">[3/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a98a47f918f6cf356c532a89e6ab28f7b">&#9670;&nbsp;</a></span>Reallocate() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1123,7 +923,7 @@ template&lt;any_type_tr unit_p&gt; </div>
 </div>
 </div>
 <a id="a6410c58628f80ffda9e119262137b27b" name="a6410c58628f80ffda9e119262137b27b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6410c58628f80ffda9e119262137b27b">&#9670;&nbsp;</a></span>Reallocate() <span class="overload">[4/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a6410c58628f80ffda9e119262137b27b">&#9670;&nbsp;</a></span>Reallocate() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1162,9 +962,8 @@ template&lt;any_type_tr unit_p&gt; </div>
 
 </div>
 </div>
-<h2 class="groupheader">Friends And Related Function Documentation</h2>
-<a id="a4ab7e63cfee850f91153a9e07041e1c8" name="a4ab7e63cfee850f91153a9e07041e1c8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4ab7e63cfee850f91153a9e07041e1c8">&#9670;&nbsp;</a></span>operator!=</h2>
+<a id="acc4640ca104847eca155dd0ec3366a4e" name="acc4640ca104847eca155dd0ec3366a4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc4640ca104847eca155dd0ec3366a4e">&#9670;&nbsp;</a></span>Reallocate() <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1175,7 +974,208 @@ template&lt;any_type_tr unit_p&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classnkr_1_1bool__t.html">bool_t</a> operator!= </td>
+          <td class="memname"><a class="el" href="classnkr_1_1maybe__t.html">maybe_t</a>&lt; allocator_err &gt; <a class="el" href="classnkr_1_1allocator_1_1heap__zeros__t.html">nkr::allocator::heap_zeros_t</a>&lt; unit_p &gt;::Reallocate </td>
+          <td>(</td>
+          <td class="paramtype">is_any_non_const_tr&lt; <a class="el" href="classnkr_1_1allocator_1_1heap__zeros__t.html#a40be358524f145400052e40d386f12d0">pointer_t</a> &gt; auto &amp;&#160;</td>
+          <td class="paramname"><em>units</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__intrinsics__contextuals.html#ga962bdb5ad1c5bc05d87739e09df6082b">count_t</a>&#160;</td>
+          <td class="paramname"><em>new_unit_count</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+
+</div>
+</div>
+<a id="a2dcb1f62265be5660fc12e646afff035" name="a2dcb1f62265be5660fc12e646afff035"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2dcb1f62265be5660fc12e646afff035">&#9670;&nbsp;</a></span>Reallocate() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;any_type_tr unit_p&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classnkr_1_1maybe__t.html">maybe_t</a>&lt; allocator_err &gt; <a class="el" href="classnkr_1_1allocator_1_1heap__zeros__t.html">nkr::allocator::heap_zeros_t</a>&lt; unit_p &gt;::Reallocate </td>
+          <td>(</td>
+          <td class="paramtype">is_any_non_const_tr&lt; <a class="el" href="classnkr_1_1allocator_1_1heap__zeros__t.html#a40be358524f145400052e40d386f12d0">pointer_t</a> &gt; auto &amp;&#160;</td>
+          <td class="paramname"><em>units</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__intrinsics__contextuals.html#ga962bdb5ad1c5bc05d87739e09df6082b">count_t</a>&#160;</td>
+          <td class="paramname"><em>new_unit_count</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const volatile</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+
+</div>
+</div>
+<a id="ae27d65bd4390f5dc5f64f2d3df9c16d6" name="ae27d65bd4390f5dc5f64f2d3df9c16d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae27d65bd4390f5dc5f64f2d3df9c16d6">&#9670;&nbsp;</a></span>Deallocate() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;any_type_tr unit_p&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__intrinsics__primitives.html#ga034482d2e50c6d0448a7953d24860fe9">void_t</a> <a class="el" href="classnkr_1_1allocator_1_1heap__zeros__t.html">nkr::allocator::heap_zeros_t</a>&lt; unit_p &gt;::Deallocate </td>
+          <td>(</td>
+          <td class="paramtype">is_any_non_const_tr&lt; <a class="el" href="classnkr_1_1allocator_1_1heap__zeros__t.html#a3f059ce989869148ec4edf78d0e52bce">units_t</a> &gt; auto &amp;&#160;</td>
+          <td class="paramname"><em>units</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+
+</div>
+</div>
+<a id="ae493ed1abf72d04761af3a4cfd416798" name="ae493ed1abf72d04761af3a4cfd416798"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae493ed1abf72d04761af3a4cfd416798">&#9670;&nbsp;</a></span>Deallocate() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;any_type_tr unit_p&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__intrinsics__primitives.html#ga034482d2e50c6d0448a7953d24860fe9">void_t</a> <a class="el" href="classnkr_1_1allocator_1_1heap__zeros__t.html">nkr::allocator::heap_zeros_t</a>&lt; unit_p &gt;::Deallocate </td>
+          <td>(</td>
+          <td class="paramtype">is_any_non_const_tr&lt; <a class="el" href="classnkr_1_1allocator_1_1heap__zeros__t.html#a3f059ce989869148ec4edf78d0e52bce">units_t</a> &gt; auto &amp;&#160;</td>
+          <td class="paramname"><em>units</em></td><td>)</td>
+          <td> const volatile</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+
+</div>
+</div>
+<a id="a39397559afa83e04f1d42da565e2be42" name="a39397559afa83e04f1d42da565e2be42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39397559afa83e04f1d42da565e2be42">&#9670;&nbsp;</a></span>Deallocate() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;any_type_tr unit_p&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__intrinsics__primitives.html#ga034482d2e50c6d0448a7953d24860fe9">void_t</a> <a class="el" href="classnkr_1_1allocator_1_1heap__zeros__t.html">nkr::allocator::heap_zeros_t</a>&lt; unit_p &gt;::Deallocate </td>
+          <td>(</td>
+          <td class="paramtype">is_any_non_const_tr&lt; <a class="el" href="classnkr_1_1allocator_1_1heap__zeros__t.html#a40be358524f145400052e40d386f12d0">pointer_t</a> &gt; auto &amp;&#160;</td>
+          <td class="paramname"><em>units</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+
+</div>
+</div>
+<a id="a70b7d338ba39c323ff9feea6e1829c05" name="a70b7d338ba39c323ff9feea6e1829c05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70b7d338ba39c323ff9feea6e1829c05">&#9670;&nbsp;</a></span>Deallocate() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;any_type_tr unit_p&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__intrinsics__primitives.html#ga034482d2e50c6d0448a7953d24860fe9">void_t</a> <a class="el" href="classnkr_1_1allocator_1_1heap__zeros__t.html">nkr::allocator::heap_zeros_t</a>&lt; unit_p &gt;::Deallocate </td>
+          <td>(</td>
+          <td class="paramtype">is_any_non_const_tr&lt; <a class="el" href="classnkr_1_1allocator_1_1heap__zeros__t.html#a40be358524f145400052e40d386f12d0">pointer_t</a> &gt; auto &amp;&#160;</td>
+          <td class="paramname"><em>units</em></td><td>)</td>
+          <td> const volatile</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+
+</div>
+</div>
+<h2 class="groupheader">Friends And Related Function Documentation</h2>
+<a id="a4bbdbf27ec65e6a64b25ebd421ef1157" name="a4bbdbf27ec65e6a64b25ebd421ef1157"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4bbdbf27ec65e6a64b25ebd421ef1157">&#9670;&nbsp;</a></span>operator==</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;any_type_tr unit_p&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classnkr_1_1bool__t.html">bool_t</a> operator== </td>
           <td>(</td>
           <td class="paramtype">is_any_tr&lt; <a class="el" href="classnkr_1_1allocator_1_1heap__zeros__t.html">heap_zeros_t</a>&lt; unit_p &gt; &gt; auto&#160;</td>
           <td class="paramname"><em>a</em>, </td>
@@ -1203,8 +1203,8 @@ template&lt;any_type_tr unit_p&gt; </div>
 
 </div>
 </div>
-<a id="a4bbdbf27ec65e6a64b25ebd421ef1157" name="a4bbdbf27ec65e6a64b25ebd421ef1157"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4bbdbf27ec65e6a64b25ebd421ef1157">&#9670;&nbsp;</a></span>operator==</h2>
+<a id="a4ab7e63cfee850f91153a9e07041e1c8" name="a4ab7e63cfee850f91153a9e07041e1c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ab7e63cfee850f91153a9e07041e1c8">&#9670;&nbsp;</a></span>operator!=</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1215,7 +1215,7 @@ template&lt;any_type_tr unit_p&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classnkr_1_1bool__t.html">bool_t</a> operator== </td>
+          <td class="memname"><a class="el" href="classnkr_1_1bool__t.html">bool_t</a> operator!= </td>
           <td>(</td>
           <td class="paramtype">is_any_tr&lt; <a class="el" href="classnkr_1_1allocator_1_1heap__zeros__t.html">heap_zeros_t</a>&lt; unit_p &gt; &gt; auto&#160;</td>
           <td class="paramname"><em>a</em>, </td>

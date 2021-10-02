@@ -198,6 +198,108 @@ nkr::allocator_err::OUT_OF_MEMORY if it fails.</dd></dl>
 </div><!-- fragment --> 
 </div>
 </div>
+<a id="a52065c5bdf7e1f414f00b31e7e671be9" name="a52065c5bdf7e1f414f00b31e7e671be9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52065c5bdf7e1f414f00b31e7e671be9">&#9670;&nbsp;</a></span>Reallocate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classnkr_1_1maybe__t.html">maybe_t</a>&lt; allocator_err &gt; nkr::os::heap::Reallocate </td>
+          <td>(</td>
+          <td class="paramtype">type_pointer_tr auto &amp;&#160;</td>
+          <td class="paramname"><em>units</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__intrinsics__contextuals.html#ga962bdb5ad1c5bc05d87739e09df6082b">count_t</a>&#160;</td>
+          <td class="paramname"><em>new_unit_count</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gives you more memory without loosing any of the previously allocated memory. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">units</td><td>should be a pointer set by <a class="el" href="namespacenkr_1_1os_1_1heap.html#a3aa3054fcc1b5577c0bcfd8f81c8f3e4" title="Gives you memory to use until you deallocate it or your program exits.">nkr::os::heap::Allocate</a> or <a class="el" href="namespacenkr_1_1os_1_1heap.html#a52065c5bdf7e1f414f00b31e7e671be9" title="Gives you more memory without loosing any of the previously allocated memory.">nkr::os::heap::Reallocate</a>, with the exception of <code>nullptr</code>, which is also allowed. When successful, it will be set to a new pointer if necessary, or else it will be left unchanged. When given a nullptr this functions exactly like <a class="el" href="namespacenkr_1_1os_1_1heap.html#a3aa3054fcc1b5577c0bcfd8f81c8f3e4" title="Gives you memory to use until you deallocate it or your program exits.">nkr::os::heap::Allocate</a>.</td></tr>
+    <tr><td class="paramname">new_unit_count</td><td>is the total number of units (objects) that may be allocated after this function returns, that is the previous total allocated units plus however many more you require, and thus it should be the total size you want the memory to be. If new_unit_count equals zero and units is not nullptr, it acts exactly like <a class="el" href="namespacenkr_1_1os_1_1heap.html#ad27c431dc437f08ed8e3ad901ea31ba3" title="Takes back memory you no longer need so it can be reused later.">nkr::os::heap::Deallocate</a>. If new_unit_count equals zero and units is nullptr, it returns without error.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>nkr::allocator_err::NONE if it succeeds.</dd>
+<dd>
+nkr::allocator_err::OUT_OF_MEMORY if it fails. Does not alter units.</dd></dl>
+<p>This will allocate more memory for you if the new count is greater than the previously allocated count. It will shrink the amount of memory if the new count is less than the previously allocated count. See <a class="el" href="namespacenkr_1_1os_1_1heap.html#a3aa3054fcc1b5577c0bcfd8f81c8f3e4" title="Gives you memory to use until you deallocate it or your program exits.">nkr::os::heap::Allocate</a> for more details about allocation generally.</p>
+<div class="fragment"><div class="line">                    <a class="code hl_typedef" href="group__intrinsics__contextuals.html#ga6938f0fd61eac987b89d3207836a458b">word_t</a>* words = <span class="keyword">nullptr</span>;</div>
+<div class="line">                    CHECK(<a class="code hl_function" href="namespacenkr_1_1os_1_1heap.html#a3aa3054fcc1b5577c0bcfd8f81c8f3e4">os::heap::Allocate</a>(words, 0xFF) == allocator_err::NONE);</div>
+<div class="line">                    CHECK(<a class="code hl_function" href="namespacenkr_1_1os_1_1heap.html#a52065c5bdf7e1f414f00b31e7e671be9">os::heap::Reallocate</a>(words, 0x100) == allocator_err::NONE);</div>
+<div class="line">                    CHECK(words != <span class="keyword">nullptr</span>);</div>
+<div class="line"> </div>
+<div class="line">                    <a class="code hl_typedef" href="group__intrinsics__contextuals.html#ga6938f0fd61eac987b89d3207836a458b">word_t</a>* backup = words;</div>
+<div class="line">                    CHECK(<a class="code hl_function" href="namespacenkr_1_1os_1_1heap.html#a52065c5bdf7e1f414f00b31e7e671be9">os::heap::Reallocate</a>(words, std::numeric_limits&lt;count_t&gt;::max() / <span class="keyword">sizeof</span>(<a class="code hl_typedef" href="group__intrinsics__contextuals.html#ga6938f0fd61eac987b89d3207836a458b">word_t</a>)) == allocator_err::OUT_OF_MEMORY);</div>
+<div class="line">                    CHECK(words == backup);</div>
+<div class="line"> </div>
+<div class="line">                    <a class="code hl_function" href="namespacenkr_1_1os_1_1heap.html#ad27c431dc437f08ed8e3ad901ea31ba3">os::heap::Deallocate</a>(words);</div>
+<div class="ttc" id="anamespacenkr_1_1os_1_1heap_html_a52065c5bdf7e1f414f00b31e7e671be9"><div class="ttname"><a href="namespacenkr_1_1os_1_1heap.html#a52065c5bdf7e1f414f00b31e7e671be9">nkr::os::heap::Reallocate</a></div><div class="ttdeci">maybe_t&lt; allocator_err &gt; Reallocate(type_pointer_tr auto &amp;units, count_t new_unit_count)</div><div class="ttdoc">Gives you more memory without loosing any of the previously allocated memory.</div><div class="ttdef"><b>Definition:</b> os_def.h:607</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="ad27c431dc437f08ed8e3ad901ea31ba3" name="ad27c431dc437f08ed8e3ad901ea31ba3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad27c431dc437f08ed8e3ad901ea31ba3">&#9670;&nbsp;</a></span>Deallocate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__intrinsics__primitives.html#ga034482d2e50c6d0448a7953d24860fe9">void_t</a> nkr::os::heap::Deallocate </td>
+          <td>(</td>
+          <td class="paramtype">type_pointer_tr auto &amp;&#160;</td>
+          <td class="paramname"><em>units</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Takes back memory you no longer need so it can be reused later. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">units</td><td>should be a pointer set by <a class="el" href="namespacenkr_1_1os_1_1heap.html#a3aa3054fcc1b5577c0bcfd8f81c8f3e4" title="Gives you memory to use until you deallocate it or your program exits.">nkr::os::heap::Allocate</a> or <a class="el" href="namespacenkr_1_1os_1_1heap.html#a52065c5bdf7e1f414f00b31e7e671be9" title="Gives you more memory without loosing any of the previously allocated memory.">nkr::os::heap::Reallocate</a>. It will be set to <code>nullptr</code> after deallocation. If it is already <code>nullptr</code>, the function returns as if it was already successful.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>When using these functions, memory will never be deallocated automatically for you like it is in some higher level types. You will have to manually deallocate every pointer you allocate through these functions, or else you may unexpectedly run out of memory. Regardless, the operating system will deallocate everything that has not already been deallocated by you when your program exits.</p>
+<div class="fragment"><div class="line">                    <a class="code hl_typedef" href="group__intrinsics__contextuals.html#ga6938f0fd61eac987b89d3207836a458b">word_t</a>* words = <span class="keyword">nullptr</span>;</div>
+<div class="line">                    CHECK(<a class="code hl_function" href="namespacenkr_1_1os_1_1heap.html#a3aa3054fcc1b5577c0bcfd8f81c8f3e4">os::heap::Allocate</a>(words, 0xFF) == allocator_err::NONE);</div>
+<div class="line">                    <a class="code hl_function" href="namespacenkr_1_1os_1_1heap.html#ad27c431dc437f08ed8e3ad901ea31ba3">os::heap::Deallocate</a>(words);</div>
+<div class="line">                    CHECK(words == <span class="keyword">nullptr</span>);</div>
+<div class="line"> </div>
+<div class="line">                    <a class="code hl_function" href="namespacenkr_1_1os_1_1heap.html#ad27c431dc437f08ed8e3ad901ea31ba3">os::heap::Deallocate</a>(words);</div>
+<div class="line">                    CHECK(words == <span class="keyword">nullptr</span>);</div>
+</div><!-- fragment --> 
+</div>
+</div>
 <a id="ada2187354ec638c7fd588533482a938a" name="ada2187354ec638c7fd588533482a938a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ada2187354ec638c7fd588533482a938a">&#9670;&nbsp;</a></span>Allocate_Zeros()</h2>
 
@@ -264,152 +366,6 @@ nkr::allocator_err::OUT_OF_MEMORY if it fails.</dd></dl>
 </div><!-- fragment --> 
 </div>
 </div>
-<a id="ad27c431dc437f08ed8e3ad901ea31ba3" name="ad27c431dc437f08ed8e3ad901ea31ba3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad27c431dc437f08ed8e3ad901ea31ba3">&#9670;&nbsp;</a></span>Deallocate()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__intrinsics__primitives.html#ga034482d2e50c6d0448a7953d24860fe9">void_t</a> nkr::os::heap::Deallocate </td>
-          <td>(</td>
-          <td class="paramtype">type_pointer_tr auto &amp;&#160;</td>
-          <td class="paramname"><em>units</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Takes back memory you no longer need so it can be reused later. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">units</td><td>should be a pointer set by <a class="el" href="namespacenkr_1_1os_1_1heap.html#a3aa3054fcc1b5577c0bcfd8f81c8f3e4" title="Gives you memory to use until you deallocate it or your program exits.">nkr::os::heap::Allocate</a> or <a class="el" href="namespacenkr_1_1os_1_1heap.html#a52065c5bdf7e1f414f00b31e7e671be9" title="Gives you more memory without loosing any of the previously allocated memory.">nkr::os::heap::Reallocate</a>. It will be set to <code>nullptr</code> after deallocation. If it is already <code>nullptr</code>, the function returns as if it was already successful.</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>When using these functions, memory will never be deallocated automatically for you like it is in some higher level types. You will have to manually deallocate every pointer you allocate through these functions, or else you may unexpectedly run out of memory. Regardless, the operating system will deallocate everything that has not already been deallocated by you when your program exits.</p>
-<div class="fragment"><div class="line">                    <a class="code hl_typedef" href="group__intrinsics__contextuals.html#ga6938f0fd61eac987b89d3207836a458b">word_t</a>* words = <span class="keyword">nullptr</span>;</div>
-<div class="line">                    CHECK(<a class="code hl_function" href="namespacenkr_1_1os_1_1heap.html#a3aa3054fcc1b5577c0bcfd8f81c8f3e4">os::heap::Allocate</a>(words, 0xFF) == allocator_err::NONE);</div>
-<div class="line">                    <a class="code hl_function" href="namespacenkr_1_1os_1_1heap.html#ad27c431dc437f08ed8e3ad901ea31ba3">os::heap::Deallocate</a>(words);</div>
-<div class="line">                    CHECK(words == <span class="keyword">nullptr</span>);</div>
-<div class="line"> </div>
-<div class="line">                    <a class="code hl_function" href="namespacenkr_1_1os_1_1heap.html#ad27c431dc437f08ed8e3ad901ea31ba3">os::heap::Deallocate</a>(words);</div>
-<div class="line">                    CHECK(words == <span class="keyword">nullptr</span>);</div>
-</div><!-- fragment --> 
-</div>
-</div>
-<a id="a5c654510fdb03d78ee9b385e7573b0e1" name="a5c654510fdb03d78ee9b385e7573b0e1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5c654510fdb03d78ee9b385e7573b0e1">&#9670;&nbsp;</a></span>Deallocate_Zeros()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__intrinsics__primitives.html#ga034482d2e50c6d0448a7953d24860fe9">void_t</a> nkr::os::heap::Deallocate_Zeros </td>
-          <td>(</td>
-          <td class="paramtype">type_pointer_tr auto &amp;&#160;</td>
-          <td class="paramname"><em>units</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Takes back memory you no longer need so it can be reused later. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">units</td><td>should be a pointer set by <a class="el" href="namespacenkr_1_1os_1_1heap.html#ada2187354ec638c7fd588533482a938a" title="Gives you zero-initialized memory to use until your program exits.">nkr::os::heap::Allocate_Zeros</a> or <a class="el" href="namespacenkr_1_1os_1_1heap.html#ab02a1ea6a96323c3854d6174df8552b4" title="Gives you more zero-initialized memory without loosing any of the previously allocated memory.">nkr::os::heap::Reallocate_Zeros</a>. It will be set to <code>nullptr</code> after deallocation. If it is already <code>nullptr</code>, the function returns as if it was already successful.</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>Please see <a class="el" href="namespacenkr_1_1os_1_1heap.html#ad27c431dc437f08ed8e3ad901ea31ba3" title="Takes back memory you no longer need so it can be reused later.">nkr::os::heap::Deallocate</a> for more details.</p>
-<dl class="section note"><dt>Note</dt><dd>This does not zero the memory. </dd></dl>
-<dl class="section user"><dt></dt><dd></dd></dl>
-<div class="fragment"><div class="line">                    <a class="code hl_typedef" href="group__intrinsics__contextuals.html#ga6938f0fd61eac987b89d3207836a458b">word_t</a>* words = <span class="keyword">nullptr</span>;</div>
-<div class="line">                    CHECK(<a class="code hl_function" href="namespacenkr_1_1os_1_1heap.html#ada2187354ec638c7fd588533482a938a">os::heap::Allocate_Zeros</a>(words, 0xFF) == allocator_err::NONE);</div>
-<div class="line">                    <a class="code hl_function" href="namespacenkr_1_1os_1_1heap.html#a5c654510fdb03d78ee9b385e7573b0e1">os::heap::Deallocate_Zeros</a>(words);</div>
-<div class="line">                    CHECK(words == <span class="keyword">nullptr</span>);</div>
-<div class="line"> </div>
-<div class="line">                    <a class="code hl_function" href="namespacenkr_1_1os_1_1heap.html#a5c654510fdb03d78ee9b385e7573b0e1">os::heap::Deallocate_Zeros</a>(words);</div>
-<div class="line">                    CHECK(words == <span class="keyword">nullptr</span>);</div>
-</div><!-- fragment --> 
-</div>
-</div>
-<a id="a52065c5bdf7e1f414f00b31e7e671be9" name="a52065c5bdf7e1f414f00b31e7e671be9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a52065c5bdf7e1f414f00b31e7e671be9">&#9670;&nbsp;</a></span>Reallocate()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classnkr_1_1maybe__t.html">maybe_t</a>&lt; allocator_err &gt; nkr::os::heap::Reallocate </td>
-          <td>(</td>
-          <td class="paramtype">type_pointer_tr auto &amp;&#160;</td>
-          <td class="paramname"><em>units</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="group__intrinsics__contextuals.html#ga962bdb5ad1c5bc05d87739e09df6082b">count_t</a>&#160;</td>
-          <td class="paramname"><em>new_unit_count</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Gives you more memory without loosing any of the previously allocated memory. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">units</td><td>should be a pointer set by <a class="el" href="namespacenkr_1_1os_1_1heap.html#a3aa3054fcc1b5577c0bcfd8f81c8f3e4" title="Gives you memory to use until you deallocate it or your program exits.">nkr::os::heap::Allocate</a> or <a class="el" href="namespacenkr_1_1os_1_1heap.html#a52065c5bdf7e1f414f00b31e7e671be9" title="Gives you more memory without loosing any of the previously allocated memory.">nkr::os::heap::Reallocate</a>, with the exception of <code>nullptr</code>, which is also allowed. When successful, it will be set to a new pointer if necessary, or else it will be left unchanged. When given a nullptr this functions exactly like <a class="el" href="namespacenkr_1_1os_1_1heap.html#a3aa3054fcc1b5577c0bcfd8f81c8f3e4" title="Gives you memory to use until you deallocate it or your program exits.">nkr::os::heap::Allocate</a>.</td></tr>
-    <tr><td class="paramname">new_unit_count</td><td>is the total number of units (objects) that may be allocated after this function returns, that is the previous total allocated units plus however many more you require, and thus it should be the total size you want the memory to be. If new_unit_count equals zero and units is not nullptr, it acts exactly like <a class="el" href="namespacenkr_1_1os_1_1heap.html#ad27c431dc437f08ed8e3ad901ea31ba3" title="Takes back memory you no longer need so it can be reused later.">nkr::os::heap::Deallocate</a>. If new_unit_count equals zero and units is nullptr, it returns without error.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>nkr::allocator_err::NONE if it succeeds.</dd>
-<dd>
-nkr::allocator_err::OUT_OF_MEMORY if it fails. Does not alter units.</dd></dl>
-<p>This will allocate more memory for you if the new count is greater than the previously allocated count. It will shrink the amount of memory if the new count is less than the previously allocated count. See <a class="el" href="namespacenkr_1_1os_1_1heap.html#a3aa3054fcc1b5577c0bcfd8f81c8f3e4" title="Gives you memory to use until you deallocate it or your program exits.">nkr::os::heap::Allocate</a> for more details about allocation generally.</p>
-<div class="fragment"><div class="line">                    <a class="code hl_typedef" href="group__intrinsics__contextuals.html#ga6938f0fd61eac987b89d3207836a458b">word_t</a>* words = <span class="keyword">nullptr</span>;</div>
-<div class="line">                    CHECK(<a class="code hl_function" href="namespacenkr_1_1os_1_1heap.html#a3aa3054fcc1b5577c0bcfd8f81c8f3e4">os::heap::Allocate</a>(words, 0xFF) == allocator_err::NONE);</div>
-<div class="line">                    CHECK(<a class="code hl_function" href="namespacenkr_1_1os_1_1heap.html#a52065c5bdf7e1f414f00b31e7e671be9">os::heap::Reallocate</a>(words, 0x100) == allocator_err::NONE);</div>
-<div class="line">                    CHECK(words != <span class="keyword">nullptr</span>);</div>
-<div class="line"> </div>
-<div class="line">                    <a class="code hl_typedef" href="group__intrinsics__contextuals.html#ga6938f0fd61eac987b89d3207836a458b">word_t</a>* backup = words;</div>
-<div class="line">                    CHECK(<a class="code hl_function" href="namespacenkr_1_1os_1_1heap.html#a52065c5bdf7e1f414f00b31e7e671be9">os::heap::Reallocate</a>(words, std::numeric_limits&lt;count_t&gt;::max() / <span class="keyword">sizeof</span>(<a class="code hl_typedef" href="group__intrinsics__contextuals.html#ga6938f0fd61eac987b89d3207836a458b">word_t</a>)) == allocator_err::OUT_OF_MEMORY);</div>
-<div class="line">                    CHECK(words == backup);</div>
-<div class="line"> </div>
-<div class="line">                    <a class="code hl_function" href="namespacenkr_1_1os_1_1heap.html#ad27c431dc437f08ed8e3ad901ea31ba3">os::heap::Deallocate</a>(words);</div>
-<div class="ttc" id="anamespacenkr_1_1os_1_1heap_html_a52065c5bdf7e1f414f00b31e7e671be9"><div class="ttname"><a href="namespacenkr_1_1os_1_1heap.html#a52065c5bdf7e1f414f00b31e7e671be9">nkr::os::heap::Reallocate</a></div><div class="ttdeci">maybe_t&lt; allocator_err &gt; Reallocate(type_pointer_tr auto &amp;units, count_t new_unit_count)</div><div class="ttdoc">Gives you more memory without loosing any of the previously allocated memory.</div><div class="ttdef"><b>Definition:</b> os_def.h:607</div></div>
-</div><!-- fragment --> 
-</div>
-</div>
 <a id="ab02a1ea6a96323c3854d6174df8552b4" name="ab02a1ea6a96323c3854d6174df8552b4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab02a1ea6a96323c3854d6174df8552b4">&#9670;&nbsp;</a></span>Reallocate_Zeros()</h2>
 
@@ -470,6 +426,50 @@ nkr::allocator_err::OUT_OF_MEMORY if it fails. Does not alter units.</dd></dl>
 <div class="line"> </div>
 <div class="line">                    <a class="code hl_function" href="namespacenkr_1_1os_1_1heap.html#a5c654510fdb03d78ee9b385e7573b0e1">os::heap::Deallocate_Zeros</a>(words);</div>
 <div class="ttc" id="anamespacenkr_1_1os_1_1heap_html_ab02a1ea6a96323c3854d6174df8552b4"><div class="ttname"><a href="namespacenkr_1_1os_1_1heap.html#ab02a1ea6a96323c3854d6174df8552b4">nkr::os::heap::Reallocate_Zeros</a></div><div class="ttdeci">maybe_t&lt; allocator_err &gt; Reallocate_Zeros(type_pointer_tr auto &amp;units, count_t new_unit_count)</div><div class="ttdoc">Gives you more zero-initialized memory without loosing any of the previously allocated memory.</div><div class="ttdef"><b>Definition:</b> os_def.h:669</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="a5c654510fdb03d78ee9b385e7573b0e1" name="a5c654510fdb03d78ee9b385e7573b0e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c654510fdb03d78ee9b385e7573b0e1">&#9670;&nbsp;</a></span>Deallocate_Zeros()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__intrinsics__primitives.html#ga034482d2e50c6d0448a7953d24860fe9">void_t</a> nkr::os::heap::Deallocate_Zeros </td>
+          <td>(</td>
+          <td class="paramtype">type_pointer_tr auto &amp;&#160;</td>
+          <td class="paramname"><em>units</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Takes back memory you no longer need so it can be reused later. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">units</td><td>should be a pointer set by <a class="el" href="namespacenkr_1_1os_1_1heap.html#ada2187354ec638c7fd588533482a938a" title="Gives you zero-initialized memory to use until your program exits.">nkr::os::heap::Allocate_Zeros</a> or <a class="el" href="namespacenkr_1_1os_1_1heap.html#ab02a1ea6a96323c3854d6174df8552b4" title="Gives you more zero-initialized memory without loosing any of the previously allocated memory.">nkr::os::heap::Reallocate_Zeros</a>. It will be set to <code>nullptr</code> after deallocation. If it is already <code>nullptr</code>, the function returns as if it was already successful.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Please see <a class="el" href="namespacenkr_1_1os_1_1heap.html#ad27c431dc437f08ed8e3ad901ea31ba3" title="Takes back memory you no longer need so it can be reused later.">nkr::os::heap::Deallocate</a> for more details.</p>
+<dl class="section note"><dt>Note</dt><dd>This does not zero the memory. </dd></dl>
+<dl class="section user"><dt></dt><dd></dd></dl>
+<div class="fragment"><div class="line">                    <a class="code hl_typedef" href="group__intrinsics__contextuals.html#ga6938f0fd61eac987b89d3207836a458b">word_t</a>* words = <span class="keyword">nullptr</span>;</div>
+<div class="line">                    CHECK(<a class="code hl_function" href="namespacenkr_1_1os_1_1heap.html#ada2187354ec638c7fd588533482a938a">os::heap::Allocate_Zeros</a>(words, 0xFF) == allocator_err::NONE);</div>
+<div class="line">                    <a class="code hl_function" href="namespacenkr_1_1os_1_1heap.html#a5c654510fdb03d78ee9b385e7573b0e1">os::heap::Deallocate_Zeros</a>(words);</div>
+<div class="line">                    CHECK(words == <span class="keyword">nullptr</span>);</div>
+<div class="line"> </div>
+<div class="line">                    <a class="code hl_function" href="namespacenkr_1_1os_1_1heap.html#a5c654510fdb03d78ee9b385e7573b0e1">os::heap::Deallocate_Zeros</a>(words);</div>
+<div class="line">                    CHECK(words == <span class="keyword">nullptr</span>);</div>
 </div><!-- fragment --> 
 </div>
 </div>
