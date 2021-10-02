@@ -92,7 +92,7 @@ var searchBox = new SearchBox("searchBox", "search",'Search','.html');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="namespacenkr.html">nkr</a></li><li class="navelem"><b>allocator</b></li><li class="navelem"><a class="el" href="classnkr_1_1allocator_1_1heap__t.html">heap_t</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespacenkr.html">nkr</a></li><li class="navelem"><a class="el" href="namespacenkr_1_1allocator.html">allocator</a></li><li class="navelem"><a class="el" href="classnkr_1_1allocator_1_1heap__t.html">heap_t</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -102,7 +102,7 @@ var searchBox = new SearchBox("searchBox", "search",'Search','.html');
 </div><!--header-->
 <div class="contents">
 
-<p>A wrapper for the <a class="el" href="namespacenkr_1_1os_1_1heap.html" title="Functions that interface with memory located on the heap. Primarily, this is an extension of the stan...">nkr::os::heap</a> allocator, often used by other types around the library as the default allocator.  
+<p>A wrapper for the <a class="el" href="namespacenkr_1_1os_1_1heap.html" title="Functions that interface with memory located on the heap. Primarily, this is an extension of the stan...">nkr::os::heap</a> allocator, often used by other types around the library as their default allocator.  
  <a href="classnkr_1_1allocator_1_1heap__t.html#details">More...</a></p>
 
 <p><code>#include &quot;heap_t_dec.h&quot;</code></p>
@@ -117,7 +117,7 @@ var searchBox = new SearchBox("searchBox", "search",'Search','.html');
 <tr class="memdesc:aaf8d87d62b8d22b78e06211a5db68178"><td class="mdescLeft">&#160;</td><td class="mdescRight">The standard C pointer of unit_t which works with this allocator.  <a href="classnkr_1_1allocator_1_1heap__t.html#aaf8d87d62b8d22b78e06211a5db68178">More...</a><br /></td></tr>
 <tr class="separator:aaf8d87d62b8d22b78e06211a5db68178"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ed2dcc75aaf1f828b639e74b684bece"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnkr_1_1allocator_1_1heap__t.html#a3ed2dcc75aaf1f828b639e74b684bece">pointer_t</a> = <a class="el" href="classnkr_1_1allocator_1_1heap__t.html#a3ed2dcc75aaf1f828b639e74b684bece">pointer_t</a>&lt; unit_p &gt;</td></tr>
-<tr class="memdesc:a3ed2dcc75aaf1f828b639e74b684bece"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer and the number of units that the pointer points to.">pointer_t</a> which works with this allocator.  <a href="classnkr_1_1allocator_1_1heap__t.html#a3ed2dcc75aaf1f828b639e74b684bece">More...</a><br /></td></tr>
+<tr class="memdesc:a3ed2dcc75aaf1f828b639e74b684bece"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer to any unit_t and a unit count indicating the size of memory bein...">pointer_t</a> which works with this allocator.  <a href="classnkr_1_1allocator_1_1heap__t.html#a3ed2dcc75aaf1f828b639e74b684bece">More...</a><br /></td></tr>
 <tr class="separator:a3ed2dcc75aaf1f828b639e74b684bece"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">static functions</h2></td></tr>
@@ -141,7 +141,7 @@ var searchBox = new SearchBox("searchBox", "search",'Search','.html');
 <tr class="separator:affe9d3d9505148cd1ae4daefddf84c8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">objects</h2></td></tr>
-<tr><td class="ititle" colspan="2"><p ><a class="anchor" id="amgrp5891da2d64975cae48d175d1e001f5da"></a>Because this is a static allocator and it doesn't need its own memory footprint, all of these are simply here to fulfill the nkr::allocator_i and do not do anything.</p>
+<tr><td class="ititle" colspan="2"><p ><a class="anchor" id="amgrp5891da2d64975cae48d175d1e001f5da"></a>Because this is a static allocator and it doesn't need its own memory footprint, all of these are simply here to fulfill the <a class="el" href="conceptnkr_1_1allocator__i.html" title="Defines common functionality that must exist on an allocator implementation for use in nkr.">nkr::allocator_i</a> and do not do anything.</p>
 </td></tr>
 <tr class="memitem:a931f6bd0663a5452688b15081e65edff"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnkr_1_1allocator_1_1heap__t.html#a931f6bd0663a5452688b15081e65edff">heap_t</a> ()=default</td></tr>
 <tr class="separator:a931f6bd0663a5452688b15081e65edff"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -182,10 +182,10 @@ var searchBox = new SearchBox("searchBox", "search",'Search','.html');
 <tr class="memdesc:a2778f2bee6d0959f87149e96e6806f59"><td class="mdescLeft">&#160;</td><td class="mdescRight">A wrapper for <a class="el" href="namespacenkr_1_1os_1_1heap.html#a3aa3054fcc1b5577c0bcfd8f81c8f3e4" title="Gives you memory to use until you deallocate it or your program exits.">nkr::os::heap::Allocate</a>.  <a href="classnkr_1_1allocator_1_1heap__t.html#a2778f2bee6d0959f87149e96e6806f59">More...</a><br /></td></tr>
 <tr class="separator:a2778f2bee6d0959f87149e96e6806f59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a60d663a87ea939c03b67adaa998b9d5d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classnkr_1_1maybe__t.html">maybe_t</a>&lt; allocator_err &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnkr_1_1allocator_1_1heap__t.html#a60d663a87ea939c03b67adaa998b9d5d">Allocate</a> (is_any_non_const_tr&lt; <a class="el" href="classnkr_1_1allocator_1_1heap__t.html#a3ed2dcc75aaf1f828b639e74b684bece">pointer_t</a> &gt; auto &amp;units, <a class="el" href="group__intrinsics__contextuals.html#ga962bdb5ad1c5bc05d87739e09df6082b">count_t</a> unit_count) const</td></tr>
-<tr class="memdesc:a60d663a87ea939c03b67adaa998b9d5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">A wrapper for <a class="el" href="namespacenkr_1_1os_1_1heap.html#a3aa3054fcc1b5577c0bcfd8f81c8f3e4" title="Gives you memory to use until you deallocate it or your program exits.">nkr::os::heap::Allocate</a>, but it can handle a <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer and the number of units that the pointer points to.">nkr::pointer_t</a>.  <a href="classnkr_1_1allocator_1_1heap__t.html#a60d663a87ea939c03b67adaa998b9d5d">More...</a><br /></td></tr>
+<tr class="memdesc:a60d663a87ea939c03b67adaa998b9d5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">A wrapper for <a class="el" href="namespacenkr_1_1os_1_1heap.html#a3aa3054fcc1b5577c0bcfd8f81c8f3e4" title="Gives you memory to use until you deallocate it or your program exits.">nkr::os::heap::Allocate</a>, but it can handle a <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer to any unit_t and a unit count indicating the size of memory bein...">nkr::pointer_t</a>.  <a href="classnkr_1_1allocator_1_1heap__t.html#a60d663a87ea939c03b67adaa998b9d5d">More...</a><br /></td></tr>
 <tr class="separator:a60d663a87ea939c03b67adaa998b9d5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a48d6c43f2755c218091b7f0aa60f3f1f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classnkr_1_1maybe__t.html">maybe_t</a>&lt; allocator_err &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnkr_1_1allocator_1_1heap__t.html#a48d6c43f2755c218091b7f0aa60f3f1f">Allocate</a> (is_any_non_const_tr&lt; <a class="el" href="classnkr_1_1allocator_1_1heap__t.html#a3ed2dcc75aaf1f828b639e74b684bece">pointer_t</a> &gt; auto &amp;units, <a class="el" href="group__intrinsics__contextuals.html#ga962bdb5ad1c5bc05d87739e09df6082b">count_t</a> unit_count) const volatile</td></tr>
-<tr class="memdesc:a48d6c43f2755c218091b7f0aa60f3f1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">A wrapper for <a class="el" href="namespacenkr_1_1os_1_1heap.html#a3aa3054fcc1b5577c0bcfd8f81c8f3e4" title="Gives you memory to use until you deallocate it or your program exits.">nkr::os::heap::Allocate</a>, but it can handle a <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer and the number of units that the pointer points to.">nkr::pointer_t</a>.  <a href="classnkr_1_1allocator_1_1heap__t.html#a48d6c43f2755c218091b7f0aa60f3f1f">More...</a><br /></td></tr>
+<tr class="memdesc:a48d6c43f2755c218091b7f0aa60f3f1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">A wrapper for <a class="el" href="namespacenkr_1_1os_1_1heap.html#a3aa3054fcc1b5577c0bcfd8f81c8f3e4" title="Gives you memory to use until you deallocate it or your program exits.">nkr::os::heap::Allocate</a>, but it can handle a <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer to any unit_t and a unit count indicating the size of memory bein...">nkr::pointer_t</a>.  <a href="classnkr_1_1allocator_1_1heap__t.html#a48d6c43f2755c218091b7f0aa60f3f1f">More...</a><br /></td></tr>
 <tr class="separator:a48d6c43f2755c218091b7f0aa60f3f1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8c77fe6d4d5c50f18540e44fe88dd064"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classnkr_1_1maybe__t.html">maybe_t</a>&lt; allocator_err &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnkr_1_1allocator_1_1heap__t.html#a8c77fe6d4d5c50f18540e44fe88dd064">Reallocate</a> (is_any_non_const_tr&lt; <a class="el" href="classnkr_1_1allocator_1_1heap__t.html#aaf8d87d62b8d22b78e06211a5db68178">units_t</a> &gt; auto &amp;units, <a class="el" href="group__intrinsics__contextuals.html#ga962bdb5ad1c5bc05d87739e09df6082b">count_t</a> new_unit_count) const</td></tr>
 <tr class="memdesc:a8c77fe6d4d5c50f18540e44fe88dd064"><td class="mdescLeft">&#160;</td><td class="mdescRight">A wrapper for <a class="el" href="namespacenkr_1_1os_1_1heap.html#a52065c5bdf7e1f414f00b31e7e671be9" title="Gives you more memory without loosing any of the previously allocated memory.">nkr::os::heap::Reallocate</a>.  <a href="classnkr_1_1allocator_1_1heap__t.html#a8c77fe6d4d5c50f18540e44fe88dd064">More...</a><br /></td></tr>
@@ -194,10 +194,10 @@ var searchBox = new SearchBox("searchBox", "search",'Search','.html');
 <tr class="memdesc:aaa580a5b9af98bdb7d75b310e9b727e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">A wrapper for <a class="el" href="namespacenkr_1_1os_1_1heap.html#a52065c5bdf7e1f414f00b31e7e671be9" title="Gives you more memory without loosing any of the previously allocated memory.">nkr::os::heap::Reallocate</a>.  <a href="classnkr_1_1allocator_1_1heap__t.html#aaa580a5b9af98bdb7d75b310e9b727e5">More...</a><br /></td></tr>
 <tr class="separator:aaa580a5b9af98bdb7d75b310e9b727e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a268a87a0e195d6fef52c0257b76e1aa9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classnkr_1_1maybe__t.html">maybe_t</a>&lt; allocator_err &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnkr_1_1allocator_1_1heap__t.html#a268a87a0e195d6fef52c0257b76e1aa9">Reallocate</a> (is_any_non_const_tr&lt; <a class="el" href="classnkr_1_1allocator_1_1heap__t.html#a3ed2dcc75aaf1f828b639e74b684bece">pointer_t</a> &gt; auto &amp;units, <a class="el" href="group__intrinsics__contextuals.html#ga962bdb5ad1c5bc05d87739e09df6082b">count_t</a> new_unit_count) const</td></tr>
-<tr class="memdesc:a268a87a0e195d6fef52c0257b76e1aa9"><td class="mdescLeft">&#160;</td><td class="mdescRight">A wrapper for <a class="el" href="namespacenkr_1_1os_1_1heap.html#a52065c5bdf7e1f414f00b31e7e671be9" title="Gives you more memory without loosing any of the previously allocated memory.">nkr::os::heap::Reallocate</a>, but it can handle a <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer and the number of units that the pointer points to.">nkr::pointer_t</a>.  <a href="classnkr_1_1allocator_1_1heap__t.html#a268a87a0e195d6fef52c0257b76e1aa9">More...</a><br /></td></tr>
+<tr class="memdesc:a268a87a0e195d6fef52c0257b76e1aa9"><td class="mdescLeft">&#160;</td><td class="mdescRight">A wrapper for <a class="el" href="namespacenkr_1_1os_1_1heap.html#a52065c5bdf7e1f414f00b31e7e671be9" title="Gives you more memory without loosing any of the previously allocated memory.">nkr::os::heap::Reallocate</a>, but it can handle a <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer to any unit_t and a unit count indicating the size of memory bein...">nkr::pointer_t</a>.  <a href="classnkr_1_1allocator_1_1heap__t.html#a268a87a0e195d6fef52c0257b76e1aa9">More...</a><br /></td></tr>
 <tr class="separator:a268a87a0e195d6fef52c0257b76e1aa9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4db378e8ef1139336c613782c6726193"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classnkr_1_1maybe__t.html">maybe_t</a>&lt; allocator_err &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnkr_1_1allocator_1_1heap__t.html#a4db378e8ef1139336c613782c6726193">Reallocate</a> (is_any_non_const_tr&lt; <a class="el" href="classnkr_1_1allocator_1_1heap__t.html#a3ed2dcc75aaf1f828b639e74b684bece">pointer_t</a> &gt; auto &amp;units, <a class="el" href="group__intrinsics__contextuals.html#ga962bdb5ad1c5bc05d87739e09df6082b">count_t</a> new_unit_count) const volatile</td></tr>
-<tr class="memdesc:a4db378e8ef1139336c613782c6726193"><td class="mdescLeft">&#160;</td><td class="mdescRight">A wrapper for <a class="el" href="namespacenkr_1_1os_1_1heap.html#a52065c5bdf7e1f414f00b31e7e671be9" title="Gives you more memory without loosing any of the previously allocated memory.">nkr::os::heap::Reallocate</a>, but t can handle a <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer and the number of units that the pointer points to.">nkr::pointer_t</a>.  <a href="classnkr_1_1allocator_1_1heap__t.html#a4db378e8ef1139336c613782c6726193">More...</a><br /></td></tr>
+<tr class="memdesc:a4db378e8ef1139336c613782c6726193"><td class="mdescLeft">&#160;</td><td class="mdescRight">A wrapper for <a class="el" href="namespacenkr_1_1os_1_1heap.html#a52065c5bdf7e1f414f00b31e7e671be9" title="Gives you more memory without loosing any of the previously allocated memory.">nkr::os::heap::Reallocate</a>, but it can handle a <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer to any unit_t and a unit count indicating the size of memory bein...">nkr::pointer_t</a>.  <a href="classnkr_1_1allocator_1_1heap__t.html#a4db378e8ef1139336c613782c6726193">More...</a><br /></td></tr>
 <tr class="separator:a4db378e8ef1139336c613782c6726193"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a34766fe49b9b672b74d92dadc0dc36f0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__intrinsics__primitives.html#ga034482d2e50c6d0448a7953d24860fe9">void_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnkr_1_1allocator_1_1heap__t.html#a34766fe49b9b672b74d92dadc0dc36f0">Deallocate</a> (is_any_non_const_tr&lt; <a class="el" href="classnkr_1_1allocator_1_1heap__t.html#aaf8d87d62b8d22b78e06211a5db68178">units_t</a> &gt; auto &amp;units) const</td></tr>
 <tr class="memdesc:a34766fe49b9b672b74d92dadc0dc36f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">A wrapper for <a class="el" href="namespacenkr_1_1os_1_1heap.html#ad27c431dc437f08ed8e3ad901ea31ba3" title="Takes back memory you no longer need so it can be reused later.">nkr::os::heap::Deallocate</a>.  <a href="classnkr_1_1allocator_1_1heap__t.html#a34766fe49b9b672b74d92dadc0dc36f0">More...</a><br /></td></tr>
@@ -206,16 +206,16 @@ var searchBox = new SearchBox("searchBox", "search",'Search','.html');
 <tr class="memdesc:ad62b9b7704286d2d5a2c7959c8a1f864"><td class="mdescLeft">&#160;</td><td class="mdescRight">A wrapper for <a class="el" href="namespacenkr_1_1os_1_1heap.html#ad27c431dc437f08ed8e3ad901ea31ba3" title="Takes back memory you no longer need so it can be reused later.">nkr::os::heap::Deallocate</a>.  <a href="classnkr_1_1allocator_1_1heap__t.html#ad62b9b7704286d2d5a2c7959c8a1f864">More...</a><br /></td></tr>
 <tr class="separator:ad62b9b7704286d2d5a2c7959c8a1f864"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adbf0a01454d652fe3e82363bf344bd0d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__intrinsics__primitives.html#ga034482d2e50c6d0448a7953d24860fe9">void_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnkr_1_1allocator_1_1heap__t.html#adbf0a01454d652fe3e82363bf344bd0d">Deallocate</a> (is_any_non_const_tr&lt; <a class="el" href="classnkr_1_1allocator_1_1heap__t.html#a3ed2dcc75aaf1f828b639e74b684bece">pointer_t</a> &gt; auto &amp;units) const</td></tr>
-<tr class="memdesc:adbf0a01454d652fe3e82363bf344bd0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">A wrapper for <a class="el" href="namespacenkr_1_1os_1_1heap.html#ad27c431dc437f08ed8e3ad901ea31ba3" title="Takes back memory you no longer need so it can be reused later.">nkr::os::heap::Deallocate</a>, but it can handle a <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer and the number of units that the pointer points to.">nkr::pointer_t</a>.  <a href="classnkr_1_1allocator_1_1heap__t.html#adbf0a01454d652fe3e82363bf344bd0d">More...</a><br /></td></tr>
+<tr class="memdesc:adbf0a01454d652fe3e82363bf344bd0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">A wrapper for <a class="el" href="namespacenkr_1_1os_1_1heap.html#ad27c431dc437f08ed8e3ad901ea31ba3" title="Takes back memory you no longer need so it can be reused later.">nkr::os::heap::Deallocate</a>, but it can handle a <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer to any unit_t and a unit count indicating the size of memory bein...">nkr::pointer_t</a>.  <a href="classnkr_1_1allocator_1_1heap__t.html#adbf0a01454d652fe3e82363bf344bd0d">More...</a><br /></td></tr>
 <tr class="separator:adbf0a01454d652fe3e82363bf344bd0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a750bafa3d38653b02e0a7e4b6f29915a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__intrinsics__primitives.html#ga034482d2e50c6d0448a7953d24860fe9">void_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnkr_1_1allocator_1_1heap__t.html#a750bafa3d38653b02e0a7e4b6f29915a">Deallocate</a> (is_any_non_const_tr&lt; <a class="el" href="classnkr_1_1allocator_1_1heap__t.html#a3ed2dcc75aaf1f828b639e74b684bece">pointer_t</a> &gt; auto &amp;units) const volatile</td></tr>
-<tr class="memdesc:a750bafa3d38653b02e0a7e4b6f29915a"><td class="mdescLeft">&#160;</td><td class="mdescRight">A wrapper for <a class="el" href="namespacenkr_1_1os_1_1heap.html#ad27c431dc437f08ed8e3ad901ea31ba3" title="Takes back memory you no longer need so it can be reused later.">nkr::os::heap::Deallocate</a>, but it can handle a <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer and the number of units that the pointer points to.">nkr::pointer_t</a>.  <a href="classnkr_1_1allocator_1_1heap__t.html#a750bafa3d38653b02e0a7e4b6f29915a">More...</a><br /></td></tr>
+<tr class="memdesc:a750bafa3d38653b02e0a7e4b6f29915a"><td class="mdescLeft">&#160;</td><td class="mdescRight">A wrapper for <a class="el" href="namespacenkr_1_1os_1_1heap.html#ad27c431dc437f08ed8e3ad901ea31ba3" title="Takes back memory you no longer need so it can be reused later.">nkr::os::heap::Deallocate</a>, but it can handle a <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer to any unit_t and a unit count indicating the size of memory bein...">nkr::pointer_t</a>.  <a href="classnkr_1_1allocator_1_1heap__t.html#a750bafa3d38653b02e0a7e4b6f29915a">More...</a><br /></td></tr>
 <tr class="separator:a750bafa3d38653b02e0a7e4b6f29915a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;any_type_tr unit_p&gt;<br />
-class nkr::allocator::heap_t&lt; unit_p &gt;</div><p >A wrapper for the <a class="el" href="namespacenkr_1_1os_1_1heap.html" title="Functions that interface with memory located on the heap. Primarily, this is an extension of the stan...">nkr::os::heap</a> allocator, often used by other types around the library as the default allocator. </p>
-<p >In addition to working directly with C pointers, in order to satisfy the nkr::allocator_i this also handles <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer and the number of units that the pointer points to.">nkr::pointer_t</a> objects, correctly setting their unit counts after operating upon them. The primary purpose of this type and others like it is to provide an interchangable set of allocators with which to use with other types around the library, for example nkr::array::dynamic_t. </p>
+class nkr::allocator::heap_t&lt; unit_p &gt;</div><p >A wrapper for the <a class="el" href="namespacenkr_1_1os_1_1heap.html" title="Functions that interface with memory located on the heap. Primarily, this is an extension of the stan...">nkr::os::heap</a> allocator, often used by other types around the library as their default allocator. </p>
+<p >In addition to working directly with C pointers, in order to satisfy the <a class="el" href="conceptnkr_1_1allocator__i.html" title="Defines common functionality that must exist on an allocator implementation for use in nkr.">nkr::allocator_i</a> this also handles <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer to any unit_t and a unit count indicating the size of memory bein...">nkr::pointer_t</a> objects, correctly setting their unit counts after operating upon them. The primary purpose of this type and others like it is to provide an interchangable set of allocators with which to use with other types around the library, for example nkr::array::dynamic_t. </p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a5c30b02946b76ad8f35b800510ca8358" name="a5c30b02946b76ad8f35b800510ca8358"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5c30b02946b76ad8f35b800510ca8358">&#9670;&nbsp;</a></span>unit_t</h2>
@@ -267,7 +267,7 @@ template&lt;any_type_tr unit_p&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>The <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer and the number of units that the pointer points to.">pointer_t</a> which works with this allocator. </p>
+<p>The <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer to any unit_t and a unit count indicating the size of memory bein...">pointer_t</a> which works with this allocator. </p>
 
 </div>
 </div>
@@ -884,10 +884,10 @@ template&lt;any_type_tr unit_p&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>A wrapper for <a class="el" href="namespacenkr_1_1os_1_1heap.html#a3aa3054fcc1b5577c0bcfd8f81c8f3e4" title="Gives you memory to use until you deallocate it or your program exits.">nkr::os::heap::Allocate</a>, but it can handle a <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer and the number of units that the pointer points to.">nkr::pointer_t</a>. </p>
+<p>A wrapper for <a class="el" href="namespacenkr_1_1os_1_1heap.html#a3aa3054fcc1b5577c0bcfd8f81c8f3e4" title="Gives you memory to use until you deallocate it or your program exits.">nkr::os::heap::Allocate</a>, but it can handle a <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer to any unit_t and a unit count indicating the size of memory bein...">nkr::pointer_t</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">units</td><td>should be a non const <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer and the number of units that the pointer points to.">nkr::pointer_t</a> that this function can write a new address and unit count to. The qualification of the unit_t itself does not matter. Must be equal to <a class="el" href="classnkr_1_1none__t.html" title="A tag used to assign &#39;nothing&#39; to a user-defined type, or to compare it with &#39;nothing&#39;.">none_t</a> or it will assert. See <a class="el" href="namespacenkr_1_1os_1_1heap.html#a3aa3054fcc1b5577c0bcfd8f81c8f3e4" title="Gives you memory to use until you deallocate it or your program exits.">nkr::os::heap::Allocate</a> for more information.</td></tr>
+    <tr><td class="paramname">units</td><td>should be a non const <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer to any unit_t and a unit count indicating the size of memory bein...">nkr::pointer_t</a> that this function can write a new address and unit count to. The qualification of the unit_t itself does not matter. Must be equal to <a class="el" href="classnkr_1_1none__t.html" title="A tag used to assign &#39;nothing&#39; to a user-defined type, or to compare it with &#39;nothing&#39;.">none_t</a> or it will assert. See <a class="el" href="namespacenkr_1_1os_1_1heap.html#a3aa3054fcc1b5577c0bcfd8f81c8f3e4" title="Gives you memory to use until you deallocate it or your program exits.">nkr::os::heap::Allocate</a> for more information.</td></tr>
     <tr><td class="paramname">unit_count</td><td>is the number of unit_t objects for which to allocate space. If this number is more than <a class="el" href="classnkr_1_1allocator_1_1heap__t.html#a0c77d45a11cb4487b21a96d2aa4b6629" title="This is the maximum number of objects which space can be allocated for.">nkr::allocator::heap_t::Max_Unit_Count</a>, it will assert. See <a class="el" href="namespacenkr_1_1os_1_1heap.html#a3aa3054fcc1b5577c0bcfd8f81c8f3e4" title="Gives you memory to use until you deallocate it or your program exits.">nkr::os::heap::Allocate</a> for more information.</td></tr>
   </table>
   </dd>
@@ -934,10 +934,10 @@ template&lt;any_type_tr unit_p&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>A wrapper for <a class="el" href="namespacenkr_1_1os_1_1heap.html#a3aa3054fcc1b5577c0bcfd8f81c8f3e4" title="Gives you memory to use until you deallocate it or your program exits.">nkr::os::heap::Allocate</a>, but it can handle a <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer and the number of units that the pointer points to.">nkr::pointer_t</a>. </p>
+<p>A wrapper for <a class="el" href="namespacenkr_1_1os_1_1heap.html#a3aa3054fcc1b5577c0bcfd8f81c8f3e4" title="Gives you memory to use until you deallocate it or your program exits.">nkr::os::heap::Allocate</a>, but it can handle a <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer to any unit_t and a unit count indicating the size of memory bein...">nkr::pointer_t</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">units</td><td>should be a non const <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer and the number of units that the pointer points to.">nkr::pointer_t</a> that this function can write a new address and unit count to. The qualification of the unit_t itself does not matter. Must be equal to <a class="el" href="classnkr_1_1none__t.html" title="A tag used to assign &#39;nothing&#39; to a user-defined type, or to compare it with &#39;nothing&#39;.">none_t</a> or it will assert. See <a class="el" href="namespacenkr_1_1os_1_1heap.html#a3aa3054fcc1b5577c0bcfd8f81c8f3e4" title="Gives you memory to use until you deallocate it or your program exits.">nkr::os::heap::Allocate</a> for more information.</td></tr>
+    <tr><td class="paramname">units</td><td>should be a non const <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer to any unit_t and a unit count indicating the size of memory bein...">nkr::pointer_t</a> that this function can write a new address and unit count to. The qualification of the unit_t itself does not matter. Must be equal to <a class="el" href="classnkr_1_1none__t.html" title="A tag used to assign &#39;nothing&#39; to a user-defined type, or to compare it with &#39;nothing&#39;.">none_t</a> or it will assert. See <a class="el" href="namespacenkr_1_1os_1_1heap.html#a3aa3054fcc1b5577c0bcfd8f81c8f3e4" title="Gives you memory to use until you deallocate it or your program exits.">nkr::os::heap::Allocate</a> for more information.</td></tr>
     <tr><td class="paramname">unit_count</td><td>is the number of unit_t objects for which to allocate space. If this number is more than <a class="el" href="classnkr_1_1allocator_1_1heap__t.html#a0c77d45a11cb4487b21a96d2aa4b6629" title="This is the maximum number of objects which space can be allocated for.">nkr::allocator::heap_t::Max_Unit_Count</a>, it will assert. See <a class="el" href="namespacenkr_1_1os_1_1heap.html#a3aa3054fcc1b5577c0bcfd8f81c8f3e4" title="Gives you memory to use until you deallocate it or your program exits.">nkr::os::heap::Allocate</a> for more information.</td></tr>
   </table>
   </dd>
@@ -985,6 +985,13 @@ template&lt;any_type_tr unit_p&gt; </div>
 </div><div class="memdoc">
 
 <p>A wrapper for <a class="el" href="namespacenkr_1_1os_1_1heap.html#a52065c5bdf7e1f414f00b31e7e671be9" title="Gives you more memory without loosing any of the previously allocated memory.">nkr::os::heap::Reallocate</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">units</td><td>should be a non const pointer that this function can write a new address to. The qualification of the unit_t itself does not matter. You can also use this function to allocate by passing a nullptr. See <a class="el" href="namespacenkr_1_1os_1_1heap.html#a52065c5bdf7e1f414f00b31e7e671be9" title="Gives you more memory without loosing any of the previously allocated memory.">nkr::os::heap::Reallocate</a> for more information.</td></tr>
+    <tr><td class="paramname">new_unit_count</td><td>is the number of unit_t objects for which to allocate space. You can also use this function to deallocate by passing a zero count. If this number is more than <a class="el" href="classnkr_1_1allocator_1_1heap__t.html#a0c77d45a11cb4487b21a96d2aa4b6629" title="This is the maximum number of objects which space can be allocated for.">nkr::allocator::heap_t::Max_Unit_Count</a>, it will assert. See <a class="el" href="namespacenkr_1_1os_1_1heap.html#a52065c5bdf7e1f414f00b31e7e671be9" title="Gives you more memory without loosing any of the previously allocated memory.">nkr::os::heap::Reallocate</a> for more information.</td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section return"><dt>Returns</dt><dd>nkr::allocator_err::NONE if it succeeds.</dd>
 <dd>
 nkr::allocator_err::OUT_OF_MEMORY if it fails. </dd></dl>
@@ -1028,6 +1035,13 @@ template&lt;any_type_tr unit_p&gt; </div>
 </div><div class="memdoc">
 
 <p>A wrapper for <a class="el" href="namespacenkr_1_1os_1_1heap.html#a52065c5bdf7e1f414f00b31e7e671be9" title="Gives you more memory without loosing any of the previously allocated memory.">nkr::os::heap::Reallocate</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">units</td><td>should be a non const pointer that this function can write a new address to. The qualification of the unit_t itself does not matter. You can also use this function to allocate by passing a nullptr. See <a class="el" href="namespacenkr_1_1os_1_1heap.html#a52065c5bdf7e1f414f00b31e7e671be9" title="Gives you more memory without loosing any of the previously allocated memory.">nkr::os::heap::Reallocate</a> for more information.</td></tr>
+    <tr><td class="paramname">new_unit_count</td><td>is the number of unit_t objects for which to allocate space. You can also use this function to deallocate by passing a zero count. If this number is more than <a class="el" href="classnkr_1_1allocator_1_1heap__t.html#a0c77d45a11cb4487b21a96d2aa4b6629" title="This is the maximum number of objects which space can be allocated for.">nkr::allocator::heap_t::Max_Unit_Count</a>, it will assert. See <a class="el" href="namespacenkr_1_1os_1_1heap.html#a52065c5bdf7e1f414f00b31e7e671be9" title="Gives you more memory without loosing any of the previously allocated memory.">nkr::os::heap::Reallocate</a> for more information.</td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section return"><dt>Returns</dt><dd>nkr::allocator_err::NONE if it succeeds.</dd>
 <dd>
 nkr::allocator_err::OUT_OF_MEMORY if it fails. </dd></dl>
@@ -1070,7 +1084,14 @@ template&lt;any_type_tr unit_p&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>A wrapper for <a class="el" href="namespacenkr_1_1os_1_1heap.html#a52065c5bdf7e1f414f00b31e7e671be9" title="Gives you more memory without loosing any of the previously allocated memory.">nkr::os::heap::Reallocate</a>, but it can handle a <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer and the number of units that the pointer points to.">nkr::pointer_t</a>. </p>
+<p>A wrapper for <a class="el" href="namespacenkr_1_1os_1_1heap.html#a52065c5bdf7e1f414f00b31e7e671be9" title="Gives you more memory without loosing any of the previously allocated memory.">nkr::os::heap::Reallocate</a>, but it can handle a <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer to any unit_t and a unit count indicating the size of memory bein...">nkr::pointer_t</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">units</td><td>should be a non const pointer that this function can write a new address to. The qualification of the unit_t itself does not matter. You can also use this function to allocate by passing a nullptr. See <a class="el" href="namespacenkr_1_1os_1_1heap.html#a52065c5bdf7e1f414f00b31e7e671be9" title="Gives you more memory without loosing any of the previously allocated memory.">nkr::os::heap::Reallocate</a> for more information.</td></tr>
+    <tr><td class="paramname">new_unit_count</td><td>is the number of unit_t objects for which to allocate space. You can also use this function to deallocate by passing a zero count. If this number is more than <a class="el" href="classnkr_1_1allocator_1_1heap__t.html#a0c77d45a11cb4487b21a96d2aa4b6629" title="This is the maximum number of objects which space can be allocated for.">nkr::allocator::heap_t::Max_Unit_Count</a>, it will assert. See <a class="el" href="namespacenkr_1_1os_1_1heap.html#a52065c5bdf7e1f414f00b31e7e671be9" title="Gives you more memory without loosing any of the previously allocated memory.">nkr::os::heap::Reallocate</a> for more information.</td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section return"><dt>Returns</dt><dd>nkr::allocator_err::NONE if it succeeds.</dd>
 <dd>
 nkr::allocator_err::OUT_OF_MEMORY if it fails. </dd></dl>
@@ -1113,7 +1134,14 @@ template&lt;any_type_tr unit_p&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>A wrapper for <a class="el" href="namespacenkr_1_1os_1_1heap.html#a52065c5bdf7e1f414f00b31e7e671be9" title="Gives you more memory without loosing any of the previously allocated memory.">nkr::os::heap::Reallocate</a>, but t can handle a <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer and the number of units that the pointer points to.">nkr::pointer_t</a>. </p>
+<p>A wrapper for <a class="el" href="namespacenkr_1_1os_1_1heap.html#a52065c5bdf7e1f414f00b31e7e671be9" title="Gives you more memory without loosing any of the previously allocated memory.">nkr::os::heap::Reallocate</a>, but it can handle a <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer to any unit_t and a unit count indicating the size of memory bein...">nkr::pointer_t</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">units</td><td>should be a non const pointer that this function can write a new address to. The qualification of the unit_t itself does not matter. You can also use this function to allocate by passing a nullptr. See <a class="el" href="namespacenkr_1_1os_1_1heap.html#a52065c5bdf7e1f414f00b31e7e671be9" title="Gives you more memory without loosing any of the previously allocated memory.">nkr::os::heap::Reallocate</a> for more information.</td></tr>
+    <tr><td class="paramname">new_unit_count</td><td>is the number of unit_t objects for which to allocate space. You can also use this function to deallocate by passing a zero count. If this number is more than <a class="el" href="classnkr_1_1allocator_1_1heap__t.html#a0c77d45a11cb4487b21a96d2aa4b6629" title="This is the maximum number of objects which space can be allocated for.">nkr::allocator::heap_t::Max_Unit_Count</a>, it will assert. See <a class="el" href="namespacenkr_1_1os_1_1heap.html#a52065c5bdf7e1f414f00b31e7e671be9" title="Gives you more memory without loosing any of the previously allocated memory.">nkr::os::heap::Reallocate</a> for more information.</td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section return"><dt>Returns</dt><dd>nkr::allocator_err::NONE if it succeeds.</dd>
 <dd>
 nkr::allocator_err::OUT_OF_MEMORY if it fails. </dd></dl>
@@ -1147,6 +1175,12 @@ template&lt;any_type_tr unit_p&gt; </div>
 </div><div class="memdoc">
 
 <p>A wrapper for <a class="el" href="namespacenkr_1_1os_1_1heap.html#ad27c431dc437f08ed8e3ad901ea31ba3" title="Takes back memory you no longer need so it can be reused later.">nkr::os::heap::Deallocate</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">units</td><td>should be a non const pointer that this function can write nullptr to after deallocating. The qualification of the unit_t itself does not matter. If given nullptr it will return without issue. See <a class="el" href="namespacenkr_1_1os_1_1heap.html#ad27c431dc437f08ed8e3ad901ea31ba3" title="Takes back memory you no longer need so it can be reused later.">nkr::os::heap::Deallocate</a> for more information. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1177,6 +1211,12 @@ template&lt;any_type_tr unit_p&gt; </div>
 </div><div class="memdoc">
 
 <p>A wrapper for <a class="el" href="namespacenkr_1_1os_1_1heap.html#ad27c431dc437f08ed8e3ad901ea31ba3" title="Takes back memory you no longer need so it can be reused later.">nkr::os::heap::Deallocate</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">units</td><td>should be a non const pointer that this function can write nullptr to after deallocating. The qualification of the unit_t itself does not matter. If given nullptr it will return without issue. See <a class="el" href="namespacenkr_1_1os_1_1heap.html#ad27c431dc437f08ed8e3ad901ea31ba3" title="Takes back memory you no longer need so it can be reused later.">nkr::os::heap::Deallocate</a> for more information. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1206,7 +1246,13 @@ template&lt;any_type_tr unit_p&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>A wrapper for <a class="el" href="namespacenkr_1_1os_1_1heap.html#ad27c431dc437f08ed8e3ad901ea31ba3" title="Takes back memory you no longer need so it can be reused later.">nkr::os::heap::Deallocate</a>, but it can handle a <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer and the number of units that the pointer points to.">nkr::pointer_t</a>. </p>
+<p>A wrapper for <a class="el" href="namespacenkr_1_1os_1_1heap.html#ad27c431dc437f08ed8e3ad901ea31ba3" title="Takes back memory you no longer need so it can be reused later.">nkr::os::heap::Deallocate</a>, but it can handle a <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer to any unit_t and a unit count indicating the size of memory bein...">nkr::pointer_t</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">units</td><td>should be a non const pointer that this function can write nullptr to after deallocating. The qualification of the unit_t itself does not matter. If given nullptr it will return without issue. See <a class="el" href="namespacenkr_1_1os_1_1heap.html#ad27c431dc437f08ed8e3ad901ea31ba3" title="Takes back memory you no longer need so it can be reused later.">nkr::os::heap::Deallocate</a> for more information. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1236,7 +1282,13 @@ template&lt;any_type_tr unit_p&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>A wrapper for <a class="el" href="namespacenkr_1_1os_1_1heap.html#ad27c431dc437f08ed8e3ad901ea31ba3" title="Takes back memory you no longer need so it can be reused later.">nkr::os::heap::Deallocate</a>, but it can handle a <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer and the number of units that the pointer points to.">nkr::pointer_t</a>. </p>
+<p>A wrapper for <a class="el" href="namespacenkr_1_1os_1_1heap.html#ad27c431dc437f08ed8e3ad901ea31ba3" title="Takes back memory you no longer need so it can be reused later.">nkr::os::heap::Deallocate</a>, but it can handle a <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer to any unit_t and a unit count indicating the size of memory bein...">nkr::pointer_t</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">units</td><td>should be a non const pointer that this function can write nullptr to after deallocating. The qualification of the unit_t itself does not matter. If given nullptr it will return without issue. See <a class="el" href="namespacenkr_1_1os_1_1heap.html#ad27c431dc437f08ed8e3ad901ea31ba3" title="Takes back memory you no longer need so it can be reused later.">nkr::os::heap::Deallocate</a> for more information. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

@@ -102,7 +102,7 @@ var searchBox = new SearchBox("searchBox", "search",'Search','.html');
 </div><!--header-->
 <div class="contents">
 
-<p>A specialization for <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer and the number of units that the pointer points to.">nkr::pointer_t</a> through <a class="el" href="classnkr_1_1pointer__t_3_01any__non__type__p_01_4.html" title="A specialization of nkr::pointer_t and a wrapper for nkr::$pointer_t::any_non_type_sp.">nkr::pointer_t&lt;any_non_type_p&gt;</a>. Accepts any type that does not have a size, in particular the void_t.  
+<p>A specialization for <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer to any unit_t and a unit count indicating the size of memory bein...">nkr::pointer_t</a> through <a class="el" href="classnkr_1_1pointer__t_3_01any__non__type__p_01_4.html" title="A specialization of nkr::pointer_t and a wrapper for nkr::$pointer_t::any_non_type_sp.">nkr::pointer_t&lt;any_non_type_p&gt;</a>. Accepts any type that does not have a size, in particular the void_t.  
  <a href="classnkr_1_1_0bpointer__t_1_1any__non__type__sp.html#details">More...</a></p>
 
 <p><code>#include &quot;pointer_t_dec.h&quot;</code></p>
@@ -259,7 +259,7 @@ var searchBox = new SearchBox("searchBox", "search",'Search','.html');
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;any_non_type_tr unit_p&gt;<br />
-class nkr::$pointer_t::any_non_type_sp&lt; unit_p &gt;</div><p >A specialization for <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer and the number of units that the pointer points to.">nkr::pointer_t</a> through <a class="el" href="classnkr_1_1pointer__t_3_01any__non__type__p_01_4.html" title="A specialization of nkr::pointer_t and a wrapper for nkr::$pointer_t::any_non_type_sp.">nkr::pointer_t&lt;any_non_type_p&gt;</a>. Accepts any type that does not have a size, in particular the void_t. </p>
+class nkr::$pointer_t::any_non_type_sp&lt; unit_p &gt;</div><p >A specialization for <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer to any unit_t and a unit count indicating the size of memory bein...">nkr::pointer_t</a> through <a class="el" href="classnkr_1_1pointer__t_3_01any__non__type__p_01_4.html" title="A specialization of nkr::pointer_t and a wrapper for nkr::$pointer_t::any_non_type_sp.">nkr::pointer_t&lt;any_non_type_p&gt;</a>. Accepts any type that does not have a size, in particular the void_t. </p>
 <p >Unlike <a class="el" href="classnkr_1_1_0bpointer__t_1_1any__type__sp.html" title="A specialization for nkr::pointer_t through nkr::pointer_t&lt;any_type_p&gt;. Accepts any type that has a s...">nkr::$pointer_t::any_type_sp</a>, because the underlying pointer has no size only a handful of operators have been defined. </p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="addbf33e34e6930f707534d24101db666" name="addbf33e34e6930f707534d24101db666"></a>
@@ -352,7 +352,7 @@ template&lt;any_non_type_tr unit_p&gt; </div>
 </div><div class="memdoc">
 
 <p>Assigns any pointer that will statically convert to the unit_t. </p>
-<dl class="section note"><dt>Note</dt><dd>This is a convenience for when you want to treat the <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer and the number of units that the pointer points to.">pointer_t</a> as if it is a pointer to a single unit. Underneath the hood, there is no difference as it's merely a syntactical option.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This is a convenience for when you want to treat the <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer to any unit_t and a unit count indicating the size of memory bein...">pointer_t</a> as if it is a pointer to a single unit. Underneath the hood, there is no difference as it's merely a syntactical option.</dd></dl>
 <dl class="section user"><dt></dt><dd></dd></dl>
 
 </div>
@@ -394,7 +394,7 @@ template&lt;any_non_type_tr unit_p&gt; </div>
 </div><div class="memdoc">
 
 <p>Assigns any pointer that will statically convert to the units_t as well as the unit count. </p>
-<dl class="section note"><dt>Note</dt><dd>This is a convenience for when you want to treat the <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer and the number of units that the pointer points to.">pointer_t</a> as if it is a pointer to an array of units. Underneath the hood, there is no difference as it's merely a syntactical option.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This is a convenience for when you want to treat the <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer to any unit_t and a unit count indicating the size of memory bein...">pointer_t</a> as if it is a pointer to an array of units. Underneath the hood, there is no difference as it's merely a syntactical option.</dd></dl>
 <dl class="section user"><dt></dt><dd></dd></dl>
 
 </div>
@@ -857,7 +857,7 @@ template&lt;any_non_type_tr unit_p&gt; </div>
 </div><div class="memdoc">
 
 <p></p>
-<dl class="section note"><dt>Note</dt><dd>This is a convenience for when you want to treat the <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer and the number of units that the pointer points to.">pointer_t</a> as if it is a pointer to a single unit. Underneath the hood, there is no difference as it's merely a syntactical option.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This is a convenience for when you want to treat the <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer to any unit_t and a unit count indicating the size of memory bein...">pointer_t</a> as if it is a pointer to a single unit. Underneath the hood, there is no difference as it's merely a syntactical option.</dd></dl>
 <dl class="section user"><dt></dt><dd></dd></dl>
 
 </div>
@@ -885,7 +885,7 @@ template&lt;any_non_type_tr unit_p&gt; </div>
 </div><div class="memdoc">
 
 <p></p>
-<dl class="section note"><dt>Note</dt><dd>This is a convenience for when you want to treat the <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer and the number of units that the pointer points to.">pointer_t</a> as if it is a pointer to a single unit. Underneath the hood, there is no difference as it's merely a syntactical option.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This is a convenience for when you want to treat the <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer to any unit_t and a unit count indicating the size of memory bein...">pointer_t</a> as if it is a pointer to a single unit. Underneath the hood, there is no difference as it's merely a syntactical option.</dd></dl>
 <dl class="section user"><dt></dt><dd></dd></dl>
 
 </div>
@@ -913,7 +913,7 @@ template&lt;any_non_type_tr unit_p&gt; </div>
 </div><div class="memdoc">
 
 <p></p>
-<dl class="section note"><dt>Note</dt><dd>This is a convenience for when you want to treat the <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer and the number of units that the pointer points to.">pointer_t</a> as if it is a pointer to a single unit. Underneath the hood, there is no difference as it's merely a syntactical option.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This is a convenience for when you want to treat the <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer to any unit_t and a unit count indicating the size of memory bein...">pointer_t</a> as if it is a pointer to a single unit. Underneath the hood, there is no difference as it's merely a syntactical option.</dd></dl>
 <dl class="section user"><dt></dt><dd></dd></dl>
 
 </div>
@@ -941,7 +941,7 @@ template&lt;any_non_type_tr unit_p&gt; </div>
 </div><div class="memdoc">
 
 <p></p>
-<dl class="section note"><dt>Note</dt><dd>This is a convenience for when you want to treat the <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer and the number of units that the pointer points to.">pointer_t</a> as if it is a pointer to a single unit. Underneath the hood, there is no difference as it's merely a syntactical option.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This is a convenience for when you want to treat the <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer to any unit_t and a unit count indicating the size of memory bein...">pointer_t</a> as if it is a pointer to a single unit. Underneath the hood, there is no difference as it's merely a syntactical option.</dd></dl>
 <dl class="section user"><dt></dt><dd></dd></dl>
 
 </div>
@@ -969,7 +969,7 @@ template&lt;any_non_type_tr unit_p&gt; </div>
 </div><div class="memdoc">
 
 <p></p>
-<dl class="section note"><dt>Note</dt><dd>This is a convenience for when you want to treat the <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer and the number of units that the pointer points to.">pointer_t</a> as if it is a pointer to an array of units. Underneath the hood, there is no difference as it's merely a syntactical option.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This is a convenience for when you want to treat the <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer to any unit_t and a unit count indicating the size of memory bein...">pointer_t</a> as if it is a pointer to an array of units. Underneath the hood, there is no difference as it's merely a syntactical option.</dd></dl>
 <dl class="section user"><dt></dt><dd></dd></dl>
 
 </div>
@@ -997,7 +997,7 @@ template&lt;any_non_type_tr unit_p&gt; </div>
 </div><div class="memdoc">
 
 <p></p>
-<dl class="section note"><dt>Note</dt><dd>This is a convenience for when you want to treat the <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer and the number of units that the pointer points to.">pointer_t</a> as if it is a pointer to an array of units. Underneath the hood, there is no difference as it's merely a syntactical option.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This is a convenience for when you want to treat the <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer to any unit_t and a unit count indicating the size of memory bein...">pointer_t</a> as if it is a pointer to an array of units. Underneath the hood, there is no difference as it's merely a syntactical option.</dd></dl>
 <dl class="section user"><dt></dt><dd></dd></dl>
 
 </div>
@@ -1025,7 +1025,7 @@ template&lt;any_non_type_tr unit_p&gt; </div>
 </div><div class="memdoc">
 
 <p></p>
-<dl class="section note"><dt>Note</dt><dd>This is a convenience for when you want to treat the <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer and the number of units that the pointer points to.">pointer_t</a> as if it is a pointer to an array of units. Underneath the hood, there is no difference as it's merely a syntactical option.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This is a convenience for when you want to treat the <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer to any unit_t and a unit count indicating the size of memory bein...">pointer_t</a> as if it is a pointer to an array of units. Underneath the hood, there is no difference as it's merely a syntactical option.</dd></dl>
 <dl class="section user"><dt></dt><dd></dd></dl>
 
 </div>
@@ -1053,7 +1053,7 @@ template&lt;any_non_type_tr unit_p&gt; </div>
 </div><div class="memdoc">
 
 <p></p>
-<dl class="section note"><dt>Note</dt><dd>This is a convenience for when you want to treat the <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer and the number of units that the pointer points to.">pointer_t</a> as if it is a pointer to an array of units. Underneath the hood, there is no difference as it's merely a syntactical option.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This is a convenience for when you want to treat the <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer to any unit_t and a unit count indicating the size of memory bein...">pointer_t</a> as if it is a pointer to an array of units. Underneath the hood, there is no difference as it's merely a syntactical option.</dd></dl>
 <dl class="section user"><dt></dt><dd></dd></dl>
 
 </div>
@@ -1397,7 +1397,7 @@ template&lt;any_non_type_tr unit_p&gt; </div>
 </div><div class="memdoc">
 
 <p></p>
-<dl class="section note"><dt>Note</dt><dd>This is a convenience for when you want to treat the <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer and the number of units that the pointer points to.">pointer_t</a> as if it is a pointer to a single unit. Underneath the hood, there is no difference as it's merely a syntactical option.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This is a convenience for when you want to treat the <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer to any unit_t and a unit count indicating the size of memory bein...">pointer_t</a> as if it is a pointer to a single unit. Underneath the hood, there is no difference as it's merely a syntactical option.</dd></dl>
 <dl class="section user"><dt></dt><dd></dd></dl>
 
 </div>
@@ -1429,7 +1429,7 @@ template&lt;any_non_type_tr unit_p&gt; </div>
 </div><div class="memdoc">
 
 <p></p>
-<dl class="section note"><dt>Note</dt><dd>This is a convenience for when you want to treat the <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer and the number of units that the pointer points to.">pointer_t</a> as if it is a pointer to a single unit. Underneath the hood, there is no difference as it's merely a syntactical option.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This is a convenience for when you want to treat the <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer to any unit_t and a unit count indicating the size of memory bein...">pointer_t</a> as if it is a pointer to a single unit. Underneath the hood, there is no difference as it's merely a syntactical option.</dd></dl>
 <dl class="section user"><dt></dt><dd></dd></dl>
 
 </div>
@@ -1471,7 +1471,7 @@ template&lt;any_non_type_tr unit_p&gt; </div>
 </div><div class="memdoc">
 
 <p></p>
-<dl class="section note"><dt>Note</dt><dd>This is a convenience for when you want to treat the <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer and the number of units that the pointer points to.">pointer_t</a> as if it is a pointer to an array of units. Underneath the hood, there is no difference as it's merely a syntactical option.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This is a convenience for when you want to treat the <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer to any unit_t and a unit count indicating the size of memory bein...">pointer_t</a> as if it is a pointer to an array of units. Underneath the hood, there is no difference as it's merely a syntactical option.</dd></dl>
 <dl class="section user"><dt></dt><dd></dd></dl>
 
 </div>
@@ -1513,7 +1513,7 @@ template&lt;any_non_type_tr unit_p&gt; </div>
 </div><div class="memdoc">
 
 <p></p>
-<dl class="section note"><dt>Note</dt><dd>This is a convenience for when you want to treat the <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer and the number of units that the pointer points to.">pointer_t</a> as if it is a pointer to an array of units. Underneath the hood, there is no difference as it's merely a syntactical option.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This is a convenience for when you want to treat the <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer to any unit_t and a unit count indicating the size of memory bein...">pointer_t</a> as if it is a pointer to an array of units. Underneath the hood, there is no difference as it's merely a syntactical option.</dd></dl>
 <dl class="section user"><dt></dt><dd></dd></dl>
 
 </div>

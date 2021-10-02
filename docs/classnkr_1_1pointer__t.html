@@ -102,7 +102,7 @@ var searchBox = new SearchBox("searchBox", "search",'Search','.html');
 </div><!--header-->
 <div class="contents">
 
-<p>A fat pointer that stores a pointer and the number of units that the pointer points to.  
+<p>A fat pointer that stores a pointer to any unit_t and a unit count indicating the size of memory being pointed to.  
  <a href="classnkr_1_1pointer__t.html#details">More...</a></p>
 
 <p><code>#include &quot;pointer_t_dec.h&quot;</code></p>
@@ -165,14 +165,15 @@ volatile <a class="el" href="classnkr_1_1pointer__t.html">pointer_t</a> &amp;&#1
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename unit_p&gt;<br />
-class nkr::pointer_t&lt; unit_p &gt;</div><p >A fat pointer that stores a pointer and the number of units that the pointer points to. </p>
+class nkr::pointer_t&lt; unit_p &gt;</div><p >A fat pointer that stores a pointer to any unit_t and a unit count indicating the size of memory being pointed to. </p>
+<p >This type is primarly used to avoid read violations which happen when indexing beyond the last unit of memory being pointed to. It's a great building block for other types that need to manage their own memory through pointers or for functions and types that need to iterate a pointer. It's even useful for simply allocating memory through any of the various allocators in the <a class="el" href="namespacenkr_1_1allocator.html" title="Contains allocators that satisfy nkr::allocator_i, making them interchangably useful anywhere that ac...">nkr::allocator</a> namespace.</p>
 <p >Additionally, this class provides methods which alter both the pointer and the number of units as you increment or decrement the object. It also plays things safe and defaults the pointer's data on construction and destruction, which can help track down bugs when trying to access data that has for example, been deallocated. Allows you to work with the underlying pointer easily by providing the expected methods and operators.</p>
 <dl class="section user"><dt>Specializations</dt><dd><ul>
 <li><a class="el" href="classnkr_1_1pointer__t_3_01any__type__p_01_4.html" title="A specialization of nkr::pointer_t and a wrapper for nkr::$pointer_t::any_type_sp.">pointer_t&lt;any_type_p&gt;</a> (wrapper for <a class="el" href="classnkr_1_1_0bpointer__t_1_1any__type__sp.html" title="A specialization for nkr::pointer_t through nkr::pointer_t&lt;any_type_p&gt;. Accepts any type that has a s...">$pointer_t::any_type_sp</a>)</li>
 <li><a class="el" href="classnkr_1_1pointer__t_3_01any__non__type__p_01_4.html" title="A specialization of nkr::pointer_t and a wrapper for nkr::$pointer_t::any_non_type_sp.">pointer_t&lt;any_non_type_p&gt;</a> (wrapper for <a class="el" href="classnkr_1_1_0bpointer__t_1_1any__non__type__sp.html" title="A specialization for nkr::pointer_t through nkr::pointer_t&lt;any_non_type_p&gt;. Accepts any type that doe...">$pointer_t::any_non_type_sp</a>)</li>
 </ul>
 </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>This default class template acts as a base-case for any template parameters that do not match any available specialization, hence all the deleted functionality.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This default class template acts as a base-case for any template parameters that do not match any available specialization, hence all the deleted functionality. Read up on its specializations to find all the functionality and any further documentation.</dd></dl>
 <dl class="section user"><dt></dt><dd></dd></dl>
 </div></div><!-- contents -->
 <!-- start footer part -->

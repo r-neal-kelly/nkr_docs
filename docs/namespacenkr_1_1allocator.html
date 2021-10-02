@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>nkr: nkr::os Namespace Reference</title>
+<title>nkr: nkr::allocator Namespace Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -90,33 +90,30 @@ var searchBox = new SearchBox("searchBox", "search",'Search','.html');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="namespacenkr.html">nkr</a></li><li class="navelem"><a class="el" href="namespacenkr_1_1os.html">os</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespacenkr.html">nkr</a></li><li class="navelem"><a class="el" href="namespacenkr_1_1allocator.html">allocator</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#namespaces">Namespaces</a>  </div>
-  <div class="headertitle"><div class="title">nkr::os Namespace Reference<div class="ingroups"><a class="el" href="group____d1cd4369__e0f4__4062__8f58__611395da215e.html">namespaces</a></div></div></div>
+<a href="#nested-classes">Classes</a>  </div>
+  <div class="headertitle"><div class="title">nkr::allocator Namespace Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Short for "Operating System", this contains several wrappers for otherwise platform specific functionality.  
-<a href="namespacenkr_1_1os.html#details">More...</a></p>
+<p>Contains allocators that satisfy <a class="el" href="conceptnkr_1_1allocator__i.html" title="Defines common functionality that must exist on an allocator implementation for use in nkr.">nkr::allocator_i</a>, making them interchangably useful anywhere that accepts the allocator interface.  
+<a href="namespacenkr_1_1allocator.html#details">More...</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:namespacenkr_1_1os_1_1atomic"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacenkr_1_1os_1_1atomic.html">atomic</a></td></tr>
-<tr class="memdesc:namespacenkr_1_1os_1_1atomic"><td class="mdescLeft">&#160;</td><td class="mdescRight">Functions that provide atomic access, assignment, and exchange of variables. <br /></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnkr_1_1allocator_1_1heap__t.html">heap_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A wrapper for the <a class="el" href="namespacenkr_1_1os_1_1heap.html" title="Functions that interface with memory located on the heap. Primarily, this is an extension of the stan...">nkr::os::heap</a> allocator, often used by other types around the library as their default allocator.  <a href="classnkr_1_1allocator_1_1heap__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:namespacenkr_1_1os_1_1endian"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacenkr_1_1os_1_1endian.html">endian</a></td></tr>
-<tr class="memdesc:namespacenkr_1_1os_1_1endian"><td class="mdescLeft">&#160;</td><td class="mdescRight">Functions that provide various information and solutions regarding endianness. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:namespacenkr_1_1os_1_1heap"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacenkr_1_1os_1_1heap.html">heap</a></td></tr>
-<tr class="memdesc:namespacenkr_1_1os_1_1heap"><td class="mdescLeft">&#160;</td><td class="mdescRight">Functions that interface with memory located on the heap. Primarily, this is an extension of the standard C library Allocation methods <code>malloc</code>, <code>realloc</code>, <code>free</code>, <code>calloc</code> and a handful of OS specific extensions, such as a function to reallocate zero-initialized memory where available. <br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnkr_1_1allocator_1_1heap__zeros__t.html">heap_zeros_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A wrapper for the <a class="el" href="namespacenkr_1_1os_1_1heap.html" title="Functions that interface with memory located on the heap. Primarily, this is an extension of the stan...">nkr::os::heap</a> allocator that zero-initializes memory, often used by other types around the library as their default allocator.  <a href="classnkr_1_1allocator_1_1heap__zeros__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >Short for "Operating System", this contains several wrappers for otherwise platform specific functionality. </p>
+<div class="textblock"><p >Contains allocators that satisfy <a class="el" href="conceptnkr_1_1allocator__i.html" title="Defines common functionality that must exist on an allocator implementation for use in nkr.">nkr::allocator_i</a>, making them interchangably useful anywhere that accepts the allocator interface. </p>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
