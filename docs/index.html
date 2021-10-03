@@ -112,15 +112,15 @@ Allocators</h3>
 <ul>
 <li><a class="el" href="conceptnkr_1_1allocator__i.html" title="Defines common functionality that must exist on an allocator implementation for use in nkr.">nkr::allocator_i</a></li>
 <li><a class="el" href="classnkr_1_1allocator_1_1heap__t.html" title="A wrapper for the nkr::os::heap allocator, often used by other types around the library as their defa...">nkr::allocator::heap_t</a></li>
-<li><a class="el" href="classnkr_1_1allocator_1_1heap__zeros__t.html" title="A wrapper for the nkr::os::heap allocator that zero-initializes memory, often used by other types aro...">nkr::allocator::heap_zeros_t</a></li>
+<li><a class="el" href="classnkr_1_1allocator_1_1heap__zeros__t.html" title="A wrapper for the nkr::os::heap allocator similar to nkr::allocator::heap_t except that it additional...">nkr::allocator::heap_zeros_t</a></li>
 </ul>
 <h3><a class="anchor" id="autotoc_md3"></a>
 Arrays</h3>
 <ul>
 <li>nkr::array_i</li>
-<li>nkr::array::dynamic_t</li>
-<li>nkr::array::instant_t</li>
-<li><a class="el" href="classnkr_1_1array_1_1stack__t.html" title="Allocates an array on the stack with many helper functions.">nkr::array::stack_t</a></li>
+<li><a class="el" href="classnkr_1_1array_1_1dynamic__t.html" title="Stores memory in a continguously growable and alterable array of units.">nkr::array::dynamic_t</a></li>
+<li><a class="el" href="classnkr_1_1array_1_1instant__t.html" title="Essentially the same as a nkr::array::stack_t, except that it allows you initialize the array without...">nkr::array::instant_t</a></li>
+<li><a class="el" href="classnkr_1_1array_1_1stack__t.html" title="Stores memory in a continguously ungrowable but alterable array of units on the stack.">nkr::array::stack_t</a></li>
 </ul>
 <h3><a class="anchor" id="autotoc_md4"></a>
 Charcoders</h3>
@@ -175,7 +175,7 @@ File Hierarchy</h2>
 <p >Files include the postfix of whatever it is they declare or define. For example, types have "_t" in the name of the file: e.g. "pointer_t.h", "bool_t.cpp". This is to make them distinct from other kinds of data that have the same name but a different postfix. In addition, post-postfixes are added to the names of files to make them distinct from the kinds of files that make up the program, e.g. "pointer_t_dec.h" for "pointer_t declaration" and "bool_t_def.h" for "bool_t definition". There is yet another that is used to decouple comments from the code, e.g. "pointer_t_dox.h" for "pointer_t documents".</p>
 <h2><a class="anchor" id="autotoc_md13"></a>
 Templates</h2>
-<p >This is pretty much a template library. Therefore this library sacrifices compilation speed for runtime speed. For that reason, I have begun implementing the option to pre-define common templated types if you find you should need them in your project. However any project that is 100,000 or so lines long should not have any significant slow-downs. Getting into the millions is much harder to speak about, but knowing C++ and its slow compilation speeds, it's probably not going to be great compilation times. However, take note that the ridiculously slow parts of the meta-language are not typically not used, especially things like iterating tuples. Very rarely is there any meta-recursion (or recursion generally) however the examples of recursion that do exist are opt-in and completely avoidable. (See <a class="el" href="classnkr_1_1array_1_1stack__t.html" title="Allocates an array on the stack with many helper functions.">nkr::array::stack_t</a> and its Push methods.)</p>
+<p >This is pretty much a template library. Therefore this library sacrifices compilation speed for runtime speed. For that reason, I have begun implementing the option to pre-define common templated types if you find you should need them in your project. However any project that is 100,000 or so lines long should not have any significant slow-downs. Getting into the millions is much harder to speak about, but knowing C++ and its slow compilation speeds, it's probably not going to be great compilation times. However, take note that the ridiculously slow parts of the meta-language are not typically not used, especially things like iterating tuples. Very rarely is there any meta-recursion (or recursion generally) however the examples of recursion that do exist are opt-in and completely avoidable. (See <a class="el" href="classnkr_1_1array_1_1stack__t.html" title="Stores memory in a continguously ungrowable but alterable array of units on the stack.">nkr::array::stack_t</a> and its Push methods.)</p>
 <h2><a class="anchor" id="autotoc_md14"></a>
 Full Definitions</h2>
 <p >As much as possible, one of my goals for this library is to create complete types as much as possible. Therefore almost every type has all sensible methods available for <code>const</code>, <code>volatile</code>, and <code>const volatile</code> versions of the type, in addition to the the unqualified variety.</p>
