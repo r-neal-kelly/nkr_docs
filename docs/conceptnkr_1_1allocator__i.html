@@ -98,9 +98,7 @@ var searchBox = new SearchBox("searchBox", "search",'Search','.html');
 <p><code>#include &quot;allocator_i.h&quot;</code></p>
 <h2 class="groupheader">Concept definition</h2>
 <div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> allocator_p&gt;</div>
-<div class="line"><span class="keyword">concept </span><a class="code hl_concept" href="conceptnkr_1_1allocator__i.html">nkr::allocator_i</a> =  <span class="keyword">requires</span>(allocator_p allocator,</div>
-<div class="line">                                   <span class="keyword">volatile</span> allocator_p volatile_allocator,</div>
-<div class="line">                                   <span class="keyword">typename</span> allocator_p::units_t units,</div>
+<div class="line"><span class="keyword">concept </span><a class="code hl_concept" href="conceptnkr_1_1allocator__i.html">nkr::allocator_i</a> =  <span class="keyword">requires</span>(<span class="keyword">typename</span> allocator_p::units_t units,</div>
 <div class="line">                                   <span class="keyword">volatile</span> <span class="keyword">typename</span> allocator_p::units_t volatile_units,</div>
 <div class="line">                                   <span class="keyword">typename</span> allocator_p::pointer_t pointer,</div>
 <div class="line">                                   <span class="keyword">volatile</span> <span class="keyword">typename</span> allocator_p::pointer_t volatile_pointer,</div>
@@ -111,32 +109,23 @@ var searchBox = new SearchBox("searchBox", "search",'Search','.html');
 <div class="line">        <span class="keyword">typename</span> allocator_p::units_t;</div>
 <div class="line">        <span class="keyword">typename</span> allocator_p::pointer_t;</div>
 <div class="line"> </div>
-<div class="line">        { allocator.Min_Unit_Count() }                                      -&gt; is_tr&lt;count_t&gt;;</div>
-<div class="line">        { volatile_allocator.Min_Unit_Count() }                             -&gt; is_tr&lt;count_t&gt;;</div>
-<div class="line">        { allocator.Max_Unit_Count() }                                      -&gt; is_tr&lt;count_t&gt;;</div>
-<div class="line">        { volatile_allocator.Max_Unit_Count() }                             -&gt; is_tr&lt;count_t&gt;;</div>
+<div class="line">        { allocator_p::Min_Unit_Count() }                               -&gt; is_tr&lt;count_t&gt;;</div>
+<div class="line">        { allocator_p::Max_Unit_Count() }                               -&gt; is_tr&lt;count_t&gt;;</div>
 <div class="line"> </div>
-<div class="line">        { allocator == allocator }                                          -&gt; is_tr&lt;bool_t&gt;;</div>
-<div class="line">        { allocator == volatile_allocator }                                 -&gt; is_tr&lt;bool_t&gt;;</div>
-<div class="line">        { volatile_allocator == allocator }                                 -&gt; is_tr&lt;bool_t&gt;;</div>
-<div class="line">        { allocator != allocator }                                          -&gt; is_tr&lt;bool_t&gt;;</div>
-<div class="line">        { allocator != volatile_allocator }                                 -&gt; is_tr&lt;bool_t&gt;;</div>
-<div class="line">        { volatile_allocator != allocator }                                 -&gt; is_tr&lt;bool_t&gt;;</div>
+<div class="line">        { allocator_p::Allocate(units, unit_count) }                    -&gt; is_tr&lt;maybe_t&lt;allocator_err&gt;&gt;;</div>
+<div class="line">        { allocator_p::Allocate(volatile_units, unit_count) }           -&gt; is_tr&lt;maybe_t&lt;allocator_err&gt;&gt;;</div>
+<div class="line">        { allocator_p::Allocate(pointer, unit_count) }                  -&gt; is_tr&lt;maybe_t&lt;allocator_err&gt;&gt;;</div>
+<div class="line">        { allocator_p::Allocate(volatile_pointer, unit_count) }         -&gt; is_tr&lt;maybe_t&lt;allocator_err&gt;&gt;;</div>
 <div class="line"> </div>
-<div class="line">        { allocator.Allocate(units, unit_count) }                           -&gt; is_tr&lt;maybe_t&lt;allocator_err&gt;&gt;;</div>
-<div class="line">        { volatile_allocator.Allocate(volatile_units, unit_count) }         -&gt; is_tr&lt;maybe_t&lt;allocator_err&gt;&gt;;</div>
-<div class="line">        { allocator.Allocate(pointer, unit_count) }                         -&gt; is_tr&lt;maybe_t&lt;allocator_err&gt;&gt;;</div>
-<div class="line">        { volatile_allocator.Allocate(volatile_pointer, unit_count) }       -&gt; is_tr&lt;maybe_t&lt;allocator_err&gt;&gt;;</div>
+<div class="line">        { allocator_p::Reallocate(units, new_unit_count) }              -&gt; is_tr&lt;maybe_t&lt;allocator_err&gt;&gt;;</div>
+<div class="line">        { allocator_p::Reallocate(volatile_units, new_unit_count) }     -&gt; is_tr&lt;maybe_t&lt;allocator_err&gt;&gt;;</div>
+<div class="line">        { allocator_p::Reallocate(pointer, new_unit_count) }            -&gt; is_tr&lt;maybe_t&lt;allocator_err&gt;&gt;;</div>
+<div class="line">        { allocator_p::Reallocate(volatile_pointer, new_unit_count) }   -&gt; is_tr&lt;maybe_t&lt;allocator_err&gt;&gt;;</div>
 <div class="line"> </div>
-<div class="line">        { allocator.Reallocate(units, new_unit_count) }                     -&gt; is_tr&lt;maybe_t&lt;allocator_err&gt;&gt;;</div>
-<div class="line">        { volatile_allocator.Reallocate(volatile_units, new_unit_count) }   -&gt; is_tr&lt;maybe_t&lt;allocator_err&gt;&gt;;</div>
-<div class="line">        { allocator.Reallocate(pointer, new_unit_count) }                   -&gt; is_tr&lt;maybe_t&lt;allocator_err&gt;&gt;;</div>
-<div class="line">        { volatile_allocator.Reallocate(volatile_pointer, new_unit_count) } -&gt; is_tr&lt;maybe_t&lt;allocator_err&gt;&gt;;</div>
-<div class="line"> </div>
-<div class="line">        { allocator.Deallocate(units) }                                     -&gt; is_tr&lt;void_t&gt;;</div>
-<div class="line">        { volatile_allocator.Deallocate(volatile_units) }                   -&gt; is_tr&lt;void_t&gt;;</div>
-<div class="line">        { allocator.Deallocate(pointer) }                                   -&gt; is_tr&lt;void_t&gt;;</div>
-<div class="line">        { volatile_allocator.Deallocate(volatile_pointer) }                 -&gt; is_tr&lt;void_t&gt;;</div>
+<div class="line">        { allocator_p::Deallocate(units) }                              -&gt; is_tr&lt;void_t&gt;;</div>
+<div class="line">        { allocator_p::Deallocate(volatile_units) }                     -&gt; is_tr&lt;void_t&gt;;</div>
+<div class="line">        { allocator_p::Deallocate(pointer) }                            -&gt; is_tr&lt;void_t&gt;;</div>
+<div class="line">        { allocator_p::Deallocate(volatile_pointer) }                   -&gt; is_tr&lt;void_t&gt;;</div>
 <div class="line">    }</div>
 <div class="ttc" id="aconceptnkr_1_1allocator__i_html"><div class="ttname"><a href="conceptnkr_1_1allocator__i.html">nkr::allocator_i</a></div><div class="ttdoc">Defines common functionality that must exist on an allocator implementation for use in nkr.</div><div class="ttdef"><b>Definition:</b> allocator_i.h:20</div></div>
 <div class="ttc" id="agroup__intrinsics__contextuals_html_ga962bdb5ad1c5bc05d87739e09df6082b"><div class="ttname"><a href="group__intrinsics__contextuals.html#ga962bdb5ad1c5bc05d87739e09df6082b">nkr::count_t</a></div><div class="ttdeci">word_t count_t</div><div class="ttdoc">Used for unit counts of any arbitrary type.</div><div class="ttdef"><b>Definition:</b> intrinsics_dec.h:95</div></div>

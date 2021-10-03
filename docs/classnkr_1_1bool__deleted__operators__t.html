@@ -102,7 +102,7 @@ var searchBox = new SearchBox("searchBox", "search",'Search','.html');
 </div><!--header-->
 <div class="contents">
 
-<p> 
+<p>Operators that shouldn't be usable with a boolean value.  
  <a href="classnkr_1_1bool__deleted__operators__t.html#details">More...</a></p>
 
 <p><code>#include &quot;bool_t_dec.h&quot;</code></p>
@@ -115,7 +115,7 @@ var searchBox = new SearchBox("searchBox", "search",'Search','.html');
   <img src="classnkr_1_1bool__deleted__operators__t.png" usemap="#nkr::bool_5Fdeleted_5Foperators_5Ft_map" alt=""/>
   <map id="nkr::bool_5Fdeleted_5Foperators_5Ft_map" name="nkr::bool_5Fdeleted_5Foperators_5Ft_map">
 <area href="classnkr_1_1_0batomic__t_1_1boolean__sp.html" title="A specialization for booleans to be used atomically." alt="nkr::$atomic_t::boolean_sp&lt; boolean_p &gt;" shape="rect" coords="0,56,243,80"/>
-<area href="classnkr_1_1bool__t.html" title="The default boolean type of this library which replaces nkr::std_bool_t, i.e. bool." alt="nkr::bool_t" shape="rect" coords="253,56,496,80"/>
+<area href="classnkr_1_1bool__t.html" title="The default boolean type of this library which replaces nkr::std_bool_t." alt="nkr::bool_t" shape="rect" coords="253,56,496,80"/>
 <area href="classnkr_1_1atomic__t_3_01boolean__p_01_4.html" title="A wrapper for nkr::$atomic_t::boolean_sp." alt="nkr::atomic_t&lt; boolean_p &gt;" shape="rect" coords="0,112,243,136"/>
   </map>
 </div></div>
@@ -189,7 +189,9 @@ var searchBox = new SearchBox("searchBox", "search",'Search','.html');
 <tr class="separator:af1b3382b307c44439d21af6ab543afa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"></div><h2 class="groupheader">Member Function Documentation</h2>
+<div class="textblock"><p >Operators that shouldn't be usable with a boolean value. </p>
+<p >Although there is nothing prohibiting a user from using a <a class="el" href="group__intrinsics__primitives.html#ga5095f8e116218344a0af438d2cce601b" title="Relegated to the std namespace in favor of nkr::bool_t.">nkr::std_bool_t</a> to achieve anything they need to with the regular C++ <code>bool</code>, our custom <a class="el" href="classnkr_1_1bool__t.html" title="The default boolean type of this library which replaces nkr::std_bool_t.">nkr::bool_t</a> and other types which act as a bool disallow any usage of operators which just don't make any sense with a boolean data type. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="afa4c83654902d3fefa312d5be6f7ef80" name="afa4c83654902d3fefa312d5be6f7ef80"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afa4c83654902d3fefa312d5be6f7ef80">&#9670;&nbsp;</a></span>operator+() <span class="overload">[1/2]</span></h2>
 
