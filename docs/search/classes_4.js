@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['instant_5ft_0',['instant_t',['../classnkr_1_1array_1_1instant__t.html',1,'nkr::array']]],
-  ['integer_5fsp_1',['integer_sp',['../classnkr_1_1_0batomic__t_1_1integer__sp.html',1,'nkr::$atomic_t']]]
+  ['heap_5ft_0',['heap_t',['../classnkr_1_1allocator_1_1heap__t.html',1,'nkr::allocator']]],
+  ['heap_5fzeros_5ft_1',['heap_zeros_t',['../classnkr_1_1allocator_1_1heap__zeros__t.html',1,'nkr::allocator']]]
 ];

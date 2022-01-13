@@ -95,15 +95,15 @@ var searchBox = new SearchBox("searchBox", "search",'Search','.html');
 <p>Only pointers that point to a any_type_tr type, which includes std::nullptr_t.  
 <a href="conceptnkr_1_1type__pointer__tr.html#details">More...</a></p>
 
-<p><code>#include &quot;traits.h&quot;</code></p>
+<p><code>#include &quot;z_traits_dec.h&quot;</code></p>
 <h2 class="groupheader">Concept definition</h2>
 <div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> type_p&gt;</div>
 <div class="line"><span class="keyword">concept </span><a class="code hl_concept" href="conceptnkr_1_1type__pointer__tr.html">nkr::type_pointer_tr</a> = </div>
-<div class="line">        <a class="code hl_concept" href="conceptnkr_1_1pointer__tr.html">pointer_tr&lt;type_p&gt;</a> &amp;&amp;</div>
+<div class="line">        <a class="code hl_concept" href="conceptnkr_1_1c__pointer__tr.html">c_pointer_tr&lt;type_p&gt;</a> &amp;&amp;</div>
 <div class="line">        <a class="code hl_concept" href="conceptnkr_1_1any__type__tr.html">any_type_tr&lt;std::remove_pointer_t&lt;type_p&gt;</a>&gt;</div>
-<div class="ttc" id="aconceptnkr_1_1any__type__tr_html"><div class="ttname"><a href="conceptnkr_1_1any__type__tr.html">nkr::any_type_tr</a></div><div class="ttdoc">An actual type. Pretty much anything but nkr::void_t.</div><div class="ttdef"><b>Definition:</b> traits.h:76</div></div>
-<div class="ttc" id="aconceptnkr_1_1pointer__tr_html"><div class="ttname"><a href="conceptnkr_1_1pointer__tr.html">nkr::pointer_tr</a></div><div class="ttdoc">In addition to regular pointers, this also includes nullptr.</div><div class="ttdef"><b>Definition:</b> traits.h:380</div></div>
-<div class="ttc" id="aconceptnkr_1_1type__pointer__tr_html"><div class="ttname"><a href="conceptnkr_1_1type__pointer__tr.html">nkr::type_pointer_tr</a></div><div class="ttdoc">Only pointers that point to a any_type_tr type, which includes std::nullptr_t.</div><div class="ttdef"><b>Definition:</b> traits.h:390</div></div>
+<div class="ttc" id="aconceptnkr_1_1any__type__tr_html"><div class="ttname"><a href="conceptnkr_1_1any__type__tr.html">nkr::any_type_tr</a></div><div class="ttdoc">An actual type. Pretty much anything but nkr::void_t.</div><div class="ttdef"><b>Definition:</b> z_traits_dec.h:84</div></div>
+<div class="ttc" id="aconceptnkr_1_1c__pointer__tr_html"><div class="ttname"><a href="conceptnkr_1_1c__pointer__tr.html">nkr::c_pointer_tr</a></div><div class="ttdoc">In addition to regular pointers, this also includes nullptr.</div><div class="ttdef"><b>Definition:</b> z_traits_dec.h:385</div></div>
+<div class="ttc" id="aconceptnkr_1_1type__pointer__tr_html"><div class="ttname"><a href="conceptnkr_1_1type__pointer__tr.html">nkr::type_pointer_tr</a></div><div class="ttdoc">Only pointers that point to a any_type_tr type, which includes std::nullptr_t.</div><div class="ttdef"><b>Definition:</b> z_traits_dec.h:395</div></div>
 </div><!-- fragment --><a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Only pointers that point to a any_type_tr type, which includes std::nullptr_t. </p>
 </div></div><!-- contents -->

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['void_5fpointer_5fsp_0',['void_pointer_sp',['../classnkr_1_1_0batomic__t_1_1void__pointer__sp.html',1,'nkr::$atomic_t']]]
+  ['user_5fdefined_5fsp_0',['user_defined_sp',['../classnkr_1_1_0bmaybe__t_1_1user__defined__sp.html',1,'nkr::$maybe_t']]]
 ];

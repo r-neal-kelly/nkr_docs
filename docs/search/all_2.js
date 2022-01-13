@@ -1,9 +1,7 @@
 var searchData=
 [
-  ['c16_5ft_0',['c16_t',['../group____17e74a8d__e977__4d08__a090__f4bb1bcf7673.html#gaaa04d878123e7509107f2c02bbe4449d',1,'nkr']]],
-  ['c32_5ft_1',['c32_t',['../group____17e74a8d__e977__4d08__a090__f4bb1bcf7673.html#ga8764e38c5ead4b335b09c613075b9810',1,'nkr']]],
-  ['c8_5ft_2',['c8_t',['../group____17e74a8d__e977__4d08__a090__f4bb1bcf7673.html#gabeadddb14962730a1b3072d4a21a2673',1,'nkr']]],
-  ['characters_3',['characters',['../group____17e74a8d__e977__4d08__a090__f4bb1bcf7673.html',1,'']]],
-  ['contextuals_4',['contextuals',['../group__intrinsics__contextuals.html',1,'']]],
-  ['count_5ft_5',['count_t',['../group__intrinsics__contextuals.html#ga962bdb5ad1c5bc05d87739e09df6082b',1,'nkr']]]
+  ['c_5fbool_5ft_0',['c_bool_t',['../group__intrinsics__primitives.html#gad05619436af7cbd3f917c34f6ca5bb0a',1,'nkr']]],
+  ['c_5fpointer_5fsp_1',['c_pointer_sp',['../classnkr_1_1_0batomic__t_1_1c__pointer__sp.html#af25a40ad8be575aa6f6a2df42168f9e1',1,'nkr::$atomic_t::c_pointer_sp::c_pointer_sp()'],['../classnkr_1_1_0batomic__t_1_1c__pointer__sp.html#a359f0e0a0dd00c8b900410438d22e691',1,'nkr::$atomic_t::c_pointer_sp::c_pointer_sp(convertible_tr&lt; value_t &gt; auto value)'],['../classnkr_1_1_0batomic__t_1_1c__pointer__sp.html#a58b472443db81af3f53321ef85179271',1,'nkr::$atomic_t::c_pointer_sp::c_pointer_sp(const c_pointer_sp &amp;other)'],['../classnkr_1_1_0batomic__t_1_1c__pointer__sp.html#a4e2be13eae085af0e96bf1a6b9d05c67',1,'nkr::$atomic_t::c_pointer_sp::c_pointer_sp(const volatile c_pointer_sp &amp;other)'],['../classnkr_1_1_0batomic__t_1_1c__pointer__sp.html#ac39331b443ff2f8f91521cb186b2647d',1,'nkr::$atomic_t::c_pointer_sp::c_pointer_sp(c_pointer_sp &amp;&amp;other) noexcept'],['../classnkr_1_1_0batomic__t_1_1c__pointer__sp.html#a7798acd066ff9879ea0077efe54ca930',1,'nkr::$atomic_t::c_pointer_sp::c_pointer_sp(volatile c_pointer_sp &amp;&amp;other) noexcept'],['../classnkr_1_1_0batomic__t_1_1c__pointer__sp.html#ad973556cd42ea352ece71c5717ef03a1',1,'nkr::$atomic_t::c_pointer_sp::c_pointer_sp(none_t)'],['../classnkr_1_1_0batomic__t_1_1c__pointer__sp.html',1,'nkr::$atomic_t::c_pointer_sp&lt; c_pointer_p &gt;'],['../classnkr_1_1_0bmaybe__t_1_1_0bbuilt__in__sp_1_1c__pointer__sp.html',1,'nkr::$maybe_t::$built_in_sp::c_pointer_sp&lt; c_pointer_p &gt;']]],
+  ['contextuals_2',['contextuals',['../group__intrinsics__contextuals.html',1,'']]],
+  ['count_5ft_3',['count_t',['../group__intrinsics__contextuals.html#ga962bdb5ad1c5bc05d87739e09df6082b',1,'nkr']]]
 ];

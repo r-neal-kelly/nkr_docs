@@ -95,13 +95,13 @@ var searchBox = new SearchBox("searchBox", "search",'Search','.html');
 <p>Allows any user-defined type to interact with <a class="el" href="classnkr_1_1none__t.html" title="A tag used to assign &#39;nothing&#39; to a user-defined type, or to compare it with &#39;nothing&#39;.">nkr::none_t</a>, which is necessary for <a class="el" href="classnkr_1_1maybe__t.html" title="Wraps a type whose object may have a value.">nkr::maybe_t</a> and <a class="el" href="classnkr_1_1some__t.html" title="Wraps a type whose object has some value.">nkr::some_t</a>.  
 <a href="conceptnkr_1_1none__i.html#details">More...</a></p>
 
-<p><code>#include &quot;none_i.h&quot;</code></p>
+<p><code>#include &quot;z_none_i.h&quot;</code></p>
 <h2 class="groupheader">Concept definition</h2>
 <div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> type_p&gt;</div>
 <div class="line"><span class="keyword">concept </span><a class="code hl_concept" href="conceptnkr_1_1none__i.html">nkr::none_i</a> = </div>
 <div class="line">        $none_i::assignment_i&lt;type_p&gt; &amp;&amp;</div>
 <div class="line">        $none_i::comparison_i&lt;type_p&gt;</div>
-<div class="ttc" id="aconceptnkr_1_1none__i_html"><div class="ttname"><a href="conceptnkr_1_1none__i.html">nkr::none_i</a></div><div class="ttdoc">Allows any user-defined type to interact with nkr::none_t, which is necessary for nkr::maybe_t and nk...</div><div class="ttdef"><b>Definition:</b> none_i.h:50</div></div>
+<div class="ttc" id="aconceptnkr_1_1none__i_html"><div class="ttname"><a href="conceptnkr_1_1none__i.html">nkr::none_i</a></div><div class="ttdoc">Allows any user-defined type to interact with nkr::none_t, which is necessary for nkr::maybe_t and nk...</div><div class="ttdef"><b>Definition:</b> z_none_i.h:50</div></div>
 </div><!-- fragment --><a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Allows any user-defined type to interact with <a class="el" href="classnkr_1_1none__t.html" title="A tag used to assign &#39;nothing&#39; to a user-defined type, or to compare it with &#39;nothing&#39;.">nkr::none_t</a>, which is necessary for <a class="el" href="classnkr_1_1maybe__t.html" title="Wraps a type whose object may have a value.">nkr::maybe_t</a> and <a class="el" href="classnkr_1_1some__t.html" title="Wraps a type whose object has some value.">nkr::some_t</a>. </p>
 <p >We make no assumptions about whatever type is meant to interface with <a class="el" href="classnkr_1_1none__t.html" title="A tag used to assign &#39;nothing&#39; to a user-defined type, or to compare it with &#39;nothing&#39;.">nkr::none_t</a>, such as assuming that <code>operator bool_t()</code> indicates a lack of a value or not. Requiring an extra step to be taken by the implementor of the type helps to ensure correct usage. </p>

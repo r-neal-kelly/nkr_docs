@@ -105,7 +105,7 @@ var searchBox = new SearchBox("searchBox", "search",'Search','.html');
 <p>A specialization for <a class="el" href="classnkr_1_1pointer__t.html" title="A fat pointer that stores a pointer to any unit_t and a unit count indicating the size of memory bein...">nkr::pointer_t</a> through <a class="el" href="classnkr_1_1pointer__t_3_01any__type__p_01_4.html" title="A specialization of nkr::pointer_t and a wrapper for nkr::$pointer_t::any_type_sp.">nkr::pointer_t&lt;any_type_p&gt;</a>. Accepts any type that has a size.  
  <a href="classnkr_1_1_0bpointer__t_1_1any__type__sp.html#details">More...</a></p>
 
-<p><code>#include &quot;pointer_t_dec.h&quot;</code></p>
+<p><code>#include &quot;z_pointer_t_dec.h&quot;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">aliases</h2></td></tr>
 <tr><td class="ititle" colspan="2"><p ><a class="anchor" id="amgrp9299da2529c98fccce0e32b476ba3266"></a></p>
@@ -116,16 +116,6 @@ var searchBox = new SearchBox("searchBox", "search",'Search','.html');
 <tr class="memitem:a0caf2f9759456fcc711e057edef6d2f4"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnkr_1_1_0bpointer__t_1_1any__type__sp.html#a0caf2f9759456fcc711e057edef6d2f4">units_t</a> = unit_p *</td></tr>
 <tr class="memdesc:a0caf2f9759456fcc711e057edef6d2f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of the raw underlying pointer.  <a href="classnkr_1_1_0bpointer__t_1_1any__type__sp.html#a0caf2f9759456fcc711e057edef6d2f4">More...</a><br /></td></tr>
 <tr class="separator:a0caf2f9759456fcc711e057edef6d2f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader">friends</h2></td></tr>
-<tr><td class="ititle" colspan="2"><p ><a class="anchor" id="amgrp28f20a02bf8a021fab4fcec48afb584e"></a></p>
-</td></tr>
-<tr class="memitem:a946d3e59062b90f170c8cba656a9d560"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classnkr_1_1bool__t.html">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnkr_1_1_0bpointer__t_1_1any__type__sp.html#a946d3e59062b90f170c8cba656a9d560">operator==</a> (is_any_tr&lt; <a class="el" href="classnkr_1_1_0bpointer__t_1_1any__type__sp.html">any_type_sp</a> &gt; auto a, is_any_tr&lt; <a class="el" href="classnkr_1_1_0bpointer__t_1_1any__type__sp.html">any_type_sp</a> &gt; auto b)</td></tr>
-<tr class="memdesc:a946d3e59062b90f170c8cba656a9d560"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows any <code>unqualified</code>, <code>const</code>, <code>volatile</code>, and/or <code>const volatile</code> object to be compared to any other.  <a href="classnkr_1_1_0bpointer__t_1_1any__type__sp.html#a946d3e59062b90f170c8cba656a9d560">More...</a><br /></td></tr>
-<tr class="separator:a946d3e59062b90f170c8cba656a9d560"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a59d9e6e215078a270d6e49853b112d52"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classnkr_1_1bool__t.html">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnkr_1_1_0bpointer__t_1_1any__type__sp.html#a59d9e6e215078a270d6e49853b112d52">operator!=</a> (is_any_tr&lt; <a class="el" href="classnkr_1_1_0bpointer__t_1_1any__type__sp.html">any_type_sp</a> &gt; auto a, is_any_tr&lt; <a class="el" href="classnkr_1_1_0bpointer__t_1_1any__type__sp.html">any_type_sp</a> &gt; auto b)</td></tr>
-<tr class="memdesc:a59d9e6e215078a270d6e49853b112d52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows any <code>unqualified</code>, <code>const</code>, <code>volatile</code>, and/or <code>const volatile</code> object to be compared to any other.  <a href="classnkr_1_1_0bpointer__t_1_1any__type__sp.html#a59d9e6e215078a270d6e49853b112d52">More...</a><br /></td></tr>
-<tr class="separator:a59d9e6e215078a270d6e49853b112d52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">objects</h2></td></tr>
 <tr><td class="ititle" colspan="2"><p ><a class="anchor" id="amgrp5891da2d64975cae48d175d1e001f5da"></a></p>
@@ -2367,87 +2357,6 @@ template&lt;any_type_tr unit_p&gt; </div>
 </div><div class="memdoc">
 
 <p></p>
-
-</div>
-</div>
-<h2 class="groupheader">Friends And Related Function Documentation</h2>
-<a id="a946d3e59062b90f170c8cba656a9d560" name="a946d3e59062b90f170c8cba656a9d560"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a946d3e59062b90f170c8cba656a9d560">&#9670;&nbsp;</a></span>operator==</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;any_type_tr unit_p&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classnkr_1_1bool__t.html">bool_t</a> operator== </td>
-          <td>(</td>
-          <td class="paramtype">is_any_tr&lt; <a class="el" href="classnkr_1_1_0bpointer__t_1_1any__type__sp.html">any_type_sp</a>&lt; unit_p &gt; &gt; auto&#160;</td>
-          <td class="paramname"><em>a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">is_any_tr&lt; <a class="el" href="classnkr_1_1_0bpointer__t_1_1any__type__sp.html">any_type_sp</a>&lt; unit_p &gt; &gt; auto&#160;</td>
-          <td class="paramname"><em>b</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Allows any <code>unqualified</code>, <code>const</code>, <code>volatile</code>, and/or <code>const volatile</code> object to be compared to any other. </p>
-
-</div>
-</div>
-<a id="a59d9e6e215078a270d6e49853b112d52" name="a59d9e6e215078a270d6e49853b112d52"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a59d9e6e215078a270d6e49853b112d52">&#9670;&nbsp;</a></span>operator!=</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;any_type_tr unit_p&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classnkr_1_1bool__t.html">bool_t</a> operator!= </td>
-          <td>(</td>
-          <td class="paramtype">is_any_tr&lt; <a class="el" href="classnkr_1_1_0bpointer__t_1_1any__type__sp.html">any_type_sp</a>&lt; unit_p &gt; &gt; auto&#160;</td>
-          <td class="paramname"><em>a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">is_any_tr&lt; <a class="el" href="classnkr_1_1_0bpointer__t_1_1any__type__sp.html">any_type_sp</a>&lt; unit_p &gt; &gt; auto&#160;</td>
-          <td class="paramname"><em>b</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Allows any <code>unqualified</code>, <code>const</code>, <code>volatile</code>, and/or <code>const volatile</code> object to be compared to any other. </p>
 
 </div>
 </div>

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['dynamic_5ft_0',['dynamic_t',['../classnkr_1_1array_1_1dynamic__t.html',1,'nkr::array']]],
-  ['dynamic_5ft_3c_20unit_5ft_2c_20allocator_3a_3aheap_5ft_3c_20typename_20charcoder_5fp_3a_3aunit_5ft_20_3e_2c_20math_3a_3afraction_5ft_3c_2017_2c_2010_20_3e_20_3e_1',['dynamic_t&lt; unit_t, allocator::heap_t&lt; typename charcoder_p::unit_t &gt;, math::fraction_t&lt; 17, 10 &gt; &gt;',['../classnkr_1_1array_1_1dynamic__t.html',1,'nkr::array']]]
+  ['c_5fpointer_5fsp_0',['c_pointer_sp',['../classnkr_1_1_0batomic__t_1_1c__pointer__sp.html',1,'nkr::$atomic_t::c_pointer_sp&lt; c_pointer_p &gt;'],['../classnkr_1_1_0bmaybe__t_1_1_0bbuilt__in__sp_1_1c__pointer__sp.html',1,'nkr::$maybe_t::$built_in_sp::c_pointer_sp&lt; c_pointer_p &gt;']]]
 ];

@@ -92,23 +92,23 @@ var searchBox = new SearchBox("searchBox", "search",'Search','.html');
 </div><!--header-->
 <div class="contents">
 
-<p>Includes <a class="el" href="group__intrinsics__primitives.html#ga5095f8e116218344a0af438d2cce601b" title="Relegated to the std namespace in favor of nkr::bool_t.">nkr::std_bool_t</a>, <a class="el" href="conceptnkr_1_1integer__tr.html" title="Either unsigned or signed integers.">nkr::integer_tr</a>, <a class="el" href="conceptnkr_1_1real__tr.html">nkr::real_tr</a>, and <a class="el" href="conceptnkr_1_1pointer__tr.html" title="In addition to regular pointers, this also includes nullptr.">nkr::pointer_tr</a>. The opposite of <a class="el" href="conceptnkr_1_1user__defined__tr.html" title="Includes non-built-in types, the opposite of nkr::built_in_tr.">nkr::user_defined_tr</a>.  
+<p>Includes <a class="el" href="group__intrinsics__primitives.html#gad05619436af7cbd3f917c34f6ca5bb0a" title="Relegated to the std namespace in favor of nkr::bool_t.">nkr::c_bool_t</a>, <a class="el" href="conceptnkr_1_1integer__tr.html" title="Either unsigned or signed integers.">nkr::integer_tr</a>, <a class="el" href="conceptnkr_1_1real__tr.html">nkr::real_tr</a>, and <a class="el" href="conceptnkr_1_1c__pointer__tr.html" title="In addition to regular pointers, this also includes nullptr.">nkr::c_pointer_tr</a>. The opposite of <a class="el" href="conceptnkr_1_1user__defined__tr.html" title="Includes non-built-in types, the opposite of nkr::built_in_tr.">nkr::user_defined_tr</a>.  
 <a href="conceptnkr_1_1built__in__tr.html#details">More...</a></p>
 
-<p><code>#include &quot;traits.h&quot;</code></p>
+<p><code>#include &quot;z_traits_dec.h&quot;</code></p>
 <h2 class="groupheader">Concept definition</h2>
 <div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> type_p&gt;</div>
 <div class="line"><span class="keyword">concept </span><a class="code hl_concept" href="conceptnkr_1_1built__in__tr.html">nkr::built_in_tr</a> = </div>
-<div class="line">        is_any_tr&lt;type_p, std_bool_t&gt; ||</div>
+<div class="line">        is_any_tr&lt;type_p, c_bool_t&gt; ||</div>
 <div class="line">        <a class="code hl_concept" href="conceptnkr_1_1integer__tr.html">integer_tr&lt;type_p&gt;</a> ||</div>
 <div class="line">        <a class="code hl_concept" href="conceptnkr_1_1real__tr.html">real_tr&lt;type_p&gt;</a> ||</div>
-<div class="line">        <a class="code hl_concept" href="conceptnkr_1_1pointer__tr.html">pointer_tr&lt;type_p&gt;</a></div>
-<div class="ttc" id="aconceptnkr_1_1built__in__tr_html"><div class="ttname"><a href="conceptnkr_1_1built__in__tr.html">nkr::built_in_tr</a></div><div class="ttdoc">Includes nkr::std_bool_t, nkr::integer_tr, nkr::real_tr, and nkr::pointer_tr. The opposite of nkr::us...</div><div class="ttdef"><b>Definition:</b> traits.h:405</div></div>
-<div class="ttc" id="aconceptnkr_1_1integer__tr_html"><div class="ttname"><a href="conceptnkr_1_1integer__tr.html">nkr::integer_tr</a></div><div class="ttdoc">Either unsigned or signed integers.</div><div class="ttdef"><b>Definition:</b> traits.h:282</div></div>
-<div class="ttc" id="aconceptnkr_1_1pointer__tr_html"><div class="ttname"><a href="conceptnkr_1_1pointer__tr.html">nkr::pointer_tr</a></div><div class="ttdoc">In addition to regular pointers, this also includes nullptr.</div><div class="ttdef"><b>Definition:</b> traits.h:380</div></div>
-<div class="ttc" id="aconceptnkr_1_1real__tr_html"><div class="ttname"><a href="conceptnkr_1_1real__tr.html">nkr::real_tr</a></div><div class="ttdef"><b>Definition:</b> traits.h:352</div></div>
+<div class="line">        <a class="code hl_concept" href="conceptnkr_1_1c__pointer__tr.html">c_pointer_tr&lt;type_p&gt;</a></div>
+<div class="ttc" id="aconceptnkr_1_1built__in__tr_html"><div class="ttname"><a href="conceptnkr_1_1built__in__tr.html">nkr::built_in_tr</a></div><div class="ttdoc">Includes nkr::c_bool_t, nkr::integer_tr, nkr::real_tr, and nkr::c_pointer_tr. The opposite of nkr::us...</div><div class="ttdef"><b>Definition:</b> z_traits_dec.h:409</div></div>
+<div class="ttc" id="aconceptnkr_1_1c__pointer__tr_html"><div class="ttname"><a href="conceptnkr_1_1c__pointer__tr.html">nkr::c_pointer_tr</a></div><div class="ttdoc">In addition to regular pointers, this also includes nullptr.</div><div class="ttdef"><b>Definition:</b> z_traits_dec.h:385</div></div>
+<div class="ttc" id="aconceptnkr_1_1integer__tr_html"><div class="ttname"><a href="conceptnkr_1_1integer__tr.html">nkr::integer_tr</a></div><div class="ttdoc">Either unsigned or signed integers.</div><div class="ttdef"><b>Definition:</b> z_traits_dec.h:288</div></div>
+<div class="ttc" id="aconceptnkr_1_1real__tr_html"><div class="ttname"><a href="conceptnkr_1_1real__tr.html">nkr::real_tr</a></div><div class="ttdef"><b>Definition:</b> z_traits_dec.h:358</div></div>
 </div><!-- fragment --><a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >Includes <a class="el" href="group__intrinsics__primitives.html#ga5095f8e116218344a0af438d2cce601b" title="Relegated to the std namespace in favor of nkr::bool_t.">nkr::std_bool_t</a>, <a class="el" href="conceptnkr_1_1integer__tr.html" title="Either unsigned or signed integers.">nkr::integer_tr</a>, <a class="el" href="conceptnkr_1_1real__tr.html">nkr::real_tr</a>, and <a class="el" href="conceptnkr_1_1pointer__tr.html" title="In addition to regular pointers, this also includes nullptr.">nkr::pointer_tr</a>. The opposite of <a class="el" href="conceptnkr_1_1user__defined__tr.html" title="Includes non-built-in types, the opposite of nkr::built_in_tr.">nkr::user_defined_tr</a>. </p>
+<div class="textblock"><p >Includes <a class="el" href="group__intrinsics__primitives.html#gad05619436af7cbd3f917c34f6ca5bb0a" title="Relegated to the std namespace in favor of nkr::bool_t.">nkr::c_bool_t</a>, <a class="el" href="conceptnkr_1_1integer__tr.html" title="Either unsigned or signed integers.">nkr::integer_tr</a>, <a class="el" href="conceptnkr_1_1real__tr.html">nkr::real_tr</a>, and <a class="el" href="conceptnkr_1_1c__pointer__tr.html" title="In addition to regular pointers, this also includes nullptr.">nkr::c_pointer_tr</a>. The opposite of <a class="el" href="conceptnkr_1_1user__defined__tr.html" title="Includes non-built-in types, the opposite of nkr::built_in_tr.">nkr::user_defined_tr</a>. </p>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
