@@ -1,14 +1,90 @@
 # Overview {#mainpage}
-### Why nkr?
+### General-Use Types
 `nkr` exists to provide an assortment of well-rounded generic `types` offering fleshed-out functionality and interoperation through two primary meta-programming abstractions: `traits` and `interfaces`:
-- `traits` are concepts that essentially act as the nouns and are divided into two general sub-categories:
+- `traits` are concepts that essentially act as the nouns for types and are divided into two general sub-categories:
   - `identities`
     - these constrain to any instantiation of a particular template type or to a non-template type. In either case, they may be const, volatile, const volatile, or non-qualified. If the type is a template, a sibling identity exists to constrain the template itself, making the template a first class citizen in the library.
   - `generics`
-    - these constrain to multiple `identities` and are also hierarchically allowed to constrain to other `generics`. They are used to describe groups of `identities` both in a meaningful and a practical way. For example a `generic` may constrain to any array, or perhaps to any array that stores its data locally, or alternatively, to any array that stores its data remotely. Any `identity` that satisfies these `generics` necessarily satisfies their requirements, and in this case that would include the access operator. In this way, templated code may reliably work with any of these constrained arrays, such as by accessing their elements.
-- `interfaces` are concepts that essentially act as verbs for `types` and `traits` by specifying how they may do something. They describe not what a type is, but what it can do. A great example of an interface is for the `nkr::none::value_t`. Instead of arbitrarily requiring some hard coupling such as a default constructor, `interfaces` allow the user to define what the none value is for their particular `identity`, whether they have a default constructor or not.
+    - these constrain to multiple `identities` and are also hierarchically allowed to constrain to other `generics`. They are used to describe groups of `identities` both in a meaningful and a practical way. For example a `generic` may constrain to any array, or perhaps to any array that stores its data locally, or alternatively, to any array that stores its data remotely. Any `identity` that satisfies these `generics` necessarily satisfies their requirements, and in this case that would include the access operator. In this way, templated code may reliably work with any of these constrained arrays by accessing their elements.
+- `interfaces` are concepts that essentially act as verbs for `types` and `traits` by specifying how they may do something. They describe not what a type is, but what it can do. A great example of an interface is for the `nkr::none::value_t`. Whereas a `trait` may require that a type have a default constructor to provide a value that may or may not be equal to `none`, an `interface` only requires a soft-coupling to define what the `none` value is for a particular `identity`, whether it is has a default constructor or not, or if it does but the default value is not equal to `none`.
 
-### Documentation Status
+### Full Qualifications
+As much as possible, this library provides methods available for `const`, `volatile`, and `const volatile` qualifications of types, in addition to the the standard non-qualification. The only exceptions are for when it doesn't make sense for a particular type to have a certain qualification, or if we are currently using a C++ type in some way, which often does not define `const` and `volatile` qualifications.
+
+# Design
+
+### Data Labels
+There are a number of postfixes tacked unto labels to differentiate them from various kinds of syntactic data. For example, "example_t" is for "example type", "example_i" for "example interface", "example_tr" for "example trait", "example_tg" for "example tag", just to name a few. This helps to secure an open namespace for new labels to be added in the future, even if they are in the same namespace and have the same base name.
+
+### File Hierarchy
+Files mimic the hierarchy of the library's namespaces and include the postfix of whatever it is they are primarily declaring or defining. For example, types have "_t" in the name of the file, such as in "example_t", and interfaces have "_i" in the name of the file, such as in "example_i". This gives as much room to avoid collisions as there is in the general namespace and leaves open more general files such as "example" where they are needed. In addition, post-postfixes are added to files that make them distinct based on their function in the include system. For example, "example_t_dec.h" is for "example_t declaration" and "example_t_def.h" for "example_t definition". Additionally, there is a primary header for each group of sub-headers that does not include a post-postfix. This file allows for a consumer of the library to easily pull in everything they need for that entity, with every file already included in order.
+
+### Move Assignment of Volatile Types
+In order to avoid an overload resolution ambiguity, we often use a templated operator to define the move assignment of volatile types. Because templates have a lower precedence than normal operators, this allows for both volatile and non-volatile instances as well as new constructions of the type to be move-assigned properly, and also allows other types that can be converted through a constructor of the type to be properly assigned as expected.
+
+```cpp
+class example_t
+{
+public:
+    example_t&            operator =(const example_t& other);
+    volatile example_t&   operator =(const example_t& other) volatile;
+    example_t&            operator =(const volatile example_t& other);
+    volatile example_t&   operator =(const volatile example_t& other) volatile;
+    example_t&            operator =(example_t&& other);                                        // may match any rvalue that is or can be converted implicitly to an example_t
+    volatile example_t&   operator =(example_t&& other) volatile;                               // ""
+    example_t&            operator =(tr1<just_volatile_tg, example_t> auto&& other);            // only ever resolves if given a volatile example_t&&
+    volatile example_t&   operator =(tr1<just_volatile_tg, example_t> auto&& other) volatile;   // ""
+}
+```
+
+### Partial Specializations By Concept {#_16d56f49_95ba_456e_a026_706c054cb133}
+Because we are using C++20 concepts, we have to work around a bug that exists in two of the major compilers. In order to use out-of-body class definitions, we take advantage of a pattern of concept partial specialization which indirectly maps onto separate types. An alias of this indirection is used as the primary type. The actual types that make up the specializations should be put in a non-colliding namespace one step interior to the namespace where the primary type lives. No members in the indirection template may be defined out-of-body:
+
+```cpp
+namespace nkr { namespace $example_t {
+
+    template <integer_tr value_p>
+    class integer_sp
+    {
+        // has any member you want, and they can all be defined out-of-body
+    }
+
+    template <pointer_tr value_p>
+    class pointer_sp
+    {
+        // ""
+    }
+
+}}
+
+namespace nkr {
+
+    template <typename value_p>
+    class example_t_sp;
+
+    template <integer_tr value_p>
+    class example_t_sp
+    {
+    public:
+        using type_t    = $example_t::integer_sp<value_p>;
+    }
+
+    template <pointer_tr value_p>
+    class example_t_sp
+    {
+    public:
+        using type_t    = $example_t::pointer_sp<value_p>;
+    }
+
+    template <typename value_p>
+    using example_t = example_t_sp<value_p>::type_t;
+
+}
+```
+[View a small but detail example of the bug.](https://github.com/r-neal-kelly/the_concept_bug)
+[Read about this on stackoverflow.](https://stackoverflow.com/questions/68589314/how-to-define-a-specialized-class-method-outside-of-class-body-in-c)
+
+## Documentation Status
 We are in the pre-alpha phase of the library. We are currently prototyping and designing the overarching system of types, traits, and interfaces, and importantly, we are designing the documentation itself. Currently we are implementing the third iteration of traits and interfaces across the library which in addition to improving accessibility and performance, also addresses a consistency issue with the previous two iterations. In the meantime, the documentation remains focused on the old versions, but after we finish this latest iteration we will be updating this documentation to not only reflect the new types as well as the old, but also to give particular focus to the new traits and interfaces that describe the system as a whole. Until that time, anything following in the documentation refers to code that has either been moved or is in the process of being moved to the new system. Thank you for your understanding.
 
 #### Basics
@@ -65,69 +141,3 @@ We are in the pre-alpha phase of the library. We are currently prototyping and d
 - macros.h
 - traits.h
 - utils.h
-
-# Designs
-
-## Data Labels
-There are a number of postfixes tacked unto labels to differentiate them from various kinds of data that work upon the same concept. For example, "example_t" is for "example type", "example_i" for "example interface", "example_tr" for "example trait", "example_err" for "example error", just to name a few. Because these all have the same name excepting the postfix, it's implied that each of these different kinds of data relate and are interconnected, all at a glance.
-
-## File Hierarchy
-Files include the postfix of whatever it is they declare or define. For example, types have "_t" in the name of the file: e.g. "pointer_t.h", "bool_t.cpp". This is to make them distinct from other kinds of data that have the same name but a different postfix. In addition, post-postfixes are added to the names of files to make them distinct from the kinds of files that make up the program, e.g. "pointer_t_dec.h" for "pointer_t declaration" and "bool_t_def.h" for "bool_t definition". There is yet another that is used to decouple comments from the code, e.g. "pointer_t_dox.h" for "pointer_t documents".
-
-## Templates
-This is pretty much a template library. Therefore this library sacrifices compilation speed for runtime speed. For that reason, I have begun implementing the option to pre-define common templated types if you find you should need them in your project. However any project that is 100,000 or so lines long should not have any significant slow-downs. Getting into the millions is much harder to speak about, but knowing C++ and its slow compilation speeds, it's probably not going to be great compilation times. However, take note that the ridiculously slow parts of the meta-language are not typically not used, especially things like iterating tuples. Very rarely is there any meta-recursion (or recursion generally) however the examples of recursion that do exist are opt-in and completely avoidable. (See nkr::array::stack_t and its Push methods.)
-
-## Full Definitions
-As much as possible, one of my goals for this library is to create complete types as much as possible. Therefore almost every type has all sensible methods available for `const`, `volatile`, and `const volatile` versions of the type, in addition to the the unqualified variety.
-
-## Class Concept Specializations {#_16d56f49_95ba_456e_a026_706c054cb133}
-Because we are using the C++20 concepts feature, which is not fully implemented in all compilers, we do have to work around a couple of bugs that currently exist in two of the big compilers to varying degrees. In order to use out-of-body class definitions, we use a pattern of concept specialization that has the specializations inherit all of their members from a different class, including methods, ctors, dtor, and assignment operators. This effectively makes the specialization the same class as the base. We put these in a name space one step interior to the namespace where the type lives, and it's named after the type with an additional "$" prefixing it. We also put no members in the default class and only use the specializations. This is to avoid yet another bug that currently exists in one of the big compilers:
-
-```cpp
-namespace nkr { namespace $class_t {
-
-    template <integer_tr integer_p>
-    class integer_sp
-    {
-        // has any member you want
-    }
-
-    template <pointer_tr pointer_p>
-    class pointer_sp
-    {
-        // has any member you want
-    }
-
-}}
-
-namespace nkr {
-
-    template <typename invalid_p>
-    class class_t
-    {
-        // has no members, and we usually delete all ctors and dtor explicitly.
-        // else it can inherit a default specialization in the sub-namespace.
-    }
-
-    template <integer_tr integer_p>
-    class class_t<integer_p> :
-        public $class_t::integer_sp
-    {
-    public:
-        using $class_t::integer_sp<integer_p>::integer_sp;
-        using $class_t::integer_sp<integer_p>::operator =;
-    };
-
-    template <pointer_tr pointer_p>
-    class class_t<pointer_p> :
-        public $class_t::pointer_sp
-    {
-    public:
-        using $class_t::pointer_sp<pointer_p>::pointer_sp;
-        using $class_t::pointer_sp<pointer_p>::operator =;
-    };
-
-}
-```
-
-[Read about this on stackoverflow.](https://stackoverflow.com/questions/68589314/how-to-define-a-specialized-class-method-outside-of-class-body-in-c)
