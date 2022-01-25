@@ -19,6 +19,51 @@ There are a number of postfixes tacked unto labels to differentiate them from va
 ### File Hierarchy
 Files mimic the hierarchy of the library's namespaces and include the postfix of whatever it is they are primarily declaring or defining. For example, types have "_t" in the name of the file, such as in "example_t", and interfaces have "_i" in the name of the file, such as in "example_i". This gives as much room to avoid collisions as there is in the general namespace and leaves open more general files such as "example" where they are needed. In addition, post-postfixes are added to files that make them distinct based on their function in the include system. For example, "example_t_dec.h" is for "example_t declaration" and "example_t_def.h" for "example_t definition". Additionally, there is a primary header for each group of sub-headers that does not include a post-postfix. This file allows for a consumer of the library to easily pull in everything they need for that entity, with every file already included in order.
 
+### Equality Operators are Globals
+For the sake of compatibility and control we define equality operators for types using a specific and exhaustive pattern all in the top global scope:
+
+```cpp
+constexpr nkr::boolean::cpp_t   operator ==(const nkr::tr1<nkr::any_tg, nkr::example_t> auto& a, const auto& b) noexcept;
+constexpr nkr::boolean::cpp_t   operator ==(const nkr::tr1<nkr::any_tg, nkr::example_t> auto& a, const auto&& b) noexcept;
+constexpr nkr::boolean::cpp_t   operator ==(const nkr::tr1<nkr::any_tg, nkr::example_t> auto&& a, const auto& b) noexcept;
+constexpr nkr::boolean::cpp_t   operator ==(const nkr::tr1<nkr::any_tg, nkr::example_t> auto&& a, const auto&& b) noexcept;
+
+constexpr nkr::boolean::cpp_t   operator !=(const nkr::tr1<nkr::any_tg, nkr::example_t> auto& a, const auto& b) noexcept;
+constexpr nkr::boolean::cpp_t   operator !=(const nkr::tr1<nkr::any_tg, nkr::example_t> auto& a, const auto&& b) noexcept;
+constexpr nkr::boolean::cpp_t   operator !=(const nkr::tr1<nkr::any_tg, nkr::example_t> auto&& a, const auto& b) noexcept;
+constexpr nkr::boolean::cpp_t   operator !=(const nkr::tr1<nkr::any_tg, nkr::example_t> auto&& a, const auto&& b) noexcept;
+```
+
+Because the left hand parameter is a templated type, it prevents a potentially confusing new feature of C++20 that automatically tries reversing arguments for standard operators, which can lead to a lot of compatibility issues and ambiguities with other types defining equality operators. Notice that the b parameter is always const, even for rvalue references. This gives an extreme amount of flexibility while maintaining as much clarity as possible. Notice also that we define no reverse versions of these operators. This allows us to define these same set of functions per type and to give them proper definitions where applicable, all without causing collisions and ambiguities. We make up for any lack of reverse definitions by allowing any type whatsoever to attempt comparison in the general algorithm below:
+
+```cpp
+inline constexpr nkr::boolean::cpp_t
+    operator ==(const nkr::tr1<nkr::any_tg, nkr::example_t> auto& a, const auto& b)
+    noexcept
+{
+    using a_t = nkr::cpp::reference_value_t<decltype(a)>;
+    using b_t = nkr::cpp::reference_value_t<decltype(b)>;
+
+    if constexpr (nkr::cpp::is_any_tr<b_t, a_t>) {
+        // works with any qualified version of the same type by comparing their inner values.
+        return a() == b();
+    } else if constexpr (nkr::cpp::to_tr<b_t, nkr::cpp::just_non_qualified_t<typename a_t::value_t>>) {
+        // only applicable if a_t has an inner type, in this case value_t. there can be any number of these specific to this type.
+        return a() == static_cast<nkr::cpp::just_non_qualified_t<typename a_t::value_t>>(b);
+    } else if constexpr (nkr::cpp::to_tr<b_t, nkr::cpp::just_non_qualified_t<a_t>>) {
+        // tries to convert b_t to a_t and recurses back to this operator.
+        return a == static_cast<nkr::cpp::just_non_qualified_t<a_t>>(b);
+    } else if constexpr (nkr::cpp::to_tr<a_t, nkr::cpp::just_non_qualified_t<b_t>>) {
+        // tries to convert a_t to b_t and compares with b's algorithm.
+        return static_cast<nkr::cpp::just_non_qualified_t<b_t>>(a) == b;
+    } else {
+        static_assert(false, "these two values can not be compared.");
+    }
+}
+```
+
+This is the only equality operator in the group of declarations above that has such a definition, as the rest simply convert their arguments and/or complement their logic to call this one.
+
 ### Move Assignment of Volatile Types
 In order to avoid an overload resolution ambiguity, we often use a templated operator to define the move assignment of volatile types. Because templates have a lower precedence than normal operators, this allows for both volatile and non-volatile instances as well as new constructions of the type to be move-assigned properly, and also allows other types that can be converted through a constructor of the type to be properly assigned as expected.
 
@@ -81,8 +126,9 @@ namespace nkr {
 
 }
 ```
-[View a small but detail example of the bug.](https://github.com/r-neal-kelly/the_concept_bug)
-[Read about this on stackoverflow.](https://stackoverflow.com/questions/68589314/how-to-define-a-specialized-class-method-outside-of-class-body-in-c)
+[View a small but detailed example of this bug.](https://github.com/r-neal-kelly/the_concept_bug)
+
+[Read about it on stackoverflow.](https://stackoverflow.com/questions/68589314/how-to-define-a-specialized-class-method-outside-of-class-body-in-c)
 
 ## Documentation Status
 We are in the pre-alpha phase of the library. We are currently prototyping and designing the overarching system of types, traits, and interfaces, and importantly, we are designing the documentation itself. Currently we are implementing the third iteration of traits and interfaces across the library which in addition to improving accessibility and performance, also addresses a consistency issue with the previous two iterations. In the meantime, the documentation remains focused on the old versions, but after we finish this latest iteration we will be updating this documentation to not only reflect the new types as well as the old, but also to give particular focus to the new traits and interfaces that describe the system as a whole. Until that time, anything following in the documentation refers to code that has either been moved or is in the process of being moved to the new system. Thank you for your understanding.
