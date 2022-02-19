@@ -60,3 +60,7 @@ dl.todo {
     border-left: 8px solid;
     border-color: #00C0E0;
 }
+
+dt {
+    padding-bottom: 0.3em;
+}
