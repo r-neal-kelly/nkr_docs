@@ -42,6 +42,7 @@ var searchData=
   ['to_5fboolean_5ftr_39',['to_boolean_tr',['../conceptnkr_1_1to__boolean__tr.html',1,'nkr']]],
   ['to_5finteger_5ftr_40',['to_integer_tr',['../conceptnkr_1_1to__integer__tr.html',1,'nkr']]],
   ['to_5freal_5ftr_41',['to_real_tr',['../conceptnkr_1_1to__real__tr.html',1,'nkr']]],
-  ['type_5fpointer_5ftr_42',['type_pointer_tr',['../conceptnkr_1_1type__pointer__tr.html',1,'nkr']]],
-  ['user_5fdefined_5ftr_43',['user_defined_tr',['../conceptnkr_1_1user__defined__tr.html',1,'nkr']]]
+  ['tr_42',['tr',['../conceptnkr_1_1tr.html',1,'nkr']]],
+  ['type_5fpointer_5ftr_43',['type_pointer_tr',['../conceptnkr_1_1type__pointer__tr.html',1,'nkr']]],
+  ['user_5fdefined_5ftr_44',['user_defined_tr',['../conceptnkr_1_1user__defined__tr.html',1,'nkr']]]
 ];

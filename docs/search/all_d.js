@@ -7,6 +7,8 @@ var searchData=
   ['signed_5fword_5ft_4',['signed_word_t',['../group__intrinsics__contextuals.html#ga4d40c7808c5b92d36990e89f3560fe89',1,'nkr']]],
   ['size_5ft_5',['size_t',['../group__intrinsics__contextuals.html#ga87710d101176846a1c5f0874dc403aff',1,'nkr']]],
   ['some_5ft_6',['some_t',['../classnkr_1_1some__t.html',1,'nkr::some_t&lt; any_p &gt;'],['../classnkr_1_1some__t.html#ad7b94fa57905f90fdfd8c024985ffdd8',1,'nkr::some_t::some_t()']]],
-  ['stack_5ft_3c_20unit_5fp_2c_20capacity_5fp_20_3e_7',['stack_t&lt; unit_p, capacity_p &gt;',['../classnkr_1_1array___1_1stack__t_3_01unit__p_00_01capacity__p_01_4.html',1,'nkr::array_']]],
-  ['swap_8',['Swap',['../namespacenkr_1_1os_1_1endian.html#ad6f72c1256c324ece791595f1f433c26',1,'nkr::os::endian']]]
+  ['some_5ft_3c_20const_20string_5ft_20_2a_20_3e_7',['some_t&lt; const string_t * &gt;',['../classnkr_1_1some__t.html',1,'nkr']]],
+  ['some_5ft_3c_20node_5fu_20_2a_20_3e_8',['some_t&lt; node_u * &gt;',['../classnkr_1_1some__t.html',1,'nkr']]],
+  ['stack_5ft_3c_20unit_5fp_2c_20capacity_5fp_20_3e_9',['stack_t&lt; unit_p, capacity_p &gt;',['../classnkr_1_1array___1_1stack__t_3_01unit__p_00_01capacity__p_01_4.html',1,'nkr::array_']]],
+  ['swap_10',['Swap',['../namespacenkr_1_1os_1_1endian.html#ad6f72c1256c324ece791595f1f433c26',1,'nkr::os::endian']]]
 ];
