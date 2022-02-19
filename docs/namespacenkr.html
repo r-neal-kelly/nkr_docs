@@ -216,10 +216,18 @@ Concepts</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
+<tr class="memitem:ac2fadabeca6af1088b2114f4b32cc63f"><td class="memTemplParams" colspan="2">template&lt;typename type_p &gt; </td></tr>
+<tr class="memitem:ac2fadabeca6af1088b2114f4b32cc63f"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t</a> = nkr::$tr::ts&lt; AND_tg, nkr::tuple::types_t&lt; type_p &gt; &gt;</td></tr>
+<tr class="memdesc:ac2fadabeca6af1088b2114f4b32cc63f"><td class="mdescLeft">&#160;</td><td class="mdescRight">A way to wrap a single type for use with an <a class="el" href="namespacenkr.html#a1898ff80c7081762a1840f00883fa258" title="Used to filter a type by its qualifications, and by other types, templates, identities,...">nkr::TR</a> expression, to differentiate it from a template.  <a href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">More...</a><br /></td></tr>
+<tr class="separator:ac2fadabeca6af1088b2114f4b32cc63f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae4babe1476e170123b9682b67160a0e8"><td class="memTemplParams" colspan="2">template&lt;nkr::generic_ ::tag::logic_gate_tr operator_p, typename ... types_p&gt; </td></tr>
 <tr class="memitem:ae4babe1476e170123b9682b67160a0e8"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacenkr.html#ae4babe1476e170123b9682b67160a0e8">ts</a> = nkr::$tr::ts&lt; operator_p, nkr::tuple::types_t&lt; types_p... &gt; &gt;</td></tr>
 <tr class="memdesc:ae4babe1476e170123b9682b67160a0e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">A way to parenthesize and perform logical operations on several types in an <a class="el" href="namespacenkr.html#a1898ff80c7081762a1840f00883fa258" title="Used to filter a type by its qualifications, and by other types, templates, identities,...">nkr::TR</a> expression.  <a href="namespacenkr.html#ae4babe1476e170123b9682b67160a0e8">More...</a><br /></td></tr>
 <tr class="separator:ae4babe1476e170123b9682b67160a0e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9ca1dc69cb9a052d8bc183cf5e69dcb"><td class="memTemplParams" colspan="2">template&lt;template&lt; typename ... &gt; typename template_p&gt; </td></tr>
+<tr class="memitem:ad9ca1dc69cb9a052d8bc183cf5e69dcb"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacenkr.html#ad9ca1dc69cb9a052d8bc183cf5e69dcb">tt</a> = nkr::$tr::tts&lt; AND_tg, nkr::tuple::templates_t&lt; template_p &gt; &gt;</td></tr>
+<tr class="memdesc:ad9ca1dc69cb9a052d8bc183cf5e69dcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">A way to wrap a single template for use with an <a class="el" href="namespacenkr.html#a1898ff80c7081762a1840f00883fa258" title="Used to filter a type by its qualifications, and by other types, templates, identities,...">nkr::TR</a> expression, to differentiate it from a type.  <a href="namespacenkr.html#ad9ca1dc69cb9a052d8bc183cf5e69dcb">More...</a><br /></td></tr>
+<tr class="separator:ad9ca1dc69cb9a052d8bc183cf5e69dcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa41183e8bf88f05fd2c80a26fa6ebb52"><td class="memTemplParams" colspan="2">template&lt;nkr::generic_ ::tag::logic_gate_tr operator_p, template&lt; typename ... &gt; typename ... templates_p&gt; </td></tr>
 <tr class="memitem:aa41183e8bf88f05fd2c80a26fa6ebb52"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacenkr.html#aa41183e8bf88f05fd2c80a26fa6ebb52">tts</a> = nkr::$tr::tts&lt; operator_p, nkr::tuple::templates_t&lt; templates_p... &gt; &gt;</td></tr>
 <tr class="memdesc:aa41183e8bf88f05fd2c80a26fa6ebb52"><td class="mdescLeft">&#160;</td><td class="mdescRight">A way to parenthesize and perform logical operations on several templates in an <a class="el" href="namespacenkr.html#a1898ff80c7081762a1840f00883fa258" title="Used to filter a type by its qualifications, and by other types, templates, identities,...">nkr::TR</a> expression.  <a href="namespacenkr.html#aa41183e8bf88f05fd2c80a26fa6ebb52">More...</a><br /></td></tr>
@@ -290,6 +298,24 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >With the exception of "nkr_" prefixed macros, all other nkr entities are defined in this namespace.</p>
 </div><h2 class="groupheader">Typedef Documentation</h2>
+<a id="ac2fadabeca6af1088b2114f4b32cc63f" name="ac2fadabeca6af1088b2114f4b32cc63f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2fadabeca6af1088b2114f4b32cc63f">&#9670;&nbsp;</a></span>t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename type_p &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">nkr::t</a> = typedef nkr::$tr::ts&lt;AND_tg, nkr::tuple::types_t&lt;type_p&gt; &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A way to wrap a single type for use with an <a class="el" href="namespacenkr.html#a1898ff80c7081762a1840f00883fa258" title="Used to filter a type by its qualifications, and by other types, templates, identities,...">nkr::TR</a> expression, to differentiate it from a template. </p>
+
+</div>
+</div>
 <a id="ae4babe1476e170123b9682b67160a0e8" name="ae4babe1476e170123b9682b67160a0e8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae4babe1476e170123b9682b67160a0e8">&#9670;&nbsp;</a></span>ts</h2>
 
@@ -305,6 +331,24 @@ template&lt;nkr::generic_ ::tag::logic_gate_tr operator_p, typename ... types_p&
 </div><div class="memdoc">
 
 <p>A way to parenthesize and perform logical operations on several types in an <a class="el" href="namespacenkr.html#a1898ff80c7081762a1840f00883fa258" title="Used to filter a type by its qualifications, and by other types, templates, identities,...">nkr::TR</a> expression. </p>
+
+</div>
+</div>
+<a id="ad9ca1dc69cb9a052d8bc183cf5e69dcb" name="ad9ca1dc69cb9a052d8bc183cf5e69dcb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9ca1dc69cb9a052d8bc183cf5e69dcb">&#9670;&nbsp;</a></span>tt</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;template&lt; typename ... &gt; typename template_p&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacenkr.html#ad9ca1dc69cb9a052d8bc183cf5e69dcb">nkr::tt</a> = typedef nkr::$tr::tts&lt;AND_tg, nkr::tuple::templates_t&lt;template_p&gt; &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A way to wrap a single template for use with an <a class="el" href="namespacenkr.html#a1898ff80c7081762a1840f00883fa258" title="Used to filter a type by its qualifications, and by other types, templates, identities,...">nkr::TR</a> expression, to differentiate it from a type. </p>
 
 </div>
 </div>
@@ -355,7 +399,67 @@ template&lt;nkr::ts_tr subjects_p, typename ... expression_parts_p&gt; </div>
 <p>Used to filter a type by its qualifications, and by other types, templates, identities, and generics. </p>
 <p >An integral function for the entire library. Any type or template that satisfies the nkr::interface::type_i or nkr::interface::template_i respectively can be used in conjunction with pre-defined operators to form an expression for use with this function. Input a group of subjects in addition to your arbitrary-length expression, and a compile-time or runtime boolean will be output indicating whether or not the subjects satisfy the expression.</p>
 <dl class="section user"><dt>Purpose</dt><dd>The primary rationale for the existence of this function is to prevent the need of defining and redefining the same concepts over and over again with only minor variations. It keeps the focus on your static tests, and more importantly when using <a class="el" href="conceptnkr_1_1tr.html" title="Used to filter a type by its qualifications, and by other types, templates, identities,...">nkr::tr</a>, it keeps the focus on the signature of your types and functions, and what kind of types are acceptable inputs for their parameters.</dd></dl>
-<dl class="section user"><dt>Using Multiple Types as an Operand</dt><dd>Naturally there are times when using more than one type as a single operand in an <a class="el" href="namespacenkr.html#a1898ff80c7081762a1840f00883fa258" title="Used to filter a type by its qualifications, and by other types, templates, identities,...">nkr::TR</a> expression is desirable. Sometimes one may wish to constrain to several operands parenthetically, to be evaluated by a logical operator. That's where <a class="el" href="namespacenkr.html#ae4babe1476e170123b9682b67160a0e8" title="A way to parenthesize and perform logical operations on several types in an nkr::TR expression.">nkr::ts</a> comes in.</dd></dl>
+<dl class="section user"><dt>Grammar Parts</dt><dd>A full <a class="el" href="namespacenkr.html#a1898ff80c7081762a1840f00883fa258" title="Used to filter a type by its qualifications, and by other types, templates, identities,...">nkr::TR</a> expression is made of two component parts, the <code>subject</code>, and an arbitrary number of <code>operators</code> paired with an <code>operand</code>: <div class="fragment"><div class="line">    <span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacenkr.html">nkr</a>;</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">static_assert</span>(<a class="code hl_function" href="namespacenkr.html#a1898ff80c7081762a1840f00883fa258">TR</a>&lt;</div>
+<div class="line">               <span class="comment">/* subject */</span></div>
+<div class="line">                  <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;int&gt;</a>,</div>
+<div class="line"> </div>
+<div class="line">               <span class="comment">/* operator, operand */</span></div>
+<div class="line">                  any_tg, <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;int&gt;</a></div>
+<div class="line">    &gt;() == <span class="keyword">true</span>);</div>
+<div class="ttc" id="anamespacenkr_html"><div class="ttname"><a href="namespacenkr.html">nkr</a></div><div class="ttdef"><b>Definition:</b> array/cpp_t_dec.h:14</div></div>
+<div class="ttc" id="anamespacenkr_html_a1898ff80c7081762a1840f00883fa258"><div class="ttname"><a href="namespacenkr.html#a1898ff80c7081762a1840f00883fa258">nkr::TR</a></div><div class="ttdeci">constexpr nkr::boolean::cpp_t TR() noexcept</div><div class="ttdoc">Used to filter a type by its qualifications, and by other types, templates, identities,...</div></div>
+<div class="ttc" id="anamespacenkr_html_ac2fadabeca6af1088b2114f4b32cc63f"><div class="ttname"><a href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">nkr::t</a></div><div class="ttdeci">nkr::$tr::ts&lt; AND_tg, nkr::tuple::types_t&lt; type_p &gt; &gt; t</div><div class="ttdoc">A way to wrap a single type for use with an nkr::TR expression, to differentiate it from a template.</div><div class="ttdef"><b>Definition:</b> tr_dec.h:174</div></div>
+</div><!-- fragment --> In the above example we statically asserted that <code>int</code> is <code>any</code> <code>int</code>. Again, but without the comments: <div class="fragment"><div class="line">    <span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacenkr.html">nkr</a>;</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">static_assert</span>(<a class="code hl_function" href="namespacenkr.html#a1898ff80c7081762a1840f00883fa258">TR</a>&lt;</div>
+<div class="line">                  <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;int&gt;</a>,</div>
+<div class="line">                  any_tg, <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;int&gt;</a></div>
+<div class="line">    &gt;() == <span class="keyword">true</span>);</div>
+</div><!-- fragment --> It is possible to use just a <code>subject</code> and an <code>operator</code>. In the following example we are asserting the subject is <code>any</code> subject: <div class="fragment"><div class="line">    <span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacenkr.html">nkr</a>;</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">static_assert</span>(<a class="code hl_function" href="namespacenkr.html#a1898ff80c7081762a1840f00883fa258">TR</a>&lt;</div>
+<div class="line">                  <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;int&gt;</a>,</div>
+<div class="line">                  any_tg</div>
+<div class="line">    &gt;() == <span class="keyword">true</span>);</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">static_assert</span>(<a class="code hl_function" href="namespacenkr.html#a1898ff80c7081762a1840f00883fa258">TR</a>&lt;</div>
+<div class="line">                  <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;float&gt;</a>,</div>
+<div class="line">                  any_tg</div>
+<div class="line">    &gt;() == <span class="keyword">true</span>);</div>
+</div><!-- fragment --> And it is also possible to use templates when working with multiple pairs of <code>operators</code> and <code>operands</code>. Here we are asserting that <code>int*</code> is <code>any</code> nkr::pointer::cpp_t <code>of any</code> <code>int</code>. This will result in <code>true</code> because nkr::pointer::cpp_t&lt;int&gt; is an alias for <code>int*</code>: <div class="fragment"><div class="line">    <span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacenkr.html">nkr</a>;</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">static_assert</span>(<a class="code hl_function" href="namespacenkr.html#a1898ff80c7081762a1840f00883fa258">TR</a>&lt;</div>
+<div class="line">                  <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;int*&gt;</a>,</div>
+<div class="line">                  any_tg, <a class="code hl_typedef" href="namespacenkr.html#ad9ca1dc69cb9a052d8bc183cf5e69dcb">tt&lt;nkr::pointer::cpp_t&gt;</a>,</div>
+<div class="line">                  of_any_tg, <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;int&gt;</a></div>
+<div class="line">    &gt;() == <span class="keyword">true</span>);</div>
+<div class="ttc" id="anamespacenkr_html_ad9ca1dc69cb9a052d8bc183cf5e69dcb"><div class="ttname"><a href="namespacenkr.html#ad9ca1dc69cb9a052d8bc183cf5e69dcb">nkr::tt</a></div><div class="ttdeci">nkr::$tr::tts&lt; AND_tg, nkr::tuple::templates_t&lt; template_p &gt; &gt; tt</div><div class="ttdoc">A way to wrap a single template for use with an nkr::TR expression, to differentiate it from a type.</div><div class="ttdef"><b>Definition:</b> tr_dec.h:187</div></div>
+</div><!-- fragment --> Alternatively, we can use a <code>tg</code>, that is a <code>tag</code> of nkr::pointer::cpp_t to achieve the same result: <div class="fragment"><div class="line">    <span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacenkr.html">nkr</a>;</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">static_assert</span>(<a class="code hl_function" href="namespacenkr.html#a1898ff80c7081762a1840f00883fa258">TR</a>&lt;</div>
+<div class="line">                  <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;int*&gt;</a>,</div>
+<div class="line">                  any_tg, <a class="code hl_typedef" href="namespacenkr.html#ad9ca1dc69cb9a052d8bc183cf5e69dcb">tt&lt;nkr::pointer::cpp_ttg&gt;</a>,</div>
+<div class="line">                  of_any_tg, <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;int&gt;</a></div>
+<div class="line">    &gt;() == <span class="keyword">true</span>);</div>
+</div><!-- fragment --> Like nkr::pointer::cpp_t whose <code>tag</code> is used in the above example, many templates provide the means to test any type directly belonging to it, regardless of the subject's actual <code>inner type</code>. Below we are simply asserting that the subject is <code>any</code> nkr::pointer::cpp_t: <div class="fragment"><div class="line">    <span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacenkr.html">nkr</a>;</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">static_assert</span>(<a class="code hl_function" href="namespacenkr.html#a1898ff80c7081762a1840f00883fa258">TR</a>&lt;</div>
+<div class="line">                  <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;int*&gt;</a>,</div>
+<div class="line">                  any_tg, <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;nkr::pointer::cpp_tg&gt;</a></div>
+<div class="line">    &gt;() == <span class="keyword">true</span>);</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">static_assert</span>(<a class="code hl_function" href="namespacenkr.html#a1898ff80c7081762a1840f00883fa258">TR</a>&lt;</div>
+<div class="line">                  <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;float*&gt;</a>,</div>
+<div class="line">                  any_tg, <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;nkr::pointer::cpp_tg&gt;</a></div>
+<div class="line">    &gt;() == <span class="keyword">true</span>);</div>
+</div><!-- fragment --> Note the use of the <code>ttg</code> postfix to constrain a template of an explicit type and the <code>tg</code> postifx to constrain a template of any type, both modifying <code>nkr:pointer::cpp</code>. These two <code>tags</code> nkr::pointer::cpp_tg and nkr::pointer::cpp_ttg are <code>identities</code> of nkr::pointer::cpp_t, respectively the <code>type indentity tag</code> and the <code>template identity tag</code>. Suffice it to say these grammatical artifices provide the ability to semantically alter an <a class="el" href="namespacenkr.html#a1898ff80c7081762a1840f00883fa258" title="Used to filter a type by its qualifications, and by other types, templates, identities,...">nkr::TR</a> expression as we have shown above.</dd></dl>
+<dl class="section user"><dt>Qualification Operators</dt><dd></dd></dl>
+<dl class="section user"><dt>Arbitrary Length</dt><dd></dd></dl>
+<dl class="section user"><dt>Wrapping Types and Templates</dt><dd>You will have noticed that types are wrapped with <a class="el" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f" title="A way to wrap a single type for use with an nkr::TR expression, to differentiate it from a template.">nkr::t</a> or <a class="el" href="namespacenkr.html#ae4babe1476e170123b9682b67160a0e8" title="A way to parenthesize and perform logical operations on several types in an nkr::TR expression.">nkr::ts</a>, that is <code>type</code> or <code>types</code> respectively. This syntactical feature differentiates between using a singluar type or multiple types in a subject or operand. It also differentiates between using types or templates as an operand. To use templates as an operand you would use <a class="el" href="namespacenkr.html#ad9ca1dc69cb9a052d8bc183cf5e69dcb" title="A way to wrap a single template for use with an nkr::TR expression, to differentiate it from a type.">nkr::tt</a> or <a class="el" href="namespacenkr.html#aa41183e8bf88f05fd2c80a26fa6ebb52" title="A way to parenthesize and perform logical operations on several templates in an nkr::TR expression.">nkr::tts</a>, that is 'template type' or 'template types' respectively. </dd></dl>
+<dl class="section user"><dt></dt><dd>It is necessary to wrap the templates into a type for the sake of arbitrary length expressions, which cannot be made up of both types and templates but only one or the other.</dd></dl>
+<dl class="section user"><dt>Using Multiple Types as an Operand</dt><dd>Naturally there are times when using more than one type as a single operand in an <a class="el" href="namespacenkr.html#a1898ff80c7081762a1840f00883fa258" title="Used to filter a type by its qualifications, and by other types, templates, identities,...">nkr::TR</a> expression is desirable. Sometimes one may wish to constrain to several operands parenthetically, to be evaluated by a logical operator. That's where <a class="el" href="namespacenkr.html#ae4babe1476e170123b9682b67160a0e8" title="A way to parenthesize and perform logical operations on several types in an nkr::TR expression.">nkr::ts</a> comes in. </dd></dl>
 <dl class="section user"><dt></dt><dd>Here we constrain to either type in the operand, with use of the nkr::OR_tg: <div class="fragment"><div class="line">    <span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacenkr.html">nkr</a>;</div>
 <div class="line"> </div>
 <div class="line">    <span class="keyword">static_assert</span>(TR&lt;t&lt;nkr::negatable::integer_t&gt;,</div>
@@ -363,7 +467,6 @@ template&lt;nkr::ts_tr subjects_p, typename ... expression_parts_p&gt; </div>
 <div class="line"> </div>
 <div class="line">    <span class="keyword">static_assert</span>(TR&lt;t&lt;nkr::negatable::real_t&gt;,</div>
 <div class="line">                  any_tg, <a class="code hl_typedef" href="namespacenkr.html#ae4babe1476e170123b9682b67160a0e8">ts&lt;OR_tg, nkr::negatable::integer_t, nkr::negatable::real_t&gt;</a>&gt;() == <span class="keyword">true</span>);</div>
-<div class="ttc" id="anamespacenkr_html"><div class="ttname"><a href="namespacenkr.html">nkr</a></div><div class="ttdef"><b>Definition:</b> array/cpp_t_dec.h:14</div></div>
 <div class="ttc" id="anamespacenkr_html_ae4babe1476e170123b9682b67160a0e8"><div class="ttname"><a href="namespacenkr.html#ae4babe1476e170123b9682b67160a0e8">nkr::ts</a></div><div class="ttdeci">nkr::$tr::ts&lt; operator_p, nkr::tuple::types_t&lt; types_p... &gt; &gt; ts</div><div class="ttdoc">A way to parenthesize and perform logical operations on several types in an nkr::TR expression.</div><div class="ttdef"><b>Definition:</b> tr_dec.h:179</div></div>
 </div><!-- fragment --> To both generics in the operand, with use of the nkr::AND_tg: <div class="fragment"><div class="line">    <span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacenkr.html">nkr</a>;</div>
 <div class="line"> </div>
@@ -385,55 +488,65 @@ template&lt;nkr::ts_tr subjects_p, typename ... expression_parts_p&gt; </div>
 <div class="line">    <span class="keyword">using</span> true_t = nkr::positive::integer_t;</div>
 <div class="line">    <span class="keyword">using</span> false_t = nkr::negatable::integer_t;</div>
 <div class="line"> </div>
-<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;OR_tg, false_t, false_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">false</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;OR_tg, false_t, true_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">true</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;OR_tg, true_t, false_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">true</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;OR_tg, true_t, true_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">true</span>);</div>
+<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;OR_tg, false_t, false_t&gt;, any_tg, <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;true_t&gt;</a>&gt;() == <span class="keyword">false</span>);</div>
+<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;OR_tg, false_t, true_t&gt;, any_tg, <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;true_t&gt;</a>&gt;() == <span class="keyword">true</span>);</div>
+<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;OR_tg, true_t, false_t&gt;, any_tg, <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;true_t&gt;</a>&gt;() == <span class="keyword">true</span>);</div>
+<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;OR_tg, true_t, true_t&gt;, any_tg, <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;true_t&gt;</a>&gt;() == <span class="keyword">true</span>);</div>
 <div class="line"> </div>
-<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;AND_tg, false_t, false_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">false</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;AND_tg, false_t, true_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">false</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;AND_tg, true_t, false_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">false</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;AND_tg, true_t, true_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">true</span>);</div>
+<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;AND_tg, false_t, false_t&gt;, any_tg, <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;true_t&gt;</a>&gt;() == <span class="keyword">false</span>);</div>
+<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;AND_tg, false_t, true_t&gt;, any_tg, <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;true_t&gt;</a>&gt;() == <span class="keyword">false</span>);</div>
+<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;AND_tg, true_t, false_t&gt;, any_tg, <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;true_t&gt;</a>&gt;() == <span class="keyword">false</span>);</div>
+<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;AND_tg, true_t, true_t&gt;, any_tg, <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;true_t&gt;</a>&gt;() == <span class="keyword">true</span>);</div>
 <div class="line"> </div>
-<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;XOR_tg, false_t, false_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">false</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;XOR_tg, false_t, true_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">true</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;XOR_tg, true_t, false_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">true</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;XOR_tg, true_t, true_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">false</span>);</div>
+<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;XOR_tg, false_t, false_t&gt;, any_tg, <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;true_t&gt;</a>&gt;() == <span class="keyword">false</span>);</div>
+<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;XOR_tg, false_t, true_t&gt;, any_tg, <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;true_t&gt;</a>&gt;() == <span class="keyword">true</span>);</div>
+<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;XOR_tg, true_t, false_t&gt;, any_tg, <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;true_t&gt;</a>&gt;() == <span class="keyword">true</span>);</div>
+<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;XOR_tg, true_t, true_t&gt;, any_tg, <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;true_t&gt;</a>&gt;() == <span class="keyword">false</span>);</div>
 <div class="line"> </div>
-<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;XOR_tg, false_t, false_t, false_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">false</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;XOR_tg, true_t, false_t, false_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">true</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;XOR_tg, false_t, true_t, false_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">true</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;XOR_tg, false_t, false_t, true_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">true</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;XOR_tg, true_t, true_t, false_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">false</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;XOR_tg, false_t, true_t, true_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">false</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;XOR_tg, true_t, false_t, true_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">false</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;XOR_tg, true_t, true_t, true_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">false</span>);</div>
+<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;XOR_tg, false_t, false_t, false_t&gt;, any_tg, <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;true_t&gt;</a>&gt;() == <span class="keyword">false</span>);</div>
+<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;XOR_tg, true_t, false_t, false_t&gt;, any_tg, <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;true_t&gt;</a>&gt;() == <span class="keyword">true</span>);</div>
+<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;XOR_tg, false_t, true_t, false_t&gt;, any_tg, <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;true_t&gt;</a>&gt;() == <span class="keyword">true</span>);</div>
+<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;XOR_tg, false_t, false_t, true_t&gt;, any_tg, <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;true_t&gt;</a>&gt;() == <span class="keyword">true</span>);</div>
+<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;XOR_tg, true_t, true_t, false_t&gt;, any_tg, <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;true_t&gt;</a>&gt;() == <span class="keyword">false</span>);</div>
+<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;XOR_tg, false_t, true_t, true_t&gt;, any_tg, <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;true_t&gt;</a>&gt;() == <span class="keyword">false</span>);</div>
+<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;XOR_tg, true_t, false_t, true_t&gt;, any_tg, <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;true_t&gt;</a>&gt;() == <span class="keyword">false</span>);</div>
+<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;XOR_tg, true_t, true_t, true_t&gt;, any_tg, <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;true_t&gt;</a>&gt;() == <span class="keyword">false</span>);</div>
 <div class="line"> </div>
-<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;NOR_tg, false_t, false_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">true</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;NOR_tg, false_t, true_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">false</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;NOR_tg, true_t, false_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">false</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;NOR_tg, true_t, true_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">false</span>);</div>
+<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;NOR_tg, false_t, false_t&gt;, any_tg, <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;true_t&gt;</a>&gt;() == <span class="keyword">true</span>);</div>
+<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;NOR_tg, false_t, true_t&gt;, any_tg, <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;true_t&gt;</a>&gt;() == <span class="keyword">false</span>);</div>
+<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;NOR_tg, true_t, false_t&gt;, any_tg, <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;true_t&gt;</a>&gt;() == <span class="keyword">false</span>);</div>
+<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;NOR_tg, true_t, true_t&gt;, any_tg, <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;true_t&gt;</a>&gt;() == <span class="keyword">false</span>);</div>
 <div class="line"> </div>
-<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;NAND_tg, false_t, false_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">true</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;NAND_tg, false_t, true_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">true</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;NAND_tg, true_t, false_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">true</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;NAND_tg, true_t, true_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">false</span>);</div>
+<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;NAND_tg, false_t, false_t&gt;, any_tg, <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;true_t&gt;</a>&gt;() == <span class="keyword">true</span>);</div>
+<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;NAND_tg, false_t, true_t&gt;, any_tg, <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;true_t&gt;</a>&gt;() == <span class="keyword">true</span>);</div>
+<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;NAND_tg, true_t, false_t&gt;, any_tg, <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;true_t&gt;</a>&gt;() == <span class="keyword">true</span>);</div>
+<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;NAND_tg, true_t, true_t&gt;, any_tg, <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;true_t&gt;</a>&gt;() == <span class="keyword">false</span>);</div>
 <div class="line"> </div>
-<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;XNOR_tg, false_t, false_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">true</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;XNOR_tg, false_t, true_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">false</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;XNOR_tg, true_t, false_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">false</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;XNOR_tg, true_t, true_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">true</span>);</div>
+<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;XNOR_tg, false_t, false_t&gt;, any_tg, <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;true_t&gt;</a>&gt;() == <span class="keyword">true</span>);</div>
+<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;XNOR_tg, false_t, true_t&gt;, any_tg, <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;true_t&gt;</a>&gt;() == <span class="keyword">false</span>);</div>
+<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;XNOR_tg, true_t, false_t&gt;, any_tg, <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;true_t&gt;</a>&gt;() == <span class="keyword">false</span>);</div>
+<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;XNOR_tg, true_t, true_t&gt;, any_tg, <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;true_t&gt;</a>&gt;() == <span class="keyword">true</span>);</div>
 <div class="line"> </div>
-<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;XNOR_tg, false_t, false_t, false_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">true</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;XNOR_tg, true_t, false_t, false_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">false</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;XNOR_tg, false_t, true_t, false_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">false</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;XNOR_tg, false_t, false_t, true_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">false</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;XNOR_tg, true_t, true_t, false_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">true</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;XNOR_tg, false_t, true_t, true_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">true</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;XNOR_tg, true_t, false_t, true_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">true</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;XNOR_tg, true_t, true_t, true_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">true</span>);</div>
+<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;XNOR_tg, false_t, false_t, false_t&gt;, any_tg, <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;true_t&gt;</a>&gt;() == <span class="keyword">true</span>);</div>
+<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;XNOR_tg, true_t, false_t, false_t&gt;, any_tg, <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;true_t&gt;</a>&gt;() == <span class="keyword">false</span>);</div>
+<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;XNOR_tg, false_t, true_t, false_t&gt;, any_tg, <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;true_t&gt;</a>&gt;() == <span class="keyword">false</span>);</div>
+<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;XNOR_tg, false_t, false_t, true_t&gt;, any_tg, <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;true_t&gt;</a>&gt;() == <span class="keyword">false</span>);</div>
+<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;XNOR_tg, true_t, true_t, false_t&gt;, any_tg, <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;true_t&gt;</a>&gt;() == <span class="keyword">true</span>);</div>
+<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;XNOR_tg, false_t, true_t, true_t&gt;, any_tg, <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;true_t&gt;</a>&gt;() == <span class="keyword">true</span>);</div>
+<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;XNOR_tg, true_t, false_t, true_t&gt;, any_tg, <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;true_t&gt;</a>&gt;() == <span class="keyword">true</span>);</div>
+<div class="line">    <span class="keyword">static_assert</span>(TR&lt;ts&lt;XNOR_tg, true_t, true_t, true_t&gt;, any_tg, <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;true_t&gt;</a>&gt;() == <span class="keyword">true</span>);</div>
 </div><!-- fragment --></dd></dl>
-<dl class="section user"><dt>Using Multiple Templates as an Operand</dt><dd>Because the syntax of the C++ language demands it, we </dd></dl>
+<dl class="section user"><dt>Using Multiple Templates as an Operand</dt><dd>Following the pattern of postfixes, with <code>t</code> for type and <code>tt</code> for template of type, we also likewise use <a class="el" href="namespacenkr.html#aa41183e8bf88f05fd2c80a26fa6ebb52" title="A way to parenthesize and perform logical operations on several templates in an nkr::TR expression.">nkr::tts</a> instead of <a class="el" href="namespacenkr.html#ae4babe1476e170123b9682b67160a0e8" title="A way to parenthesize and perform logical operations on several types in an nkr::TR expression.">nkr::ts</a> to make use of multiple templates in an operand: <div class="fragment"><div class="line">    <span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacenkr.html">nkr</a>;</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">static_assert</span>(TR&lt;t&lt;nkr::positive::integer_t*&gt;,</div>
+<div class="line">                  any_tg, <a class="code hl_typedef" href="namespacenkr.html#aa41183e8bf88f05fd2c80a26fa6ebb52">tts&lt;OR_tg, nkr::pointer::cpp_ttg, nkr::array::cpp_ttg&gt;</a>,</div>
+<div class="line">                  of_any_tg, <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;nkr::positive::integer_t&gt;</a>&gt;());</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">static_assert</span>(TR&lt;t&lt;nkr::positive::integer_t[1]&gt;,</div>
+<div class="line">                  any_tg, <a class="code hl_typedef" href="namespacenkr.html#aa41183e8bf88f05fd2c80a26fa6ebb52">tts&lt;OR_tg, nkr::pointer::cpp_ttg, nkr::array::cpp_ttg&gt;</a>,</div>
+<div class="line">                  of_any_tg, <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;nkr::positive::integer_t&gt;</a>&gt;());</div>
+<div class="ttc" id="anamespacenkr_html_aa41183e8bf88f05fd2c80a26fa6ebb52"><div class="ttname"><a href="namespacenkr.html#aa41183e8bf88f05fd2c80a26fa6ebb52">nkr::tts</a></div><div class="ttdeci">nkr::$tr::tts&lt; operator_p, nkr::tuple::templates_t&lt; templates_p... &gt; &gt; tts</div><div class="ttdoc">A way to parenthesize and perform logical operations on several templates in an nkr::TR expression.</div><div class="ttdef"><b>Definition:</b> tr_dec.h:192</div></div>
+</div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
