@@ -95,6 +95,7 @@ var searchBox = new SearchBox("searchBox", "search",'Search','.html');
 <a href="#namespaces">Namespaces</a> &#124;
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#concepts">Concepts</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">nkr Namespace Reference<div class="ingroups"><a class="el" href="group____d1cd4369__e0f4__4062__8f58__611395da215e.html">namespaces</a></div></div></div>
 </div><!--header-->
@@ -151,7 +152,7 @@ Classes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="concepts" name="concepts"></a>
 Concepts</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">concept &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conceptnkr_1_1tr.html">tr</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to filter a type by other types, templates, identities, and generics in the context of a declaration. <br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to filter a type by qualifications, other types, templates, identities, and generics in the context of a declaration. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">concept &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conceptnkr_1_1allocator__i.html">allocator_i</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines common functionality that must exist on an allocator implementation for use in nkr. <br /></td></tr>
@@ -213,11 +214,22 @@ Concepts</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">concept &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conceptnkr_1_1same__or__derived__from__tr.html">same_or_derived_from_tr</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:ae4babe1476e170123b9682b67160a0e8"><td class="memTemplParams" colspan="2">template&lt;nkr::generic_ ::tag::logic_gate_tr operator_p, typename ... types_p&gt; </td></tr>
+<tr class="memitem:ae4babe1476e170123b9682b67160a0e8"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacenkr.html#ae4babe1476e170123b9682b67160a0e8">ts</a> = nkr::$tr::ts&lt; operator_p, nkr::tuple::types_t&lt; types_p... &gt; &gt;</td></tr>
+<tr class="memdesc:ae4babe1476e170123b9682b67160a0e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">A way to parenthesize and perform logical operations on several types in an <a class="el" href="namespacenkr.html#a1898ff80c7081762a1840f00883fa258" title="Used to filter a type by qualifications, other types, templates, identities, and generics.">nkr::TR</a> expression.  <a href="namespacenkr.html#ae4babe1476e170123b9682b67160a0e8">More...</a><br /></td></tr>
+<tr class="separator:ae4babe1476e170123b9682b67160a0e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa41183e8bf88f05fd2c80a26fa6ebb52"><td class="memTemplParams" colspan="2">template&lt;nkr::generic_ ::tag::logic_gate_tr operator_p, template&lt; typename ... &gt; typename ... templates_p&gt; </td></tr>
+<tr class="memitem:aa41183e8bf88f05fd2c80a26fa6ebb52"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacenkr.html#aa41183e8bf88f05fd2c80a26fa6ebb52">tts</a> = nkr::$tr::tts&lt; operator_p, nkr::tuple::templates_t&lt; templates_p... &gt; &gt;</td></tr>
+<tr class="memdesc:aa41183e8bf88f05fd2c80a26fa6ebb52"><td class="mdescLeft">&#160;</td><td class="mdescRight">A way to parenthesize and perform logical operations on several templates in an <a class="el" href="namespacenkr.html#a1898ff80c7081762a1840f00883fa258" title="Used to filter a type by qualifications, other types, templates, identities, and generics.">nkr::TR</a> expression.  <a href="namespacenkr.html#aa41183e8bf88f05fd2c80a26fa6ebb52">More...</a><br /></td></tr>
+<tr class="separator:aa41183e8bf88f05fd2c80a26fa6ebb52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a1898ff80c7081762a1840f00883fa258"><td class="memTemplParams" colspan="2">template&lt;nkr::ts_tr subjects_p, typename ... expression_parts_p&gt; </td></tr>
 <tr class="memitem:a1898ff80c7081762a1840f00883fa258"><td class="memTemplItemLeft" align="right" valign="top">constexpr nkr::boolean::cpp_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacenkr.html#a1898ff80c7081762a1840f00883fa258">TR</a> () noexcept</td></tr>
-<tr class="memdesc:a1898ff80c7081762a1840f00883fa258"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to filter a type by other types, templates, identities, and generics.  <a href="namespacenkr.html#a1898ff80c7081762a1840f00883fa258">More...</a><br /></td></tr>
+<tr class="memdesc:a1898ff80c7081762a1840f00883fa258"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to filter a type by qualifications, other types, templates, identities, and generics.  <a href="namespacenkr.html#a1898ff80c7081762a1840f00883fa258">More...</a><br /></td></tr>
 <tr class="separator:a1898ff80c7081762a1840f00883fa258"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e2b0a5823f1763322168ce5405ba455"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classnkr_1_1bool__t.html">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacenkr.html#a7e2b0a5823f1763322168ce5405ba455">operator==</a> (built_in_tr auto built_in, is_any_tr&lt; <a class="el" href="classnkr_1_1none__t.html">none_t</a> &gt; auto none)</td></tr>
 <tr class="separator:a7e2b0a5823f1763322168ce5405ba455"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -277,7 +289,44 @@ Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >With the exception of "nkr_" prefixed macros, all other nkr entities are defined in this namespace.</p>
-</div><h2 class="groupheader">Function Documentation</h2>
+</div><h2 class="groupheader">Typedef Documentation</h2>
+<a id="ae4babe1476e170123b9682b67160a0e8" name="ae4babe1476e170123b9682b67160a0e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4babe1476e170123b9682b67160a0e8">&#9670;&nbsp;</a></span>ts</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;nkr::generic_ ::tag::logic_gate_tr operator_p, typename ... types_p&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacenkr.html#ae4babe1476e170123b9682b67160a0e8">nkr::ts</a> = typedef nkr::$tr::ts&lt;operator_p, nkr::tuple::types_t&lt;types_p...&gt; &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A way to parenthesize and perform logical operations on several types in an <a class="el" href="namespacenkr.html#a1898ff80c7081762a1840f00883fa258" title="Used to filter a type by qualifications, other types, templates, identities, and generics.">nkr::TR</a> expression. </p>
+
+</div>
+</div>
+<a id="aa41183e8bf88f05fd2c80a26fa6ebb52" name="aa41183e8bf88f05fd2c80a26fa6ebb52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa41183e8bf88f05fd2c80a26fa6ebb52">&#9670;&nbsp;</a></span>tts</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;nkr::generic_ ::tag::logic_gate_tr operator_p, template&lt; typename ... &gt; typename ... templates_p&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacenkr.html#aa41183e8bf88f05fd2c80a26fa6ebb52">nkr::tts</a> = typedef nkr::$tr::tts&lt;operator_p, nkr::tuple::templates_t&lt;templates_p...&gt; &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A way to parenthesize and perform logical operations on several templates in an <a class="el" href="namespacenkr.html#a1898ff80c7081762a1840f00883fa258" title="Used to filter a type by qualifications, other types, templates, identities, and generics.">nkr::TR</a> expression. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
 <a id="a1898ff80c7081762a1840f00883fa258" name="a1898ff80c7081762a1840f00883fa258"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1898ff80c7081762a1840f00883fa258">&#9670;&nbsp;</a></span>TR()</h2>
 
@@ -303,9 +352,77 @@ template&lt;nkr::ts_tr subjects_p, typename ... expression_parts_p&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Used to filter a type by other types, templates, identities, and generics. </p>
+<p>Used to filter a type by qualifications, other types, templates, identities, and generics. </p>
 <p >An integral function for the entire library. Any type or template that satisfies the nkr::interface::type_i or nkr::interface::template_i respectively can be used in conjunction with pre-defined operators to form an expression for use with this function. Input a group of subjects in addition to your arbitrary-length expression, and a compile-time or runtime boolean will be output indicating whether or not the subjects satisfy the expression.</p>
-<p >The primary rationale for the existence of this function is to prevent the need of defining and redefining the same concepts over and over again with only minor variations. It keeps the focus on your static tests, and more importantly when using <a class="el" href="conceptnkr_1_1tr.html" title="Used to filter a type by other types, templates, identities, and generics in the context of a declara...">nkr::tr</a>, it keeps the focus on the signature of your types and functions, and what kind of types are acceptable inputs for their parameters. </p>
+<dl class="section user"><dt>Why</dt><dd>The primary rationale for the existence of this function is to prevent the need of defining and redefining the same concepts over and over again with only minor variations. It keeps the focus on your static tests, and more importantly when using <a class="el" href="conceptnkr_1_1tr.html" title="Used to filter a type by qualifications, other types, templates, identities, and generics in the cont...">nkr::tr</a>, it keeps the focus on the signature of your types and functions, and what kind of types are acceptable inputs for their parameters.</dd></dl>
+<dl class="section user"><dt>Using Multiple Types as an Operand</dt><dd>Naturally there are times when using a single type or template as an operand in an <a class="el" href="namespacenkr.html#a1898ff80c7081762a1840f00883fa258" title="Used to filter a type by qualifications, other types, templates, identities, and generics.">nkr::TR</a> expression is not enough. Sometimes one may wish to constain to several operands parenthetically, which can be evaluated with the logical operator of choice. That's where <a class="el" href="namespacenkr.html#ae4babe1476e170123b9682b67160a0e8" title="A way to parenthesize and perform logical operations on several types in an nkr::TR expression.">nkr::ts</a> comes in. </dd></dl>
+<dl class="section user"><dt></dt><dd>Here we constrain to either type in the operand: <div class="fragment"><div class="line">            <span class="keyword">static_assert</span>(TR&lt;t&lt;nkr::negatable::integer_t&gt;,</div>
+<div class="line">                          any_tg, <a class="code hl_typedef" href="namespacenkr.html#ae4babe1476e170123b9682b67160a0e8">ts&lt;OR_tg, nkr::negatable::integer_t, nkr::negatable::real_t&gt;</a>&gt;() == <span class="keyword">true</span>);</div>
+<div class="line"> </div>
+<div class="line">            <span class="keyword">static_assert</span>(TR&lt;t&lt;nkr::negatable::real_t&gt;,</div>
+<div class="line">                          any_tg, <a class="code hl_typedef" href="namespacenkr.html#ae4babe1476e170123b9682b67160a0e8">ts&lt;OR_tg, nkr::negatable::integer_t, nkr::negatable::real_t&gt;</a>&gt;() == <span class="keyword">true</span>);</div>
+<div class="ttc" id="anamespacenkr_html_ae4babe1476e170123b9682b67160a0e8"><div class="ttname"><a href="namespacenkr.html#ae4babe1476e170123b9682b67160a0e8">nkr::ts</a></div><div class="ttdeci">nkr::$tr::ts&lt; operator_p, nkr::tuple::types_t&lt; types_p... &gt; &gt; ts</div><div class="ttdoc">A way to parenthesize and perform logical operations on several types in an nkr::TR expression.</div><div class="ttdef"><b>Definition:</b> tr_dec.h:179</div></div>
+</div><!-- fragment --> To both generics in the operand: <div class="fragment"><div class="line">            <span class="keyword">static_assert</span>(TR&lt;t&lt;nkr::negatable::integer_t&gt;,</div>
+<div class="line">                          any_tg, <a class="code hl_typedef" href="namespacenkr.html#ae4babe1476e170123b9682b67160a0e8">ts&lt;AND_tg, nkr::generic::negatable_tg, nkr::generic::number_tg&gt;</a>&gt;() == <span class="keyword">true</span>);</div>
+<div class="line"> </div>
+<div class="line">            <span class="keyword">static_assert</span>(TR&lt;t&lt;nkr::negatable::real_t&gt;,</div>
+<div class="line">                          any_tg, <a class="code hl_typedef" href="namespacenkr.html#ae4babe1476e170123b9682b67160a0e8">ts&lt;AND_tg, nkr::generic::negatable_tg, nkr::generic::number_tg&gt;</a>&gt;() == <span class="keyword">true</span>);</div>
+</div><!-- fragment --> To just one generic in the operand: <div class="fragment"><div class="line">            <span class="keyword">static_assert</span>(TR&lt;t&lt;nkr::boolean::cpp_t&gt;,</div>
+<div class="line">                          any_tg, <a class="code hl_typedef" href="namespacenkr.html#ae4babe1476e170123b9682b67160a0e8">ts&lt;XOR_tg, nkr::generic::boolean_tg, nkr::generic::user_defined_tg&gt;</a>&gt;() == <span class="keyword">true</span>);</div>
+<div class="line"> </div>
+<div class="line">            <span class="keyword">static_assert</span>(TR&lt;t&lt;nkr::boolean::pure_t&gt;,</div>
+<div class="line">                          any_tg, <a class="code hl_typedef" href="namespacenkr.html#ae4babe1476e170123b9682b67160a0e8">ts&lt;XOR_tg, nkr::generic::boolean_tg, nkr::generic::user_defined_tg&gt;</a>&gt;() == <span class="keyword">false</span>);</div>
+</div><!-- fragment --> And likewise, you can use <a class="el" href="namespacenkr.html#ae4babe1476e170123b9682b67160a0e8" title="A way to parenthesize and perform logical operations on several types in an nkr::TR expression.">nkr::ts</a> for multiple subjects. Here we've built an entire set of truth tables where each subject is tested againt the singular operand: <div class="fragment"><div class="line">            <span class="keyword">using</span> true_t = nkr::positive::integer_t;</div>
+<div class="line">            <span class="keyword">using</span> false_t = nkr::negatable::integer_t;</div>
+<div class="line"> </div>
+<div class="line">            <span class="keyword">static_assert</span>(TR&lt;ts&lt;OR_tg, false_t, false_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">false</span>);</div>
+<div class="line">            <span class="keyword">static_assert</span>(TR&lt;ts&lt;OR_tg, false_t, true_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">true</span>);</div>
+<div class="line">            <span class="keyword">static_assert</span>(TR&lt;ts&lt;OR_tg, true_t, false_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">true</span>);</div>
+<div class="line">            <span class="keyword">static_assert</span>(TR&lt;ts&lt;OR_tg, true_t, true_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">true</span>);</div>
+<div class="line"> </div>
+<div class="line">            <span class="keyword">static_assert</span>(TR&lt;ts&lt;AND_tg, false_t, false_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">false</span>);</div>
+<div class="line">            <span class="keyword">static_assert</span>(TR&lt;ts&lt;AND_tg, false_t, true_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">false</span>);</div>
+<div class="line">            <span class="keyword">static_assert</span>(TR&lt;ts&lt;AND_tg, true_t, false_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">false</span>);</div>
+<div class="line">            <span class="keyword">static_assert</span>(TR&lt;ts&lt;AND_tg, true_t, true_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">true</span>);</div>
+<div class="line"> </div>
+<div class="line">            <span class="keyword">static_assert</span>(TR&lt;ts&lt;XOR_tg, false_t, false_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">false</span>);</div>
+<div class="line">            <span class="keyword">static_assert</span>(TR&lt;ts&lt;XOR_tg, false_t, true_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">true</span>);</div>
+<div class="line">            <span class="keyword">static_assert</span>(TR&lt;ts&lt;XOR_tg, true_t, false_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">true</span>);</div>
+<div class="line">            <span class="keyword">static_assert</span>(TR&lt;ts&lt;XOR_tg, true_t, true_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">false</span>);</div>
+<div class="line"> </div>
+<div class="line">            <span class="keyword">static_assert</span>(TR&lt;ts&lt;XOR_tg, false_t, false_t, false_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">false</span>);</div>
+<div class="line">            <span class="keyword">static_assert</span>(TR&lt;ts&lt;XOR_tg, true_t, false_t, false_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">true</span>);</div>
+<div class="line">            <span class="keyword">static_assert</span>(TR&lt;ts&lt;XOR_tg, false_t, true_t, false_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">true</span>);</div>
+<div class="line">            <span class="keyword">static_assert</span>(TR&lt;ts&lt;XOR_tg, false_t, false_t, true_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">true</span>);</div>
+<div class="line">            <span class="keyword">static_assert</span>(TR&lt;ts&lt;XOR_tg, true_t, true_t, false_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">false</span>);</div>
+<div class="line">            <span class="keyword">static_assert</span>(TR&lt;ts&lt;XOR_tg, false_t, true_t, true_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">false</span>);</div>
+<div class="line">            <span class="keyword">static_assert</span>(TR&lt;ts&lt;XOR_tg, true_t, false_t, true_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">false</span>);</div>
+<div class="line">            <span class="keyword">static_assert</span>(TR&lt;ts&lt;XOR_tg, true_t, true_t, true_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">false</span>);</div>
+<div class="line"> </div>
+<div class="line">            <span class="keyword">static_assert</span>(TR&lt;ts&lt;NOR_tg, false_t, false_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">true</span>);</div>
+<div class="line">            <span class="keyword">static_assert</span>(TR&lt;ts&lt;NOR_tg, false_t, true_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">false</span>);</div>
+<div class="line">            <span class="keyword">static_assert</span>(TR&lt;ts&lt;NOR_tg, true_t, false_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">false</span>);</div>
+<div class="line">            <span class="keyword">static_assert</span>(TR&lt;ts&lt;NOR_tg, true_t, true_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">false</span>);</div>
+<div class="line"> </div>
+<div class="line">            <span class="keyword">static_assert</span>(TR&lt;ts&lt;NAND_tg, false_t, false_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">true</span>);</div>
+<div class="line">            <span class="keyword">static_assert</span>(TR&lt;ts&lt;NAND_tg, false_t, true_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">true</span>);</div>
+<div class="line">            <span class="keyword">static_assert</span>(TR&lt;ts&lt;NAND_tg, true_t, false_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">true</span>);</div>
+<div class="line">            <span class="keyword">static_assert</span>(TR&lt;ts&lt;NAND_tg, true_t, true_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">false</span>);</div>
+<div class="line"> </div>
+<div class="line">            <span class="keyword">static_assert</span>(TR&lt;ts&lt;XNOR_tg, false_t, false_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">true</span>);</div>
+<div class="line">            <span class="keyword">static_assert</span>(TR&lt;ts&lt;XNOR_tg, false_t, true_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">false</span>);</div>
+<div class="line">            <span class="keyword">static_assert</span>(TR&lt;ts&lt;XNOR_tg, true_t, false_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">false</span>);</div>
+<div class="line">            <span class="keyword">static_assert</span>(TR&lt;ts&lt;XNOR_tg, true_t, true_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">true</span>);</div>
+<div class="line"> </div>
+<div class="line">            <span class="keyword">static_assert</span>(TR&lt;ts&lt;XNOR_tg, false_t, false_t, false_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">true</span>);</div>
+<div class="line">            <span class="keyword">static_assert</span>(TR&lt;ts&lt;XNOR_tg, true_t, false_t, false_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">false</span>);</div>
+<div class="line">            <span class="keyword">static_assert</span>(TR&lt;ts&lt;XNOR_tg, false_t, true_t, false_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">false</span>);</div>
+<div class="line">            <span class="keyword">static_assert</span>(TR&lt;ts&lt;XNOR_tg, false_t, false_t, true_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">false</span>);</div>
+<div class="line">            <span class="keyword">static_assert</span>(TR&lt;ts&lt;XNOR_tg, true_t, true_t, false_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">true</span>);</div>
+<div class="line">            <span class="keyword">static_assert</span>(TR&lt;ts&lt;XNOR_tg, false_t, true_t, true_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">true</span>);</div>
+<div class="line">            <span class="keyword">static_assert</span>(TR&lt;ts&lt;XNOR_tg, true_t, false_t, true_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">true</span>);</div>
+<div class="line">            <span class="keyword">static_assert</span>(TR&lt;ts&lt;XNOR_tg, true_t, true_t, true_t&gt;, any_tg, t&lt;true_t&gt;&gt;() == <span class="keyword">true</span>);</div>
+</div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
