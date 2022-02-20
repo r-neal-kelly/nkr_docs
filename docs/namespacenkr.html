@@ -399,7 +399,7 @@ template&lt;nkr::ts_tr subjects_p, typename ... expression_parts_p&gt; </div>
 <p>Used to filter a type by its qualifications, and by other types, templates, identities, and generics. </p>
 <p >An integral function for the entire library. Any type or template that satisfies the nkr::interface::type_i or nkr::interface::template_i respectively can be used in conjunction with pre-defined operators to form an expression for use with this function. Input a group of subjects in addition to your arbitrary-length expression, and a compile-time or runtime boolean will be output indicating whether or not the subjects satisfy the expression.</p>
 <dl class="section user"><dt>Purpose</dt><dd>The primary rationale for the existence of this function is to prevent the need of defining and redefining the same concepts over and over again with only minor variations. It keeps the focus on your static tests, and more importantly when using <a class="el" href="conceptnkr_1_1tr.html" title="Used to filter a type by its qualifications, and by other types, templates, identities,...">nkr::tr</a>, it keeps the focus on the signature of your types and functions, and what kind of types are acceptable inputs for their parameters.</dd></dl>
-<dl class="section user"><dt>Grammar Parts</dt><dd>A full <a class="el" href="namespacenkr.html#a1898ff80c7081762a1840f00883fa258" title="Used to filter a type by its qualifications, and by other types, templates, identities,...">nkr::TR</a> expression is made of two component parts, the <code>subject</code>, and an arbitrary number of <code>operators</code> paired with an <code>operand</code>: <div class="fragment"><div class="line">    <span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacenkr.html">nkr</a>;</div>
+<dl class="section user"><dt>Grammatical Parts</dt><dd>A full <a class="el" href="namespacenkr.html#a1898ff80c7081762a1840f00883fa258" title="Used to filter a type by its qualifications, and by other types, templates, identities,...">nkr::TR</a> expression is made of two component parts, the <code>subject</code>, and an arbitrary number of <code>operators</code> paired with an <code>operand</code>: <div class="fragment"><div class="line">    <span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacenkr.html">nkr</a>;</div>
 <div class="line"> </div>
 <div class="line">    <span class="keyword">static_assert</span>(<a class="code hl_function" href="namespacenkr.html#a1898ff80c7081762a1840f00883fa258">TR</a>&lt;</div>
 <div class="line">               <span class="comment">/* subject */</span></div>
@@ -411,13 +411,14 @@ template&lt;nkr::ts_tr subjects_p, typename ... expression_parts_p&gt; </div>
 <div class="ttc" id="anamespacenkr_html"><div class="ttname"><a href="namespacenkr.html">nkr</a></div><div class="ttdef"><b>Definition:</b> array/cpp_t_dec.h:14</div></div>
 <div class="ttc" id="anamespacenkr_html_a1898ff80c7081762a1840f00883fa258"><div class="ttname"><a href="namespacenkr.html#a1898ff80c7081762a1840f00883fa258">nkr::TR</a></div><div class="ttdeci">constexpr nkr::boolean::cpp_t TR() noexcept</div><div class="ttdoc">Used to filter a type by its qualifications, and by other types, templates, identities,...</div></div>
 <div class="ttc" id="anamespacenkr_html_ac2fadabeca6af1088b2114f4b32cc63f"><div class="ttname"><a href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">nkr::t</a></div><div class="ttdeci">nkr::$tr::ts&lt; AND_tg, nkr::tuple::types_t&lt; type_p &gt; &gt; t</div><div class="ttdoc">A way to wrap a single type for use with an nkr::TR expression, to differentiate it from a template.</div><div class="ttdef"><b>Definition:</b> tr_dec.h:174</div></div>
-</div><!-- fragment --> In the above example we statically asserted that <code>int</code> is <code>any</code> <code>int</code>. Again, but without the comments: <div class="fragment"><div class="line">    <span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacenkr.html">nkr</a>;</div>
+</div><!-- fragment --> In the above example we statically asserted that <code>int</code> is <code>any</code> <code>int</code>. This time without comments: <div class="fragment"><div class="line">    <span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacenkr.html">nkr</a>;</div>
 <div class="line"> </div>
 <div class="line">    <span class="keyword">static_assert</span>(<a class="code hl_function" href="namespacenkr.html#a1898ff80c7081762a1840f00883fa258">TR</a>&lt;</div>
 <div class="line">                  <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;int&gt;</a>,</div>
 <div class="line">                  any_tg, <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;int&gt;</a></div>
 <div class="line">    &gt;() == <span class="keyword">true</span>);</div>
-</div><!-- fragment --> It is possible to use just a <code>subject</code> and an <code>operator</code>. In the following example we are asserting the subject is <code>any</code> subject: <div class="fragment"><div class="line">    <span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacenkr.html">nkr</a>;</div>
+</div><!-- fragment --></dd></dl>
+<dl class="section user"><dt>Implicit Operands</dt><dd>It is possible to use just a <code>subject</code> and an <code>operator</code> without use of an <code>operand</code>. This trivial example will always return true because <code>any</code> <code>subject</code> will always be <code>any</code> <code>subject</code>: <div class="fragment"><div class="line">    <span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacenkr.html">nkr</a>;</div>
 <div class="line"> </div>
 <div class="line">    <span class="keyword">static_assert</span>(<a class="code hl_function" href="namespacenkr.html#a1898ff80c7081762a1840f00883fa258">TR</a>&lt;</div>
 <div class="line">                  <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;int&gt;</a>,</div>
@@ -428,7 +429,57 @@ template&lt;nkr::ts_tr subjects_p, typename ... expression_parts_p&gt; </div>
 <div class="line">                  <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;float&gt;</a>,</div>
 <div class="line">                  any_tg</div>
 <div class="line">    &gt;() == <span class="keyword">true</span>);</div>
-</div><!-- fragment --> And it is also possible to use templates when working with multiple pairs of <code>operators</code> and <code>operands</code>. Here we are asserting that <code>int*</code> is <code>any</code> nkr::pointer::cpp_t <code>of any</code> <code>int</code>. This will result in <code>true</code> because nkr::pointer::cpp_t&lt;int&gt; is an alias for <code>int*</code>: <div class="fragment"><div class="line">    <span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacenkr.html">nkr</a>;</div>
+</div><!-- fragment --></dd></dl>
+<dl class="section user"><dt>Qualification Operators</dt><dd>Implicit operands become critical for operators besides <code>any_tg</code>. Sometimes it is desireable to constrain a subject to qualification regardless of type: <div class="fragment"><div class="line">    <span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacenkr.html">nkr</a>;</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">static_assert</span>(<a class="code hl_function" href="namespacenkr.html#a1898ff80c7081762a1840f00883fa258">TR</a>&lt;</div>
+<div class="line">                  <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;int&gt;</a>,</div>
+<div class="line">                  any_const_tg</div>
+<div class="line">    &gt;() == <span class="keyword">false</span>);</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">static_assert</span>(<a class="code hl_function" href="namespacenkr.html#a1898ff80c7081762a1840f00883fa258">TR</a>&lt;</div>
+<div class="line">                  <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;const int&gt;</a>,</div>
+<div class="line">                  any_const_tg</div>
+<div class="line">    &gt;() == <span class="keyword">true</span>);</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">static_assert</span>(<a class="code hl_function" href="namespacenkr.html#a1898ff80c7081762a1840f00883fa258">TR</a>&lt;</div>
+<div class="line">                  <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;float&gt;</a>,</div>
+<div class="line">                  any_const_tg</div>
+<div class="line">    &gt;() == <span class="keyword">false</span>);</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">static_assert</span>(<a class="code hl_function" href="namespacenkr.html#a1898ff80c7081762a1840f00883fa258">TR</a>&lt;</div>
+<div class="line">                  <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;const float&gt;</a>,</div>
+<div class="line">                  any_const_tg</div>
+<div class="line">    &gt;() == <span class="keyword">true</span>);</div>
+</div><!-- fragment --> More commonly it is desirable to constrain to qualification and the type: <div class="fragment"><div class="line">    <span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacenkr.html">nkr</a>;</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">static_assert</span>(<a class="code hl_function" href="namespacenkr.html#a1898ff80c7081762a1840f00883fa258">TR</a>&lt;</div>
+<div class="line">                  <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;int&gt;</a>,</div>
+<div class="line">                  any_const_tg, <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;int&gt;</a></div>
+<div class="line">    &gt;() == <span class="keyword">false</span>);</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">static_assert</span>(<a class="code hl_function" href="namespacenkr.html#a1898ff80c7081762a1840f00883fa258">TR</a>&lt;</div>
+<div class="line">                  <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;const int&gt;</a>,</div>
+<div class="line">                  any_const_tg, <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;int&gt;</a></div>
+<div class="line">    &gt;() == <span class="keyword">true</span>);</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">static_assert</span>(<a class="code hl_function" href="namespacenkr.html#a1898ff80c7081762a1840f00883fa258">TR</a>&lt;</div>
+<div class="line">                  <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;float&gt;</a>,</div>
+<div class="line">                  any_const_tg, <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;float&gt;</a></div>
+<div class="line">    &gt;() == <span class="keyword">false</span>);</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">static_assert</span>(<a class="code hl_function" href="namespacenkr.html#a1898ff80c7081762a1840f00883fa258">TR</a>&lt;</div>
+<div class="line">                  <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;const float&gt;</a>,</div>
+<div class="line">                  any_const_tg, <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;float&gt;</a></div>
+<div class="line">    &gt;() == <span class="keyword">true</span>);</div>
+</div><!-- fragment --></dd></dl>
+<dl class="section user"><dt>Template Operands</dt><dd>It is also possible to use templates. Here we simply constrain to an instantiated nkr::pointer::cpp_t, which will result in <code>true</code> because nkr::pointer::cpp_t&lt;int&gt; is an alias of <code>int*</code>: <div class="fragment"><div class="line">    <span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacenkr.html">nkr</a>;</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">static_assert</span>(<a class="code hl_function" href="namespacenkr.html#a1898ff80c7081762a1840f00883fa258">TR</a>&lt;</div>
+<div class="line">                  <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;int*&gt;</a>,</div>
+<div class="line">                  any_tg, <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;nkr::pointer::cpp_t&lt;int&gt;</a>&gt;</div>
+<div class="line">    &gt;() == <span class="keyword">true</span>);</div>
+</div><!-- fragment --> Often it is useful to separate the template from its <code>inner type</code> which would be <code>int</code> in this case. This allows for more flexible expressions that make use of more than just the <code>any_tg</code> operator. Here we are asserting the same as above, that <code>int*</code> is <code>any</code> nkr::pointer::cpp_t <code>of any</code> <code>int</code>: <div class="fragment"><div class="line">    <span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacenkr.html">nkr</a>;</div>
 <div class="line"> </div>
 <div class="line">    <span class="keyword">static_assert</span>(<a class="code hl_function" href="namespacenkr.html#a1898ff80c7081762a1840f00883fa258">TR</a>&lt;</div>
 <div class="line">                  <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;int*&gt;</a>,</div>
@@ -436,14 +487,15 @@ template&lt;nkr::ts_tr subjects_p, typename ... expression_parts_p&gt; </div>
 <div class="line">                  of_any_tg, <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;int&gt;</a></div>
 <div class="line">    &gt;() == <span class="keyword">true</span>);</div>
 <div class="ttc" id="anamespacenkr_html_ad9ca1dc69cb9a052d8bc183cf5e69dcb"><div class="ttname"><a href="namespacenkr.html#ad9ca1dc69cb9a052d8bc183cf5e69dcb">nkr::tt</a></div><div class="ttdeci">nkr::$tr::tts&lt; AND_tg, nkr::tuple::templates_t&lt; template_p &gt; &gt; tt</div><div class="ttdoc">A way to wrap a single template for use with an nkr::TR expression, to differentiate it from a type.</div><div class="ttdef"><b>Definition:</b> tr_dec.h:187</div></div>
-</div><!-- fragment --> Alternatively, we can use a <code>tg</code>, that is a <code>tag</code> of nkr::pointer::cpp_t to achieve the same result: <div class="fragment"><div class="line">    <span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacenkr.html">nkr</a>;</div>
+</div><!-- fragment --></dd></dl>
+<dl class="section user"><dt>Tag Operands</dt><dd>Alternatively we can use a <code>ttg</code>, that is a <code>template tag</code> of nkr::pointer::cpp_t to achieve the same result: <div class="fragment"><div class="line">    <span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacenkr.html">nkr</a>;</div>
 <div class="line"> </div>
 <div class="line">    <span class="keyword">static_assert</span>(<a class="code hl_function" href="namespacenkr.html#a1898ff80c7081762a1840f00883fa258">TR</a>&lt;</div>
 <div class="line">                  <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;int*&gt;</a>,</div>
 <div class="line">                  any_tg, <a class="code hl_typedef" href="namespacenkr.html#ad9ca1dc69cb9a052d8bc183cf5e69dcb">tt&lt;nkr::pointer::cpp_ttg&gt;</a>,</div>
 <div class="line">                  of_any_tg, <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;int&gt;</a></div>
 <div class="line">    &gt;() == <span class="keyword">true</span>);</div>
-</div><!-- fragment --> Like nkr::pointer::cpp_t whose <code>tag</code> is used in the above example, many templates provide the means to test any type directly belonging to it, regardless of the subject's actual <code>inner type</code>. Below we are simply asserting that the subject is <code>any</code> nkr::pointer::cpp_t: <div class="fragment"><div class="line">    <span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacenkr.html">nkr</a>;</div>
+</div><!-- fragment --> The use of <code>tags</code> can bring even more flexibility to an expression. For example, most templates provide a <code>tag</code> to test if a type is instantiated from it, regardless of the subject's actual <code>inner type</code>. Below we simply assert that the <code>subject</code> needs to be instantiated from <code>any</code> nkr::pointer::cpp_t by use of its <code>tg</code> or <code>type tag</code>: <div class="fragment"><div class="line">    <span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacenkr.html">nkr</a>;</div>
 <div class="line"> </div>
 <div class="line">    <span class="keyword">static_assert</span>(<a class="code hl_function" href="namespacenkr.html#a1898ff80c7081762a1840f00883fa258">TR</a>&lt;</div>
 <div class="line">                  <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;int*&gt;</a>,</div>
@@ -454,11 +506,29 @@ template&lt;nkr::ts_tr subjects_p, typename ... expression_parts_p&gt; </div>
 <div class="line">                  <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;float*&gt;</a>,</div>
 <div class="line">                  any_tg, <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;nkr::pointer::cpp_tg&gt;</a></div>
 <div class="line">    &gt;() == <span class="keyword">true</span>);</div>
-</div><!-- fragment --> Note the use of the <code>ttg</code> postfix to constrain a template of an explicit type and the <code>tg</code> postifx to constrain a template of any type, both modifying <code>nkr:pointer::cpp</code>. These two <code>tags</code> nkr::pointer::cpp_tg and nkr::pointer::cpp_ttg are <code>identities</code> of nkr::pointer::cpp_t, respectively the <code>type indentity tag</code> and the <code>template identity tag</code>. Suffice it to say these grammatical artifices provide the ability to semantically alter an <a class="el" href="namespacenkr.html#a1898ff80c7081762a1840f00883fa258" title="Used to filter a type by its qualifications, and by other types, templates, identities,...">nkr::TR</a> expression as we have shown above.</dd></dl>
-<dl class="section user"><dt>Qualification Operators</dt><dd></dd></dl>
-<dl class="section user"><dt>Arbitrary Length</dt><dd></dd></dl>
-<dl class="section user"><dt>Wrapping Types and Templates</dt><dd>You will have noticed that types are wrapped with <a class="el" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f" title="A way to wrap a single type for use with an nkr::TR expression, to differentiate it from a template.">nkr::t</a> or <a class="el" href="namespacenkr.html#ae4babe1476e170123b9682b67160a0e8" title="A way to parenthesize and perform logical operations on several types in an nkr::TR expression.">nkr::ts</a>, that is <code>type</code> or <code>types</code> respectively. This syntactical feature differentiates between using a singluar type or multiple types in a subject or operand. It also differentiates between using types or templates as an operand. To use templates as an operand you would use <a class="el" href="namespacenkr.html#ad9ca1dc69cb9a052d8bc183cf5e69dcb" title="A way to wrap a single template for use with an nkr::TR expression, to differentiate it from a type.">nkr::tt</a> or <a class="el" href="namespacenkr.html#aa41183e8bf88f05fd2c80a26fa6ebb52" title="A way to parenthesize and perform logical operations on several templates in an nkr::TR expression.">nkr::tts</a>, that is 'template type' or 'template types' respectively. </dd></dl>
-<dl class="section user"><dt></dt><dd>It is necessary to wrap the templates into a type for the sake of arbitrary length expressions, which cannot be made up of both types and templates but only one or the other.</dd></dl>
+</div><!-- fragment --> Note the symetrical use of <code>tt</code> with <code>ttg</code> to constrain a <code>template tag</code> and <code>t</code> with <code>tg</code> to constrain a <code>type tag</code>.</dd></dl>
+<dl class="section user"><dt>Type Wrappers and Template Wrappers</dt><dd>Types are wrapped with <a class="el" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f" title="A way to wrap a single type for use with an nkr::TR expression, to differentiate it from a template.">nkr::t</a> or <a class="el" href="namespacenkr.html#ae4babe1476e170123b9682b67160a0e8" title="A way to parenthesize and perform logical operations on several types in an nkr::TR expression.">nkr::ts</a>, that is <code>type</code> or <code>types</code> respectively. This syntactical feature differentiates between using a singluar type or multiple types in a subject or operand. It also differentiates between using types or templates as an operand. To use templates as an operand you would use <a class="el" href="namespacenkr.html#ad9ca1dc69cb9a052d8bc183cf5e69dcb" title="A way to wrap a single template for use with an nkr::TR expression, to differentiate it from a type.">nkr::tt</a> or <a class="el" href="namespacenkr.html#aa41183e8bf88f05fd2c80a26fa6ebb52" title="A way to parenthesize and perform logical operations on several templates in an nkr::TR expression.">nkr::tts</a>, that is 'template type' or 'template types' respectively. It is necessary to wrap the templates this way for the sake of arbitrary length expressions, which cannot be made up of both types and templates but only one or the other.</dd></dl>
+<dl class="section user"><dt>Generic Operands</dt><dd><code>Tags</code> become absolutely critical when we start to introduce <code>generics</code> into our expressions.</dd></dl>
+<dl class="section user"><dt>Arbitrary Length</dt><dd>Arbitrary length expressions allow for the constraint of templates of templates of templates, ..., of templates of types. Here we have an intentionally complex example: <div class="fragment"><div class="line">    <span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacenkr.html">nkr</a>;</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">static_assert</span>(<a class="code hl_function" href="namespacenkr.html#a1898ff80c7081762a1840f00883fa258">TR</a>&lt;</div>
+<div class="line">                  <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;int****&gt;</a>,</div>
+<div class="line">                  any_tg, <a class="code hl_typedef" href="namespacenkr.html#ad9ca1dc69cb9a052d8bc183cf5e69dcb">tt&lt;nkr::pointer::cpp_t&gt;</a>,</div>
+<div class="line">                  of_any_tg, <a class="code hl_typedef" href="namespacenkr.html#ad9ca1dc69cb9a052d8bc183cf5e69dcb">tt&lt;nkr::pointer::cpp_t&gt;</a>,</div>
+<div class="line">                  of_any_tg, <a class="code hl_typedef" href="namespacenkr.html#ad9ca1dc69cb9a052d8bc183cf5e69dcb">tt&lt;nkr::pointer::cpp_t&gt;</a>,</div>
+<div class="line">                  of_any_tg, <a class="code hl_typedef" href="namespacenkr.html#ad9ca1dc69cb9a052d8bc183cf5e69dcb">tt&lt;nkr::pointer::cpp_t&gt;</a>,</div>
+<div class="line">                  of_any_tg, <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;int&gt;</a></div>
+<div class="line">    &gt;() == <span class="keyword">true</span>);</div>
+</div><!-- fragment --> However it is possible to find real-world examples of two or even three operands in use with an <a class="el" href="namespacenkr.html#a1898ff80c7081762a1840f00883fa258" title="Used to filter a type by its qualifications, and by other types, templates, identities,...">nkr::TR</a> expression throughout the library, with various templates and types coming into play. A classic C++ example would be an lvalue reference to a pointer which one might pass to a function for initialization: <div class="fragment"><div class="line">    <span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacenkr.html">nkr</a>;</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">static_assert</span>(<a class="code hl_function" href="namespacenkr.html#a1898ff80c7081762a1840f00883fa258">TR</a>&lt;</div>
+<div class="line">                  <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;const int* volatile&amp;&gt;</a>,</div>
+<div class="line">                  any_tg, <a class="code hl_typedef" href="namespacenkr.html#ad9ca1dc69cb9a052d8bc183cf5e69dcb">tt&lt;nkr::reference::lvalue_t&gt;</a>,</div>
+<div class="line">                  of_any_non_const_tg, <a class="code hl_typedef" href="namespacenkr.html#ad9ca1dc69cb9a052d8bc183cf5e69dcb">tt&lt;nkr::pointer::cpp_t&gt;</a>,</div>
+<div class="line">                  of_any_tg, <a class="code hl_typedef" href="namespacenkr.html#ac2fadabeca6af1088b2114f4b32cc63f">t&lt;int&gt;</a></div>
+<div class="line">    &gt;() == <span class="keyword">true</span>);</div>
+</div><!-- fragment --> In this case our function would not care what the pointer is pointing to, or that its <code>inner type</code> is <code>const</code>. It only cares that it is a reference to a pointer that is <code>non_const</code>, else it wouldn't be able to set it. It doesn't actualy care if the pointer is <code>volatile</code> or not because its functionality remains the same in that event.</dd></dl>
+<dl class="section user"><dt>Target Operand</dt><dd>Finally, because the subject of <a class="el" href="namespacenkr.html#a1898ff80c7081762a1840f00883fa258" title="Used to filter a type by its qualifications, and by other types, templates, identities,...">nkr::TR</a> must always be a type and not a template, so too must the last operand be a type and not a template, even if that type is a <code>type tag</code> representing a template.</dd></dl>
 <dl class="section user"><dt>Using Multiple Types as an Operand</dt><dd>Naturally there are times when using more than one type as a single operand in an <a class="el" href="namespacenkr.html#a1898ff80c7081762a1840f00883fa258" title="Used to filter a type by its qualifications, and by other types, templates, identities,...">nkr::TR</a> expression is desirable. Sometimes one may wish to constrain to several operands parenthetically, to be evaluated by a logical operator. That's where <a class="el" href="namespacenkr.html#ae4babe1476e170123b9682b67160a0e8" title="A way to parenthesize and perform logical operations on several types in an nkr::TR expression.">nkr::ts</a> comes in. </dd></dl>
 <dl class="section user"><dt></dt><dd>Here we constrain to either type in the operand, with use of the nkr::OR_tg: <div class="fragment"><div class="line">    <span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacenkr.html">nkr</a>;</div>
 <div class="line"> </div>
