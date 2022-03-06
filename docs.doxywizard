@@ -963,7 +963,94 @@ RECURSIVE              = YES
 # Note that relative paths are relative to the directory from which doxygen is
 # run.
 
-EXCLUDE                =
+EXCLUDE                = ../nkr/nkr/include/nkr/z_allocator \
+                         ../nkr/nkr/include/nkr/z_array \
+                         ../nkr/nkr/include/nkr/z_charcoder \
+                         ../nkr/nkr/include/nkr/z_enumeration \
+                         ../nkr/nkr/include/nkr/z_hasher \
+                         ../nkr/nkr/include/nkr/z_number \
+                         ../nkr/nkr/include/nkr/z_string \
+                         ../nkr/nkr/include/nkr/z_tree \
+                         ../nkr/nkr/include/nkr/z_allocator_err.h \
+                         ../nkr/nkr/include/nkr/z_allocator_err_dox.h \
+                         ../nkr/nkr/include/nkr/z_allocator_i.h \
+                         ../nkr/nkr/include/nkr/z_allocator_i_dox.h \
+                         ../nkr/nkr/include/nkr/z_array_i.h \
+                         ../nkr/nkr/include/nkr/z_array_i_dox.h \
+                         ../nkr/nkr/include/nkr/z_atomic_t.h \
+                         ../nkr/nkr/include/nkr/z_atomic_t_dec.h \
+                         ../nkr/nkr/include/nkr/z_atomic_t_def.h \
+                         ../nkr/nkr/include/nkr/z_atomic_t_dox.h \
+                         ../nkr/nkr/include/nkr/z_bool_t.h \
+                         ../nkr/nkr/include/nkr/z_bool_t_dec.h \
+                         ../nkr/nkr/include/nkr/z_bool_t_def.h \
+                         ../nkr/nkr/include/nkr/z_bool_t_dox.h \
+                         ../nkr/nkr/include/nkr/z_charcoder_i.h \
+                         ../nkr/nkr/include/nkr/z_charcoder_i_dox.h \
+                         ../nkr/nkr/include/nkr/z_fors.h \
+                         ../nkr/nkr/include/nkr/z_fors_dox.h \
+                         ../nkr/nkr/include/nkr/z_hasher_i.h \
+                         ../nkr/nkr/include/nkr/z_hasher_i_dox.h \
+                         ../nkr/nkr/include/nkr/z_intrinsics.h \
+                         ../nkr/nkr/include/nkr/z_intrinsics_dec.h \
+                         ../nkr/nkr/include/nkr/z_intrinsics_def.h \
+                         ../nkr/nkr/include/nkr/z_intrinsics_dox.h \
+                         ../nkr/nkr/include/nkr/z_macros.h \
+                         ../nkr/nkr/include/nkr/z_macros_dec.h \
+                         ../nkr/nkr/include/nkr/z_macros_def.h \
+                         ../nkr/nkr/include/nkr/z_macros_dox.h \
+                         ../nkr/nkr/include/nkr/z_math.h \
+                         ../nkr/nkr/include/nkr/z_math_dec.h \
+                         ../nkr/nkr/include/nkr/z_math_def.h \
+                         ../nkr/nkr/include/nkr/z_math_dox.h \
+                         ../nkr/nkr/include/nkr/z_maybe_i.h \
+                         ../nkr/nkr/include/nkr/z_maybe_i_dox.h \
+                         ../nkr/nkr/include/nkr/z_maybe_t.h \
+                         ../nkr/nkr/include/nkr/z_maybe_t_dec.h \
+                         ../nkr/nkr/include/nkr/z_maybe_t_def.h \
+                         ../nkr/nkr/include/nkr/z_maybe_t_dox.h \
+                         ../nkr/nkr/include/nkr/z_none_i.h \
+                         ../nkr/nkr/include/nkr/z_none_i_dox.h \
+                         ../nkr/nkr/include/nkr/z_none_t.h \
+                         ../nkr/nkr/include/nkr/z_none_t_dec.h \
+                         ../nkr/nkr/include/nkr/z_none_t_def.h \
+                         ../nkr/nkr/include/nkr/z_none_t_dox.h \
+                         ../nkr/nkr/include/nkr/z_optional_t.h \
+                         ../nkr/nkr/include/nkr/z_optional_t_dec.h \
+                         ../nkr/nkr/include/nkr/z_optional_t_def.h \
+                         ../nkr/nkr/include/nkr/z_optional_t_dox.h \
+                         ../nkr/nkr/include/nkr/z_os.h \
+                         ../nkr/nkr/include/nkr/z_os_dec.h \
+                         ../nkr/nkr/include/nkr/z_os_def.h \
+                         ../nkr/nkr/include/nkr/z_os_dox.h \
+                         ../nkr/nkr/include/nkr/z_pointer_t.h \
+                         ../nkr/nkr/include/nkr/z_pointer_t_dec.h \
+                         ../nkr/nkr/include/nkr/z_pointer_t_def.h \
+                         ../nkr/nkr/include/nkr/z_pointer_t_dox.h \
+                         ../nkr/nkr/include/nkr/z_regex_t.h \
+                         ../nkr/nkr/include/nkr/z_regex_t_dec.h \
+                         ../nkr/nkr/include/nkr/z_regex_t_def.h \
+                         ../nkr/nkr/include/nkr/z_regex_t_dox.h \
+                         ../nkr/nkr/include/nkr/z_some_i.h \
+                         ../nkr/nkr/include/nkr/z_some_i_dox.h \
+                         ../nkr/nkr/include/nkr/z_some_t.h \
+                         ../nkr/nkr/include/nkr/z_some_t_dec.h \
+                         ../nkr/nkr/include/nkr/z_some_t_def.h \
+                         ../nkr/nkr/include/nkr/z_some_t_dox.h \
+                         ../nkr/nkr/include/nkr/z_string_i.h \
+                         ../nkr/nkr/include/nkr/z_string_i_dox.h \
+                         ../nkr/nkr/include/nkr/z_string_itr.h \
+                         ../nkr/nkr/include/nkr/z_string_itr_dec.h \
+                         ../nkr/nkr/include/nkr/z_string_itr_def.h \
+                         ../nkr/nkr/include/nkr/z_string_itr_dox.h \
+                         ../nkr/nkr/include/nkr/z_traits.h \
+                         ../nkr/nkr/include/nkr/z_traits_dec.h \
+                         ../nkr/nkr/include/nkr/z_traits_def.h \
+                         ../nkr/nkr/include/nkr/z_traits_dox.h \
+                         ../nkr/nkr/include/nkr/z_utils.h \
+                         ../nkr/nkr/include/nkr/z_utils_dec.h \
+                         ../nkr/nkr/include/nkr/z_utils_def.h \
+                         ../nkr/nkr/include/nkr/z_utils_dox.h
 
 # The EXCLUDE_SYMLINKS tag can be used to select whether or not files or
 # directories that are symbolic links (a Unix file system feature) are excluded

@@ -1,7 +1,9 @@
 var searchData=
 [
-  ['c_5fbool_5ft_0',['c_bool_t',['../group__intrinsics__primitives.html#gad05619436af7cbd3f917c34f6ca5bb0a',1,'nkr']]],
-  ['c_5fpointer_5fsp_1',['c_pointer_sp',['../classnkr_1_1atomic__t_0b_1_1c__pointer__sp.html#a1bc85c6184b176c040f1b5bd2289d85d',1,'nkr::atomic_t$::c_pointer_sp::c_pointer_sp()'],['../classnkr_1_1atomic__t_0b_1_1c__pointer__sp.html#a54d9493aa289f86deac42f3befffc02d',1,'nkr::atomic_t$::c_pointer_sp::c_pointer_sp(convertible_tr&lt; value_t &gt; auto value)'],['../classnkr_1_1atomic__t_0b_1_1c__pointer__sp.html#a9ab0a27d44ddc305c67edb9cbd329dee',1,'nkr::atomic_t$::c_pointer_sp::c_pointer_sp(const c_pointer_sp &amp;other)'],['../classnkr_1_1atomic__t_0b_1_1c__pointer__sp.html#a032d0e48ab409456b2f11fa5f879614b',1,'nkr::atomic_t$::c_pointer_sp::c_pointer_sp(const volatile c_pointer_sp &amp;other)'],['../classnkr_1_1atomic__t_0b_1_1c__pointer__sp.html#abb7c2a2b9fce9ff55076a6195eaa150e',1,'nkr::atomic_t$::c_pointer_sp::c_pointer_sp(c_pointer_sp &amp;&amp;other) noexcept'],['../classnkr_1_1atomic__t_0b_1_1c__pointer__sp.html#ac559a19ec20b1a712aaa986f3c4764a9',1,'nkr::atomic_t$::c_pointer_sp::c_pointer_sp(volatile c_pointer_sp &amp;&amp;other) noexcept'],['../classnkr_1_1atomic__t_0b_1_1c__pointer__sp.html#a63d004291b08a43a522878c8fd883ad4',1,'nkr::atomic_t$::c_pointer_sp::c_pointer_sp(none_t)'],['../classnkr_1_1atomic__t_0b_1_1c__pointer__sp.html',1,'nkr::atomic_t$::c_pointer_sp&lt; c_pointer_p &gt;'],['../classnkr_1_1maybe__t_0b_1_1built__in__sp_0b_1_1c__pointer__sp.html',1,'nkr::maybe_t$::built_in_sp$::c_pointer_sp&lt; c_pointer_p &gt;']]],
-  ['contextuals_2',['contextuals',['../group__intrinsics__contextuals.html',1,'']]],
-  ['count_5ft_3',['count_t',['../group__intrinsics__contextuals.html#ga962bdb5ad1c5bc05d87739e09df6082b',1,'nkr']]]
+  ['t_0',['t',['../namespacenkr.html#aecb8f05af8f5d93778ce60239336d8e3',1,'nkr']]],
+  ['tools_1',['Tools',['../md_include_markdown_tools.html',1,'']]],
+  ['tr_2',['TR',['../namespacenkr.html#a1898ff80c7081762a1840f00883fa258',1,'nkr']]],
+  ['ts_3',['ts',['../namespacenkr.html#a38a1a30f12686b2cf6312cdc291277b1',1,'nkr']]],
+  ['tt_4',['tt',['../namespacenkr.html#a5b44c572847cc1f4d65122f867f3bdbf',1,'nkr']]],
+  ['tts_5',['tts',['../namespacenkr.html#a44055ffedfb4e7317834a0938c1ceb40',1,'nkr']]]
 ];

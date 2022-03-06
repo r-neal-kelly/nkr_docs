@@ -1,4 +1,0 @@
-var searchData=
-[
-  ['value_0',['value',['../classnkr_1_1atomic__t_0b_1_1boolean__sp.html#a253102fd70c703781f72713968f0b365',1,'nkr::atomic_t$::boolean_sp::value()'],['../classnkr_1_1atomic__t_0b_1_1integer__sp.html#ade5aa70fadab9b37e0de1c10dc2997ed',1,'nkr::atomic_t$::integer_sp::value()'],['../classnkr_1_1atomic__t_0b_1_1real__sp.html#ae0f5885c1c8c00304b6ba9cacfb3af7e',1,'nkr::atomic_t$::real_sp::value()'],['../classnkr_1_1atomic__t_0b_1_1c__pointer__sp.html#a7af5ac495cb5722989e07c655422d85b',1,'nkr::atomic_t$::c_pointer_sp::value()'],['../classnkr_1_1atomic__t_0b_1_1void__pointer__sp.html#af3c259ed87f6124fe2cbbf9fe37f6b23',1,'nkr::atomic_t$::void_pointer_sp::value()'],['../classnkr_1_1bool__t.html#a958519a06dccd2780cbef9f845dae5e5',1,'nkr::bool_t::value()'],['../classnkr_1_1maybe__t_0b_1_1built__in__sp_0b_1_1any__sp.html#a5927e7867709b6bb8b4bc13d62f9b67d',1,'nkr::maybe_t$::built_in_sp$::any_sp::value()']]]
-];
