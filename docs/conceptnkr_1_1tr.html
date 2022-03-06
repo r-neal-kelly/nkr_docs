@@ -30,7 +30,7 @@
   <td id="projectalign">
    <div id="projectname">nkr
    </div>
-   <div id="projectbrief">My C++20 library</div>
+   <div id="projectbrief">A C++20 library with a custom meta-programming language, an extensible string, and more, all developed alongside a comprehensive test suite.</div>
   </td>
  </tr>
  </tbody>
@@ -99,7 +99,7 @@ var searchBox = new SearchBox("searchBox", "search",'Search','.html');
 <div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> subject_p, <span class="keyword">typename</span> ... expression_parts_p&gt;</div>
 <div class="line"><span class="keyword">concept </span><a class="code hl_concept" href="conceptnkr_1_1tr.html">nkr::tr</a> = </div>
 <div class="line">        TR&lt;t&lt;subject_p&gt;, expression_parts_p...&gt;()</div>
-<div class="ttc" id="aconceptnkr_1_1tr_html"><div class="ttname"><a href="conceptnkr_1_1tr.html">nkr::tr</a></div><div class="ttdoc">Used to filter a type by its qualifications, and by other types, templates, identities,...</div><div class="ttdef"><b>Definition:</b> tr_dec.h:260</div></div>
+<div class="ttc" id="aconceptnkr_1_1tr_html"><div class="ttname"><a href="conceptnkr_1_1tr.html">nkr::tr</a></div><div class="ttdoc">Used to filter a type by its qualifications, and by other types, templates, identities,...</div><div class="ttdef"><b>Definition:</b> tr_dec.h:261</div></div>
 </div><!-- fragment --><a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Used to filter a type by its qualifications, and by other types, templates, identities, and generics in the context of a declaration. </p>
 <p >Distinct from the <a class="el" href="namespacenkr.html#a1898ff80c7081762a1840f00883fa258" title="Used to filter a type by its qualifications, and by other types, templates, identities,...">nkr::TR</a> function, <a class="el" href="conceptnkr_1_1tr.html" title="Used to filter a type by its qualifications, and by other types, templates, identities,...">nkr::tr</a> is a concept that can be used in the context of type and function declarations where only one subject is implicitly allowed for constraint. In the library proper, it is far more common to see this concept in use as compared to the underlying function, which is more prevalent in static_asserts such as are found in the numerous test suites for nkr.</p>
