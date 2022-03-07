@@ -73,6 +73,7 @@ var searchBox = new SearchBox("searchBox", "search",'Search','.html');
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
       <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -105,13 +106,13 @@ var searchBox = new SearchBox("searchBox", "search",'Search','.html');
  <a href="classnkr_1_1constant__t.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">aliases</h2></td></tr>
-<tr class="memitem:a82ef3fa45b229f77a16e8ca97fa506bb"><td class="memItemLeft" align="right" valign="top"><a id="a82ef3fa45b229f77a16e8ca97fa506bb" name="a82ef3fa45b229f77a16e8ca97fa506bb"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>value_t</b> = type_p</td></tr>
+<tr class="memitem:a82ef3fa45b229f77a16e8ca97fa506bb"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnkr_1_1constant__t.html#a82ef3fa45b229f77a16e8ca97fa506bb">value_t</a> = type_p</td></tr>
+<tr class="memdesc:a82ef3fa45b229f77a16e8ca97fa506bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="md_include_markdown_designs.html#_8f6a1988_bbdb_46ba_8746_40c02acda41c">primary inner type</a> of <a class="el" href="classnkr_1_1constant__t.html" title="Represents an unchangable literal value in a compile-time or run-time context.">nkr::constant_t</a>.  <a href="classnkr_1_1constant__t.html#a82ef3fa45b229f77a16e8ca97fa506bb">More...</a><br /></td></tr>
 <tr class="separator:a82ef3fa45b229f77a16e8ca97fa506bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">static functions</h2></td></tr>
 <tr class="memitem:a0d5c2b56f683a6a80990c40fdc1e681b"><td class="memItemLeft" align="right" valign="top"><a id="a0d5c2b56f683a6a80990c40fdc1e681b" name="a0d5c2b56f683a6a80990c40fdc1e681b"></a>
-static constexpr value_t&#160;</td><td class="memItemRight" valign="bottom"><b>Value</b> () noexcept</td></tr>
+static constexpr <a class="el" href="classnkr_1_1constant__t.html#a82ef3fa45b229f77a16e8ca97fa506bb">value_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>Value</b> () noexcept</td></tr>
 <tr class="separator:a0d5c2b56f683a6a80990c40fdc1e681b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">constructors</h2></td></tr>
@@ -167,10 +168,10 @@ constexpr&#160;</td><td class="memItemRight" valign="bottom"><b>operator constan
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">operators</h2></td></tr>
 <tr class="memitem:a980e80536ae41ef65000b9dd3b0fa674"><td class="memItemLeft" align="right" valign="top"><a id="a980e80536ae41ef65000b9dd3b0fa674" name="a980e80536ae41ef65000b9dd3b0fa674"></a>
-constexpr value_t&#160;</td><td class="memItemRight" valign="bottom"><b>operator()</b> () const noexcept</td></tr>
+constexpr <a class="el" href="classnkr_1_1constant__t.html#a82ef3fa45b229f77a16e8ca97fa506bb">value_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>operator()</b> () const noexcept</td></tr>
 <tr class="separator:a980e80536ae41ef65000b9dd3b0fa674"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a67591b8cf25b4ec336544fbc2e50c470"><td class="memItemLeft" align="right" valign="top"><a id="a67591b8cf25b4ec336544fbc2e50c470" name="a67591b8cf25b4ec336544fbc2e50c470"></a>
-constexpr value_t&#160;</td><td class="memItemRight" valign="bottom"><b>operator()</b> () const volatile noexcept</td></tr>
+constexpr <a class="el" href="classnkr_1_1constant__t.html#a82ef3fa45b229f77a16e8ca97fa506bb">value_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>operator()</b> () const volatile noexcept</td></tr>
 <tr class="separator:a67591b8cf25b4ec336544fbc2e50c470"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -179,7 +180,26 @@ class nkr::constant_t&lt; type_p, value_p &gt;</div><p >Represents an unchangabl
 <p ><a class="el" href="classnkr_1_1constant__t.html" title="Represents an unchangable literal value in a compile-time or run-time context.">nkr::constant_t</a> is primarily used as a template type parameter in place of a template value parameter, for the sake of the <a class="el" href="md_include_markdown_designs.html#_ab449a60_e674_4d0a_91d9_557ec4c5660c">one kind of template parameter principle</a>. However, there's nothing restricting its use in other contexts if it is desireable.</p>
 <dl class="section user"><dt></dt><dd></dd></dl>
 <dl class="section note"><dt>Note</dt><dd>This type is similar to the standard C++ <a href="https://en.cppreference.com/w/cpp/types/integral_constant">std::integral_constant</a>. </dd></dl>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="a82ef3fa45b229f77a16e8ca97fa506bb" name="a82ef3fa45b229f77a16e8ca97fa506bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82ef3fa45b229f77a16e8ca97fa506bb">&#9670;&nbsp;</a></span>value_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;nkr::generic::type_tr type_p, type_p value_p&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classnkr_1_1constant__t.html">nkr::constant_t</a>&lt; type_p, value_p &gt;::value_t =  type_p</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The <a class="el" href="md_include_markdown_designs.html#_8f6a1988_bbdb_46ba_8746_40c02acda41c">primary inner type</a> of <a class="el" href="classnkr_1_1constant__t.html" title="Represents an unchangable literal value in a compile-time or run-time context.">nkr::constant_t</a>. </p>
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3

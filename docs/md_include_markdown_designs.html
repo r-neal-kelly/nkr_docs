@@ -87,7 +87,69 @@ var searchBox = new SearchBox("searchBox", "search",'Search','.html');
   <div class="headertitle"><div class="title">Designs </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="_ab449a60_e674_4d0a_91d9_557ec4c5660c"></a>
+<div class="textblock"><h1><a class="anchor" id="_8f6a1988_bbdb_46ba_8746_40c02acda41c"></a>
+Primary Inner Type</h1>
+<p >Most every template type available in the library, regardless of how many parameters it has, contains a <code>primary inner type</code>. Usually, it's the first provided argument in the parameter list:</p>
+<div class="fragment"><div class="line">    <span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacenkr.html">nkr</a>;</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> type_p, <span class="keyword">typename</span> ...maybe_more_types_p&gt;</div>
+<div class="line">    <span class="keyword">class </span>template_t</div>
+<div class="line">    {</div>
+<div class="line">    <span class="keyword">public</span>:</div>
+<div class="line">        <span class="keyword">using</span> type_t    = type_p;   <span class="comment">// the primary inner type</span></div>
+<div class="line">    };</div>
+<div class="ttc" id="anamespacenkr_html"><div class="ttname"><a href="namespacenkr.html">nkr</a></div><div class="ttdoc">The entire library is contained within this namespace.</div><div class="ttdef"><b>Definition:</b> array/cpp_t_dec.h:14</div></div>
+</div><!-- fragment --><p >Primary inner types are usually used for the sake of type constraints, particularly through use of an <a class="el" href="conceptnkr_1_1tr.html" title="Used to filter a type by its qualifications, and by other types, templates, identities,...">nkr::tr</a> expression with multiple operands:</p>
+<div class="fragment"><div class="line">    <span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacenkr.html">nkr</a>;</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// we can use any nkr template as long as it has a primary inner type</span></div>
+<div class="line">    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> type_p&gt;</div>
+<div class="line">    <span class="keyword">using</span> template_t = nkr::pointer::cpp_t&lt;type_p&gt;;</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">static_assert</span>(tr&lt;</div>
+<div class="line">                  template_t&lt;long&gt;,         <span class="comment">// we provide a primary inner type of &quot;long&quot;</span></div>
+<div class="line">                  any_tg, tt&lt;template_t&gt;,</div>
+<div class="line">                  of_any_tg, t&lt;long long&gt;   <span class="comment">// but we&#39;re looking for &quot;long long&quot;, so it&#39;s false</span></div>
+<div class="line">    &gt; == <span class="keyword">false</span>);</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">static_assert</span>(tr&lt;</div>
+<div class="line">                  template_t&lt;long long&gt;,    <span class="comment">// we change it to &quot;long long&quot; to get true</span></div>
+<div class="line">                  any_tg, tt&lt;template_t&gt;,</div>
+<div class="line">                  of_any_tg, t&lt;long long&gt;</div>
+<div class="line">    &gt; == <span class="keyword">true</span>);</div>
+</div><!-- fragment --><p >It should be noted that each template does not need to have the same alias name for the <code>primary inner type</code>, nor does it need to reuse the parameter name in the name of its alias:</p>
+<div class="fragment"><div class="line">    <span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacenkr.html">nkr</a>;</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> type_p, <span class="keyword">typename</span> ...maybe_more_types_p&gt;</div>
+<div class="line">    <span class="keyword">class </span>template_t</div>
+<div class="line">    {</div>
+<div class="line">    <span class="keyword">public</span>:</div>
+<div class="line">        <span class="keyword">using</span> value_t   = type_p;   <span class="comment">// does not use the parameter&#39;s name</span></div>
+<div class="line">    };</div>
+</div><!-- fragment --><p >So in order to know what the <code>primary inner type</code> is for a particular template instantiation, we need to use nkr::interface::type_i:</p>
+<div class="fragment"><div class="line">    <span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacenkr.html">nkr</a>;</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> type_p&gt;</div>
+<div class="line">    <span class="keyword">using</span> template_t = nkr::pointer::cpp_t&lt;type_p&gt;;</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// here we give our example template a primary inner type of &quot;int&quot;</span></div>
+<div class="line">    <span class="keyword">using</span> type_t = template_t&lt;int&gt;;</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">using</span> interface_of_type_t = nkr::interface::type_i&lt;type_t&gt;;</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// we can access the primary inner type with an alias contained in the interface</span></div>
+<div class="line">    <span class="keyword">using</span> primary_inner_type_of_type_t = interface_of_type_t::of_t;</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// it should be equal to what we gave our template_t</span></div>
+<div class="line">    <span class="keyword">static_assert</span>(nkr::cpp::is_tr&lt;primary_inner_type_of_type_t, int&gt;);</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">using</span> interface_of_interface_of_type_t = nkr::interface::type_i&lt;interface_of_type_t&gt;;</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// coincidentally, the interface itself has a primary inner type equal to type_t</span></div>
+<div class="line">    <span class="keyword">static_assert</span>(nkr::cpp::is_tr&lt;interface_of_interface_of_type_t::of_t, type_t&gt;);</div>
+</div><!-- fragment --><p >Common alias names for a <code>primary inner type</code> are <code>type_t</code>, <code>value_t</code>, and <code>unit_t</code>.</p>
+<hr  />
+<h1><a class="anchor" id="_ab449a60_e674_4d0a_91d9_557ec4c5660c"></a>
 The "One Kind of Template Parameter" Principle</h1>
 <p >A few key points need to be understood before expressing this principle:</p><ol type="1">
 <li>Templates can take an large variety of entities as parameters including types, other templates, and literal values.</li>

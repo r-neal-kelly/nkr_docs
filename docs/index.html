@@ -119,7 +119,7 @@ Data Labels</h2>
 <h2><a class="anchor" id="autotoc_md9"></a>
 File Hierarchy</h2>
 <p >Files mimic the hierarchy of the library's namespaces and include the postfix of whatever it is they are primarily declaring or defining. For example, types have "_t" in the name of the file, such as in "example_t", and interfaces have "_i" in the name of the file, such as in "example_i". This gives as much room to avoid collisions as there is in the general namespace and leaves open more general files such as "example" where they are needed. In addition, post-postfixes are added to files that make them distinct based on their function in the include system. For example, "example_t_dec.h" is for "example_t declaration" and "example_t_def.h" for "example_t definition". Additionally, there is a primary header for each group of sub-headers that does not include a post-postfix. This file allows for a consumer of the library to easily pull in everything they need for that entity, with every file already included in order.</p>
-<h2><a class="anchor" id="autotoc_md11"></a>
+<h2><a class="anchor" id="autotoc_md10"></a>
 Equality Operators are Globals</h2>
 <p >For the sake of compatibility and control we define equality operators for types using a specific and exhaustive pattern all in the top global scope:</p>
 <div class="fragment"><div class="line"><span class="keyword">constexpr</span> nkr::boolean::cpp_t   operator ==(<span class="keyword">const</span> nkr::tr1&lt;nkr::any_tg, nkr::example_t&gt; <span class="keyword">auto</span>&amp; a, <span class="keyword">const</span> <span class="keyword">auto</span>&amp; b) <span class="keyword">noexcept</span>;</div>
@@ -156,7 +156,7 @@ Equality Operators are Globals</h2>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment --><p >This is the only equality operator in the group of declarations above that has such a definition, as the rest simply convert their arguments and/or complement their logic to call this one.</p>
-<h2><a class="anchor" id="autotoc_md13"></a>
+<h2><a class="anchor" id="autotoc_md11"></a>
 Move Assignment of Volatile Types</h2>
 <p >In order to avoid an overload resolution ambiguity, we often use a templated operator to define the move assignment of volatile types. Because templates have a lower precedence than normal operators, this allows for both volatile and non-volatile instances as well as new constructions of the type to be move-assigned properly, and also allows other types that can be converted through a constructor of the type to be properly assigned as expected.</p>
 <div class="fragment"><div class="line"><span class="keyword">class </span>example_t</div>
@@ -217,7 +217,7 @@ Partial Specializations By Concept</h2>
 </div><!-- fragment --><p> <a href="https://github.com/r-neal-kelly/the_concept_bug">View a small but detailed example of this bug.</a></p>
 <p ><a href="https://stackoverflow.com/questions/68589314/how-to-define-a-specialized-class-method-outside-of-class-body-in-c">Read about it on stackoverflow.</a></p>
 <hr  />
-<h1><a class="anchor" id="autotoc_md15"></a>
+<h1><a class="anchor" id="autotoc_md13"></a>
 Documentation Status</h1>
 <p >We are in the pre-alpha phase of the library. We are currently prototyping and designing the overarching system of types, traits, and interfaces, and importantly, we are still designing the documentation itself. I've removed all of the old documentation from the previous iteration and have begun writing for the third. </p>
 </div></div><!-- PageDoc -->
