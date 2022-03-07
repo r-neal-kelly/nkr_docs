@@ -1,9 +1,18 @@
 var searchData=
 [
-  ['t_0',['t',['../namespacenkr.html#aecb8f05af8f5d93778ce60239336d8e3',1,'nkr']]],
-  ['tools_1',['Tools',['../md_include_markdown_tools.html',1,'']]],
-  ['tr_2',['TR',['../namespacenkr.html#a1898ff80c7081762a1840f00883fa258',1,'nkr']]],
-  ['ts_3',['ts',['../namespacenkr.html#a38a1a30f12686b2cf6312cdc291277b1',1,'nkr']]],
-  ['tt_4',['tt',['../namespacenkr.html#a5b44c572847cc1f4d65122f867f3bdbf',1,'nkr']]],
-  ['tts_5',['tts',['../namespacenkr.html#a44055ffedfb4e7317834a0938c1ceb40',1,'nkr']]]
+  ['allocator_0',['allocator',['../namespacenkr_1_1allocator.html',1,'nkr']]],
+  ['array_1',['array',['../namespacenkr_1_1array.html',1,'nkr']]],
+  ['boolean_2',['boolean',['../namespacenkr_1_1boolean.html',1,'nkr']]],
+  ['charcoder_3',['charcoder',['../namespacenkr_1_1charcoder.html',1,'nkr']]],
+  ['concurrency_4',['concurrency',['../namespacenkr_1_1concurrency.html',1,'nkr']]],
+  ['constant_5',['constant',['../namespacenkr_1_1constant.html',1,'nkr']]],
+  ['cpp_6',['cpp',['../namespacenkr_1_1cpp.html',1,'nkr']]],
+  ['enumeration_7',['enumeration',['../namespacenkr_1_1enumeration.html',1,'nkr']]],
+  ['error_8',['error',['../namespacenkr_1_1error.html',1,'nkr']]],
+  ['negatable_9',['negatable',['../namespacenkr_1_1negatable.html',1,'nkr']]],
+  ['nkr_10',['nkr',['../index.html',1,'(Global Namespace)'],['../namespacenkr.html',1,'nkr']]],
+  ['none_11',['none',['../namespacenkr_1_1none.html',1,'nkr']]],
+  ['os_12',['os',['../namespacenkr_1_1os.html',1,'nkr']]],
+  ['positive_13',['positive',['../namespacenkr_1_1positive.html',1,'nkr']]],
+  ['tr_14',['tr',['../conceptnkr_1_1tr.html',1,'nkr']]]
 ];

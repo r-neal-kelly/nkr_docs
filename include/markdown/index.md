@@ -1,5 +1,8 @@
-# Overview {#mainpage}
-### General-Use Types
+# nkr {#mainpage}
+
+# Overview
+
+## General-Use Types
 `nkr` exists to provide an assortment of well-rounded generic `types` offering fleshed-out functionality and interoperation through two primary meta-programming abstractions: `traits` and `interfaces`:
 - `traits` are concepts that essentially act as the nouns for types and are divided into two general sub-categories:
   - `identities`
@@ -10,18 +13,20 @@
 
 For more information, please see nkr::tr<> and nkr::TR<>.
 
-### Full Qualifications
+## Full Qualifications
 As much as possible, this library provides methods available for `const`, `volatile`, and `const volatile` qualifications of types, in addition to the the standard non-qualification. The only exceptions are for when it doesn't make sense for a particular type to have a certain qualification, or if we are currently using a C++ type in some way, which often does not define `const` and `volatile` qualifications.
+
+---
 
 # Design
 
-### Data Labels
+## Data Labels
 There are a number of postfixes tacked unto labels to differentiate them from various kinds of syntactic data. For example, "example_t" is for "example type", "example_i" for "example interface", "example_tr" for "example trait", "example_tg" for "example tag", just to name a few. This helps to secure an open namespace for new labels to be added in the future, even if they are in the same namespace and have the same base name.
 
-### File Hierarchy
+## File Hierarchy
 Files mimic the hierarchy of the library's namespaces and include the postfix of whatever it is they are primarily declaring or defining. For example, types have "_t" in the name of the file, such as in "example_t", and interfaces have "_i" in the name of the file, such as in "example_i". This gives as much room to avoid collisions as there is in the general namespace and leaves open more general files such as "example" where they are needed. In addition, post-postfixes are added to files that make them distinct based on their function in the include system. For example, "example_t_dec.h" is for "example_t declaration" and "example_t_def.h" for "example_t definition". Additionally, there is a primary header for each group of sub-headers that does not include a post-postfix. This file allows for a consumer of the library to easily pull in everything they need for that entity, with every file already included in order.
 
-### Equality Operators are Globals
+## Equality Operators are Globals
 For the sake of compatibility and control we define equality operators for types using a specific and exhaustive pattern all in the top global scope:
 
 ```cpp
@@ -66,7 +71,7 @@ inline constexpr nkr::boolean::cpp_t
 
 This is the only equality operator in the group of declarations above that has such a definition, as the rest simply convert their arguments and/or complement their logic to call this one.
 
-### Move Assignment of Volatile Types
+## Move Assignment of Volatile Types
 In order to avoid an overload resolution ambiguity, we often use a templated operator to define the move assignment of volatile types. Because templates have a lower precedence than normal operators, this allows for both volatile and non-volatile instances as well as new constructions of the type to be move-assigned properly, and also allows other types that can be converted through a constructor of the type to be properly assigned as expected.
 
 ```cpp
@@ -84,7 +89,7 @@ public:
 }
 ```
 
-### Partial Specializations By Concept {#_16d56f49_95ba_456e_a026_706c054cb133}
+## Partial Specializations By Concept {#_16d56f49_95ba_456e_a026_706c054cb133}
 Because we are using C++20 concepts, we have to work around a bug that exists in two of the major compilers. In order to use out-of-body class definitions, we take advantage of a pattern of concept partial specialization which indirectly maps onto separate types. An alias of this indirection is used as the primary type. The actual types that make up the specializations should be put in a non-colliding namespace one step interior to the namespace where the primary type lives. No members in the indirection template may be defined out-of-body:
 
 ```cpp
@@ -132,5 +137,8 @@ namespace nkr {
 
 [Read about it on stackoverflow.](https://stackoverflow.com/questions/68589314/how-to-define-a-specialized-class-method-outside-of-class-body-in-c)
 
-## Documentation Status
+---
+
+# Documentation Status
+
 We are in the pre-alpha phase of the library. We are currently prototyping and designing the overarching system of types, traits, and interfaces, and importantly, we are still designing the documentation itself. I've removed all of the old documentation from the previous iteration and have begun writing for the third.

@@ -1,30 +1,33 @@
 var indexSectionsWithContent =
 {
-  0: "not",
-  1: "n",
-  2: "t",
+  0: "cdnt",
+  1: "c",
+  2: "n",
   3: "t",
-  4: "ot",
-  5: "n"
+  4: "t",
+  5: "dnt",
+  6: "n"
 };
 
 var indexSectionNames =
 {
   0: "all",
-  1: "namespaces",
-  2: "functions",
-  3: "typedefs",
-  4: "pages",
-  5: "concepts"
+  1: "classes",
+  2: "namespaces",
+  3: "functions",
+  4: "typedefs",
+  5: "pages",
+  6: "concepts"
 };
 
 var indexSectionLabels =
 {
   0: "All",
-  1: "Namespaces",
-  2: "Functions",
-  3: "Typedefs",
-  4: "Pages",
-  5: "Concepts"
+  1: "Classes",
+  2: "Namespaces",
+  3: "Functions",
+  4: "Typedefs",
+  5: "Pages",
+  6: "Concepts"
 };
 
