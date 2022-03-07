@@ -1,5 +1,9 @@
 # Designs
 
+*Contents*
+- [Primary Inner Type](@ref _8f6a1988_bbdb_46ba_8746_40c02acda41c)
+- [One Kind of Template Parameter](@ref _ab449a60_e674_4d0a_91d9_557ec4c5660c)
+
 ## Primary Inner Type {#_8f6a1988_bbdb_46ba_8746_40c02acda41c}
 Most every template type available in the library, regardless of how many parameters it has, contains a `primary inner type`. Usually, it's the first provided argument in the parameter list:
 
@@ -29,5 +33,3 @@ A few key points need to be understood before expressing this principle:
     4. Parameter packs require one kind of template parameter and thus different entities cannot be mixed.
 
 With these points in mind, it only makes sense to restrict each individual template to accept only one kind of template argument, whatever that may be. Doing so allows us to statically constrain the use of templates in our functions, types, interfaces, and more. For example, nkr::tr requires that every template used in an expression can only take types and nothing else.
-
----

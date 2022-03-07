@@ -87,7 +87,11 @@ var searchBox = new SearchBox("searchBox", "search",'Search','.html');
   <div class="headertitle"><div class="title">Designs </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="_8f6a1988_bbdb_46ba_8746_40c02acda41c"></a>
+<div class="textblock"><p ><em>Contents</em></p><ul>
+<li><a class="el" href="md_include_markdown_designs.html#_8f6a1988_bbdb_46ba_8746_40c02acda41c">Primary Inner Type</a></li>
+<li><a class="el" href="md_include_markdown_designs.html#_ab449a60_e674_4d0a_91d9_557ec4c5660c">One Kind of Template Parameter</a></li>
+</ul>
+<h1><a class="anchor" id="_8f6a1988_bbdb_46ba_8746_40c02acda41c"></a>
 Primary Inner Type</h1>
 <p >Most every template type available in the library, regardless of how many parameters it has, contains a <code>primary inner type</code>. Usually, it's the first provided argument in the parameter list:</p>
 <div class="fragment"><div class="line">    <span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacenkr.html">nkr</a>;</div>
@@ -157,9 +161,8 @@ The "One Kind of Template Parameter" Principle</h1>
 <li>Templates can have any number of parameters and so parameter packs must be used in the concept.</li>
 <li>Parameter packs require one kind of template parameter and thus different entities cannot be mixed.</li>
 </ol>
-<p >With these points in mind, it only makes sense to restrict each individual template to accept only one kind of template argument, whatever that may be. Doing so allows us to statically constrain the use of templates in our functions, types, interfaces, and more. For example, <a class="el" href="conceptnkr_1_1tr.html" title="Used to filter a type by its qualifications, and by other types, templates, identities,...">nkr::tr</a> requires that every template used in an expression can only take types and nothing else.</p>
-<hr  />
- </div></div><!-- contents -->
+<p >With these points in mind, it only makes sense to restrict each individual template to accept only one kind of template argument, whatever that may be. Doing so allows us to statically constrain the use of templates in our functions, types, interfaces, and more. For example, <a class="el" href="conceptnkr_1_1tr.html" title="Used to filter a type by its qualifications, and by other types, templates, identities,...">nkr::tr</a> requires that every template used in an expression can only take types and nothing else. </p>
+</div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
