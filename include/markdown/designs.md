@@ -1,4 +1,4 @@
-# Designs {#_f05d9613_e520_4e07_8b91_a670427a4302}
+# Designs {#Designs}
 
 ## The "One Kind of Template Parameter" Principle {#_ab449a60_e674_4d0a_91d9_557ec4c5660c}
 A few key points need to be understood before expressing this principle:
