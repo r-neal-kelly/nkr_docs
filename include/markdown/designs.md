@@ -74,6 +74,7 @@ The following is a comprehensive list of postfixes and their meanings as found t
 - `_dec_def` declaration definitions
 - `_def` definitions
 - `_dox` documents or docs
+- `_e` enumeration
 - `_i` interface
 - `_lb` label
 - `_p` parameter
