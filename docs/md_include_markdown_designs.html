@@ -87,10 +87,131 @@ var searchBox = new SearchBox("searchBox", "search",'Search','.html');
   <div class="headertitle"><div class="title">Designs </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p ><em>Contents</em></p><ul>
+<div class="textblock"><p >This page contains many key concepts revolving around design decisions that have been made with <a class="el" href="namespacenkr.html">nkr</a>. Each section thoroughly explains why these designs exist and how best to take advantage of them.</p>
+<p ><em>Contents</em></p><ul>
+<li><a class="el" href="md_include_markdown_designs.html#_839025a7_339e_4e65_a259_5feacb45ea12">Label Postfixes</a><ul>
+<li><a class="el" href="md_include_markdown_designs.html#_1382824d_0c2f_476c_b433_cf542fd6bdef">List of Label Postfixes</a></li>
+</ul>
+</li>
 <li><a class="el" href="md_include_markdown_designs.html#_8f6a1988_bbdb_46ba_8746_40c02acda41c">Primary Inner Type</a></li>
 <li><a class="el" href="md_include_markdown_designs.html#_ab449a60_e674_4d0a_91d9_557ec4c5660c">One Kind of Template Parameter</a></li>
 </ul>
+<hr  />
+<h1><a class="anchor" id="_839025a7_339e_4e65_a259_5feacb45ea12"></a>
+Label Postfixes</h1>
+<p >There are a number of postfixes on various labels throughout the library. They are helpful in avoiding name collisions, in particular with C++ keywords, but primarily they are used to differentiate between different kinds of entities, such as types, traits, and interfaces.</p>
+<div class="fragment"><div class="line">    <span class="comment">// &quot;_t&quot; is for &quot;type&quot;</span></div>
+<div class="line">    <span class="keyword">class </span>example_t</div>
+<div class="line">    {</div>
+<div class="line">    <span class="keyword">public</span>:</div>
+<div class="line">    };</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// &quot;_tr&quot; is for &quot;trait&quot;</span></div>
+<div class="line">    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> type_p&gt;</div>
+<div class="line">    <span class="keyword">concept </span>example_tr =</div>
+<div class="line">        <span class="keyword">true</span>;</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// &quot;_i&quot; is for &quot;interface&quot;</span></div>
+<div class="line">    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> type_p&gt;</div>
+<div class="line">    <span class="keyword">class </span>example_i</div>
+<div class="line">    {</div>
+<div class="line">    <span class="keyword">public</span>:</div>
+<div class="line">    };</div>
+</div><!-- fragment --><p >You may have noticed that even the template parameter has a postifx, in particular <code>_p</code>. This allows for the easy definition of an alias with the same base name inside the template, a very frequent occurrence in nkr:</p>
+<div class="fragment"><div class="line">    <span class="comment">// &quot;_p&quot; is for &quot;parameter&quot;</span></div>
+<div class="line">    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> parameter_p&gt;</div>
+<div class="line">    <span class="keyword">class </span>example_t</div>
+<div class="line">    {</div>
+<div class="line">    <span class="keyword">public</span>:</div>
+<div class="line">        <span class="keyword">using</span> parameter_t   = parameter_p;</div>
+<div class="line">    };</div>
+</div><!-- fragment --><p >Importantly, postfixes can indicate strong relationships between several entities. It is extremely frequent to find these related entities declared nearby each other in the same file. This repetition of the primary name in combination with the repetition of the extremely common postfixes allows for easy recall when working with these entities. For example we may have the following:</p>
+<div class="fragment"><div class="line">    <span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacenkr.html">nkr</a>;</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// a template type is frequently the primary entity in a relationship</span></div>
+<div class="line">    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> type_p&gt;</div>
+<div class="line">    <span class="keyword">class </span>entity_t</div>
+<div class="line">    {</div>
+<div class="line">    <span class="keyword">public</span>:</div>
+<div class="line">    };</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// this &quot;tag&quot; can represent an instantiation of the primary entity</span></div>
+<div class="line">    <span class="keyword">struct </span>entity_tg    {};</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// whereas this &quot;template tag&quot; can represent the template itself</span></div>
+<div class="line">    <span class="keyword">template</span> &lt;<span class="keyword">typename</span>&gt;</div>
+<div class="line">    <span class="keyword">struct </span>entity_ttg   {};</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// a &quot;trait&quot; can be used to constrain to an instantiated type</span></div>
+<div class="line">    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> type_p&gt;</div>
+<div class="line">    <span class="keyword">concept </span>entity_tr =</div>
+<div class="line">        <span class="keyword">true</span>;</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// and a &quot;template trait&quot; to constrain to the template proper</span></div>
+<div class="line">    <span class="keyword">template</span> &lt;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ...&gt; <span class="keyword">typename</span> template_p&gt;</div>
+<div class="line">    <span class="keyword">concept </span>entity_ttr =</div>
+<div class="line">        <span class="keyword">true</span>;</div>
+<div class="ttc" id="anamespacenkr_html"><div class="ttname"><a href="namespacenkr.html">nkr</a></div><div class="ttdoc">The entire library is contained within this namespace.</div><div class="ttdef"><b>Definition:</b> array/cpp_t_dec.h:14</div></div>
+</div><!-- fragment --><p >You may have noticed that template types share the same postfix as a regular type: <code>_t</code>. This is because the meaning of the postfix remains the same with <code>_t</code> referring to an <code>instantiated type</code>, which is the most frequent occurrence of a template type label:</p>
+<div class="fragment"><div class="line">    <span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacenkr.html">nkr</a>;</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// &quot;_t&quot; is not for &quot;template&quot;!</span></div>
+<div class="line">    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> type_p&gt;</div>
+<div class="line">    <span class="keyword">class </span>template_t</div>
+<div class="line">    {</div>
+<div class="line">    <span class="keyword">public</span>:</div>
+<div class="line">    };</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// &quot;_t&quot; is for &quot;type&quot;, as in &quot;instantiated type&quot;.</span></div>
+<div class="line">    <span class="keyword">using</span> instantiated_type_t = template_t&lt;int&gt;;</div>
+</div><!-- fragment --><p >You may have also noticed the distinction between <code>_tg</code> and <code>_ttg</code> as well as <code>_tr</code> and <code>_ttr</code>. While <code>_tg</code> and <code>_tr</code> may be read as <code>tag</code> and <code>trait</code> and both reference a <code>type</code>, <code>_ttg</code> and <code>_ttr</code> may be read as <code>template tag</code> and <code>template trait</code>, both referencing a <code>template</code>. More formally, they may be read as <code>template of type tag</code> and <code>template of type trait</code>. This pattern extends indefinitely, and may be used to define a <code>template of template of type tag</code> and <code>template of template of type trait</code>:</p>
+<div class="fragment"><div class="line">    <span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacenkr.html">nkr</a>;</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// &quot;_tttg&quot; for &quot;template of template of type tag&quot;</span></div>
+<div class="line">    <span class="keyword">template</span> &lt;<span class="keyword">template</span> &lt;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ...&gt; <span class="keyword">typename</span> ...&gt; <span class="keyword">typename</span> template_template_p&gt;</div>
+<div class="line">    <span class="keyword">struct  </span>entity_tttg {};</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// &quot;_tttr&quot; for &quot;template of template of type trait&quot;</span></div>
+<div class="line">    <span class="keyword">template</span> &lt;<span class="keyword">template</span> &lt;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ...&gt; <span class="keyword">typename</span> ...&gt; <span class="keyword">typename</span> template_template_p&gt;</div>
+<div class="line">    <span class="keyword">concept </span>entity_tttr =</div>
+<div class="line">        <span class="keyword">true</span>;</div>
+</div><!-- fragment --><p >nkr::tuple::templates_t is an example of this indefinite postfix pattern coming into play.</p>
+<p >Postfixes even have a use in the naming of files, in particular header files. The most common postfixes come in a set of five, and like the various entities in the library proper, these postfixes are use to coordinate various files that have the same base name and imply a distinct relation to one another. They are in addition to the postfix of the primary entity contained in the files:</p>
+<div class="fragment"><div class="line">    <span class="comment">// The non-postfix header pulls in everything but the &quot;_dox&quot; below. This is what you would normally use in your code.</span></div>
+<div class="line"><span class="preprocessor">    #include &quot;nkr/pointer/cpp_t.h&quot;</span></div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// &quot;_dec&quot; provides the declarations of entities contained in this header-group. The go-to file to know what is available.</span></div>
+<div class="line"><span class="preprocessor">    #include &quot;nkr/pointer/cpp_t_dec.h&quot;</span></div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// &quot;_dec_def&quot; defines the constexpr and other meta entities of &quot;_dec&quot;. A helpful technical distinction from &quot;_def&quot;.</span></div>
+<div class="line"><span class="preprocessor">    #include &quot;nkr/pointer/cpp_t_dec_def.h&quot;</span></div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// &quot;_def&quot; defines the non-constexpr and non-meta entities of &quot;_dec&quot;.</span></div>
+<div class="line"><span class="preprocessor">    #include &quot;nkr/pointer/cpp_t_def.h&quot;</span></div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// &quot;_dox&quot; provides the doxygen comments used to create the documention for the entities of &quot;_dec&quot;.</span></div>
+<div class="line"><span class="preprocessor">    #include &quot;nkr/pointer/cpp_t_dox.h&quot;</span></div>
+</div><!-- fragment --><p >The following is a comprehensive list of postfixes and their meanings as found throughout nkr:</p>
+<h2><a class="anchor" id="_1382824d_0c2f_476c_b433_cf542fd6bdef"></a>
+List of Label Postfixes</h2>
+<ul>
+<li><code>_dec</code> declarations</li>
+<li><code>_dec_def</code> declaration definitions</li>
+<li><code>_def</code> definitions</li>
+<li><code>_dox</code> documents or docs</li>
+<li><code>_i</code> interface</li>
+<li><code>_lb</code> label</li>
+<li><code>_p</code> parameter</li>
+<li><code>_t</code> type</li>
+<li><code>_tg</code> tag</li>
+<li><code>_tr</code> trait</li>
+<li><code>_ttg</code> template tag</li>
+<li><code>_ttr</code> template trait</li>
+<li><code>_tttg</code> template template tag</li>
+<li><code>_tttr</code> template template trait</li>
+<li><code>_u</code> union</li>
+</ul>
+<hr  />
 <h1><a class="anchor" id="_8f6a1988_bbdb_46ba_8746_40c02acda41c"></a>
 Primary Inner Type</h1>
 <p >Most every template type available in the library, regardless of how many parameters it has, contains a <code>primary inner type</code>. Usually, it's the first provided argument in the parameter list:</p>
@@ -102,7 +223,6 @@ Primary Inner Type</h1>
 <div class="line">    <span class="keyword">public</span>:</div>
 <div class="line">        <span class="keyword">using</span> type_t    = type_p;   <span class="comment">// the primary inner type</span></div>
 <div class="line">    };</div>
-<div class="ttc" id="anamespacenkr_html"><div class="ttname"><a href="namespacenkr.html">nkr</a></div><div class="ttdoc">The entire library is contained within this namespace.</div><div class="ttdef"><b>Definition:</b> array/cpp_t_dec.h:14</div></div>
 </div><!-- fragment --><p >Primary inner types are usually used for the sake of type constraints, particularly through use of an <a class="el" href="conceptnkr_1_1tr.html" title="Used to filter a type by its qualifications, and by other types, templates, identities,...">nkr::tr</a> expression with multiple operands:</p>
 <div class="fragment"><div class="line">    <span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacenkr.html">nkr</a>;</div>
 <div class="line"> </div>

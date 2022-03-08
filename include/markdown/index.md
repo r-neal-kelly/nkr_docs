@@ -20,9 +20,6 @@ As much as possible, this library provides methods available for `const`, `volat
 
 # Design
 
-## Data Labels
-There are a number of postfixes tacked unto labels to differentiate them from various kinds of syntactic data. For example, "example_t" is for "example type", "example_i" for "example interface", "example_tr" for "example trait", "example_tg" for "example tag", just to name a few. This helps to secure an open namespace for new labels to be added in the future, even if they are in the same namespace and have the same base name.
-
 ## File Hierarchy
 Files mimic the hierarchy of the library's namespaces and include the postfix of whatever it is they are primarily declaring or defining. For example, types have "_t" in the name of the file, such as in "example_t", and interfaces have "_i" in the name of the file, such as in "example_i". This gives as much room to avoid collisions as there is in the general namespace and leaves open more general files such as "example" where they are needed. In addition, post-postfixes are added to files that make them distinct based on their function in the include system. For example, "example_t_dec.h" is for "example_t declaration" and "example_t_def.h" for "example_t definition". Additionally, there is a primary header for each group of sub-headers that does not include a post-postfix. This file allows for a consumer of the library to easily pull in everything they need for that entity, with every file already included in order.
 
