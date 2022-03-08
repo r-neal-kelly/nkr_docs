@@ -20,7 +20,7 @@ As much as possible, this library provides methods available for `const`, `volat
 
 # Design
 
-These design topics are currently being moved to the [designs page](@ref _523a0a22_e5f2_4b04_8d08_cacb45380dbb) which has far more coverage and in depth explanations.
+These design topics are currently being moved to the [designs page](designs.md) which has far more coverage and in depth explanations.
 
 ## Move Assignment of Volatile Types
 In order to avoid an overload resolution ambiguity, we often use a templated operator to define the move assignment of volatile types. Because templates have a lower precedence than normal operators, this allows for both volatile and non-volatile instances as well as new constructions of the type to be move-assigned properly, and also allows other types that can be converted through a constructor of the type to be properly assigned as expected.

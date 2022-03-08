@@ -1,4 +1,4 @@
-# Designs {#_523a0a22_e5f2_4b04_8d08_cacb45380dbb}
+# Designs
 This page contains many key concepts revolving around design decisions that have been made with [nkr](@ref nkr). Each section thoroughly explains why these designs exist and how best to take advantage of them.
 
 - [Global Equality Operators](@ref _1f10466e_b496_498a_a930_6c7227b37371)
