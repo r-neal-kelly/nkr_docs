@@ -88,9 +88,9 @@ var searchBox = new SearchBox("searchBox", "search",'Search','.html');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p ><a class="anchor" id="mainpage"></a> </p>
-<h1><a class="anchor" id="autotoc_md7"></a>
+<h1><a class="anchor" id="autotoc_md1"></a>
 Overview</h1>
-<h2><a class="anchor" id="autotoc_md8"></a>
+<h2><a class="anchor" id="autotoc_md2"></a>
 General-Use Types</h2>
 <p ><code>nkr</code> exists to provide an assortment of well-rounded generic <code>types</code> offering fleshed-out functionality and interoperation through two primary meta-programming abstractions: <code>traits</code> and <code>interfaces</code>:</p><ul>
 <li><code>traits</code> are concepts that essentially act as the nouns for types and are divided into two general sub-categories:<ul>
@@ -107,53 +107,13 @@ General-Use Types</h2>
 <li><code>interfaces</code> are concepts that essentially act as verbs for <code>types</code> and <code>traits</code> by specifying how they may do something. They describe not what a type is, but what it can do. A great example of an interface is for the <code>nkr::none::value_t</code>. Whereas a <code>trait</code> may require that a type have a default constructor to provide a value that may or may not be equal to <code>none</code>, an <code>interface</code> only requires a soft-coupling to define what the <code>none</code> value is for a particular <code>identity</code>, whether it is has a default constructor or not, or if it does but the default value is not equal to <code>none</code>.</li>
 </ul>
 <p >For more information, please see <a class="el" href="conceptnkr_1_1tr.html" title="Used to filter a type by its qualifications, and by other types, templates, identities,...">nkr::tr&lt;&gt;</a> and <a class="el" href="namespacenkr.html#a1898ff80c7081762a1840f00883fa258" title="Used to filter a type by its qualifications, and by other types, templates, identities,...">nkr::TR&lt;&gt;</a>.</p>
-<h2><a class="anchor" id="autotoc_md9"></a>
+<h2><a class="anchor" id="autotoc_md3"></a>
 Full Qualifications</h2>
 <p >As much as possible, this library provides methods available for <code>const</code>, <code>volatile</code>, and <code>const volatile</code> qualifications of types, in addition to the the standard non-qualification. The only exceptions are for when it doesn't make sense for a particular type to have a certain qualification, or if we are currently using a C++ type in some way, which often does not define <code>const</code> and <code>volatile</code> qualifications.</p>
 <hr  />
-<h1><a class="anchor" id="autotoc_md11"></a>
+<h1><a class="anchor" id="autotoc_md5"></a>
 Design</h1>
-<h2><a class="anchor" id="autotoc_md12"></a>
-File Hierarchy</h2>
-<p >Files mimic the hierarchy of the library's namespaces and include the postfix of whatever it is they are primarily declaring or defining. For example, types have "_t" in the name of the file, such as in "example_t", and interfaces have "_i" in the name of the file, such as in "example_i". This gives as much room to avoid collisions as there is in the general namespace and leaves open more general files such as "example" where they are needed. In addition, post-postfixes are added to files that make them distinct based on their function in the include system. For example, "example_t_dec.h" is for "example_t declaration" and "example_t_def.h" for "example_t definition". Additionally, there is a primary header for each group of sub-headers that does not include a post-postfix. This file allows for a consumer of the library to easily pull in everything they need for that entity, with every file already included in order.</p>
-<h2><a class="anchor" id="autotoc_md13"></a>
-Equality Operators are Globals</h2>
-<p >For the sake of compatibility and control we define equality operators for types using a specific and exhaustive pattern all in the top global scope:</p>
-<div class="fragment"><div class="line"><span class="keyword">constexpr</span> nkr::boolean::cpp_t   operator ==(<span class="keyword">const</span> nkr::tr1&lt;nkr::any_tg, nkr::example_t&gt; <span class="keyword">auto</span>&amp; a, <span class="keyword">const</span> <span class="keyword">auto</span>&amp; b) <span class="keyword">noexcept</span>;</div>
-<div class="line"><span class="keyword">constexpr</span> nkr::boolean::cpp_t   operator ==(<span class="keyword">const</span> nkr::tr1&lt;nkr::any_tg, nkr::example_t&gt; <span class="keyword">auto</span>&amp; a, <span class="keyword">const</span> <span class="keyword">auto</span>&amp;&amp; b) <span class="keyword">noexcept</span>;</div>
-<div class="line"><span class="keyword">constexpr</span> nkr::boolean::cpp_t   operator ==(<span class="keyword">const</span> nkr::tr1&lt;nkr::any_tg, nkr::example_t&gt; <span class="keyword">auto</span>&amp;&amp; a, <span class="keyword">const</span> <span class="keyword">auto</span>&amp; b) <span class="keyword">noexcept</span>;</div>
-<div class="line"><span class="keyword">constexpr</span> nkr::boolean::cpp_t   operator ==(<span class="keyword">const</span> nkr::tr1&lt;nkr::any_tg, nkr::example_t&gt; <span class="keyword">auto</span>&amp;&amp; a, <span class="keyword">const</span> <span class="keyword">auto</span>&amp;&amp; b) <span class="keyword">noexcept</span>;</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">constexpr</span> nkr::boolean::cpp_t   operator !=(<span class="keyword">const</span> nkr::tr1&lt;nkr::any_tg, nkr::example_t&gt; <span class="keyword">auto</span>&amp; a, <span class="keyword">const</span> <span class="keyword">auto</span>&amp; b) <span class="keyword">noexcept</span>;</div>
-<div class="line"><span class="keyword">constexpr</span> nkr::boolean::cpp_t   operator !=(<span class="keyword">const</span> nkr::tr1&lt;nkr::any_tg, nkr::example_t&gt; <span class="keyword">auto</span>&amp; a, <span class="keyword">const</span> <span class="keyword">auto</span>&amp;&amp; b) <span class="keyword">noexcept</span>;</div>
-<div class="line"><span class="keyword">constexpr</span> nkr::boolean::cpp_t   operator !=(<span class="keyword">const</span> nkr::tr1&lt;nkr::any_tg, nkr::example_t&gt; <span class="keyword">auto</span>&amp;&amp; a, <span class="keyword">const</span> <span class="keyword">auto</span>&amp; b) <span class="keyword">noexcept</span>;</div>
-<div class="line"><span class="keyword">constexpr</span> nkr::boolean::cpp_t   operator !=(<span class="keyword">const</span> nkr::tr1&lt;nkr::any_tg, nkr::example_t&gt; <span class="keyword">auto</span>&amp;&amp; a, <span class="keyword">const</span> <span class="keyword">auto</span>&amp;&amp; b) <span class="keyword">noexcept</span>;</div>
-</div><!-- fragment --><p >Because the left hand parameter is a templated type, it prevents a potentially confusing new feature of C++20 that automatically tries reversing arguments for standard operators, which can lead to a lot of compatibility issues and ambiguities with other types defining equality operators. Notice that the b parameter is always const, even for rvalue references. This gives an extreme amount of flexibility while maintaining as much clarity as possible. Notice also that we define no reverse versions of these operators. This allows us to define these same set of functions per type and to give them proper definitions where applicable, all without causing collisions and ambiguities. We make up for any lack of reverse definitions by allowing any type whatsoever to attempt comparison in the general algorithm below:</p>
-<div class="fragment"><div class="line"><span class="keyword">inline</span> <span class="keyword">constexpr</span> nkr::boolean::cpp_t</div>
-<div class="line">    operator ==(<span class="keyword">const</span> nkr::tr1&lt;nkr::any_tg, nkr::example_t&gt; <span class="keyword">auto</span>&amp; a, <span class="keyword">const</span> <span class="keyword">auto</span>&amp; b)</div>
-<div class="line">    <span class="keyword">noexcept</span></div>
-<div class="line">{</div>
-<div class="line">    <span class="keyword">using</span> a_t = nkr::cpp::reference_value_t&lt;<span class="keyword">decltype</span>(a)&gt;;</div>
-<div class="line">    <span class="keyword">using</span> b_t = nkr::cpp::reference_value_t&lt;<span class="keyword">decltype</span>(b)&gt;;</div>
-<div class="line"> </div>
-<div class="line">    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (nkr::cpp::is_any_tr&lt;b_t, a_t&gt;) {</div>
-<div class="line">        <span class="comment">// works with any qualified version of the same type by comparing their inner values.</span></div>
-<div class="line">        <span class="keywordflow">return</span> a() == b();</div>
-<div class="line">    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (nkr::cpp::to_tr&lt;b_t, nkr::cpp::just_non_qualified_t&lt;typename a_t::value_t&gt;&gt;) {</div>
-<div class="line">        <span class="comment">// only applicable if a_t has an inner type, in this case value_t. there can be any number of these specific to this type.</span></div>
-<div class="line">        <span class="keywordflow">return</span> a() == <span class="keyword">static_cast&lt;</span>nkr::cpp::just_non_qualified_t&lt;typename a_t::value_t&gt;<span class="keyword">&gt;</span>(b);</div>
-<div class="line">    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (nkr::cpp::to_tr&lt;b_t, nkr::cpp::just_non_qualified_t&lt;a_t&gt;&gt;) {</div>
-<div class="line">        <span class="comment">// tries to convert b_t to a_t and recurses back to this operator.</span></div>
-<div class="line">        <span class="keywordflow">return</span> a == <span class="keyword">static_cast&lt;</span>nkr::cpp::just_non_qualified_t&lt;a_t&gt;<span class="keyword">&gt;</span>(b);</div>
-<div class="line">    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (nkr::cpp::to_tr&lt;a_t, nkr::cpp::just_non_qualified_t&lt;b_t&gt;&gt;) {</div>
-<div class="line">        <span class="comment">// tries to convert a_t to b_t and compares with b&#39;s algorithm.</span></div>
-<div class="line">        <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>nkr::cpp::just_non_qualified_t&lt;b_t&gt;<span class="keyword">&gt;</span>(a) == b;</div>
-<div class="line">    } <span class="keywordflow">else</span> {</div>
-<div class="line">        <span class="keyword">static_assert</span>(<span class="keyword">false</span>, <span class="stringliteral">&quot;these two values can not be compared.&quot;</span>);</div>
-<div class="line">    }</div>
-<div class="line">}</div>
-</div><!-- fragment --><p >This is the only equality operator in the group of declarations above that has such a definition, as the rest simply convert their arguments and/or complement their logic to call this one.</p>
-<h2><a class="anchor" id="autotoc_md14"></a>
+<h2><a class="anchor" id="autotoc_md6"></a>
 Move Assignment of Volatile Types</h2>
 <p >In order to avoid an overload resolution ambiguity, we often use a templated operator to define the move assignment of volatile types. Because templates have a lower precedence than normal operators, this allows for both volatile and non-volatile instances as well as new constructions of the type to be move-assigned properly, and also allows other types that can be converted through a constructor of the type to be properly assigned as expected.</p>
 <div class="fragment"><div class="line"><span class="keyword">class </span>example_t</div>
@@ -214,7 +174,7 @@ Partial Specializations By Concept</h2>
 </div><!-- fragment --><p> <a href="https://github.com/r-neal-kelly/the_concept_bug">View a small but detailed example of this bug.</a></p>
 <p ><a href="https://stackoverflow.com/questions/68589314/how-to-define-a-specialized-class-method-outside-of-class-body-in-c">Read about it on stackoverflow.</a></p>
 <hr  />
-<h1><a class="anchor" id="autotoc_md16"></a>
+<h1><a class="anchor" id="autotoc_md8"></a>
 Documentation Status</h1>
 <p >We are in the pre-alpha phase of the library. We are currently prototyping and designing the overarching system of types, traits, and interfaces, and importantly, we are still designing the documentation itself. I've removed all of the old documentation from the previous iteration and have begun writing for the third. </p>
 </div></div><!-- PageDoc -->

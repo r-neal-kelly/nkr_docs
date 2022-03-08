@@ -1,11 +1,41 @@
 # Designs
 This page contains many key concepts revolving around design decisions that have been made with [nkr](@ref nkr). Each section thoroughly explains why these designs exist and how best to take advantage of them.
 
-*Contents*
+- [Global Equality Operators](@ref _1f10466e_b496_498a_a930_6c7227b37371)
 - [Label Postfixes](@ref _839025a7_339e_4e65_a259_5feacb45ea12)
   - [List of Label Postfixes](@ref _1382824d_0c2f_476c_b433_cf542fd6bdef)
 - [Primary Inner Type](@ref _8f6a1988_bbdb_46ba_8746_40c02acda41c)
 - [One Kind of Template Parameter](@ref _ab449a60_e674_4d0a_91d9_557ec4c5660c)
+
+---
+
+## Global Equality Operators {#_1f10466e_b496_498a_a930_6c7227b37371}
+
+We define equality operators outside of the @ref nkr namespace and in the global scope. We follow a **very specific pattern**. For `constexpr` types we write:
+
+@snippet "./docs/src/designs.cpp" _e18507aa_b4f3_4469_b0a6_ff276fabf1b6
+
+And for non-`constexpr` constructible types we merely drop the `constexpr` at the beginning of the declaration:
+
+@snippet "./docs/src/designs.cpp" _fc99f829_b919_4aae_bdfb_b45b355c2614
+
+Following the above pattern makes all equality operator overloads **templates**, and with that point in mind, this pattern avoids two very important conflicts:
+1. Because the first template parameter, and *only* the first template parameter is constrained specifically to an `identity` and never a `generic`, **this pattern can *never* have ambiguous operator overload collisions with other operators that follow the same exact pattern**. This allows us to extend this pattern to all types ad infinitum, including types that inherit base types with their own overloads defined or types that can otherwise implicitly be converted to another.
+2. Because all possible values are covered in the second parameter, including both lvalues and rvalues of any type whatsoever, **it is *impossible* for operator overload resolution to resolve to any implicit conversions from the second type**, in particular during reverse operator resolution - a potentially frustrating addition to the C++20 standard.
+
+Following this pattern gives an extreme amount of flexibility for users. A user need not worry about the order of their arguments and whether including this or that file will somehow cause the compiler to spit out a thousand-line-long error message, resulting in a headache for the user every time it happens.
+
+However, this comes at the cost of extra development effort. Every single type must define their own operator overloads explicitly. This means if you wish to use the overload of another type, you must define its operators and explicitly cast to that type. For this reason, the pattern was designed such that you only need to define one of the eight operators, and the rest can be easily defined as proxies.
+
+The following is a full example of how one would define the operators for two different types, neither of which knows if the other is compatible. Both of them have an identifiable [primary inner type](@ref _8f6a1988_bbdb_46ba_8746_40c02acda41c), which adds options to their algorithms that otherwise might not be there:
+
+@snippet "./docs/src/designs.cpp" _26b07298_7839_4099_9253_a58ba962aa0b
+
+Now we can fully equate values of these two types in every imaginable way:
+
+@snippet "./docs/src/designs.cpp" _4cb072ae_149f_4024_9145_7592e38ea63e
+
+Because all of these operators are templates, even for non-`constexpr` subjects, `if constexpr` expressions can and should be used to define the algorithms. This allows the compiler to completely optimize away most if not all the function calls that result when equating values of these and other types that have these operators.
 
 ---
 
