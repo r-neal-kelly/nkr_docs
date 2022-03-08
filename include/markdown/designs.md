@@ -1,4 +1,4 @@
-# Designs
+# Designs {#_523a0a22_e5f2_4b04_8d08_cacb45380dbb}
 This page contains many key concepts revolving around design decisions that have been made with [nkr](@ref nkr). Each section thoroughly explains why these designs exist and how best to take advantage of them.
 
 - [Global Equality Operators](@ref _1f10466e_b496_498a_a930_6c7227b37371)
@@ -109,7 +109,7 @@ Common alias names for a `primary inner type` are `type_t`, `value_t`, and `unit
 
 ---
 
-## The "One Kind of Template Parameter" Principle {#_ab449a60_e674_4d0a_91d9_557ec4c5660c}
+## One Kind of Template Parameter {#_ab449a60_e674_4d0a_91d9_557ec4c5660c}
 A few key points need to be understood before expressing this principle:
     1. Templates can take an large variety of entities as parameters including types, other templates, and literal values.
     2. It is desirable to use templates as parameters in concepts.
