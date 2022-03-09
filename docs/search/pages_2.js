@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['nkr_0',['nkr',['../index.html',1,'']]]
+  ['nkr_20docs_0',['nkr docs',['../index.html',1,'']]]
 ];

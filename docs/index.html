@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>nkr: nkr</title>
+<title>nkr: nkr docs</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -84,100 +84,32 @@ var searchBox = new SearchBox("searchBox", "search",'Search','.html');
 </div>
 
 <div><div class="header">
-  <div class="headertitle"><div class="title">nkr </div></div>
+  <div class="headertitle"><div class="title">nkr docs </div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p ><a class="anchor" id="mainpage"></a> </p>
-<h1><a class="anchor" id="autotoc_md8"></a>
+<h1><a class="anchor" id="autotoc_md11"></a>
 Overview</h1>
-<h2><a class="anchor" id="autotoc_md9"></a>
-General-Use Types</h2>
-<p ><code>nkr</code> exists to provide an assortment of well-rounded generic <code>types</code> offering fleshed-out functionality and interoperation through two primary meta-programming abstractions: <code>traits</code> and <code>interfaces</code>:</p><ul>
-<li><code>traits</code> are concepts that essentially act as the nouns for types and are divided into two general sub-categories:<ul>
-<li><code>identities</code><ul>
-<li>these constrain to any instantiation of a particular template type or to a non-template type. In either case, they may be const, volatile, const volatile, or non-qualified. If the type is a template, a sibling identity exists to constrain the template itself, making the template a first class citizen in the library.</li>
+<p ><a class="el" href="namespacenkr.html">nkr</a> is a static 64 and 32 bit C++20 library providing powerfully generic types, versatile traits and interfaces, and a formal meta-programming language called <a class="el" href="conceptnkr_1_1tr.html" title="Used to filter a type by its qualifications, and by other types, templates, identities,...">nkr::tr</a> to dynamically define C++20 concepts in-place with arbitrary constraints and arbitrary precision. <a class="el" href="namespacenkr.html">nkr</a> comes with a robust and comprehensive set of test suites to ensure correctness and performance, as well as an all-encompassing set of documentation to guarantee understanding and usability. Currently available for Windows with future plans for a port to Linux.</p>
+<p >Available at:</p><ul>
+<li><a href="https://github.com/r-neal-kelly/nkr">GitHub</a></li>
 </ul>
-</li>
-<li><code>generics</code><ul>
-<li>these constrain to multiple <code>identities</code> and are also hierarchically allowed to constrain to other <code>generics</code>. They are used to describe groups of <code>identities</code> both in a meaningful and a practical way. For example a <code>generic</code> may constrain to any array, or perhaps to any array that stores its data locally, or alternatively, to any array that stores its data remotely. Any <code>identity</code> that satisfies these <code>generics</code> necessarily satisfies their requirements, and in this case that would include the access operator. In this way, templated code may reliably work with any of these constrained arrays by accessing their elements.</li>
+<p >For more detailed prose:</p><ul>
+<li><a class="el" href="md_include_pages_glossary.html">Glossary</a></li>
+<li><a class="el" href="md_include_pages_designs.html">Designs</a></li>
+<li><a href="https://github.com/r-neal-kelly/nkr/blob/master/README.md">README</a></li>
+<li><a class="el" href="md_include_pages_styles.html">Styles</a></li>
+<li><a class="el" href="md_include_pages_tools.html">Tools</a></li>
 </ul>
-</li>
+<p >And for technical reference:</p><ul>
+<li><a href="namespaces.html">Namespaces</a></li>
+<li><a href="annotated.html">Classes</a></li>
+<li><a href="concepts.html">Concepts</a></li>
 </ul>
-</li>
-<li><code>interfaces</code> are concepts that essentially act as verbs for <code>types</code> and <code>traits</code> by specifying how they may do something. They describe not what a type is, but what it can do. A great example of an interface is for the <code>nkr::none::value_t</code>. Whereas a <code>trait</code> may require that a type have a default constructor to provide a value that may or may not be equal to <code>none</code>, an <code>interface</code> only requires a soft-coupling to define what the <code>none</code> value is for a particular <code>identity</code>, whether it is has a default constructor or not, or if it does but the default value is not equal to <code>none</code>.</li>
-</ul>
-<p >For more information, please see <a class="el" href="conceptnkr_1_1tr.html" title="Used to filter a type by its qualifications, and by other types, templates, identities,...">nkr::tr&lt;&gt;</a> and <a class="el" href="namespacenkr.html#a1898ff80c7081762a1840f00883fa258" title="Used to filter a type by its qualifications, and by other types, templates, identities,...">nkr::TR&lt;&gt;</a>.</p>
-<h2><a class="anchor" id="autotoc_md10"></a>
-Full Qualifications</h2>
-<p >As much as possible, this library provides methods available for <code>const</code>, <code>volatile</code>, and <code>const volatile</code> qualifications of types, in addition to the the standard non-qualification. The only exceptions are for when it doesn't make sense for a particular type to have a certain qualification, or if we are currently using a C++ type in some way, which often does not define <code>const</code> and <code>volatile</code> qualifications.</p>
 <hr  />
-<h1><a class="anchor" id="autotoc_md12"></a>
-Design</h1>
-<p >These design topics are currently being moved to the <a class="el" href="md_include_pages_designs.html">designs page</a> which has far more coverage and in depth explanations.</p>
-<h2><a class="anchor" id="autotoc_md13"></a>
-Move Assignment of Volatile Types</h2>
-<p >In order to avoid an overload resolution ambiguity, we often use a templated operator to define the move assignment of volatile types. Because templates have a lower precedence than normal operators, this allows for both volatile and non-volatile instances as well as new constructions of the type to be move-assigned properly, and also allows other types that can be converted through a constructor of the type to be properly assigned as expected.</p>
-<div class="fragment"><div class="line"><span class="keyword">class </span>example_t</div>
-<div class="line">{</div>
-<div class="line"><span class="keyword">public</span>:</div>
-<div class="line">    example_t&amp;            operator =(<span class="keyword">const</span> example_t&amp; other);</div>
-<div class="line">    <span class="keyword">volatile</span> example_t&amp;   operator =(<span class="keyword">const</span> example_t&amp; other) <span class="keyword">volatile</span>;</div>
-<div class="line">    example_t&amp;            operator =(<span class="keyword">const</span> <span class="keyword">volatile</span> example_t&amp; other);</div>
-<div class="line">    <span class="keyword">volatile</span> example_t&amp;   operator =(<span class="keyword">const</span> <span class="keyword">volatile</span> example_t&amp; other) <span class="keyword">volatile</span>;</div>
-<div class="line">    example_t&amp;            operator =(example_t&amp;&amp; other);                                        <span class="comment">// may match any rvalue that is or can be converted implicitly to an example_t</span></div>
-<div class="line">    <span class="keyword">volatile</span> example_t&amp;   operator =(example_t&amp;&amp; other) <span class="keyword">volatile</span>;                               <span class="comment">// &quot;&quot;</span></div>
-<div class="line">    example_t&amp;            operator =(tr1&lt;just_volatile_tg, example_t&gt; <span class="keyword">auto</span>&amp;&amp; other);            <span class="comment">// only ever resolves if given a volatile example_t&amp;&amp;</span></div>
-<div class="line">    <span class="keyword">volatile</span> example_t&amp;   operator =(tr1&lt;just_volatile_tg, example_t&gt; <span class="keyword">auto</span>&amp;&amp; other) <span class="keyword">volatile</span>;   <span class="comment">// &quot;&quot;</span></div>
-<div class="line">}</div>
-</div><!-- fragment --><h2><a class="anchor" id="_16d56f49_95ba_456e_a026_706c054cb133"></a>
-Partial Specializations By Concept</h2>
-<p >Because we are using C++20 concepts, we have to work around a bug that exists in two of the major compilers. In order to use out-of-body class definitions, we take advantage of a pattern of concept partial specialization which indirectly maps onto separate types. An alias of this indirection is used as the primary type. The actual types that make up the specializations should be put in a non-colliding namespace one step interior to the namespace where the primary type lives. No members in the indirection template may be defined out-of-body:</p>
-<div class="fragment"><div class="line"><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacenkr.html">nkr</a> { <span class="keyword">namespace </span>example_t$ {</div>
-<div class="line"> </div>
-<div class="line">    <span class="keyword">template</span> &lt;<span class="keywordtype">int</span>eger_tr value_p&gt;</div>
-<div class="line">    <span class="keyword">class </span>integer_sp</div>
-<div class="line">    {</div>
-<div class="line">        <span class="comment">// has any member you want, and they can all be defined out-of-body</span></div>
-<div class="line">    }</div>
-<div class="line"> </div>
-<div class="line">    <span class="keyword">template</span> &lt;po<span class="keywordtype">int</span>er_tr value_p&gt;</div>
-<div class="line">    <span class="keyword">class </span>pointer_sp</div>
-<div class="line">    {</div>
-<div class="line">        <span class="comment">// &quot;&quot;</span></div>
-<div class="line">    }</div>
-<div class="line"> </div>
-<div class="line">}}</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacenkr.html">nkr</a> {</div>
-<div class="line"> </div>
-<div class="line">    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> value_p&gt;</div>
-<div class="line">    <span class="keyword">class </span>example_t_sp;</div>
-<div class="line"> </div>
-<div class="line">    <span class="keyword">template</span> &lt;<span class="keywordtype">int</span>eger_tr value_p&gt;</div>
-<div class="line">    <span class="keyword">class </span>example_t_sp</div>
-<div class="line">    {</div>
-<div class="line">    <span class="keyword">public</span>:</div>
-<div class="line">        <span class="keyword">using</span> type_t    = example_t$::integer_sp&lt;value_p&gt;;</div>
-<div class="line">    }</div>
-<div class="line"> </div>
-<div class="line">    <span class="keyword">template</span> &lt;po<span class="keywordtype">int</span>er_tr value_p&gt;</div>
-<div class="line">    <span class="keyword">class </span>example_t_sp</div>
-<div class="line">    {</div>
-<div class="line">    <span class="keyword">public</span>:</div>
-<div class="line">        <span class="keyword">using</span> type_t    = example_t$::pointer_sp&lt;value_p&gt;;</div>
-<div class="line">    }</div>
-<div class="line"> </div>
-<div class="line">    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> value_p&gt;</div>
-<div class="line">    <span class="keyword">using</span> example_t = example_t_sp&lt;value_p&gt;::type_t;</div>
-<div class="line"> </div>
-<div class="line">}</div>
-<div class="ttc" id="anamespacenkr_html"><div class="ttname"><a href="namespacenkr.html">nkr</a></div><div class="ttdoc">The entire library is contained within this namespace.</div><div class="ttdef"><b>Definition:</b> array/cpp_t_dec.h:14</div></div>
-</div><!-- fragment --><p> <a href="https://github.com/r-neal-kelly/the_concept_bug">View a small but detailed example of this bug.</a></p>
-<p ><a href="https://stackoverflow.com/questions/68589314/how-to-define-a-specialized-class-method-outside-of-class-body-in-c">Read about it on stackoverflow.</a></p>
-<hr  />
-<h1><a class="anchor" id="autotoc_md15"></a>
-Documentation Status</h1>
-<p >We are in the pre-alpha phase of the library. We are currently prototyping and designing the overarching system of types, traits, and interfaces, and importantly, we are still designing the documentation itself. I've removed all of the old documentation from the previous iteration and have begun writing for the third. </p>
+<h1><a class="anchor" id="autotoc_md13"></a>
+Status</h1>
+<p >We are in the alpha phase of the library and it has not seen its first release yet. Currently we are prototyping and designing the overarching system of types, traits, and interfaces, and importantly, we are also designing the documentation itself. </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->

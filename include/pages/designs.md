@@ -1,7 +1,14 @@
 # Designs
-This page contains many key concepts revolving around design decisions that have been made with [nkr](@ref nkr). Each section thoroughly explains why these designs exist and how best to take advantage of them.
+Many key concepts concerning design exist in @ref nkr, and their presence is felt all throughout the library. Their purposes involve the goals of memorization, scalability, performance, readability, and more. This page exists to argue the case for each design decision, to show how to take advantage of each pattern, and importantly, how to maintain that pattern when adding to the library.
+
+Every single one of these designs has a non-trivial purpose and a lot of research and prototyping to back them up. A voluminous number of code examples exist per design and should be taken full advantage of in order to grasp why and how each pattern exists to specifically benefit you and your end-users. Every single piece of code is sampled from various test suites and thus is always up-to-date. Due to the length of these code examples, a table of contents located to your right is available for your convenience.
 
 @tableofcontents
+
+## Exception Avoidance {#_2cc5247e_75fb_4baa_91b3_b1be6ba6faff}
+(W.I.P)
+
+---
 
 ## Global Equality Operators {#_1f10466e_b496_498a_a930_6c7227b37371}
 
@@ -38,9 +45,9 @@ Because all of these operators are templates, even for non-`constexpr` subjects,
 
 We call these distinct functionalities "identities" because each component entity that makes up an identity is integral to the identification of the [primary entity](@ref _75c3be6c_da45_4652_bf67_513fde1b9a06) of interest providing the functionality, such as a [type](@ref _d5fa5645_f7f9_446a_936d_459b0e0e4982), a [template](@ref _a13ace0b_d5fa_4445_87cc_c6beca57ff12), or a [template template ad infinitum](@ref _fd358de8_6263_4f8f_b928_180781753d09).
 
-In order to form an identity, we define the primary entity together with its various [identity tags](@ref _00c037ff_572b_4949_94ba_ced07fe26487) and [identity traits](@ref _998fbcbf_ece6_455a_9f74_fda2b132fc39). We take advantage of the [label postfix design](@ref _839025a7_339e_4e65_a259_5feacb45ea12) and utilize the same [base name](@ref _457a439d_2c16_48e4_9163_1e21aa6b2805) with different [postfixes](@ref _d28459df_56cd_4fe9_92a7_73c78f2f96f4) to strongly signify the relation of these entities to one another.
+In order to form an identity, we define the primary entity together with its various [identity traits](@ref _998fbcbf_ece6_455a_9f74_fda2b132fc39) and [identity tags](@ref _00c037ff_572b_4949_94ba_ced07fe26487). We take advantage of the [label postfix design](@ref _839025a7_339e_4e65_a259_5feacb45ea12) and utilize the same [base name](@ref _457a439d_2c16_48e4_9163_1e21aa6b2805) with different [postfixes](@ref _d28459df_56cd_4fe9_92a7_73c78f2f96f4) to strongly signify the relation of these entities to one another.
 
-We'll begin by examining the identity trait and leave the identity tag absent until afterwards:
+We'll begin by examining the identity trait and leave the identity tag for afterwards:
 @snippet "./docs/src/designs.cpp" _54c5c7e1_91a3_4d5b_b41d_c158d3b4c573
 
 Here we define the identity traits of a template called "a":
@@ -48,6 +55,15 @@ Here we define the identity traits of a template called "a":
 
 And lastly we define the identity traits of a template template called "a":
 @snippet "./docs/src/designs.cpp" _7e0fe0cd_2eac_4f85_9539_4a1399492ab0
+
+---
+
+## Interface Specialization Indirection {#_3199146d_6573_4ada_8636_0e3a2607116a}
+(W.I.P)
+
+Because we are using C++20 concepts, we have to work around a bug that exists in two of the major compilers. In order to use out-of-body class definitions, we take advantage of a pattern of concept partial specialization which indirectly maps onto separate types. An alias of this indirection is used as the primary type. The actual types that make up the specializations should be put in a non-colliding namespace one step interior to the namespace where the primary type lives. No members in the indirection template may be defined out-of-body.
+
+[View a small but detailed example of this bug.](https://github.com/r-neal-kelly/the_concept_bug)
 
 ---
 
@@ -101,6 +117,15 @@ The following is a comprehensive list of postfixes and their meanings as found t
 
 ---
 
+## Move Assignment of Volatile Instances {#_d720707b_2ea9_49b9_8625_8bca5b680359}
+(W.I.P)
+
+In order to avoid an overload resolution ambiguity, we use a template operator to define the move assignment of volatile types. Because templates have a lower precedence than normal operators, this allows for both volatile and non-volatile instances as well as new constructions of the type to be move-assigned properly, and also allows other types that can be converted through a constructor of the type to be properly assigned as expected:
+
+@snippet "./docs/src/designs.cpp" _77c0f598_a0d0_44d9_be46_7751b857d956
+
+---
+
 ## One Hierarchy {#_fb50a132_1997_4cb6_92b0_616254f27bae}
 (W.I.P)
 
@@ -135,3 +160,15 @@ So in order to know what the `primary inner type` is for a particular template i
 @snippet "./docs/src/designs.cpp" _7c1eacd8_f30a_4dd8_80e7_c4e02c2b88a2
 
 Common alias names for a `primary inner type` are `type_t`, `value_t`, and `unit_t`.
+
+---
+
+## Qualification Support {#_a742d628_4b70_448e_bdc4_594f6954bdb2}
+(W.I.P)
+
+This library provides methods available for `non-qualified`, `const`, `volatile`, and `const volatile` qualifications of as many types as possible. Exceptions only occur when it doesn't make sense for a particular type to have a certain qualification, or for the aliased C++ types that do not define all qualifications.
+
+---
+
+## Type Documentation {#_5451462d_8ed6_4fc2_86f0_b2f98e5efdc6}
+(W.I.P)

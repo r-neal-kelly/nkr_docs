@@ -12,9 +12,10 @@ var searchData=
   ['enumeration_9',['enumeration',['../namespacenkr_1_1enumeration.html',1,'nkr']]],
   ['error_10',['error',['../namespacenkr_1_1error.html',1,'nkr']]],
   ['negatable_11',['negatable',['../namespacenkr_1_1negatable.html',1,'nkr']]],
-  ['nkr_12',['nkr',['../index.html',1,'(Global Namespace)'],['../namespacenkr.html',1,'nkr']]],
-  ['none_13',['none',['../namespacenkr_1_1none.html',1,'nkr']]],
-  ['os_14',['os',['../namespacenkr_1_1os.html',1,'nkr']]],
-  ['positive_15',['positive',['../namespacenkr_1_1positive.html',1,'nkr']]],
-  ['tr_16',['tr',['../conceptnkr_1_1tr.html',1,'nkr']]]
+  ['nkr_12',['nkr',['../namespacenkr.html',1,'']]],
+  ['nkr_20docs_13',['nkr docs',['../index.html',1,'']]],
+  ['none_14',['none',['../namespacenkr_1_1none.html',1,'nkr']]],
+  ['os_15',['os',['../namespacenkr_1_1os.html',1,'nkr']]],
+  ['positive_16',['positive',['../namespacenkr_1_1positive.html',1,'nkr']]],
+  ['tr_17',['tr',['../conceptnkr_1_1tr.html',1,'nkr']]]
 ];

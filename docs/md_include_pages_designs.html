@@ -88,17 +88,27 @@ var searchBox = new SearchBox("searchBox", "search",'Search','.html');
 </div><!--header-->
 <div class="contents">
 <div class="toc"><h3>Table of Contents</h3>
-<ul><li class="level1"><a href="#_1f10466e_b496_498a_a930_6c7227b37371">Global Equality Operators</a></li>
+<ul><li class="level1"><a href="#_2cc5247e_75fb_4baa_91b3_b1be6ba6faff">Exception Avoidance</a></li>
+<li class="level1"><a href="#_1f10466e_b496_498a_a930_6c7227b37371">Global Equality Operators</a></li>
 <li class="level1"><a href="#_749bceb9_9b02_4278_bd34_a8a83933e675">Identities</a></li>
+<li class="level1"><a href="#_3199146d_6573_4ada_8636_0e3a2607116a">Interface Specialization Indirection</a></li>
 <li class="level1"><a href="#_839025a7_339e_4e65_a259_5feacb45ea12">Label Postfixes</a><ul><li class="level2"><a href="#_1382824d_0c2f_476c_b433_cf542fd6bdef">List of Label Postfixes</a></li>
 </ul>
 </li>
+<li class="level1"><a href="#_d720707b_2ea9_49b9_8625_8bca5b680359">Move Assignment of Volatile Instances</a></li>
 <li class="level1"><a href="#_fb50a132_1997_4cb6_92b0_616254f27bae">One Hierarchy</a></li>
 <li class="level1"><a href="#_ab449a60_e674_4d0a_91d9_557ec4c5660c">One Kind of Template Parameter</a></li>
 <li class="level1"><a href="#_8f6a1988_bbdb_46ba_8746_40c02acda41c">Primary Inner Type</a></li>
+<li class="level1"><a href="#_a742d628_4b70_448e_bdc4_594f6954bdb2">Qualification Support</a></li>
+<li class="level1"><a href="#_5451462d_8ed6_4fc2_86f0_b2f98e5efdc6">Type Documentation</a></li>
 </ul>
 </div>
-<div class="textblock"><p >This page contains many key concepts revolving around design decisions that have been made with <a class="el" href="namespacenkr.html">nkr</a>. Each section thoroughly explains why these designs exist and how best to take advantage of them.</p>
+<div class="textblock"><p >Many key concepts concerning design exist in <a class="el" href="namespacenkr.html">nkr</a>, and their presence is felt all throughout the library. Their purposes involve the goals of memorization, scalability, performance, readability, and more. This page exists to argue the case for each design decision, to show how to take advantage of each pattern, and importantly, how to maintain that pattern when adding to the library.</p>
+<p >Every single one of these designs has a non-trivial purpose and a lot of research and prototyping to back them up. A voluminous number of code examples exist per design and should be taken full advantage of in order to grasp why and how each pattern exists to specifically benefit you and your end-users. Every single piece of code is sampled from various test suites and thus is always up-to-date. Due to the length of these code examples, a table of contents located to your right is available for your convenience.</p>
+<h1><a class="anchor" id="_2cc5247e_75fb_4baa_91b3_b1be6ba6faff"></a>
+Exception Avoidance</h1>
+<p >(W.I.P)</p>
+<hr  />
 <h1><a class="anchor" id="_1f10466e_b496_498a_a930_6c7227b37371"></a>
 Global Equality Operators</h1>
 <p >We define equality operators outside of the <a class="el" href="namespacenkr.html">nkr</a> namespace and in the global scope. We follow a <b>very specific pattern</b>. For <code>constexpr</code> types we write:</p>
@@ -395,8 +405,8 @@ Global Equality Operators</h1>
 Identities</h1>
 <p ><a class="el" href="md_include_pages_glossary.html#_fd6e7324_a83c_4317_a5a8_9edfabfa7fce">Identities</a> are an integral part of the library because they provide an abstraction over functionality which necessarily needs multiple syntactical <a class="el" href="md_include_pages_glossary.html#_beac6b26_2cf9_4051_99ba_4ae5a39e66ec">entities</a> in order to be uniquely distinguished from other functionalities in the <a class="el" href="md_include_pages_glossary.html#_ef6a576b_26d1_4762_b577_3fe83cdee79f">meta-program</a>.</p>
 <p >We call these distinct functionalities "identities" because each component entity that makes up an identity is integral to the identification of the <a class="el" href="md_include_pages_glossary.html#_75c3be6c_da45_4652_bf67_513fde1b9a06">primary entity</a> of interest providing the functionality, such as a <a class="el" href="md_include_pages_glossary.html#_d5fa5645_f7f9_446a_936d_459b0e0e4982">type</a>, a <a class="el" href="md_include_pages_glossary.html#_a13ace0b_d5fa_4445_87cc_c6beca57ff12">template</a>, or a <a class="el" href="md_include_pages_glossary.html#_fd358de8_6263_4f8f_b928_180781753d09">template template ad infinitum</a>.</p>
-<p >In order to form an identity, we define the primary entity together with its various <a class="el" href="md_include_pages_glossary.html#_00c037ff_572b_4949_94ba_ced07fe26487">identity tags</a> and <a class="el" href="md_include_pages_glossary.html#_998fbcbf_ece6_455a_9f74_fda2b132fc39">identity traits</a>. We take advantage of the <a class="el" href="md_include_pages_designs.html#_839025a7_339e_4e65_a259_5feacb45ea12">label postfix design</a> and utilize the same <a class="el" href="md_include_pages_glossary.html#_457a439d_2c16_48e4_9163_1e21aa6b2805">base name</a> with different <a class="el" href="md_include_pages_glossary.html#_d28459df_56cd_4fe9_92a7_73c78f2f96f4">postfixes</a> to strongly signify the relation of these entities to one another.</p>
-<p >We'll begin by examining the identity trait and leave the identity tag absent until afterwards: </p><div class="fragment"><div class="line">    <span class="keyword">class </span>a_t</div>
+<p >In order to form an identity, we define the primary entity together with its various <a class="el" href="md_include_pages_glossary.html#_998fbcbf_ece6_455a_9f74_fda2b132fc39">identity traits</a> and <a class="el" href="md_include_pages_glossary.html#_00c037ff_572b_4949_94ba_ced07fe26487">identity tags</a>. We take advantage of the <a class="el" href="md_include_pages_designs.html#_839025a7_339e_4e65_a259_5feacb45ea12">label postfix design</a> and utilize the same <a class="el" href="md_include_pages_glossary.html#_457a439d_2c16_48e4_9163_1e21aa6b2805">base name</a> with different <a class="el" href="md_include_pages_glossary.html#_d28459df_56cd_4fe9_92a7_73c78f2f96f4">postfixes</a> to strongly signify the relation of these entities to one another.</p>
+<p >We'll begin by examining the identity trait and leave the identity tag for afterwards: </p><div class="fragment"><div class="line">    <span class="keyword">class </span>a_t</div>
 <div class="line">    {</div>
 <div class="line">    <span class="keyword">public</span>:</div>
 <div class="line">    };</div>
@@ -537,6 +547,12 @@ Identities</h1>
 <div class="line">    <span class="comment">// but never any other template</span></div>
 <div class="line">    <span class="keyword">static_assert</span>(a_tttr&lt;b_t&gt; == <span class="keyword">false</span>);</div>
 </div><!-- fragment --><hr  />
+<h1><a class="anchor" id="_3199146d_6573_4ada_8636_0e3a2607116a"></a>
+Interface Specialization Indirection</h1>
+<p >(W.I.P)</p>
+<p >Because we are using C++20 concepts, we have to work around a bug that exists in two of the major compilers. In order to use out-of-body class definitions, we take advantage of a pattern of concept partial specialization which indirectly maps onto separate types. An alias of this indirection is used as the primary type. The actual types that make up the specializations should be put in a non-colliding namespace one step interior to the namespace where the primary type lives. No members in the indirection template may be defined out-of-body.</p>
+<p ><a href="https://github.com/r-neal-kelly/the_concept_bug">View a small but detailed example of this bug.</a></p>
+<hr  />
 <h1><a class="anchor" id="_839025a7_339e_4e65_a259_5feacb45ea12"></a>
 Label Postfixes</h1>
 <p >There are a number of postfixes on various labels throughout the library. They are helpful in avoiding name collisions, in particular with C++ keywords, but primarily they are used to differentiate between different kinds of entities, such as types, traits, and interfaces.</p>
@@ -652,6 +668,25 @@ List of Label Postfixes</h2>
 <li><code>_u</code> union</li>
 </ul>
 <hr  />
+<h1><a class="anchor" id="_d720707b_2ea9_49b9_8625_8bca5b680359"></a>
+Move Assignment of Volatile Instances</h1>
+<p >(W.I.P)</p>
+<p >In order to avoid an overload resolution ambiguity, we use a template operator to define the move assignment of volatile types. Because templates have a lower precedence than normal operators, this allows for both volatile and non-volatile instances as well as new constructions of the type to be move-assigned properly, and also allows other types that can be converted through a constructor of the type to be properly assigned as expected:</p>
+<div class="fragment"><div class="line">    <span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacenkr.html">nkr</a>;</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">class </span>example_t</div>
+<div class="line">    {</div>
+<div class="line">    <span class="keyword">public</span>:</div>
+<div class="line">        example_t&amp;          operator =(<span class="keyword">const</span> example_t&amp; other);</div>
+<div class="line">        <span class="keyword">volatile</span> example_t&amp; operator =(<span class="keyword">const</span> example_t&amp; other) <span class="keyword">volatile</span>;</div>
+<div class="line">        example_t&amp;          operator =(<span class="keyword">const</span> <span class="keyword">volatile</span> example_t&amp; other);</div>
+<div class="line">        <span class="keyword">volatile</span> example_t&amp; operator =(<span class="keyword">const</span> <span class="keyword">volatile</span> example_t&amp; other) <span class="keyword">volatile</span>;</div>
+<div class="line">        example_t&amp;          operator =(example_t&amp;&amp; other);                                          <span class="comment">// may match any rvalue or temp value of example_t or anything implicitly convertible</span></div>
+<div class="line">        <span class="keyword">volatile</span> example_t&amp; operator =(example_t&amp;&amp; other) <span class="keyword">volatile</span>;                                 <span class="comment">// &quot;&quot;</span></div>
+<div class="line">        example_t&amp;          operator =(tr&lt;just_volatile_tg, t&lt;example_t&gt;&gt; <span class="keyword">auto</span>&amp;&amp; other);            <span class="comment">// is only ever resolved to when given a volatile example_t&amp;&amp; and nothing else</span></div>
+<div class="line">        <span class="keyword">volatile</span> example_t&amp; operator =(tr&lt;just_volatile_tg, t&lt;example_t&gt;&gt; <span class="keyword">auto</span>&amp;&amp; other) <span class="keyword">volatile</span>;   <span class="comment">// &quot;&quot;</span></div>
+<div class="line">    };</div>
+</div><!-- fragment --><hr  />
 <h1><a class="anchor" id="_fb50a132_1997_4cb6_92b0_616254f27bae"></a>
 One Hierarchy</h1>
 <p >(W.I.P)</p>
@@ -725,7 +760,16 @@ Primary Inner Type</h1>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// coincidentally, the interface itself has a primary inner type equal to type_t</span></div>
 <div class="line">    <span class="keyword">static_assert</span>(nkr::cpp::is_tr&lt;interface_of_interface_of_type_t::of_t, type_t&gt;);</div>
-</div><!-- fragment --><p >Common alias names for a <code>primary inner type</code> are <code>type_t</code>, <code>value_t</code>, and <code>unit_t</code>. </p>
+</div><!-- fragment --><p >Common alias names for a <code>primary inner type</code> are <code>type_t</code>, <code>value_t</code>, and <code>unit_t</code>.</p>
+<hr  />
+<h1><a class="anchor" id="_a742d628_4b70_448e_bdc4_594f6954bdb2"></a>
+Qualification Support</h1>
+<p >(W.I.P)</p>
+<p >This library provides methods available for <code>non-qualified</code>, <code>const</code>, <code>volatile</code>, and <code>const volatile</code> qualifications of as many types as possible. Exceptions only occur when it doesn't make sense for a particular type to have a certain qualification, or for the aliased C++ types that do not define all qualifications.</p>
+<hr  />
+<h1><a class="anchor" id="_5451462d_8ed6_4fc2_86f0_b2f98e5efdc6"></a>
+Type Documentation</h1>
+<p >(W.I.P) </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->
