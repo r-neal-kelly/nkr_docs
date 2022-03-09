@@ -95,10 +95,12 @@ var searchBox = new SearchBox("searchBox", "search",'Search','.html');
 <li><a class="el" href="md_include_pages_designs.html#_1382824d_0c2f_476c_b433_cf542fd6bdef">List of Label Postfixes</a></li>
 </ul>
 </li>
-<li><a class="el" href="md_include_pages_designs.html#_8f6a1988_bbdb_46ba_8746_40c02acda41c">Primary Inner Type</a></li>
+<li><a class="el" href="md_include_pages_designs.html#_fb50a132_1997_4cb6_92b0_616254f27bae">One Hierarchy</a></li>
 <li><a class="el" href="md_include_pages_designs.html#_ab449a60_e674_4d0a_91d9_557ec4c5660c">One Kind of Template Parameter</a></li>
+<li><a class="el" href="md_include_pages_designs.html#_8f6a1988_bbdb_46ba_8746_40c02acda41c">Primary Inner Type</a> </li>
 </ul>
-<hr  />
+<h1><a class="anchor" id="autotoc_md1"></a>
+-</h1>
 <h1><a class="anchor" id="_1f10466e_b496_498a_a930_6c7227b37371"></a>
 Global Equality Operators</h1>
 <p >We define equality operators outside of the <a class="el" href="namespacenkr.html">nkr</a> namespace and in the global scope. We follow a <b>very specific pattern</b>. For <code>constexpr</code> types we write:</p>
@@ -367,7 +369,7 @@ Global Equality Operators</h1>
 <div class="fragment"><div class="line">    <span class="comment">// This calls equality_a_t branch 1</span></div>
 <div class="line">    <span class="keyword">static_assert</span>(nkr::equality_a_t(1) == nkr::equality_a_t(1));</div>
 <div class="line"> </div>
-<div class="line">    <span class="comment">// This calls equality_a_t branch 3 then equality_b_t branch 1</span></div>
+<div class="line">    <span class="comment">// This calls equality_a_t branch 4 then equality_b_t branch 1</span></div>
 <div class="line">    <span class="keyword">static_assert</span>(nkr::equality_a_t(1) == nkr::equality_b_t(1));</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// This calls equality_b_t branch 1</span></div>
@@ -396,147 +398,7 @@ Identities</h1>
 <p ><a class="el" href="md_include_pages_glossary.html#_fd6e7324_a83c_4317_a5a8_9edfabfa7fce">Identities</a> are an integral part of the library because they provide an abstraction over functionality which necessarily needs multiple syntactical <a class="el" href="md_include_pages_glossary.html#_beac6b26_2cf9_4051_99ba_4ae5a39e66ec">entities</a> in order to be uniquely distinguished from other functionalities in the <a class="el" href="md_include_pages_glossary.html#_ef6a576b_26d1_4762_b577_3fe83cdee79f">meta-program</a>.</p>
 <p >We call these distinct functionalities "identities" because each component entity that makes up an identity is integral to the identification of the <a class="el" href="md_include_pages_glossary.html#_75c3be6c_da45_4652_bf67_513fde1b9a06">primary entity</a> of interest providing the functionality, such as a <a class="el" href="md_include_pages_glossary.html#_d5fa5645_f7f9_446a_936d_459b0e0e4982">type</a>, a <a class="el" href="md_include_pages_glossary.html#_a13ace0b_d5fa_4445_87cc_c6beca57ff12">template</a>, or a <a class="el" href="md_include_pages_glossary.html#_fd358de8_6263_4f8f_b928_180781753d09">template template ad infinitum</a>.</p>
 <p >In order to form an identity, we define the primary entity together with its various <a class="el" href="md_include_pages_glossary.html#_00c037ff_572b_4949_94ba_ced07fe26487">identity tags</a> and <a class="el" href="md_include_pages_glossary.html#_998fbcbf_ece6_455a_9f74_fda2b132fc39">identity traits</a>. We take advantage of the <a class="el" href="md_include_pages_designs.html#_839025a7_339e_4e65_a259_5feacb45ea12">label postfix design</a> and utilize the same <a class="el" href="md_include_pages_glossary.html#_457a439d_2c16_48e4_9163_1e21aa6b2805">base name</a> with different <a class="el" href="md_include_pages_glossary.html#_d28459df_56cd_4fe9_92a7_73c78f2f96f4">postfixes</a> to strongly signify the relation of these entities to one another.</p>
-<p >We'll begin by examining the identity trait and leave the identity tag absent until afterwards: </p><div class="fragment"><div class="line">    <span class="keyword">class </span>a_t</div>
-<div class="line">    {</div>
-<div class="line">    <span class="keyword">public</span>:</div>
-<div class="line">    };</div>
-<div class="line"> </div>
-<div class="line">    <span class="comment">// the &quot;type indentity trait&quot; for a_t</span></div>
-<div class="line">    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> type_p&gt;</div>
-<div class="line">    <span class="keyword">concept </span>a_tr =</div>
-<div class="line">        nkr::cpp::is_any_tr&lt;type_p, a_t&gt;;</div>
-<div class="line"> </div>
-<div class="line">    <span class="comment">// should constrain to any qualification of a_t</span></div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tr&lt;a_t&gt; == <span class="keyword">true</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tr&lt;const a_t&gt; == <span class="keyword">true</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tr&lt;volatile a_t&gt; == <span class="keyword">true</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tr&lt;const volatile a_t&gt; == <span class="keyword">true</span>);</div>
-<div class="line"> </div>
-<div class="line">    <span class="keyword">using</span> alias_of_a_t = a_t;</div>
-<div class="line"> </div>
-<div class="line">    <span class="comment">// and naturally any qualification of an alias of a_t</span></div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tr&lt;alias_of_a_t&gt; == <span class="keyword">true</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tr&lt;const alias_of_a_t&gt; == <span class="keyword">true</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tr&lt;volatile alias_of_a_t&gt; == <span class="keyword">true</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tr&lt;const volatile alias_of_a_t&gt; == <span class="keyword">true</span>);</div>
-<div class="line"> </div>
-<div class="line">    <span class="keyword">class </span>b_t</div>
-<div class="line">    {</div>
-<div class="line">    <span class="keyword">public</span>:</div>
-<div class="line">    };</div>
-<div class="line"> </div>
-<div class="line">    <span class="comment">// but never any qualification of any other type</span></div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tr&lt;b_t&gt; == <span class="keyword">false</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tr&lt;const b_t&gt; == <span class="keyword">false</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tr&lt;volatile b_t&gt; == <span class="keyword">false</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tr&lt;const volatile b_t&gt; == <span class="keyword">false</span>);</div>
-</div><!-- fragment --><p >Here we define the identity traits of a template called "a": </p><div class="fragment"><div class="line">    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> ...parameters_p&gt;</div>
-<div class="line">    <span class="keyword">class </span>a_t</div>
-<div class="line">    {</div>
-<div class="line">    <span class="keyword">public</span>:</div>
-<div class="line">        <span class="keyword">using</span> parameters_t = nkr::tuple::types_t&lt;parameters_p...&gt;;</div>
-<div class="line">    };</div>
-<div class="line"> </div>
-<div class="line">    <span class="comment">// the &quot;instantiated type indentity trait&quot; for a_t</span></div>
-<div class="line">    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> type_p&gt;</div>
-<div class="line">    <span class="keyword">concept </span>a_tr =</div>
-<div class="line">        nkr::cpp::is_any_tr&lt;type_p, typename type_p::parameters_t::template into_t&lt;a_t&gt;&gt;;</div>
-<div class="line"> </div>
-<div class="line">    <span class="comment">// should constrain to any qualification of an instantiated a_t</span></div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tr&lt;a_t&lt;&gt;&gt; == <span class="keyword">true</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tr&lt;const a_t&lt;&gt;&gt; == <span class="keyword">true</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tr&lt;volatile a_t&lt;&gt;&gt; == <span class="keyword">true</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tr&lt;const volatile a_t&lt;&gt;&gt; == <span class="keyword">true</span>);</div>
-<div class="line"> </div>
-<div class="line">    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> ...parameters_p&gt;</div>
-<div class="line">    <span class="keyword">using</span> alias_of_a_t = a_t&lt;parameters_p...&gt;;</div>
-<div class="line"> </div>
-<div class="line">    <span class="comment">// and naturally any qualification of an instantiated alias of a_t</span></div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tr&lt;alias_of_a_t&lt;&gt;&gt; == <span class="keyword">true</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tr&lt;const alias_of_a_t&lt;&gt;&gt; == <span class="keyword">true</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tr&lt;volatile alias_of_a_t&lt;&gt;&gt; == <span class="keyword">true</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tr&lt;const volatile alias_of_a_t&lt;&gt;&gt; == <span class="keyword">true</span>);</div>
-<div class="line"> </div>
-<div class="line">    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> ...parameters_p&gt;</div>
-<div class="line">    <span class="keyword">class </span>b_t</div>
-<div class="line">    {</div>
-<div class="line">    <span class="keyword">public</span>:</div>
-<div class="line">        <span class="keyword">using</span> parameters_t = nkr::tuple::types_t&lt;parameters_p...&gt;;</div>
-<div class="line">    };</div>
-<div class="line"> </div>
-<div class="line">    <span class="comment">// but never any qualification of any other type</span></div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tr&lt;b_t&lt;&gt;&gt; == <span class="keyword">false</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tr&lt;const b_t&lt;&gt;&gt; == <span class="keyword">false</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tr&lt;volatile b_t&lt;&gt;&gt; == <span class="keyword">false</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tr&lt;const volatile b_t&lt;&gt;&gt; == <span class="keyword">false</span>);</div>
-<div class="line"> </div>
-<div class="line">    <span class="comment">// the &quot;template indentity trait&quot; for a_t</span></div>
-<div class="line">    <span class="keyword">template</span> &lt;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ...&gt; <span class="keyword">typename</span> template_p&gt;</div>
-<div class="line">    <span class="keyword">concept </span>a_ttr =</div>
-<div class="line">        nkr::cpp::is_any_ttr&lt;template_p, a_t&gt;;</div>
-<div class="line"> </div>
-<div class="line">    <span class="comment">// should constrain to a_t</span></div>
-<div class="line">    <span class="keyword">static_assert</span>(a_ttr&lt;a_t&gt; == <span class="keyword">true</span>);</div>
-<div class="line"> </div>
-<div class="line">    <span class="comment">// and any alias of a_t</span></div>
-<div class="line">    <span class="keyword">static_assert</span>(a_ttr&lt;alias_of_a_t&gt; == <span class="keyword">true</span>);</div>
-<div class="line"> </div>
-<div class="line">    <span class="comment">// but never any other template</span></div>
-<div class="line">    <span class="keyword">static_assert</span>(a_ttr&lt;b_t&gt; == <span class="keyword">false</span>);</div>
-</div><!-- fragment --><p >And lastly we define the identity traits of a template template called "a": </p><div class="fragment"><div class="line">    <span class="keyword">template</span> &lt;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ...&gt; <span class="keyword">typename</span> ...parameters_p&gt;</div>
-<div class="line">    <span class="keyword">class </span>a_t</div>
-<div class="line">    {</div>
-<div class="line">    <span class="keyword">public</span>:</div>
-<div class="line">        <span class="keyword">using</span> parameters_t = nkr::tuple::templates_t&lt;parameters_p...&gt;;</div>
-<div class="line">    };</div>
-<div class="line"> </div>
-<div class="line">    <span class="comment">// the &quot;instantiated type indentity trait&quot; for a_t</span></div>
-<div class="line">    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> type_p&gt;</div>
-<div class="line">    <span class="keyword">concept </span>a_tr =</div>
-<div class="line">        nkr::cpp::is_any_tr&lt;type_p, typename type_p::parameters_t::template into_t&lt;a_t&gt;&gt;;</div>
-<div class="line"> </div>
-<div class="line">    <span class="comment">// should constrain to any qualification of an instantiated a_t</span></div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tr&lt;a_t&lt;&gt;&gt; == <span class="keyword">true</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tr&lt;const a_t&lt;&gt;&gt; == <span class="keyword">true</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tr&lt;volatile a_t&lt;&gt;&gt; == <span class="keyword">true</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tr&lt;const volatile a_t&lt;&gt;&gt; == <span class="keyword">true</span>);</div>
-<div class="line"> </div>
-<div class="line">    <span class="keyword">template</span> &lt;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ...&gt; <span class="keyword">typename</span> ...parameters_p&gt;</div>
-<div class="line">    <span class="keyword">using</span> alias_of_a_t = a_t&lt;parameters_p...&gt;;</div>
-<div class="line"> </div>
-<div class="line">    <span class="comment">// and naturally any qualification of an instantiated alias of a_t</span></div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tr&lt;alias_of_a_t&lt;&gt;&gt; == <span class="keyword">true</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tr&lt;const alias_of_a_t&lt;&gt;&gt; == <span class="keyword">true</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tr&lt;volatile alias_of_a_t&lt;&gt;&gt; == <span class="keyword">true</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tr&lt;const volatile alias_of_a_t&lt;&gt;&gt; == <span class="keyword">true</span>);</div>
-<div class="line"> </div>
-<div class="line">    <span class="keyword">template</span> &lt;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ...&gt; <span class="keyword">typename</span> ...parameters_p&gt;</div>
-<div class="line">    <span class="keyword">class </span>b_t</div>
-<div class="line">    {</div>
-<div class="line">    <span class="keyword">public</span>:</div>
-<div class="line">        <span class="keyword">using</span> parameters_t = nkr::tuple::templates_t&lt;parameters_p...&gt;;</div>
-<div class="line">    };</div>
-<div class="line"> </div>
-<div class="line">    <span class="comment">// but never any qualification of any other type</span></div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tr&lt;b_t&lt;&gt;&gt; == <span class="keyword">false</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tr&lt;const b_t&lt;&gt;&gt; == <span class="keyword">false</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tr&lt;volatile b_t&lt;&gt;&gt; == <span class="keyword">false</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tr&lt;const volatile b_t&lt;&gt;&gt; == <span class="keyword">false</span>);</div>
-<div class="line"> </div>
-<div class="line">    <span class="comment">// the &quot;template template indentity trait&quot; for a_t</span></div>
-<div class="line">    <span class="keyword">template</span> &lt;<span class="keyword">template</span> &lt;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ...&gt; <span class="keyword">typename</span> ...&gt; <span class="keyword">typename</span> template_template_p&gt;</div>
-<div class="line">    <span class="keyword">concept </span>a_tttr =</div>
-<div class="line">        nkr::cpp::is_any_tttr&lt;template_template_p, a_t&gt;;</div>
-<div class="line"> </div>
-<div class="line">    <span class="comment">// should constrain to a_t</span></div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tttr&lt;a_t&gt; == <span class="keyword">true</span>);</div>
-<div class="line"> </div>
-<div class="line">    <span class="comment">// and any alias of a_t</span></div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tttr&lt;alias_of_a_t&gt; == <span class="keyword">true</span>);</div>
-<div class="line"> </div>
-<div class="line">    <span class="comment">// but never any other template</span></div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tttr&lt;b_t&gt; == <span class="keyword">false</span>);</div>
-</div><!-- fragment --><hr  />
+<p >We'll begin by examining the identity trait and leave the identity tag absent until afterwards: </p><div class="fragment"></div><!-- fragment --><p >Here we define the identity traits of a template called "a": </p><div class="fragment"></div><!-- fragment --><p >And lastly we define the identity traits of a template template called "a": </p><div class="fragment"></div><!-- fragment --><hr  />
 <h1><a class="anchor" id="_839025a7_339e_4e65_a259_5feacb45ea12"></a>
 Label Postfixes</h1>
 <p >There are a number of postfixes on various labels throughout the library. They are helpful in avoiding name collisions, in particular with C++ keywords, but primarily they are used to differentiate between different kinds of entities, such as types, traits, and interfaces.</p>
@@ -652,6 +514,20 @@ List of Label Postfixes</h2>
 <li><code>_u</code> union</li>
 </ul>
 <hr  />
+<h1><a class="anchor" id="_fb50a132_1997_4cb6_92b0_616254f27bae"></a>
+One Hierarchy</h1>
+<p >(W.I.P)</p>
+<hr  />
+<h1><a class="anchor" id="_ab449a60_e674_4d0a_91d9_557ec4c5660c"></a>
+One Kind of Template Parameter</h1>
+<p >A few key points need to be understood before expressing this principle:</p><ol type="1">
+<li>Templates can take an large variety of entities as parameters including types, other templates, and literal values.</li>
+<li>It is desirable to use templates as parameters in concepts.</li>
+<li>Templates can have any number of parameters and so parameter packs must be used in the concept.</li>
+<li>Parameter packs require one kind of template parameter and thus different entities cannot be mixed.</li>
+</ol>
+<p >With these points in mind, it only makes sense to restrict each individual template to accept only one kind of template argument, whatever that may be. Doing so allows us to statically constrain the use of templates in our functions, types, interfaces, and more. For example, <a class="el" href="conceptnkr_1_1tr.html" title="Used to filter a type by its qualifications, and by other types, templates, identities,...">nkr::tr</a> requires that every template used in an expression can only take types and nothing else.</p>
+<hr  />
 <h1><a class="anchor" id="_8f6a1988_bbdb_46ba_8746_40c02acda41c"></a>
 Primary Inner Type</h1>
 <p >Most every template type available in the library, regardless of how many parameters it has, contains a <code>primary inner type</code>. Usually, it's the first provided argument in the parameter list:</p>
@@ -711,17 +587,7 @@ Primary Inner Type</h1>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// coincidentally, the interface itself has a primary inner type equal to type_t</span></div>
 <div class="line">    <span class="keyword">static_assert</span>(nkr::cpp::is_tr&lt;interface_of_interface_of_type_t::of_t, type_t&gt;);</div>
-</div><!-- fragment --><p >Common alias names for a <code>primary inner type</code> are <code>type_t</code>, <code>value_t</code>, and <code>unit_t</code>.</p>
-<hr  />
-<h1><a class="anchor" id="_ab449a60_e674_4d0a_91d9_557ec4c5660c"></a>
-One Kind of Template Parameter</h1>
-<p >A few key points need to be understood before expressing this principle:</p><ol type="1">
-<li>Templates can take an large variety of entities as parameters including types, other templates, and literal values.</li>
-<li>It is desirable to use templates as parameters in concepts.</li>
-<li>Templates can have any number of parameters and so parameter packs must be used in the concept.</li>
-<li>Parameter packs require one kind of template parameter and thus different entities cannot be mixed.</li>
-</ol>
-<p >With these points in mind, it only makes sense to restrict each individual template to accept only one kind of template argument, whatever that may be. Doing so allows us to statically constrain the use of templates in our functions, types, interfaces, and more. For example, <a class="el" href="conceptnkr_1_1tr.html" title="Used to filter a type by its qualifications, and by other types, templates, identities,...">nkr::tr</a> requires that every template used in an expression can only take types and nothing else. </p>
+</div><!-- fragment --><p >Common alias names for a <code>primary inner type</code> are <code>type_t</code>, <code>value_t</code>, and <code>unit_t</code>. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->

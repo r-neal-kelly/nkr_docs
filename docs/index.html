@@ -88,9 +88,9 @@ var searchBox = new SearchBox("searchBox", "search",'Search','.html');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p ><a class="anchor" id="mainpage"></a> </p>
-<h1><a class="anchor" id="autotoc_md7"></a>
+<h1><a class="anchor" id="autotoc_md9"></a>
 Overview</h1>
-<h2><a class="anchor" id="autotoc_md8"></a>
+<h2><a class="anchor" id="autotoc_md12"></a>
 General-Use Types</h2>
 <p ><code>nkr</code> exists to provide an assortment of well-rounded generic <code>types</code> offering fleshed-out functionality and interoperation through two primary meta-programming abstractions: <code>traits</code> and <code>interfaces</code>:</p><ul>
 <li><code>traits</code> are concepts that essentially act as the nouns for types and are divided into two general sub-categories:<ul>
@@ -107,14 +107,14 @@ General-Use Types</h2>
 <li><code>interfaces</code> are concepts that essentially act as verbs for <code>types</code> and <code>traits</code> by specifying how they may do something. They describe not what a type is, but what it can do. A great example of an interface is for the <code>nkr::none::value_t</code>. Whereas a <code>trait</code> may require that a type have a default constructor to provide a value that may or may not be equal to <code>none</code>, an <code>interface</code> only requires a soft-coupling to define what the <code>none</code> value is for a particular <code>identity</code>, whether it is has a default constructor or not, or if it does but the default value is not equal to <code>none</code>.</li>
 </ul>
 <p >For more information, please see <a class="el" href="conceptnkr_1_1tr.html" title="Used to filter a type by its qualifications, and by other types, templates, identities,...">nkr::tr&lt;&gt;</a> and <a class="el" href="namespacenkr.html#a1898ff80c7081762a1840f00883fa258" title="Used to filter a type by its qualifications, and by other types, templates, identities,...">nkr::TR&lt;&gt;</a>.</p>
-<h2><a class="anchor" id="autotoc_md9"></a>
+<h2><a class="anchor" id="autotoc_md13"></a>
 Full Qualifications</h2>
 <p >As much as possible, this library provides methods available for <code>const</code>, <code>volatile</code>, and <code>const volatile</code> qualifications of types, in addition to the the standard non-qualification. The only exceptions are for when it doesn't make sense for a particular type to have a certain qualification, or if we are currently using a C++ type in some way, which often does not define <code>const</code> and <code>volatile</code> qualifications.</p>
 <hr  />
-<h1><a class="anchor" id="autotoc_md11"></a>
+<h1><a class="anchor" id="autotoc_md15"></a>
 Design</h1>
 <p >These design topics are currently being moved to the <a class="el" href="md_include_pages_designs.html">designs page</a> which has far more coverage and in depth explanations.</p>
-<h2><a class="anchor" id="autotoc_md12"></a>
+<h2><a class="anchor" id="autotoc_md16"></a>
 Move Assignment of Volatile Types</h2>
 <p >In order to avoid an overload resolution ambiguity, we often use a templated operator to define the move assignment of volatile types. Because templates have a lower precedence than normal operators, this allows for both volatile and non-volatile instances as well as new constructions of the type to be move-assigned properly, and also allows other types that can be converted through a constructor of the type to be properly assigned as expected.</p>
 <div class="fragment"><div class="line"><span class="keyword">class </span>example_t</div>
@@ -175,7 +175,7 @@ Partial Specializations By Concept</h2>
 </div><!-- fragment --><p> <a href="https://github.com/r-neal-kelly/the_concept_bug">View a small but detailed example of this bug.</a></p>
 <p ><a href="https://stackoverflow.com/questions/68589314/how-to-define-a-specialized-class-method-outside-of-class-body-in-c">Read about it on stackoverflow.</a></p>
 <hr  />
-<h1><a class="anchor" id="autotoc_md14"></a>
+<h1><a class="anchor" id="autotoc_md18"></a>
 Documentation Status</h1>
 <p >We are in the pre-alpha phase of the library. We are currently prototyping and designing the overarching system of types, traits, and interfaces, and importantly, we are still designing the documentation itself. I've removed all of the old documentation from the previous iteration and have begun writing for the third. </p>
 </div></div><!-- PageDoc -->
