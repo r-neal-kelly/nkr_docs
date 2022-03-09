@@ -89,13 +89,13 @@ var searchBox = new SearchBox("searchBox", "search",'Search','.html');
 <div class="contents">
 <div class="textblock"><p >This page contains many key concepts revolving around design decisions that have been made with <a class="el" href="namespacenkr.html">nkr</a>. Each section thoroughly explains why these designs exist and how best to take advantage of them.</p>
 <ul>
-<li><a class="el" href="md_include_markdown_designs.html#_1f10466e_b496_498a_a930_6c7227b37371">Global Equality Operators</a></li>
-<li><a class="el" href="md_include_markdown_designs.html#_839025a7_339e_4e65_a259_5feacb45ea12">Label Postfixes</a><ul>
-<li><a class="el" href="md_include_markdown_designs.html#_1382824d_0c2f_476c_b433_cf542fd6bdef">List of Label Postfixes</a></li>
+<li><a class="el" href="md_include_pages_designs.html#_1f10466e_b496_498a_a930_6c7227b37371">Global Equality Operators</a></li>
+<li><a class="el" href="md_include_pages_designs.html#_839025a7_339e_4e65_a259_5feacb45ea12">Label Postfixes</a><ul>
+<li><a class="el" href="md_include_pages_designs.html#_1382824d_0c2f_476c_b433_cf542fd6bdef">List of Label Postfixes</a></li>
 </ul>
 </li>
-<li><a class="el" href="md_include_markdown_designs.html#_8f6a1988_bbdb_46ba_8746_40c02acda41c">Primary Inner Type</a></li>
-<li><a class="el" href="md_include_markdown_designs.html#_ab449a60_e674_4d0a_91d9_557ec4c5660c">One Kind of Template Parameter</a></li>
+<li><a class="el" href="md_include_pages_designs.html#_8f6a1988_bbdb_46ba_8746_40c02acda41c">Primary Inner Type</a></li>
+<li><a class="el" href="md_include_pages_designs.html#_ab449a60_e674_4d0a_91d9_557ec4c5660c">One Kind of Template Parameter</a></li>
 </ul>
 <hr  />
 <h1><a class="anchor" id="_1f10466e_b496_498a_a930_6c7227b37371"></a>
@@ -141,7 +141,7 @@ Global Equality Operators</h1>
 </ol>
 <p >Following this pattern gives an extreme amount of flexibility for users. A user need not worry about the order of their arguments and whether including this or that file will somehow cause the compiler to spit out a thousand-line-long error message, resulting in a headache for the user every time it happens.</p>
 <p >However, this comes at the cost of extra development effort. Every single type must define their own operator overloads explicitly. This means if you wish to use the overload of another type, you must define its operators and explicitly cast to that type. For this reason, the pattern was designed such that you only need to define one of the eight operators, and the rest can be easily defined as proxies.</p>
-<p >The following is a full example of how one would define the operators for two different types, neither of which knows if the other is compatible. Both of them have an identifiable <a class="el" href="md_include_markdown_designs.html#_8f6a1988_bbdb_46ba_8746_40c02acda41c">primary inner type</a>, which adds options to their algorithms that otherwise might not be there:</p>
+<p >The following is a full example of how one would define the operators for two different types, neither of which knows if the other is compatible. Both of them have an identifiable <a class="el" href="md_include_pages_designs.html#_8f6a1988_bbdb_46ba_8746_40c02acda41c">primary inner type</a>, which adds options to their algorithms that otherwise might not be there:</p>
 <div class="fragment"><div class="line">    <span class="keyword">namespace </span><a class="code hl_namespace" href="namespacenkr.html">nkr</a> {</div>
 <div class="line"> </div>
 <div class="line">        <span class="keyword">class </span>equality_a_t</div>
