@@ -1,15 +1,7 @@
 # Designs
 This page contains many key concepts revolving around design decisions that have been made with [nkr](@ref nkr). Each section thoroughly explains why these designs exist and how best to take advantage of them.
 
-- [Global Equality Operators](@ref _1f10466e_b496_498a_a930_6c7227b37371)
-- [Identities](@ref _749bceb9_9b02_4278_bd34_a8a83933e675)
-- [Label Postfixes](@ref _839025a7_339e_4e65_a259_5feacb45ea12)
-  - [List of Label Postfixes](@ref _1382824d_0c2f_476c_b433_cf542fd6bdef)
-- [One Hierarchy](@ref _fb50a132_1997_4cb6_92b0_616254f27bae)
-- [One Kind of Template Parameter](@ref _ab449a60_e674_4d0a_91d9_557ec4c5660c)
-- [Primary Inner Type](@ref _8f6a1988_bbdb_46ba_8746_40c02acda41c)
-- 
----
+@tableofcontents
 
 ## Global Equality Operators {#_1f10466e_b496_498a_a930_6c7227b37371}
 
@@ -49,13 +41,13 @@ We call these distinct functionalities "identities" because each component entit
 In order to form an identity, we define the primary entity together with its various [identity tags](@ref _00c037ff_572b_4949_94ba_ced07fe26487) and [identity traits](@ref _998fbcbf_ece6_455a_9f74_fda2b132fc39). We take advantage of the [label postfix design](@ref _839025a7_339e_4e65_a259_5feacb45ea12) and utilize the same [base name](@ref _457a439d_2c16_48e4_9163_1e21aa6b2805) with different [postfixes](@ref _d28459df_56cd_4fe9_92a7_73c78f2f96f4) to strongly signify the relation of these entities to one another.
 
 We'll begin by examining the identity trait and leave the identity tag absent until afterwards:
-@snippet "./docs/src/glossary.cpp" _54c5c7e1_91a3_4d5b_b41d_c158d3b4c573
+@snippet "./docs/src/designs.cpp" _54c5c7e1_91a3_4d5b_b41d_c158d3b4c573
 
 Here we define the identity traits of a template called "a":
-@snippet "./docs/src/glossary.cpp" _fbae0c33_830c_4106_8c8d_bcbae9a82433
+@snippet "./docs/src/designs.cpp" _fbae0c33_830c_4106_8c8d_bcbae9a82433
 
 And lastly we define the identity traits of a template template called "a":
-@snippet "./docs/src/glossary.cpp" _7e0fe0cd_2eac_4f85_9539_4a1399492ab0
+@snippet "./docs/src/designs.cpp" _7e0fe0cd_2eac_4f85_9539_4a1399492ab0
 
 ---
 

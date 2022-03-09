@@ -1,7 +1,21 @@
 # Glossary
 
+[alias]:                            @ref _9cb80c36_ce78_4c8f_9744_c3017d0f9806
+[base name]:                        @ref _457a439d_2c16_48e4_9163_1e21aa6b2805
+[identity]:                         @ref _fd6e7324_a83c_4317_a5a8_9edfabfa7fce
+[interface]:                        @ref _530148d0_cb32_40a7_9288_99cff1c667fe
+[primary entity]:                   @ref _75c3be6c_da45_4652_bf67_513fde1b9a06
+[template]:                         @ref _a13ace0b_d5fa_4445_87cc_c6beca57ff12
+[template template ad infinitum]:   @ref _fd358de8_6263_4f8f_b928_180781753d09
+[type]:                             @ref _d5fa5645_f7f9_446a_936d_459b0e0e4982
+[type section]:                     @ref _2680c916_75d0_4b99_8aba_cddbcc0b84e9
+
+[label postfix design]:             @ref _839025a7_339e_4e65_a259_5feacb45ea12
+
+@tableofcontents
+
 ## alias {#_9cb80c36_ce78_4c8f_9744_c3017d0f9806}
-An `alias` refers to a standard C++ [type alias, template alias, or a template template alias ad infinitum](https://en.cppreference.com/w/cpp/language/type_alias). Aliases are frequently found in the first [type section](@ref _2680c916_75d0_4b99_8aba_cddbcc0b84e9) of [types](@ref _d5fa5645_f7f9_446a_936d_459b0e0e4982), [templates](@ref _a13ace0b_d5fa_4445_87cc_c6beca57ff12), and [template templates ad infinitum](@ref _fd358de8_6263_4f8f_b928_180781753d09). They are also used to define the [primary entity](@ref _75c3be6c_da45_4652_bf67_513fde1b9a06) of the [identity](@ref _fd6e7324_a83c_4317_a5a8_9edfabfa7fce) for each [interface](@ref _530148d0_cb32_40a7_9288_99cff1c667fe). When aliasing template parameters, thanks to the [label postfix design](@ref _839025a7_339e_4e65_a259_5feacb45ea12), aliases often keep the same [base name](@ref _457a439d_2c16_48e4_9163_1e21aa6b2805) as their respective parameters. In the nkr::cpp namespace, standard C++ types and templates are directly aliased as primary entities for their respective identities.
+An `alias` refers to a standard C++ [type alias, template alias, or a template template alias ad infinitum](https://en.cppreference.com/w/cpp/language/type_alias). Aliases are frequently found in the first [type section] of [types][type], [templates][template], and [template templates ad infinitum][template template ad infinitum]. They are also used to define the [primary entity] of the [identity] for each [interface]. When aliasing template parameters, thanks to the [label postfix design], aliases often keep the same [base name] as their respective parameters. In the nkr::cpp namespace, standard C++ types and templates are directly aliased as primary entities for their respective identities.
 
 ## base name {#_457a439d_2c16_48e4_9163_1e21aa6b2805}
 A `base name` is the left-hand side of a [label](@ref _f2d4e658_c44a_4b89_b00b_35184f78db10) and is frequently repeated among the labels of [entities](@ref _beac6b26_2cf9_4051_99ba_4ae5a39e66ec) of the same [identity](@ref _fd6e7324_a83c_4317_a5a8_9edfabfa7fce), [generic](@ref _90dbd4cc_851e_429c_bae1_b9b4285cb1ee), or [file group](@ref _a76c0f9d_0ab5_41e3_aeea_8a9e66b9a3fa). Like [postfixes](@ref _d28459df_56cd_4fe9_92a7_73c78f2f96f4), base names may be repeated even in the same namespace, but only with different postfixes.
