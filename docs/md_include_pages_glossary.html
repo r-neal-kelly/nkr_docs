@@ -87,170 +87,89 @@ var searchBox = new SearchBox("searchBox", "search",'Search','.html');
   <div class="headertitle"><div class="title">Glossary </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="autotoc_md6"></a>
+<div class="textblock"><h1><a class="anchor" id="_9cb80c36_ce78_4c8f_9744_c3017d0f9806"></a>
+alias</h1>
+<p >An <code>alias</code> refers to a standard C++ <a href="https://en.cppreference.com/w/cpp/language/type_alias">type alias, template alias, or a template template alias ad infinitum</a>. Aliases are frequently found in the first <a class="el" href="md_include_pages_glossary.html#_2680c916_75d0_4b99_8aba_cddbcc0b84e9">type section</a> of <a class="el" href="md_include_pages_glossary.html#_d5fa5645_f7f9_446a_936d_459b0e0e4982">types</a>, <a class="el" href="md_include_pages_glossary.html#_a13ace0b_d5fa_4445_87cc_c6beca57ff12">templates</a>, and <a class="el" href="md_include_pages_glossary.html#_fd358de8_6263_4f8f_b928_180781753d09">template templates ad infinitum</a>. They are also used to define the <a class="el" href="md_include_pages_glossary.html#_75c3be6c_da45_4652_bf67_513fde1b9a06">primary entity</a> of the <a class="el" href="md_include_pages_glossary.html#_fd6e7324_a83c_4317_a5a8_9edfabfa7fce">identity</a> for each <a class="el" href="md_include_pages_glossary.html#_530148d0_cb32_40a7_9288_99cff1c667fe">interface</a>. When aliasing template parameters, thanks to the <a class="el" href="md_include_pages_designs.html#_839025a7_339e_4e65_a259_5feacb45ea12">label postfix design</a>, aliases often keep the same <a class="el" href="md_include_pages_glossary.html#_457a439d_2c16_48e4_9163_1e21aa6b2805">base name</a> as their respective parameters. In the <a class="el" href="namespacenkr_1_1cpp.html" title="CPP types are standard C++ types that can be used like other nkr types.">nkr::cpp</a> namespace, standard C++ types and templates are directly aliased as primary entities for their respective identities.</p>
+<h1><a class="anchor" id="_457a439d_2c16_48e4_9163_1e21aa6b2805"></a>
 base name</h1>
+<p >A <code>base name</code> is the left-hand side of a <a class="el" href="md_include_pages_glossary.html#_f2d4e658_c44a_4b89_b00b_35184f78db10">label</a> and is frequently repeated among the labels of <a class="el" href="md_include_pages_glossary.html#_beac6b26_2cf9_4051_99ba_4ae5a39e66ec">entities</a> of the same <a class="el" href="md_include_pages_glossary.html#_fd6e7324_a83c_4317_a5a8_9edfabfa7fce">identity</a>, <a class="el" href="md_include_pages_glossary.html#_90dbd4cc_851e_429c_bae1_b9b4285cb1ee">generic</a>, or <a class="el" href="md_include_pages_glossary.html#_a76c0f9d_0ab5_41e3_aeea_8a9e66b9a3fa">file group</a>. Like <a class="el" href="md_include_pages_glossary.html#_d28459df_56cd_4fe9_92a7_73c78f2f96f4">postfixes</a>, base names may be repeated even in the same namespace, but only with different postfixes.</p>
+<h1><a class="anchor" id="_beac6b26_2cf9_4051_99ba_4ae5a39e66ec"></a>
+entity</h1>
+<p >An <code>entity</code> is an indivisibly unique subject represented by a uniquely named <a class="el" href="md_include_pages_glossary.html#_f2d4e658_c44a_4b89_b00b_35184f78db10">label</a>. <a class="el" href="md_include_pages_glossary.html#_d5fa5645_f7f9_446a_936d_459b0e0e4982">Types</a>, <a class="el" href="md_include_pages_glossary.html#_a13ace0b_d5fa_4445_87cc_c6beca57ff12">templates</a>, <a class="el" href="md_include_pages_glossary.html#_fd358de8_6263_4f8f_b928_180781753d09">template templates ad infinitum</a>, <a class="el" href="md_include_pages_glossary.html#_aa695b0f_e642_4521_928e_5deba76d9bc6">tags</a>, <a class="el" href="md_include_pages_glossary.html#_a7aaad0a_73cd_4237_92ee_0ea24814c2a7">traits</a>, <a class="el" href="md_include_pages_glossary.html#_530148d0_cb32_40a7_9288_99cff1c667fe">interfaces</a>, <a class="el" href="md_include_pages_glossary.html#_fce2f1b3_466d_4f17_9d2f_45e1b2d1c0e5">functions</a>, <a class="el" href="md_include_pages_glossary.html#_c6831e56_fbb1_445d_b3fc_7b35c60286a5">methods</a>, <a class="el" href="md_include_pages_glossary.html#_8f685d74_eeb0_499a_a597_2eb707d61e69">files</a>, and more all all entities.</p>
+<h1><a class="anchor" id="_f2fd9706_47ef_4a9d_bb60_39f7055128ee"></a>
+entity group</h1>
+<h1><a class="anchor" id="_8f685d74_eeb0_499a_a597_2eb707d61e69"></a>
+file</h1>
+<p >A <code>file</code> is an <a class="el" href="md_include_pages_glossary.html#_beac6b26_2cf9_4051_99ba_4ae5a39e66ec">entity</a> representing an atomically indivisible part of the library, such as a standard C++ header or translation unit. It does not need to be a file type oriented to the C++ language. It can be any file with a unique <a class="el" href="md_include_pages_glossary.html#_f2d4e658_c44a_4b89_b00b_35184f78db10">label</a>.</p>
+<h1><a class="anchor" id="_a76c0f9d_0ab5_41e3_aeea_8a9e66b9a3fa"></a>
+file group</h1>
+<h1><a class="anchor" id="_fce2f1b3_466d_4f17_9d2f_45e1b2d1c0e5"></a>
+function</h1>
+<h1><a class="anchor" id="_90dbd4cc_851e_429c_bae1_b9b4285cb1ee"></a>
+generic</h1>
 <h1><a class="anchor" id="_df1f9c80_7b88_4247_b9b4_1ca3b0bf2d9a"></a>
 generic trait</h1>
+<p >A <code>generic trait</code> is a <a class="el" href="md_include_pages_glossary.html#_a7aaad0a_73cd_4237_92ee_0ea24814c2a7">trait</a> used to constrain inputs to <b>multiple</b> <a class="el" href="md_include_pages_glossary.html#_fd6e7324_a83c_4317_a5a8_9edfabfa7fce">identities</a> which must each satisfy specific qualities defined by the <a class="el" href="md_include_pages_glossary.html#_90dbd4cc_851e_429c_bae1_b9b4285cb1ee">generic</a>. This is opposed to an <a class="el" href="md_include_pages_glossary.html#_df1f9c80_7b88_4247_b9b4_1ca3b0bf2d9a">identity trait</a> which constrains to a <b>single</b> identity.</p>
+<h1><a class="anchor" id="_fd6e7324_a83c_4317_a5a8_9edfabfa7fce"></a>
+identity</h1>
+<p >An <code>identity</code> is an <a class="el" href="md_include_pages_glossary.html#_f2fd9706_47ef_4a9d_bb60_39f7055128ee">entity group</a> relating to a singularly unique <a class="el" href="md_include_pages_glossary.html#_d5fa5645_f7f9_446a_936d_459b0e0e4982">type</a>, or all <a class="el" href="md_include_pages_glossary.html#_be26724f_df26_4658_8cab_109d0b853c27">instantiated types</a> of a singularly unique <a class="el" href="md_include_pages_glossary.html#_a13ace0b_d5fa_4445_87cc_c6beca57ff12">template</a> or of a singularly unique <a class="el" href="md_include_pages_glossary.html#_fd358de8_6263_4f8f_b928_180781753d09">template template ad infinitum</a>. This entity group consists of the <a class="el" href="md_include_pages_glossary.html#_75c3be6c_da45_4652_bf67_513fde1b9a06">primary entity</a>, one or more <a class="el" href="md_include_pages_glossary.html#_998fbcbf_ece6_455a_9f74_fda2b132fc39">identity traits</a>, and one or more <a class="el" href="md_include_pages_glossary.html#_00c037ff_572b_4949_94ba_ced07fe26487">identity tags</a>. All public <a class="el" href="md_include_pages_glossary.html#_d5fa5645_f7f9_446a_936d_459b0e0e4982">types</a>, <a class="el" href="md_include_pages_glossary.html#_a13ace0b_d5fa_4445_87cc_c6beca57ff12">templates</a>, <a class="el" href="md_include_pages_glossary.html#_fd358de8_6263_4f8f_b928_180781753d09">template templates ad infinitum</a>, and <a class="el" href="md_include_pages_glossary.html#_530148d0_cb32_40a7_9288_99cff1c667fe">interfaces</a> in <a class="el" href="namespacenkr.html">nkr</a> have an identity. An identity is distinctly opposed to a <a class="el" href="md_include_pages_glossary.html#_90dbd4cc_851e_429c_bae1_b9b4285cb1ee">generic</a> which cannot either be or have an identity.</p>
+<h1><a class="anchor" id="_00c037ff_572b_4949_94ba_ced07fe26487"></a>
+identity tag</h1>
 <h1><a class="anchor" id="_998fbcbf_ece6_455a_9f74_fda2b132fc39"></a>
 identity trait</h1>
-<p >An <code>identity trait</code> is a standard C++20 <code>concept</code> used to constrain inputs to a unique type or template.</p>
-<p >With a type: </p><div class="fragment"><div class="line">    <span class="keyword">class </span>a_t</div>
-<div class="line">    {</div>
-<div class="line">    <span class="keyword">public</span>:</div>
-<div class="line">    };</div>
-<div class="line"> </div>
-<div class="line">    <span class="comment">// the &quot;type indentity trait&quot; for a_t</span></div>
-<div class="line">    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> type_p&gt;</div>
-<div class="line">    <span class="keyword">concept </span>a_tr =</div>
-<div class="line">        nkr::cpp::is_any_tr&lt;type_p, a_t&gt;;</div>
-<div class="line"> </div>
-<div class="line">    <span class="comment">// should constrain to any qualification of a_t</span></div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tr&lt;a_t&gt; == <span class="keyword">true</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tr&lt;const a_t&gt; == <span class="keyword">true</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tr&lt;volatile a_t&gt; == <span class="keyword">true</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tr&lt;const volatile a_t&gt; == <span class="keyword">true</span>);</div>
-<div class="line"> </div>
-<div class="line">    <span class="keyword">using</span> alias_of_a_t = a_t;</div>
-<div class="line"> </div>
-<div class="line">    <span class="comment">// and naturally any qualification of an alias of a_t</span></div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tr&lt;alias_of_a_t&gt; == <span class="keyword">true</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tr&lt;const alias_of_a_t&gt; == <span class="keyword">true</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tr&lt;volatile alias_of_a_t&gt; == <span class="keyword">true</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tr&lt;const volatile alias_of_a_t&gt; == <span class="keyword">true</span>);</div>
-<div class="line"> </div>
-<div class="line">    <span class="keyword">class </span>b_t</div>
-<div class="line">    {</div>
-<div class="line">    <span class="keyword">public</span>:</div>
-<div class="line">    };</div>
-<div class="line"> </div>
-<div class="line">    <span class="comment">// but never any qualification of any other type</span></div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tr&lt;b_t&gt; == <span class="keyword">false</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tr&lt;const b_t&gt; == <span class="keyword">false</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tr&lt;volatile b_t&gt; == <span class="keyword">false</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tr&lt;const volatile b_t&gt; == <span class="keyword">false</span>);</div>
-</div><!-- fragment --><p >With a template of type: </p><div class="fragment"><div class="line">    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> ...parameters_p&gt;</div>
-<div class="line">    <span class="keyword">class </span>a_t</div>
-<div class="line">    {</div>
-<div class="line">    <span class="keyword">public</span>:</div>
-<div class="line">        <span class="keyword">using</span> parameters_t = nkr::tuple::types_t&lt;parameters_p...&gt;;</div>
-<div class="line">    };</div>
-<div class="line"> </div>
-<div class="line">    <span class="comment">// the &quot;instantiated type indentity trait&quot; for a_t</span></div>
-<div class="line">    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> type_p&gt;</div>
-<div class="line">    <span class="keyword">concept </span>a_tr =</div>
-<div class="line">        nkr::cpp::is_any_tr&lt;type_p, typename type_p::parameters_t::template into_t&lt;a_t&gt;&gt;;</div>
-<div class="line"> </div>
-<div class="line">    <span class="comment">// should constrain to any qualification of an instantiated a_t</span></div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tr&lt;a_t&lt;&gt;&gt; == <span class="keyword">true</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tr&lt;const a_t&lt;&gt;&gt; == <span class="keyword">true</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tr&lt;volatile a_t&lt;&gt;&gt; == <span class="keyword">true</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tr&lt;const volatile a_t&lt;&gt;&gt; == <span class="keyword">true</span>);</div>
-<div class="line"> </div>
-<div class="line">    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> ...parameters_p&gt;</div>
-<div class="line">    <span class="keyword">using</span> alias_of_a_t = a_t&lt;parameters_p...&gt;;</div>
-<div class="line"> </div>
-<div class="line">    <span class="comment">// and naturally any qualification of an instantiated alias of a_t</span></div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tr&lt;alias_of_a_t&lt;&gt;&gt; == <span class="keyword">true</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tr&lt;const alias_of_a_t&lt;&gt;&gt; == <span class="keyword">true</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tr&lt;volatile alias_of_a_t&lt;&gt;&gt; == <span class="keyword">true</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tr&lt;const volatile alias_of_a_t&lt;&gt;&gt; == <span class="keyword">true</span>);</div>
-<div class="line"> </div>
-<div class="line">    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> ...parameters_p&gt;</div>
-<div class="line">    <span class="keyword">class </span>b_t</div>
-<div class="line">    {</div>
-<div class="line">    <span class="keyword">public</span>:</div>
-<div class="line">        <span class="keyword">using</span> parameters_t = nkr::tuple::types_t&lt;parameters_p...&gt;;</div>
-<div class="line">    };</div>
-<div class="line"> </div>
-<div class="line">    <span class="comment">// but never any qualification of any other type</span></div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tr&lt;b_t&lt;&gt;&gt; == <span class="keyword">false</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tr&lt;const b_t&lt;&gt;&gt; == <span class="keyword">false</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tr&lt;volatile b_t&lt;&gt;&gt; == <span class="keyword">false</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tr&lt;const volatile b_t&lt;&gt;&gt; == <span class="keyword">false</span>);</div>
-<div class="line"> </div>
-<div class="line">    <span class="comment">// the &quot;template indentity trait&quot; for a_t</span></div>
-<div class="line">    <span class="keyword">template</span> &lt;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ...&gt; <span class="keyword">typename</span> template_p&gt;</div>
-<div class="line">    <span class="keyword">concept </span>a_ttr =</div>
-<div class="line">        nkr::cpp::is_any_ttr&lt;template_p, a_t&gt;;</div>
-<div class="line"> </div>
-<div class="line">    <span class="comment">// should constrain to a_t</span></div>
-<div class="line">    <span class="keyword">static_assert</span>(a_ttr&lt;a_t&gt; == <span class="keyword">true</span>);</div>
-<div class="line"> </div>
-<div class="line">    <span class="comment">// and any alias of a_t</span></div>
-<div class="line">    <span class="keyword">static_assert</span>(a_ttr&lt;alias_of_a_t&gt; == <span class="keyword">true</span>);</div>
-<div class="line"> </div>
-<div class="line">    <span class="comment">// but never any other template</span></div>
-<div class="line">    <span class="keyword">static_assert</span>(a_ttr&lt;b_t&gt; == <span class="keyword">false</span>);</div>
-</div><!-- fragment --><p >And with a template of template of type: </p><div class="fragment"><div class="line">    <span class="keyword">template</span> &lt;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ...&gt; <span class="keyword">typename</span> ...parameters_p&gt;</div>
-<div class="line">    <span class="keyword">class </span>a_t</div>
-<div class="line">    {</div>
-<div class="line">    <span class="keyword">public</span>:</div>
-<div class="line">        <span class="keyword">using</span> parameters_t = nkr::tuple::templates_t&lt;parameters_p...&gt;;</div>
-<div class="line">    };</div>
-<div class="line"> </div>
-<div class="line">    <span class="comment">// the &quot;instantiated type indentity trait&quot; for a_t</span></div>
-<div class="line">    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> type_p&gt;</div>
-<div class="line">    <span class="keyword">concept </span>a_tr =</div>
-<div class="line">        nkr::cpp::is_any_tr&lt;type_p, typename type_p::parameters_t::template into_t&lt;a_t&gt;&gt;;</div>
-<div class="line"> </div>
-<div class="line">    <span class="comment">// should constrain to any qualification of an instantiated a_t</span></div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tr&lt;a_t&lt;&gt;&gt; == <span class="keyword">true</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tr&lt;const a_t&lt;&gt;&gt; == <span class="keyword">true</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tr&lt;volatile a_t&lt;&gt;&gt; == <span class="keyword">true</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tr&lt;const volatile a_t&lt;&gt;&gt; == <span class="keyword">true</span>);</div>
-<div class="line"> </div>
-<div class="line">    <span class="keyword">template</span> &lt;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ...&gt; <span class="keyword">typename</span> ...parameters_p&gt;</div>
-<div class="line">    <span class="keyword">using</span> alias_of_a_t = a_t&lt;parameters_p...&gt;;</div>
-<div class="line"> </div>
-<div class="line">    <span class="comment">// and naturally any qualification of an instantiated alias of a_t</span></div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tr&lt;alias_of_a_t&lt;&gt;&gt; == <span class="keyword">true</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tr&lt;const alias_of_a_t&lt;&gt;&gt; == <span class="keyword">true</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tr&lt;volatile alias_of_a_t&lt;&gt;&gt; == <span class="keyword">true</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tr&lt;const volatile alias_of_a_t&lt;&gt;&gt; == <span class="keyword">true</span>);</div>
-<div class="line"> </div>
-<div class="line">    <span class="keyword">template</span> &lt;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ...&gt; <span class="keyword">typename</span> ...parameters_p&gt;</div>
-<div class="line">    <span class="keyword">class </span>b_t</div>
-<div class="line">    {</div>
-<div class="line">    <span class="keyword">public</span>:</div>
-<div class="line">        <span class="keyword">using</span> parameters_t = nkr::tuple::templates_t&lt;parameters_p...&gt;;</div>
-<div class="line">    };</div>
-<div class="line"> </div>
-<div class="line">    <span class="comment">// but never any qualification of any other type</span></div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tr&lt;b_t&lt;&gt;&gt; == <span class="keyword">false</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tr&lt;const b_t&lt;&gt;&gt; == <span class="keyword">false</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tr&lt;volatile b_t&lt;&gt;&gt; == <span class="keyword">false</span>);</div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tr&lt;const volatile b_t&lt;&gt;&gt; == <span class="keyword">false</span>);</div>
-<div class="line"> </div>
-<div class="line">    <span class="comment">// the &quot;template template indentity trait&quot; for a_t</span></div>
-<div class="line">    <span class="keyword">template</span> &lt;<span class="keyword">template</span> &lt;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ...&gt; <span class="keyword">typename</span> ...&gt; <span class="keyword">typename</span> template_template_p&gt;</div>
-<div class="line">    <span class="keyword">concept </span>a_tttr =</div>
-<div class="line">        nkr::cpp::is_any_tttr&lt;template_template_p, a_t&gt;;</div>
-<div class="line"> </div>
-<div class="line">    <span class="comment">// should constrain to a_t</span></div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tttr&lt;a_t&gt; == <span class="keyword">true</span>);</div>
-<div class="line"> </div>
-<div class="line">    <span class="comment">// and any alias of a_t</span></div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tttr&lt;alias_of_a_t&gt; == <span class="keyword">true</span>);</div>
-<div class="line"> </div>
-<div class="line">    <span class="comment">// but never any other template</span></div>
-<div class="line">    <span class="keyword">static_assert</span>(a_tttr&lt;b_t&gt; == <span class="keyword">false</span>);</div>
-</div><!-- fragment --><p >This includes any qualification and/or alias of a type/instantiated type, and any alias of a template. An identity always has the same base name as the type or template it constrains and is never found in the nkr::generic namespace.</p>
-<p >An identity is the opposite of a generic.</p>
-<h1><a class="anchor" id="autotoc_md7"></a>
+<p >An <code>identity trait</code> is a <a class="el" href="md_include_pages_glossary.html#_a7aaad0a_73cd_4237_92ee_0ea24814c2a7">trait</a> used to constrain inputs to a <b>singular</b> <a class="el" href="md_include_pages_glossary.html#_fd6e7324_a83c_4317_a5a8_9edfabfa7fce">identity</a>, which is opposed to a <a class="el" href="md_include_pages_glossary.html#_df1f9c80_7b88_4247_b9b4_1ca3b0bf2d9a">generic trait</a> which constrains inputs to <b>multiple</b> <a class="el" href="md_include_pages_glossary.html#_fd6e7324_a83c_4317_a5a8_9edfabfa7fce">identities</a>.</p>
+<h1><a class="anchor" id="_abf4372e_9ae6_40b6_96cb_60a40ab5896b"></a>
+inner type</h1>
+<h1><a class="anchor" id="_be26724f_df26_4658_8cab_109d0b853c27"></a>
 instantiated type</h1>
-<h1><a class="anchor" id="autotoc_md8"></a>
+<h1><a class="anchor" id="_530148d0_cb32_40a7_9288_99cff1c667fe"></a>
+interface</h1>
+<h1><a class="anchor" id="_e930ffa6_a82e_461e_9bd9_427f2d51d568"></a>
+interface implementation</h1>
+<h1><a class="anchor" id="_d21a1a63_6ce7_4285_80cb_fb1c7c08c3b7"></a>
+interface specialization</h1>
+<h1><a class="anchor" id="_e0d5f93d_1ba5_4e41_a280_78a557410cc9"></a>
+interface trait</h1>
+<h1><a class="anchor" id="_f2d4e658_c44a_4b89_b00b_35184f78db10"></a>
+label</h1>
+<p >A <code>label</code> is the result of combining a <a class="el" href="md_include_pages_glossary.html#_457a439d_2c16_48e4_9163_1e21aa6b2805">base_name</a>, a <a class="el" href="md_include_pages_glossary.html#_d28459df_56cd_4fe9_92a7_73c78f2f96f4">postfix</a> and any relative <a class="el" href="md_include_pages_glossary.html#_c479bb40_3d82_43ce_b058_3576494604ad">namespaces</a> or directories on disk, in order to uniquely distinguish an <a class="el" href="md_include_pages_glossary.html#_beac6b26_2cf9_4051_99ba_4ae5a39e66ec">entity</a> from other entities. Labels are not to be confused with <a class="el" href="md_include_pages_glossary.html#_e6b57146_2f9c_4636_a4f8_7b2022688e41">label labels</a> which themselves are entities representing labels.</p>
+<h1><a class="anchor" id="_e6b57146_2f9c_4636_a4f8_7b2022688e41"></a>
+label label</h1>
+<p >A <code>label label</code> is a <a class="el" href="md_include_pages_glossary.html#_d5fa5645_f7f9_446a_936d_459b0e0e4982">type</a> with a <a class="el" href="md_include_pages_glossary.html#_d28459df_56cd_4fe9_92a7_73c78f2f96f4">postfix</a> of <code>_lb</code> representing a <a class="el" href="md_include_pages_glossary.html#_f2d4e658_c44a_4b89_b00b_35184f78db10">label</a>. They are used to describe various <a class="el" href="md_include_pages_glossary.html#_beac6b26_2cf9_4051_99ba_4ae5a39e66ec">entities</a> in the <a class="el" href="md_include_pages_glossary.html#_ef6a576b_26d1_4762_b577_3fe83cdee79f">meta-program</a> and are frequently found as <a class="el" href="md_include_pages_glossary.html#_abf4372e_9ae6_40b6_96cb_60a40ab5896b">inner types</a> of <a class="el" href="md_include_pages_glossary.html#_aa695b0f_e642_4521_928e_5deba76d9bc6">tags</a>.</p>
+<h1><a class="anchor" id="_ef6a576b_26d1_4762_b577_3fe83cdee79f"></a>
+meta-program</h1>
+<h1><a class="anchor" id="_c6831e56_fbb1_445d_b3fc_7b35c60286a5"></a>
+method</h1>
+<h1><a class="anchor" id="_c479bb40_3d82_43ce_b058_3576494604ad"></a>
+namespace</h1>
+<h1><a class="anchor" id="_d28459df_56cd_4fe9_92a7_73c78f2f96f4"></a>
 postfix</h1>
-<h1><a class="anchor" id="autotoc_md9"></a>
+<p >A <code>postfix</code> is the right-hand side of a <a class="el" href="md_include_pages_glossary.html#_f2d4e658_c44a_4b89_b00b_35184f78db10">label</a> and is frequently repeated among the labels of <a class="el" href="md_include_pages_glossary.html#_beac6b26_2cf9_4051_99ba_4ae5a39e66ec">entities</a> throughout the entire library. Like <a class="el" href="md_include_pages_glossary.html#_457a439d_2c16_48e4_9163_1e21aa6b2805">base names</a>, postfixes may be repeated even in the same namespace, but only with different base names. The <a class="el" href="md_include_pages_designs.html#_839025a7_339e_4e65_a259_5feacb45ea12">label postfix design</a> is a critical component to the structure of <a class="el" href="namespacenkr.html">nkr</a>. <a class="el" href="md_include_pages_designs.html#_1382824d_0c2f_476c_b433_cf542fd6bdef">A list of postfixes is available here</a>.</p>
+<h1><a class="anchor" id="_75c3be6c_da45_4652_bf67_513fde1b9a06"></a>
+primary entity</h1>
+<p >A <code>primary entity</code> is the most important <a class="el" href="md_include_pages_glossary.html#_beac6b26_2cf9_4051_99ba_4ae5a39e66ec">entity</a> in an <a class="el" href="md_include_pages_glossary.html#_f2fd9706_47ef_4a9d_bb60_39f7055128ee">entity group</a>. Depending on the context, a primary entity may be a <a class="el" href="md_include_pages_glossary.html#_d5fa5645_f7f9_446a_936d_459b0e0e4982">type</a>, a <a class="el" href="md_include_pages_glossary.html#_a13ace0b_d5fa_4445_87cc_c6beca57ff12">template</a>, a <a class="el" href="md_include_pages_glossary.html#_fd358de8_6263_4f8f_b928_180781753d09">template template ad infinitum</a>, a <a class="el" href="md_include_pages_glossary.html#_a7aaad0a_73cd_4237_92ee_0ea24814c2a7">trait</a>, an <a class="el" href="md_include_pages_glossary.html#_530148d0_cb32_40a7_9288_99cff1c667fe">interface</a>, a <a class="el" href="md_include_pages_glossary.html#_c479bb40_3d82_43ce_b058_3576494604ad">namespace</a>, or a <a class="el" href="md_include_pages_glossary.html#_fce2f1b3_466d_4f17_9d2f_45e1b2d1c0e5">function</a>. The primary entity is always used as the <a class="el" href="md_include_pages_glossary.html#_457a439d_2c16_48e4_9163_1e21aa6b2805">base name</a> for each <a class="el" href="md_include_pages_glossary.html#_a76c0f9d_0ab5_41e3_aeea_8a9e66b9a3fa">file group</a>.</p>
+<h1><a class="anchor" id="_4e605182_03fd_45fe_ad99_66ef95f8af15"></a>
+primary inner type</h1>
+<h1><a class="anchor" id="_31e7e083_2557_4598_b990_1b76deabd5fc"></a>
+private namespace</h1>
+<h1><a class="anchor" id="_9f3ee03e_8be9_45ed_96d6_ea4a978e1085"></a>
+public namespace</h1>
+<h1><a class="anchor" id="_320d56ae_eec3_4d75_8ef3_677f4dd31c82"></a>
+static function</h1>
+<h1><a class="anchor" id="_aa695b0f_e642_4521_928e_5deba76d9bc6"></a>
 tag</h1>
 <h1><a class="anchor" id="_a13ace0b_d5fa_4445_87cc_c6beca57ff12"></a>
 template</h1>
 <h1><a class="anchor" id="_fd358de8_6263_4f8f_b928_180781753d09"></a>
-template template</h1>
-<h1><a class="anchor" id="autotoc_md10"></a>
+template template ad infinitum</h1>
+<h1><a class="anchor" id="_a7aaad0a_73cd_4237_92ee_0ea24814c2a7"></a>
 trait</h1>
-<p >A <code>trait</code> is a standard C++20 <code>concept</code> used to constrain <a class="el" href="md_include_pages_glossary.html#_d5fa5645_f7f9_446a_936d_459b0e0e4982">types</a>, <a class="el" href="md_include_pages_glossary.html#_a13ace0b_d5fa_4445_87cc_c6beca57ff12">templates</a>, and <a class="el" href="md_include_pages_glossary.html#_fd358de8_6263_4f8f_b928_180781753d09">template templates</a> to arbitrary precision. There are two kinds of <code>traits</code>, namely <a class="el" href="md_include_pages_glossary.html#_998fbcbf_ece6_455a_9f74_fda2b132fc39">identity traits</a> and <a class="el" href="md_include_pages_glossary.html#_df1f9c80_7b88_4247_b9b4_1ca3b0bf2d9a">generic traits</a>. Almost every type in the library defines traits, and the nkr::generic namespace in particular defines a numerous amount of them.</p>
+<p >A <code>trait</code> is a standard C++20 <code>concept</code> used to constrain <a class="el" href="md_include_pages_glossary.html#_d5fa5645_f7f9_446a_936d_459b0e0e4982">types</a>, <a class="el" href="md_include_pages_glossary.html#_a13ace0b_d5fa_4445_87cc_c6beca57ff12">templates</a>, and <a class="el" href="md_include_pages_glossary.html#_fd358de8_6263_4f8f_b928_180781753d09">template templates ad infinitum</a>. There are three kinds of <code>traits</code>, namely <a class="el" href="md_include_pages_glossary.html#_998fbcbf_ece6_455a_9f74_fda2b132fc39">identity traits</a>, <a class="el" href="md_include_pages_glossary.html#_df1f9c80_7b88_4247_b9b4_1ca3b0bf2d9a">generic traits</a>, and <a class="el" href="md_include_pages_glossary.html#_e0d5f93d_1ba5_4e41_a280_78a557410cc9">interface traits</a>. Almost every <a class="el" href="md_include_pages_glossary.html#_75c3be6c_da45_4652_bf67_513fde1b9a06">primary entity</a> in the library defines at least one trait, and the nkr::generic namespace in particular defines a numerous amount of them. Traits are a first-class citizen in <a class="el" href="conceptnkr_1_1tr.html" title="Used to filter a type by its qualifications, and by other types, templates, identities,...">nkr::tr</a> expressions, along with their related <a class="el" href="md_include_pages_glossary.html#_d5fa5645_f7f9_446a_936d_459b0e0e4982">types</a>, <a class="el" href="md_include_pages_glossary.html#_a13ace0b_d5fa_4445_87cc_c6beca57ff12">templates</a>, and <a class="el" href="md_include_pages_glossary.html#_aa695b0f_e642_4521_928e_5deba76d9bc6">tags</a>. All traits end with the <code>_tr</code> <a class="el" href="md_include_pages_glossary.html#_d28459df_56cd_4fe9_92a7_73c78f2f96f4">postfix</a>.</p>
 <h1><a class="anchor" id="_d5fa5645_f7f9_446a_936d_459b0e0e4982"></a>
 type</h1>
+<h1><a class="anchor" id="_2680c916_75d0_4b99_8aba_cddbcc0b84e9"></a>
+type section</h1>
+<p >A <code>type section</code> is an artificial group of similiar <a class="el" href="md_include_pages_glossary.html#_beac6b26_2cf9_4051_99ba_4ae5a39e66ec">entities</a> found on <a class="el" href="md_include_pages_glossary.html#_d5fa5645_f7f9_446a_936d_459b0e0e4982">type</a>, <a class="el" href="md_include_pages_glossary.html#_a13ace0b_d5fa_4445_87cc_c6beca57ff12">template</a>, and <a class="el" href="md_include_pages_glossary.html#_fd358de8_6263_4f8f_b928_180781753d09">template template ad infinitum</a> declarations. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->

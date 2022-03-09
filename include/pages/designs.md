@@ -2,6 +2,7 @@
 This page contains many key concepts revolving around design decisions that have been made with [nkr](@ref nkr). Each section thoroughly explains why these designs exist and how best to take advantage of them.
 
 - [Global Equality Operators](@ref _1f10466e_b496_498a_a930_6c7227b37371)
+- [Identities](@ref _749bceb9_9b02_4278_bd34_a8a83933e675)
 - [Label Postfixes](@ref _839025a7_339e_4e65_a259_5feacb45ea12)
   - [List of Label Postfixes](@ref _1382824d_0c2f_476c_b433_cf542fd6bdef)
 - [Primary Inner Type](@ref _8f6a1988_bbdb_46ba_8746_40c02acda41c)
@@ -36,6 +37,24 @@ Now we can fully equate values of these two types in every imaginable way:
 @snippet "./docs/src/designs.cpp" _4cb072ae_149f_4024_9145_7592e38ea63e
 
 Because all of these operators are templates, even for non-`constexpr` subjects, `if constexpr` expressions can and should be used to define the algorithms. This allows the compiler to completely optimize away most if not all the function calls that result when equating values of these and other types that have these operators.
+
+---
+
+## Identities {#_749bceb9_9b02_4278_bd34_a8a83933e675}
+[Identities](@ref _fd6e7324_a83c_4317_a5a8_9edfabfa7fce) are an integral part of the library because they provide an abstraction over functionality which necessarily needs multiple syntactical [entities](@ref _beac6b26_2cf9_4051_99ba_4ae5a39e66ec) in order to be uniquely distinguished from other functionalities in the [meta-program](@ref _ef6a576b_26d1_4762_b577_3fe83cdee79f).
+
+We call these distinct functionalities "identities" because each component entity that makes up an identity is integral to the identification of the [primary entity](@ref _75c3be6c_da45_4652_bf67_513fde1b9a06) of interest providing the functionality, such as a [type](@ref _d5fa5645_f7f9_446a_936d_459b0e0e4982), a [template](@ref _a13ace0b_d5fa_4445_87cc_c6beca57ff12), or a [template template ad infinitum](@ref _fd358de8_6263_4f8f_b928_180781753d09).
+
+In order to form an identity, we define the primary entity together with its various [identity tags](@ref _00c037ff_572b_4949_94ba_ced07fe26487) and [identity traits](@ref _998fbcbf_ece6_455a_9f74_fda2b132fc39). We take advantage of the [label postfix design](@ref _839025a7_339e_4e65_a259_5feacb45ea12) and utilize the same [base name](@ref _457a439d_2c16_48e4_9163_1e21aa6b2805) with different [postfixes](@ref _d28459df_56cd_4fe9_92a7_73c78f2f96f4) to strongly signify the relation of these entities to one another.
+
+We'll begin by examining the identity trait and leave the identity tag absent until afterwards:
+@snippet "./docs/src/glossary.cpp" _54c5c7e1_91a3_4d5b_b41d_c158d3b4c573
+
+Here we define the identity traits of a template called "a":
+@snippet "./docs/src/glossary.cpp" _fbae0c33_830c_4106_8c8d_bcbae9a82433
+
+And lastly we define the identity traits of a template template called "a":
+@snippet "./docs/src/glossary.cpp" _7e0fe0cd_2eac_4f85_9539_4a1399492ab0
 
 ---
 
