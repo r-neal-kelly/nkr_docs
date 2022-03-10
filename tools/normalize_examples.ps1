@@ -1,0 +1,2 @@
+cd normalize_examples
+node normalize_examples
