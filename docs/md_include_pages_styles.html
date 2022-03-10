@@ -47,6 +47,7 @@ var searchBox = new SearchBox("searchBox", "search",'Search','.html');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li class="current"><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="concepts.html"><span>Concepts</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
@@ -209,12 +210,12 @@ Names</h2>
 <div class="line">        {</div>
 <div class="line">        }</div>
 <div class="line"> </div>
-<div class="line"><span class="preprocessor">    #if defined(nkr_SIMPLE_GETTER_SETTER)</span></div>
+<div class="line">    <span class="preprocessor">#if defined(nkr_SIMPLE_GETTER_SETTER)</span></div>
 <div class="line">        u64_t&amp; Data()</div>
 <div class="line">        {</div>
 <div class="line">            <span class="keywordflow">return</span> this-&gt;data;</div>
 <div class="line">        }</div>
-<div class="line"><span class="preprocessor">    #elif defined(nkr_COMPLEX_GETTER_SETTER)</span></div>
+<div class="line">    <span class="preprocessor">#elif defined(nkr_COMPLEX_GETTER_SETTER)</span></div>
 <div class="line">        u64_t Data()<span class="keyword"> const</span></div>
 <div class="line"><span class="keyword">        </span>{</div>
 <div class="line">            <span class="keywordflow">return</span> this-&gt;data;</div>
@@ -224,7 +225,7 @@ Names</h2>
 <div class="line">        {</div>
 <div class="line">            this-&gt;data = data;</div>
 <div class="line">        }</div>
-<div class="line"><span class="preprocessor">    #endif</span></div>
+<div class="line">    <span class="preprocessor">#endif</span></div>
 <div class="line">    };</div>
 <div class="line"> </div>
 <div class="line">}</div>
@@ -349,7 +350,7 @@ Names</h2>
 <div class="line"> </div>
 <div class="line"><span class="preprocessor">#define nkr_DO_MACRO(MACRO_PARAMETER_p) \</span></div>
 <div class="line"><span class="preprocessor">nkr_M                                   \</span></div>
-<div class="line"><span class="preprocessor">    (MACRO_PARAMETER_p);                \</span></div>
+<div class="line">    <span class="preprocessor">(MACRO_PARAMETER_p);                \</span></div>
 <div class="line"><span class="preprocessor">nkr_W</span></div>
 <div class="line"> </div>
 <div class="line">    nkr_DO_MACRO(0);</div>

@@ -51,11 +51,16 @@ const /* string_t */    path_to_docs = `../../docs`;
 /* string_t */ function Normalize_File_Text(/* string_t */ file_text)
 {
     const /* regex_t */ fragment_regex = /(?<=<div class="fragment">).*?(?=<\/div><!-- fragment -->)/gs;
+    const /* regex_t */ preprocessor_and_space_regex = /<span class="preprocessor">( +)/g;
     const /* regex_t */ normalized_line_regex = /(?<=<div class="line">)[^ ]/;
-    const /* regex_t */ only_line_space_regex = /(?<=<div class="line">)  +/g;
-    const /* string_t */ line_prefix = `<div class="line">`;
+    const /* regex_t */ line_and_space_regex = /(?<=<div class="line">)  +/g;
+
+    const /* string_t */ preprocessor_tag = `<span class="preprocessor">`;
+    const /* string_t */ line_tag = `<div class="line">`;
 
     let fragments = [];
+
+    file_text = file_text.replace(preprocessor_and_space_regex, `$1${preprocessor_tag}`);
 
     let match;
     while ((match = fragment_regex.exec(file_text)) !== null) {
@@ -67,10 +72,10 @@ const /* string_t */    path_to_docs = `../../docs`;
             fragment.end = match.index + match[0].length;
             fragments.push(fragment);
     
-            let lines = fragment.text.match(only_line_space_regex);
+            let lines = fragment.text.match(line_and_space_regex);
             if (lines !== null) {
                 let min_space_count = Math.min(...lines.map(value => value.length));
-                fragment.text = fragment.text.replace(new RegExp(line_prefix + ' '.repeat(min_space_count), "g"), line_prefix);
+                fragment.text = fragment.text.replace(new RegExp(line_tag + ' '.repeat(min_space_count), "g"), line_tag);
             }
         }
     }

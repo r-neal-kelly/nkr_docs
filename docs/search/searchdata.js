@@ -1,12 +1,13 @@
 var indexSectionsWithContent =
 {
-  0: "cdgnstv",
+  0: "cdginstv",
   1: "c",
   2: "n",
   3: "t",
   4: "tv",
-  5: "dgnst",
-  6: "n"
+  5: "in",
+  6: "dgnst",
+  7: "n"
 };
 
 var indexSectionNames =
@@ -16,8 +17,9 @@ var indexSectionNames =
   2: "namespaces",
   3: "functions",
   4: "typedefs",
-  5: "pages",
-  6: "concepts"
+  5: "groups",
+  6: "pages",
+  7: "concepts"
 };
 
 var indexSectionLabels =
@@ -27,7 +29,8 @@ var indexSectionLabels =
   2: "Namespaces",
   3: "Functions",
   4: "Typedefs",
-  5: "Pages",
-  6: "Concepts"
+  5: "Modules",
+  6: "Pages",
+  7: "Concepts"
 };
 

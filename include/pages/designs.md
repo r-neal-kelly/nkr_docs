@@ -1,5 +1,8 @@
 # Designs
-Many key concepts concerning design exist in @ref nkr, and their presence is felt all throughout the library. Their purposes involve the goals of memorization, scalability, performance, readability, and more. This page exists to argue the case for each design decision, to show how to take advantage of each pattern, and importantly, how to maintain that pattern when adding to the library.
+
+[nkr]:  @ref nkr
+
+Many key concepts concerning design exist in [nkr][nkr], and their presence is felt all throughout the library. Their purposes involve the goals of memorization, scalability, performance, readability, and more. This page exists to argue the case for each design decision, to show how to take advantage of each pattern, and importantly, how to maintain that pattern when adding to the library.
 
 Every single one of these designs has a non-trivial purpose and a lot of research and prototyping to back them up. A voluminous number of code examples exist per design and should be taken full advantage of in order to grasp why and how each pattern exists to specifically benefit you and your end-users. Every single piece of code is sampled from various test suites and thus is always up-to-date. Due to the length of these code examples, a table of contents located to your right is available for your convenience.
 
@@ -12,7 +15,7 @@ Every single one of these designs has a non-trivial purpose and a lot of researc
 
 ## Global Equality Operators {#_1f10466e_b496_498a_a930_6c7227b37371}
 
-We define equality operators outside of the @ref nkr namespace and in the global scope. We follow a **very specific pattern**. For `constexpr` types we write:
+We define equality operators outside of the [nkr][nkr] namespace and in the global scope. We follow a **very specific pattern**. For `constexpr` types we write:
 
 @snippet "./docs/src/designs.cpp" _e18507aa_b4f3_4469_b0a6_ff276fabf1b6
 
@@ -72,7 +75,7 @@ There are a number of postfixes on various labels throughout the library. They a
 
 @snippet "./docs/src/designs.cpp" _b516dddc_3630_470a_acf5_f070b2d4ffd1
 
-You may have noticed that even the template parameter has a postifx, in particular `_p`. This allows for the easy definition of an alias with the same base name inside the template, a very frequent occurrence in @ref nkr:
+You may have noticed that even the template parameter has a postifx, in particular `_p`. This allows for the easy definition of an alias with the same base name inside the template, a very frequent occurrence in [nkr][nkr]:
 
 @snippet "./docs/src/designs.cpp" _d77d72c6_49d4_48d5_8799_655eef4bdebb
 
@@ -94,7 +97,7 @@ Postfixes even have a use in the naming of files, in particular header files. Th
 
 @snippet "./docs/src/designs.cpp" _dda6b4f4_9596_4713_8d31_f48990e0c898
 
-The following is a comprehensive list of postfixes and their meanings as found throughout @ref nkr:
+The following is a comprehensive list of postfixes and their meanings as found throughout [nkr][nkr]:
 
 ### List of Label Postfixes {#_1382824d_0c2f_476c_b433_cf542fd6bdef}
 

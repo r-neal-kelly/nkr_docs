@@ -47,6 +47,7 @@ var searchBox = new SearchBox("searchBox", "search",'Search','.html');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li class="current"><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="concepts.html"><span>Concepts</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
@@ -573,7 +574,7 @@ Label Postfixes</h1>
 <div class="line">{</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">};</div>
-</div><!-- fragment --><p >You may have noticed that even the template parameter has a postifx, in particular <code>_p</code>. This allows for the easy definition of an alias with the same base name inside the template, a very frequent occurrence in nkr:</p>
+</div><!-- fragment --><p >You may have noticed that even the template parameter has a postifx, in particular <code>_p</code>. This allows for the easy definition of an alias with the same base name inside the template, a very frequent occurrence in <a class="el" href="namespacenkr.html">nkr</a>:</p>
 <div class="fragment"><div class="line"><span class="comment">// &quot;_p&quot; is for &quot;parameter&quot;</span></div>
 <div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> parameter_p&gt;</div>
 <div class="line"><span class="keyword">class </span>example_t</div>
@@ -632,21 +633,21 @@ Label Postfixes</h1>
 <div class="line">    <span class="keyword">true</span>;</div>
 </div><!-- fragment --><p >nkr::tuple::templates_t is an example of this indefinite postfix pattern coming into play.</p>
 <p >Postfixes even have a use in the naming of files, in particular header files. The most common postfixes come in a set of five, and like the various entities in the library proper, these postfixes are use to coordinate various files that have the same base name and imply a distinct relation to one another. They are in addition to the postfix of the primary entity contained in the files:</p>
-<div class="fragment"><div class="line">    <span class="comment">// The non-postfix header pulls in everything but the &quot;_dox&quot; below. This is what you would normally use in your code.</span></div>
-<div class="line"><span class="preprocessor">    #include &quot;nkr/pointer/cpp_t.h&quot;</span></div>
+<div class="fragment"><div class="line"><span class="comment">// The non-postfix header pulls in everything but the &quot;_dox&quot; below. This is what you would normally use in your code.</span></div>
+<div class="line"><span class="preprocessor">#include &quot;nkr/pointer/cpp_t.h&quot;</span></div>
 <div class="line"> </div>
-<div class="line">    <span class="comment">// &quot;_dec&quot; provides the declarations of entities contained in this header-group. The go-to file to know what is available.</span></div>
-<div class="line"><span class="preprocessor">    #include &quot;nkr/pointer/cpp_t_dec.h&quot;</span></div>
+<div class="line"><span class="comment">// &quot;_dec&quot; provides the declarations of entities contained in this header-group. The go-to file to know what is available.</span></div>
+<div class="line"><span class="preprocessor">#include &quot;nkr/pointer/cpp_t_dec.h&quot;</span></div>
 <div class="line"> </div>
-<div class="line">    <span class="comment">// &quot;_dec_def&quot; defines the constexpr and other meta entities of &quot;_dec&quot;. A helpful technical distinction from &quot;_def&quot;.</span></div>
-<div class="line"><span class="preprocessor">    #include &quot;nkr/pointer/cpp_t_dec_def.h&quot;</span></div>
+<div class="line"><span class="comment">// &quot;_dec_def&quot; defines the constexpr and other meta entities of &quot;_dec&quot;. A helpful technical distinction from &quot;_def&quot;.</span></div>
+<div class="line"><span class="preprocessor">#include &quot;nkr/pointer/cpp_t_dec_def.h&quot;</span></div>
 <div class="line"> </div>
-<div class="line">    <span class="comment">// &quot;_def&quot; defines the non-constexpr and non-meta entities of &quot;_dec&quot;.</span></div>
-<div class="line"><span class="preprocessor">    #include &quot;nkr/pointer/cpp_t_def.h&quot;</span></div>
+<div class="line"><span class="comment">// &quot;_def&quot; defines the non-constexpr and non-meta entities of &quot;_dec&quot;.</span></div>
+<div class="line"><span class="preprocessor">#include &quot;nkr/pointer/cpp_t_def.h&quot;</span></div>
 <div class="line"> </div>
-<div class="line">    <span class="comment">// &quot;_dox&quot; provides the doxygen comments used to create the documention for the entities of &quot;_dec&quot;.</span></div>
-<div class="line"><span class="preprocessor">    #include &quot;nkr/pointer/cpp_t_dox.h&quot;</span></div>
-</div><!-- fragment --><p >The following is a comprehensive list of postfixes and their meanings as found throughout nkr:</p>
+<div class="line"><span class="comment">// &quot;_dox&quot; provides the doxygen comments used to create the documention for the entities of &quot;_dec&quot;.</span></div>
+<div class="line"><span class="preprocessor">#include &quot;nkr/pointer/cpp_t_dox.h&quot;</span></div>
+</div><!-- fragment --><p >The following is a comprehensive list of postfixes and their meanings as found throughout <a class="el" href="namespacenkr.html">nkr</a>:</p>
 <h2><a class="anchor" id="_1382824d_0c2f_476c_b433_cf542fd6bdef"></a>
 List of Label Postfixes</h2>
 <ul>
