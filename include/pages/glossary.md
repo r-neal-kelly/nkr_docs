@@ -35,6 +35,7 @@
 [meta-program]:                                     @ref _ef6a576b_26d1_4762_b577_3fe83cdee79f
 [method]:                                           @ref _c6831e56_fbb1_445d_b3fc_7b35c60286a5
 [namespace]:                                        @ref _c479bb40_3d82_43ce_b058_3576494604ad
+[outer template]:                                   @ref _8d98abf9_d254_4d79_8a45_fd732c7c519b
 [outer type]:                                       @ref _d863f410_28d6_4442_a353_f2851abc33f5
 [postfix]:                                          @ref _d28459df_56cd_4fe9_92a7_73c78f2f96f4
 [primary entity]:                                   @ref _75c3be6c_da45_4652_bf67_513fde1b9a06
@@ -159,6 +160,8 @@ A `literal value` is an instance of a [built-in type][built-in type], a [C++ lit
 ## method {#_c6831e56_fbb1_445d_b3fc_7b35c60286a5}
 
 ## namespace {#_c479bb40_3d82_43ce_b058_3576494604ad}
+
+## outer template {#_8d98abf9_d254_4d79_8a45_fd732c7c519b}
 
 ## outer type {#_d863f410_28d6_4442_a353_f2851abc33f5}
 

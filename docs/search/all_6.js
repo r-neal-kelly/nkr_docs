@@ -1,7 +1,7 @@
 var searchData=
 [
   ['t_0',['t',['../namespacenkr.html#aecb8f05af8f5d93778ce60239336d8e3',1,'nkr']]],
-  ['tag_5flb_1',['tag_lb',['../classnkr_1_1constant__tg_1_1tag__lb.html',1,'nkr::constant_tg::tag_lb'],['../classnkr_1_1constant__ttg_1_1tag__lb.html',1,'nkr::constant_ttg&lt; typename &gt;::tag_lb']]],
+  ['tag_5flb_1',['tag_lb',['../classnkr_1_1constant__tg_1_1tag__lb.html',1,'nkr::constant_tg::tag_lb'],['../classnkr_1_1constant__ttg_1_1tag__lb.html',1,'nkr::constant_ttg&lt;... &gt;::tag_lb']]],
   ['template_5flb_2',['template_lb',['../classnkr_1_1constant__ttg_1_1template__lb.html',1,'nkr::constant_ttg']]],
   ['tools_3',['Tools',['../md_include_pages_tools.html',1,'']]],
   ['tr_4',['TR',['../namespacenkr.html#a1898ff80c7081762a1840f00883fa258',1,'nkr']]],
