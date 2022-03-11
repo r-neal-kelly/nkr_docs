@@ -7,16 +7,14 @@
 const /* object_t */    fs  = require(`fs`);
 const /* string_t */    path_to_docs = `../../docs`;
 
-/* string_t[] */ async function HTML_Files(directory_path)
+/* string_t[] */ async function Read_Directory(directory_path)
 {
-    const /* regex_t */ html_regex = /\.html/;
-
     return new Promise(function (/* function_t */ Resolve, /* function_t */ Reject) {
         fs.readdir(directory_path, function (/* error_t */ error, /* string_t[] */ files) {
             if (error) {
                 Reject(error);
             } else {
-                Resolve(files.filter(/* string_t */ value => html_regex.test(value)));
+                Resolve(files);
             }
         });
     });
@@ -53,7 +51,7 @@ const /* string_t */    path_to_docs = `../../docs`;
     const /* regex_t */ fragment_regex = /(?<=<div class="fragment">).*?(?=<\/div><!-- fragment -->)/gs;
     const /* regex_t */ preprocessor_and_space_regex = /<span class="preprocessor">( +)/g;
     const /* regex_t */ normalized_line_regex = /(?<=<div class="line">)[^ ]/;
-    const /* regex_t */ line_and_space_regex = /(?<=<div class="line">)  +/g;
+    const /* regex_t */ line_indent_regex = /(?<=<div class="line">)  +/g;
 
     const /* string_t */ preprocessor_tag = `<span class="preprocessor">`;
     const /* string_t */ line_tag = `<div class="line">`;
@@ -72,14 +70,14 @@ const /* string_t */    path_to_docs = `../../docs`;
             fragment.end = match.index + match[0].length;
             fragments.push(fragment);
     
-            let lines = fragment.text.match(line_and_space_regex);
-            if (lines !== null) {
-                let min_space_count = Math.min(...lines.map(value => value.length));
+            let line_indents = fragment.text.match(line_indent_regex);
+            if (line_indents !== null) {
+                let min_space_count = Math.min(...line_indents.map(value => value.length));
                 fragment.text = fragment.text.replace(new RegExp(line_tag + ' '.repeat(min_space_count), "g"), line_tag);
             }
         }
     }
-    
+
     for (let idx = fragments.length - 1; idx >= 0; idx -= 1) {
         let fragment = fragments[idx];
     
@@ -95,7 +93,7 @@ const /* string_t */    path_to_docs = `../../docs`;
 (/* void_t */ async function Main()
 {
     try {
-        let html_files = await HTML_Files(path_to_docs);
+        let html_files = (await Read_Directory(path_to_docs)).filter(/* string_t */ value => /\.html/.test(value));
 
         for (let html_file of html_files) {
             try {
