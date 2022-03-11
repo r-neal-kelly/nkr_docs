@@ -166,6 +166,11 @@ Common alias names for a `primary inner type` are `type_t`, `value_t`, and `unit
 
 ---
 
+## Primary Inner Value {#_94c723c3_0213_4866_a383_50edc6ef02bd}
+(W.I.P)
+
+---
+
 ## Qualification Support {#_a742d628_4b70_448e_bdc4_594f6954bdb2}
 (W.I.P)
 
@@ -174,4 +179,9 @@ This library provides methods available for `non-qualified`, `const`, `volatile`
 ---
 
 ## Type Documentation {#_5451462d_8ed6_4fc2_86f0_b2f98e5efdc6}
+(W.I.P)
+
+---
+
+## Type Sections {#_5a685522_8b24_41da_83f3_03603bf8965c}
 (W.I.P)

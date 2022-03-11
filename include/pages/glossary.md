@@ -4,6 +4,7 @@
 [base name]:                                        @ref _457a439d_2c16_48e4_9163_1e21aa6b2805
 [built-in type]:                                    @ref _94723553_416d_4b32_a557_3be4476128cb
 [capacity]:                                         @ref _d80dc763_eb25_46ae_a309_2f5c2c976c7d
+[caster]:                                           @ref _7cc08c80_b12d_4849_abac_d2e553b74267
 [compile-time]:                                     @ref _b11fed50_b607_4f57_b5e7_af27886ddb6a
 [entity]:                                           @ref _beac6b26_2cf9_4051_99ba_4ae5a39e66ec
 [entity group]:                                     @ref _f2fd9706_47ef_4a9d_bb60_39f7055128ee
@@ -14,6 +15,7 @@
 [generic tag]:                                      @ref _59d693c9_3962_4c49_9f0e_fc3c8a706b84
 [generic trait]:                                    @ref _df1f9c80_7b88_4247_b9b4_1ca3b0bf2d9a
 [identity]:                                         @ref _fd6e7324_a83c_4317_a5a8_9edfabfa7fce
+[identity inner type trait]:                        @ref _c4966e47_6f21_49bc_b253_75a881583731
 [identity tag]:                                     @ref _00c037ff_572b_4949_94ba_ced07fe26487
 [identity template tag]:                            @ref _af64f18b_d770_41fb_929e_7eb973ddfd03
 [identity template trait]:                          @ref _2d942eaa_04fe_4671_8aa0_3969a2bcf5b7
@@ -35,17 +37,20 @@
 [meta-program]:                                     @ref _ef6a576b_26d1_4762_b577_3fe83cdee79f
 [method]:                                           @ref _c6831e56_fbb1_445d_b3fc_7b35c60286a5
 [namespace]:                                        @ref _c479bb40_3d82_43ce_b058_3576494604ad
+[operator]:                                         @ref _611647a3_9703_4f6c_bb5f_84132533dc23
 [outer template]:                                   @ref _8d98abf9_d254_4d79_8a45_fd732c7c519b
 [outer type]:                                       @ref _d863f410_28d6_4442_a353_f2851abc33f5
 [postfix]:                                          @ref _d28459df_56cd_4fe9_92a7_73c78f2f96f4
 [primary entity]:                                   @ref _75c3be6c_da45_4652_bf67_513fde1b9a06
 [primary inner type]:                               @ref _4e605182_03fd_45fe_ad99_66ef95f8af15
+[primary inner value]:                              @ref _efa732b7_12bb_4ff3_bdf7_d309717a1699
 [private namespace]:                                @ref _31e7e083_2557_4598_b990_1b76deabd5fc
 [public namespace]:                                 @ref _9f3ee03e_8be9_45ed_96d6_ea4a978e1085
 [run-time]:                                         @ref _6486340c_e540_4c05_8d06_90e4cc18c1b3
 [static function]:                                  @ref _320d56ae_eec3_4d75_8ef3_677f4dd31c82
 [tag]:                                              @ref _aa695b0f_e642_4521_928e_5deba76d9bc6
 [template]:                                         @ref _a13ace0b_d5fa_4445_87cc_c6beca57ff12
+[template argument]:                                @ref _c1c0e928_ba39_4137_babb_17726e128d1c
 [template generic]:                                 @ref _453f9a0f_4bb8_4b45_97e5_f8d484fa72ce
 [template parameter]:                               @ref _0925b426_5838_49f6_9104_5f2ca97e27bf
 [template parameter list]:                          @ref _a3d7c8fa_79b9_4444_91c5_acdc6dbd60a1
@@ -59,6 +64,7 @@
 [trait]:                                            @ref _a7aaad0a_73cd_4237_92ee_0ea24814c2a7
 [type]:                                             @ref _d5fa5645_f7f9_446a_936d_459b0e0e4982
 [type generic]:                                     @ref _d2e01c1b_1c3f_4ff9_a58f_ee7a1569eae6
+[type instance]:                                    @ref _7c636ccf_7f4b_40c1_a955_2dca05506ac4
 [type section]:                                     @ref _2680c916_75d0_4b99_8aba_cddbcc0b84e9
 [unit]:                                             @ref _77b87f74_6ca6_445c_861e_0147d4881768
 [unit count]:                                       @ref _641f8694_631d_482c_89b3_effb15244c61
@@ -84,6 +90,8 @@ A `base name` is the left-hand side of a [label][label] and is frequently repeat
 
 ## capacity {#_d80dc763_eb25_46ae_a309_2f5c2c976c7d}
 A `capacity` is the number of [units][unit] that will fit within an allocated memory space. This is wholly distinct from a [unit count][unit count] which is the number of units **in use** within the limits of the capacity. A capacity may sometimes be referred to as a [total unit count][total unit count].
+
+## caster {#_7cc08c80_b12d_4849_abac_d2e553b74267}
 
 ## compile-time {#_b11fed50_b607_4f57_b5e7_af27886ddb6a}
 
@@ -113,6 +121,8 @@ A `generic trait` is a [trait][trait] used to constrain inputs to **multiple** [
 
 ## identity {#_fd6e7324_a83c_4317_a5a8_9edfabfa7fce}
 An `identity` is an [entity group][entity group] representing a singularly unique [type][type], or all [instantiated types][instantiated type] of a singularly unique [template][template] or all [instantiated types][instantiated type] of a singularly unique [template template ad infinitum][template template ad infinitum]. This entity group consists of the [primary entity][primary entity], one or more [identity traits][identity trait], and one or more [identity tags][identity tag]. All public [types][type], [templates][template], [template templates ad infinitum][template template ad infinitum], and [interfaces][interface] in @ref nkr have an identity. An identity is distinctly opposed to a [generic][generic] which cannot be an identity.
+
+## identity inner type trait {#_c4966e47_6f21_49bc_b253_75a881583731}
 
 ## identity tag {#_00c037ff_572b_4949_94ba_ced07fe26487}
 An `identity tag` is a [tag][tag] used to represent a **singular** [identity][identity], which is opposed to a [generic tag][generic tag] which represents **multiple** [identities][identity]. An [identity][identity] may have any number of tags including an [identity type tag][identity type tag], an [identity template tag][identity template tag], and an [identity template template ad infinitum tag].
@@ -153,13 +163,15 @@ A `label` is the result of combining a [base_name][base name], a [postfix][postf
 A `label label` is a [type][type] with a [postfix][postfix] of `_lb` representing a [label][label]. They are used to describe various [entities][entity] in the [meta-program][meta-program] and are frequently found as [inner types][inner type] of [tags][tag]. All label labels have the `_lb` [postfix][postfix].
 
 ## literal value {#_aafc1022_913c_4a2a_8747_dacdbef8f762}
-A `literal value` is an instance of a [built-in type][built-in type], a [C++ literal type](https://en.cppreference.com/w/cpp/named_req/LiteralType), or potentially a [C++ literal overload](https://en.cppreference.com/w/cpp/language/user_literal).
+A `literal value` is a [type instance][type instance] of a [built-in type][built-in type], a [C++ literal type](https://en.cppreference.com/w/cpp/named_req/LiteralType), or potentially a [C++ literal overload](https://en.cppreference.com/w/cpp/language/user_literal).
 
 ## meta-program {#_ef6a576b_26d1_4762_b577_3fe83cdee79f}
 
 ## method {#_c6831e56_fbb1_445d_b3fc_7b35c60286a5}
 
 ## namespace {#_c479bb40_3d82_43ce_b058_3576494604ad}
+
+## operator {#_611647a3_9703_4f6c_bb5f_84132533dc23}
 
 ## outer template {#_8d98abf9_d254_4d79_8a45_fd732c7c519b}
 
@@ -172,6 +184,8 @@ A `postfix` is the right-hand side of a [label][label] and is frequently repeate
 A `primary entity` is the most important [entity][entity] in an [entity group][entity group]. Depending on the context, a primary entity may be a [type][type], a [template][template], a [template template ad infinitum][template template ad infinitum], a [trait][trait], an [interface][interface], a [namespace][namespace], or a [function][function]. The primary entity is always used as the [base name][base name] for each [file group][file group].
 
 ## primary inner type {#_4e605182_03fd_45fe_ad99_66ef95f8af15}
+
+## primary inner value {#_efa732b7_12bb_4ff3_bdf7_d309717a1699}
 
 ## private namespace {#_31e7e083_2557_4598_b990_1b76deabd5fc}
 A `private namespace` is a [namespace][namespace] not intended or designed for use by code including @ref nkr functionality. Like private [methods][method] on [types][type], private namespaces allow for implementation details that are more subject to change than their public counterparts. Unlike their method cousins however, private namespaces also allow for the avoidance of [label][label] collisions for the most common of implementation names. Most private namespaces have a complementing [public namespace][public namespace] with the same name, so in order to avoid label collisions private namespaces *always* have a `$` suffixed on the end of their label indicating the private nature of the namespace. All private namespaces otherwise have no [postfix][postfix].
@@ -187,6 +201,8 @@ A `public namespace` is a [namespace][namespace] that contains [entities][entity
 A `tag` is a [type][type], a [template][template], or a [template template ad infinitum][template template ad infinitum] that is used as a surrogate to represent a [primary entity][primary entity] in the [meta-program][meta-program], especially within [template parameter lists][template parameter list]. They may represent other [types][type], [templates][template], [template templates ad infinitum][template template ad infinitum], or they may represent [traits][trait] or [interfaces][interface]. They play an important role in side-stepping limitations of the [meta-program][meta-program] and the limitations of a few abstractions. For example, a [trait][trait] cannot be passed through a [template parameter list][template parameter list], but a tag can be. In the case of built-in abstractions, a tag may be used to represent [identities][identity] that are otherwise syntactically non-representable, e.g. nkr::pointer::cpp_tg can be used in place of `*`, and nkr::array::cpp_tg for `[]`, notably without any [capacity][capacity]. A tag always has at least one [label label][label label] as an [inner type][inner type] so as to be identifiable, especially regarding what kind of primary entity it represents. All tags end with the `_tg` [postfix][postfix].
 
 ## template {#_a13ace0b_d5fa_4445_87cc_c6beca57ff12}
+
+## template argument {#_c1c0e928_ba39_4137_babb_17726e128d1c}
 
 ## template generic {#_453f9a0f_4bb8_4b45_97e5_f8d484fa72ce}
 
@@ -216,11 +232,13 @@ A `trait` is a standard C++20 `concept` used to constrain [types][type], [templa
 
 ## type generic {#_d2e01c1b_1c3f_4ff9_a58f_ee7a1569eae6}
 
+## type instance {#_7c636ccf_7f4b_40c1_a955_2dca05506ac4}
+
 ## type section {#_2680c916_75d0_4b99_8aba_cddbcc0b84e9}
 A `type section` is an artificial group of similar [entities][entity] found on [type][type], [template][template], and [template template ad infinitum][template template ad infinitum] declarations.
 
 ## unit {#_77b87f74_6ca6_445c_861e_0147d4881768}
-A `unit` is a contextually indivisible instance of a `unit_t`, a commonly used [label][label] for a [primary inner type][primary inner type] of [outer types][outer type] that work with more than one instance of their primary inner type, such as arrays, linked lists, hash-maps, and allocators.
+A `unit` is a contextually indivisible [type instance][type instance] of a `unit_t`, which is a commonly used [label][label] for a [primary inner type][primary inner type] of [outer types][outer type] that work with more than one instance of their primary inner type, such as arrays, linked lists, hash-maps, and allocators.
 
 ## unit count {#_641f8694_631d_482c_89b3_effb15244c61}
 A `unit count` is the number of [units][unit] that are currently occupying a [capacity][capacity]. This is wholly distinct from a [capacity][capacity] which is the total number of units **that can fit** within the limits of a memory space. Not to be confused with a [total unit count][total unit count] which is another name for [capacity][capacity].
