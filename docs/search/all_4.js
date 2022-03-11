@@ -14,7 +14,7 @@ var searchData=
   ['negatable_11',['negatable',['../namespacenkr_1_1negatable.html',1,'nkr']]],
   ['nkr_12',['nkr',['../namespacenkr.html',1,'']]],
   ['nkr_20docs_13',['nkr docs',['../index.html',1,'']]],
-  ['nkr_3a_3aconstant_5ft_14',['nkr::constant_t',['../group____144407f2__f15c__4e13__9507__168de44b2b1f.html',1,'']]],
+  ['nkr_3a_3aconstant_5ft_20identity_14',['nkr::constant_t Identity',['../group____144407f2__f15c__4e13__9507__168de44b2b1f.html',1,'']]],
   ['none_15',['none',['../namespacenkr_1_1none.html',1,'nkr']]],
   ['os_16',['os',['../namespacenkr_1_1os.html',1,'nkr']]],
   ['positive_17',['positive',['../namespacenkr_1_1positive.html',1,'nkr']]],

@@ -1,7 +1,7 @@
 var indexSectionsWithContent =
 {
   0: "cdginstv",
-  1: "c",
+  1: "cit",
   2: "n",
   3: "t",
   4: "tv",
