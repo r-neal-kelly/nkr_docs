@@ -4,8 +4,25 @@
 
 `use strict`;
 
-const /* object_t */    fs  = require(`fs`);
-const /* string_t */    path_to_docs = `../../docs`;
+const /* object_t */ fs     = require(`fs`);
+const /* object_t */ path   = require(`path`);
+
+const /* string_t */ help_message = `
+Info:
+
+    This program will normalize the indentation of code examples in doxygen generated html files.
+    Works with doxygen version 1.9.3.
+
+Parameter #1:
+
+    relative or absolute path, e.g. "./docs":
+        Must be the folder doxygen generates its html files in.
+        All html files must be in the same folder.
+        Will not work with the doxygen option to separate files into multiple directories.
+    
+    "-h" or "--help" or (none):
+        Displays this message in the terminal.
+`;
 
 /* string_t[] */ async function Read_Directory(directory_path)
 {
@@ -92,26 +109,40 @@ const /* string_t */    path_to_docs = `../../docs`;
 
 (/* void_t */ async function Main()
 {
-    try {
-        let html_files = (await Read_Directory(path_to_docs)).filter(/* string_t */ value => /\.html/.test(value));
+    const /* string_t[] */ arguments = process.argv.slice(2);
 
-        for (let html_file of html_files) {
-            try {
-                let file_text = await Read_File(`${path_to_docs}/${html_file}`);
-                let normalized_file_text = Normalize_File_Text(file_text);
+    if (arguments[0] == `-h` || arguments[0] == `--help` || arguments[0] == null) {
+        console.log(help_message);
+    } else {
+        const /* string_t */ path_to_docs = path.resolve(arguments[0]);
+
+        try {
+            let html_files = (await Read_Directory(path_to_docs)).filter(/* string_t */ value => /\.html/.test(value));
+    
+            for (let html_file of html_files) {
                 try {
-                    await Write_File(`${path_to_docs}/${html_file}`, normalized_file_text);
+                    let file_text = await Read_File(`${path_to_docs}/${html_file}`);
+                    let normalized_file_text = Normalize_File_Text(file_text);
+                    try {
+                        await Write_File(`${path_to_docs}/${html_file}`, normalized_file_text);
+                    } catch (error) {
+                        console.log(`\n`);
+                        console.log(`failed to write html file: ${html_file}`);
+                        console.log(error);
+                        console.log(`\n`);
+                    }
                 } catch (error) {
-                    console.log(`failed to write html file: ${html_file}`);
+                    console.log(`\n`);
+                    console.log(`failed to read html file: ${html_file}`);
                     console.log(error);
+                    console.log(`\n`);
                 }
-            } catch (error) {
-                console.log(`failed to read html file: ${html_file}`);
-                console.log(error);
             }
+        } catch(error) {
+            console.log(`\n`);
+            console.log(`failed to read docs directory: ${path_to_docs}`);
+            console.log(error);
+            console.log(`\n`);
         }
-    } catch(error) {
-        console.log(`failed to read docs directory`);
-        console.log(error);
     }
 })();

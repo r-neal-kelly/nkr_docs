@@ -8,12 +8,12 @@ if (Test-Path -LiteralPath $docs_path -PathType Container) {
 }
 
 doxygen $docs_config
-
-cd $normalize_examples_path
-node normalize_examples
-cd $top_path
-
 Write-Host
-Write-Host press any key to continue...
+
+Write-Host "normalizing code examples..."
+node "$normalize_examples_path\normalize_examples" $docs_path
+Write-Host
+
+Write-Host "press any key to continue..."
 Write-Host
 Read-Host
