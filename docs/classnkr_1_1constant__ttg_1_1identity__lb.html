@@ -106,10 +106,14 @@ var searchBox = new SearchBox("searchBox", "search",'Search','.html');
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename ...&gt;<br />
 class nkr::constant_ttg&lt;... &gt;::identity_lb</div><p >A <a class="el" href="md_include_pages_glossary.html#_e6b57146_2f9c_4636_a4f8_7b2022688e41">label label</a> that identifies its <a class="el" href="md_include_pages_glossary.html#_8d98abf9_d254_4d79_8a45_fd732c7c519b">outer template</a> and instantiated <a class="el" href="md_include_pages_glossary.html#_d863f410_28d6_4442_a353_f2851abc33f5">outer type</a> as a member of an <a class="el" href="md_include_pages_glossary.html#_fd6e7324_a83c_4317_a5a8_9edfabfa7fce">identity</a>. </p>
-<div class="fragment"><div class="line">TEST_CASE(<span class="stringliteral">&quot;should satisfy the appropriate generic template tag and generic type tag&quot;</span>)</div>
+<h3><a class="anchor" id="autotoc_md7"></a>
+Examples:</h3>
+<div class="fragment"><div class="line">TEST_CASE(<span class="stringliteral">&quot;should allow its outer template to satisfy the appropriate generic template tag&quot;</span>)</div>
 <div class="line">{</div>
 <div class="line">    <span class="keyword">static_assert</span>(nkr::generic::tag::identity_ttr&lt;nkr::constant_ttg&gt;);</div>
-<div class="line"> </div>
+<div class="line">}</div>
+</div><!-- fragment --> <div class="fragment"><div class="line">TEST_CASE(<span class="stringliteral">&quot;should allow its instantiated outer type to satisfy the appropriate generic type tag&quot;</span>)</div>
+<div class="line">{</div>
 <div class="line">    <span class="keyword">static_assert</span>(nkr::generic::tag::identity_tr&lt;nkr::constant_ttg&lt;&gt;&gt;);</div>
 <div class="line">    <span class="keyword">static_assert</span>(nkr::generic::tag::identity_tr&lt;const nkr::constant_ttg&lt;&gt;&gt;);</div>
 <div class="line">    <span class="keyword">static_assert</span>(nkr::generic::tag::identity_tr&lt;volatile nkr::constant_ttg&lt;&gt;&gt;);</div>

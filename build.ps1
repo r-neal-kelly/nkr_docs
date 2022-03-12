@@ -13,7 +13,3 @@ Write-Host
 Write-Host "normalizing code examples..."
 node "$normalize_examples_path\normalize_examples" $docs_path
 Write-Host
-
-Write-Host "press any key to continue..."
-Write-Host
-Read-Host

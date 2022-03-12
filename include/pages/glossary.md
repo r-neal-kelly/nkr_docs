@@ -6,6 +6,7 @@
 [capacity]:                                         @ref _d80dc763_eb25_46ae_a309_2f5c2c976c7d
 [caster]:                                           @ref _7cc08c80_b12d_4849_abac_d2e553b74267
 [compile-time]:                                     @ref _b11fed50_b607_4f57_b5e7_af27886ddb6a
+[complement]:                                       @ref _015c3e2c_827b_46b1_bdd0_3a337bbd3f60
 [entity]:                                           @ref _beac6b26_2cf9_4051_99ba_4ae5a39e66ec
 [entity group]:                                     @ref _f2fd9706_47ef_4a9d_bb60_39f7055128ee
 [file]:                                             @ref _8f685d74_eeb0_499a_a597_2eb707d61e69
@@ -94,6 +95,9 @@ A `capacity` is the number of [units][unit] that will fit within an allocated me
 ## caster {#_7cc08c80_b12d_4849_abac_d2e553b74267}
 
 ## compile-time {#_b11fed50_b607_4f57_b5e7_af27886ddb6a}
+
+## complement {#_015c3e2c_827b_46b1_bdd0_3a337bbd3f60}
+A `complement` is a related [static function][static function], [method][method], [operator][operator], or [caster][caster] that completes the functionality of its relations. For example, a [type][type] can have a set of [methods] with the same name but different qualifications for `this`, or a set of [static function][static function] may exist that covers logical operators such as `OR` and `NOR`.
 
 ## entity {#_beac6b26_2cf9_4051_99ba_4ae5a39e66ec}
 An `entity` is an indivisibly unique subject represented by a uniquely named [label][label]. [Types][type], [templates][template], [template templates ad infinitum][template template ad infinitum], [tags][tag], [traits][trait], [interfaces][interface], [functions][function], [methods][method], [files][file], and more all all entities.
