@@ -93,7 +93,7 @@ You may have also noticed the distinction between `_tg` and `_ttg` as well as `_
 
 nkr::tuple::templates_t is an example of this indefinite postfix pattern coming into play.
 
-Postfixes even have a use in the naming of files, in particular header files. The most common postfixes come in a set of five, and like the various entities in the library proper, these postfixes are use to coordinate various files that have the same base name and imply a distinct relation to one another. They are in addition to the postfix of the primary entity contained in the files:
+Postfixes even have a use in the naming of files, in particular header files. The most common postfixes come in a set of five, and like the various entities in the library proper, these postfixes are used to coordinate various files that have the same base name and imply a distinct relation to one another. These special postfixes used for file name are in addition to the postfix of the primary entity contained in the files:
 
 @snippet "./docs/src/designs.cpp" _dda6b4f4_9596_4713_8d31_f48990e0c898
 
@@ -102,7 +102,7 @@ The following is a comprehensive list of postfixes and their meanings as found t
 ### List of Label Postfixes {#_1382824d_0c2f_476c_b433_cf542fd6bdef}
 
 - `_dec` declarations
-- `_dec_def` declaration definitions
+- `_dec_def` declaritive definitions
 - `_def` definitions
 - `_dox` documents or docs
 - `_e` enumeration

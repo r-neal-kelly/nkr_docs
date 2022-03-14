@@ -598,7 +598,7 @@ Label Postfixes</h1>
 <div class="line"><span class="keyword">struct </span>entity_tg    {};</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// whereas this &quot;template tag&quot; can represent the template itself</span></div>
-<div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span>&gt;</div>
+<div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> ...&gt;</div>
 <div class="line"><span class="keyword">struct </span>entity_ttg   {};</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// a &quot;trait&quot; can be used to constrain to an instantiated type</span></div>
@@ -634,7 +634,7 @@ Label Postfixes</h1>
 <div class="line"><span class="keyword">concept </span>entity_tttr =</div>
 <div class="line">    <span class="keyword">true</span>;</div>
 </div><!-- fragment --><p >nkr::tuple::templates_t is an example of this indefinite postfix pattern coming into play.</p>
-<p >Postfixes even have a use in the naming of files, in particular header files. The most common postfixes come in a set of five, and like the various entities in the library proper, these postfixes are use to coordinate various files that have the same base name and imply a distinct relation to one another. They are in addition to the postfix of the primary entity contained in the files:</p>
+<p >Postfixes even have a use in the naming of files, in particular header files. The most common postfixes come in a set of five, and like the various entities in the library proper, these postfixes are used to coordinate various files that have the same base name and imply a distinct relation to one another. These special postfixes used for file name are in addition to the postfix of the primary entity contained in the files:</p>
 <div class="fragment"><div class="line"><span class="comment">// The non-postfix header pulls in everything but the &quot;_dox&quot; below. This is what you would normally use in your code.</span></div>
 <div class="line"><span class="preprocessor">#include &quot;nkr/pointer/cpp_t.h&quot;</span></div>
 <div class="line"> </div>
@@ -654,7 +654,7 @@ Label Postfixes</h1>
 List of Label Postfixes</h2>
 <ul>
 <li><code>_dec</code> declarations</li>
-<li><code>_dec_def</code> declaration definitions</li>
+<li><code>_dec_def</code> declaritive definitions</li>
 <li><code>_def</code> definitions</li>
 <li><code>_dox</code> documents or docs</li>
 <li><code>_e</code> enumeration</li>
