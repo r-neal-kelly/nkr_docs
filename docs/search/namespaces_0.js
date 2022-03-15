@@ -6,12 +6,14 @@ var searchData=
   ['charcoder_3',['charcoder',['../namespacenkr_1_1charcoder.html',1,'nkr']]],
   ['concurrency_4',['concurrency',['../namespacenkr_1_1concurrency.html',1,'nkr']]],
   ['constant_5',['constant',['../namespacenkr_1_1constant.html',1,'nkr']]],
-  ['cpp_6',['cpp',['../namespacenkr_1_1cpp.html',1,'nkr']]],
-  ['enumeration_7',['enumeration',['../namespacenkr_1_1enumeration.html',1,'nkr']]],
-  ['error_8',['error',['../namespacenkr_1_1error.html',1,'nkr']]],
-  ['negatable_9',['negatable',['../namespacenkr_1_1negatable.html',1,'nkr']]],
-  ['nkr_10',['nkr',['../namespacenkr.html',1,'']]],
-  ['none_11',['none',['../namespacenkr_1_1none.html',1,'nkr']]],
-  ['os_12',['os',['../namespacenkr_1_1os.html',1,'nkr']]],
-  ['positive_13',['positive',['../namespacenkr_1_1positive.html',1,'nkr']]]
+  ['constant_5ft_24_6',['constant_t$',['../namespacenkr_1_1constant__t_0b.html',1,'nkr']]],
+  ['cpp_7',['cpp',['../namespacenkr_1_1cpp.html',1,'nkr']]],
+  ['enumeration_8',['enumeration',['../namespacenkr_1_1enumeration.html',1,'nkr']]],
+  ['error_9',['error',['../namespacenkr_1_1error.html',1,'nkr']]],
+  ['interface_10',['interface',['../namespacenkr_1_1interface.html',1,'nkr']]],
+  ['negatable_11',['negatable',['../namespacenkr_1_1negatable.html',1,'nkr']]],
+  ['nkr_12',['nkr',['../namespacenkr.html',1,'']]],
+  ['none_13',['none',['../namespacenkr_1_1interface_1_1none.html',1,'nkr::interface::none'],['../namespacenkr_1_1none.html',1,'nkr::none']]],
+  ['os_14',['os',['../namespacenkr_1_1os.html',1,'nkr']]],
+  ['positive_15',['positive',['../namespacenkr_1_1positive.html',1,'nkr']]]
 ];
