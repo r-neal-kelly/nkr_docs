@@ -107,6 +107,14 @@ Parameter #1:
     return file_text;
 }
 
+/* void_t */ function Print_Error(/* string_t */ message, /* error_t */ error)
+{
+    console.log(`\n`);
+    console.log(message);
+    console.log(error);
+    console.log(`\n`);
+}
+
 (/* void_t */ async function Main()
 {
     const /* string_t[] */ arguments = process.argv.slice(2);
@@ -126,23 +134,14 @@ Parameter #1:
                     try {
                         await Write_File(`${path_to_docs}/${html_file}`, normalized_file_text);
                     } catch (error) {
-                        console.log(`\n`);
-                        console.log(`failed to write html file: ${html_file}`);
-                        console.log(error);
-                        console.log(`\n`);
+                        Print_Error(`failed to write html file: ${html_file}`, error);
                     }
                 } catch (error) {
-                    console.log(`\n`);
-                    console.log(`failed to read html file: ${html_file}`);
-                    console.log(error);
-                    console.log(`\n`);
+                    Print_Error(`failed to read html file: ${html_file}`, error);
                 }
             }
         } catch(error) {
-            console.log(`\n`);
-            console.log(`failed to read docs directory: ${path_to_docs}`);
-            console.log(error);
-            console.log(`\n`);
+            Print_Error(`failed to read docs directory: ${path_to_docs}`, error);
         }
     }
 })();
