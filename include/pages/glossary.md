@@ -66,6 +66,7 @@
 [type]:                                             @ref _d5fa5645_f7f9_446a_936d_459b0e0e4982
 [type generic]:                                     @ref _d2e01c1b_1c3f_4ff9_a58f_ee7a1569eae6
 [type instance]:                                    @ref _7c636ccf_7f4b_40c1_a955_2dca05506ac4
+[type qualification]:                               @ref _db33c623_ed4b_4daf_809a_2e105d0d76dd
 [type section]:                                     @ref _2680c916_75d0_4b99_8aba_cddbcc0b84e9
 [unit]:                                             @ref _77b87f74_6ca6_445c_861e_0147d4881768
 [unit count]:                                       @ref _641f8694_631d_482c_89b3_effb15244c61
@@ -237,6 +238,8 @@ A `trait` is a standard C++20 `concept` used to constrain [types][type], [templa
 ## type generic {#_d2e01c1b_1c3f_4ff9_a58f_ee7a1569eae6}
 
 ## type instance {#_7c636ccf_7f4b_40c1_a955_2dca05506ac4}
+
+## type qualification {#_db33c623_ed4b_4daf_809a_2e105d0d76dd}
 
 ## type section {#_2680c916_75d0_4b99_8aba_cddbcc0b84e9}
 A `type section` is an artificial group of similar [entities][entity] found on [type][type], [template][template], and [template template ad infinitum][template template ad infinitum] declarations.

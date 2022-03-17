@@ -3,8 +3,8 @@ var indexSectionsWithContent =
   0: "cdginostv",
   1: "cit",
   2: "n",
-  3: "otv",
-  4: "tv",
+  3: "iotv",
+  4: "otv",
   5: "in",
   6: "dgnst",
   7: "n"
