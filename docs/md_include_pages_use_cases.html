@@ -88,9 +88,9 @@ var searchBox = new SearchBox("searchBox", "search",'Search','.html');
   <div class="headertitle"><div class="title">Use-Cases </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="autotoc_md33"></a>
+<div class="textblock"><h1><a class="anchor" id="autotoc_md32"></a>
 nkr::tr</h1>
-<h2><a class="anchor" id="autotoc_md34"></a>
+<h2><a class="anchor" id="autotoc_md33"></a>
 Dynamically Define Concepts In-Place</h2>
 <p >Let's take a concrete example. What if we wanted to have a function that takes two <code>std::vectors</code> and combines them? We do not care what their <code>value_types</code> are, only that the second one has a <code>value_type</code> statically convertible to the other. Let's put together a simple algorithm and not worry about exceptions and other validations:</p>
 <div class="fragment"><div class="line"><span class="keywordtype">void</span> Combine(<span class="keyword">auto</span>&amp; vector_a, <span class="keyword">auto</span>&amp; vector_b)</div>
@@ -290,7 +290,33 @@ Dynamically Define Concepts In-Place</h2>
 <div class="line">    <span class="comment">// Combine_Non_Const_Compatible_Vectors(vector_a, vector_c);</span></div>
 <div class="line">}</div>
 <div class="ttc" id="anamespacenkr_html_aecb8f05af8f5d93778ce60239336d8e3"><div class="ttname"><a href="namespacenkr.html#aecb8f05af8f5d93778ce60239336d8e3">nkr::t</a></div><div class="ttdeci">nkr::tr$::ts&lt; AND_tg, nkr::tuple::types_t&lt; type_p &gt; &gt; t</div><div class="ttdoc">A way to wrap a single type for use with an nkr::TR expression, to differentiate it from a template.</div><div class="ttdef"><b>Definition:</b> tr_dec.h:175</div></div>
-</div><!-- fragment --> </div></div><!-- contents -->
+</div><!-- fragment --><p >As we have seen, by using <a class="el" href="conceptnkr_1_1tr.html" title="Used to filter a type by its qualifications, and by other types, templates, identities,...">nkr::tr</a> we have cleanly and explicitly constrained our function as originally specified. Now we will truly only get non-const <code>std::vectors</code> passing through our function, all without having to statically define an exterior concept. We even use <a class="el" href="conceptnkr_1_1tr.html" title="Used to filter a type by its qualifications, and by other types, templates, identities,...">nkr::tr</a> to ensure that their <code>value_types</code> are compatible. And in the future if we decide to support other types such as <code>std::forward_list</code> we can easily do so:</p>
+<div class="fragment"><div class="line"><span class="keywordtype">void</span> Combine_With_Overloads(<a class="code hl_concept" href="conceptnkr_1_1tr.html">nkr::tr</a>&lt;nkr::any_non_const_tg, <a class="code hl_typedef" href="namespacenkr.html#a5b44c572847cc1f4d65122f867f3bdbf">nkr::tt&lt;std::vector&gt;</a>&gt; <span class="keyword">auto</span>&amp; vector_a,</div>
+<div class="line">                            <a class="code hl_concept" href="conceptnkr_1_1tr.html">nkr::tr</a>&lt;nkr::any_non_const_tg, <a class="code hl_typedef" href="namespacenkr.html#a5b44c572847cc1f4d65122f867f3bdbf">nkr::tt&lt;std::vector&gt;</a>&gt; <span class="keyword">auto</span>&amp; vector_b)</div>
+<div class="line">{</div>
+<div class="line">    <span class="comment">// ...</span></div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> Combine_With_Overloads(<a class="code hl_concept" href="conceptnkr_1_1tr.html">nkr::tr</a>&lt;nkr::any_non_const_tg, <a class="code hl_typedef" href="namespacenkr.html#a5b44c572847cc1f4d65122f867f3bdbf">nkr::tt&lt;std::forward_list&gt;</a>&gt; <span class="keyword">auto</span>&amp; forward_list_a,</div>
+<div class="line">                            <a class="code hl_concept" href="conceptnkr_1_1tr.html">nkr::tr</a>&lt;nkr::any_non_const_tg, <a class="code hl_typedef" href="namespacenkr.html#a5b44c572847cc1f4d65122f867f3bdbf">nkr::tt&lt;std::forward_list&gt;</a>&gt; <span class="keyword">auto</span>&amp; forward_list_b)</div>
+<div class="line">{</div>
+<div class="line">    <span class="comment">// ...</span></div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line">TEST_CASE(<span class="stringliteral">&quot;should work with non-const std::vectors or non-const std::forward_lists&quot;</span>)</div>
+<div class="line">{</div>
+<div class="line">    std::vector&lt;float&gt; vector_a;</div>
+<div class="line">    std::vector&lt;int&gt; vector_b;</div>
+<div class="line"> </div>
+<div class="line">    Combine_With_Overloads(vector_a, vector_b);</div>
+<div class="line"> </div>
+<div class="line">    std::forward_list&lt;float&gt; forward_list_a;</div>
+<div class="line">    std::forward_list&lt;int&gt; forward_list_b;</div>
+<div class="line"> </div>
+<div class="line">    Combine_With_Overloads(forward_list_a, forward_list_b);</div>
+<div class="line">}</div>
+</div><!-- fragment --><p >And that's just scratching the surface of what <a class="el" href="conceptnkr_1_1tr.html" title="Used to filter a type by its qualifications, and by other types, templates, identities,...">nkr::tr</a> is capable of. With advanced usage we can constrain to multiple types and templates, their inner <code>value_types</code>, duck-typed generics, and even full-fledged interfaces all within a single expression. </p>
+</div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

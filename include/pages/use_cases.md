@@ -45,3 +45,9 @@ While it's true that we want non-const `std::vectors` for our function, that is 
 There's just one thing missing. Let's add another private and dynamically defined in-place concept within our function body, to make sure that the inner types of the `std::vectors` are convertible:
 
 @snippet "./tr/src/tr.cpp" _9728b2d9_8986_46b7_b27b_a0d777cf2c90
+
+As we have seen, by using nkr::tr we have cleanly and explicitly constrained our function as originally specified. Now we will truly only get non-const `std::vectors` passing through our function, all without having to statically define an exterior concept. We even use nkr::tr to ensure that their `value_types` are compatible. And in the future if we decide to support other types such as `std::forward_list` we can easily do so:
+
+@snippet "./tr/src/tr.cpp" _0642efde_b645_4ca3_bb58_f094905d5c2e
+
+And that's just scratching the surface of what nkr::tr is capable of. With advanced usage we can constrain to multiple types and templates, their inner `value_types`, duck-typed generics, and even full-fledged interfaces all within a single expression.
