@@ -88,9 +88,17 @@ var searchBox = new SearchBox("searchBox", "search",'Search','.html');
   <div class="headertitle"><div class="title">Use-Cases </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="autotoc_md31"></a>
+<div class="toc"><h3>Table of Contents</h3>
+<ul><li class="level1"><a href="#autotoc_md29">nkr::tr</a><ul><li class="level2"><a href="#autotoc_md30">Dynamically Define Concepts In-Place</a></li>
+<li class="level2"><a href="#autotoc_md31">Easy to Logically NOT Concepts</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="textblock"><p >Examples of how <a class="el" href="namespacenkr.html">nkr</a> can be put to use.</p>
+<h1><a class="anchor" id="autotoc_md29"></a>
 nkr::tr</h1>
-<h2><a class="anchor" id="autotoc_md32"></a>
+<h2><a class="anchor" id="autotoc_md30"></a>
 Dynamically Define Concepts In-Place</h2>
 <p >Let's take a concrete example. What if we wanted to have a function that takes two <code>std::vectors</code> and combines them? We do not care what their <code>value_types</code> are, only that the second one has a <code>value_type</code> statically convertible to the other. Let's put together a simple algorithm and not worry about exceptions and other validations:</p>
 <div class="fragment"><div class="line"><span class="keywordtype">void</span> Combine(<span class="keyword">auto</span>&amp; vector_a, <span class="keyword">auto</span>&amp; vector_b)</div>
@@ -315,7 +323,233 @@ Dynamically Define Concepts In-Place</h2>
 <div class="line"> </div>
 <div class="line">    Combine_With_Overloads(forward_list_a, forward_list_b);</div>
 <div class="line">}</div>
-</div><!-- fragment --><p >And that's just scratching the surface of what <a class="el" href="conceptnkr_1_1tr.html" title="Used to filter a type by its qualifications, and by other types, templates, identities,...">nkr::tr</a> is capable of. With advanced usage we can constrain to multiple types and templates, their inner <code>value_types</code>, duck-typed generics, and even full-fledged interfaces all within a single expression. </p>
+</div><!-- fragment --><p >And that's just scratching the surface of what <a class="el" href="conceptnkr_1_1tr.html" title="Used to filter a type by its qualifications, and by other types, templates, identities,...">nkr::tr</a> is capable of. With advanced usage we can constrain to multiple types and templates, their inner <code>value_types</code>, duck-typed generics, and even full-fledged interfaces all within a single expression.</p>
+<h2><a class="anchor" id="autotoc_md31"></a>
+Easy to Logically NOT Concepts</h2>
+<p >Let's say we have a container class with two overloads for <code>Push_Back</code>, each of which accepts an object to add into our container. We have two overloads because we want the first one to copy lvalue references and the second one to move rvalue references. Because the lvalue reference overload has to make a copy, we allow any type that can be converted into an <code>element_t</code>, but with the rvalue reference overload we want to keep the argument explicitly moveable so that our function can't turn into a potentially hidden and expensive operation:</p>
+<div class="fragment"><div class="line"><span class="keyword">enum class</span> result_e</div>
+<div class="line">{</div>
+<div class="line">    WILL_COPY,</div>
+<div class="line">    WILL_CONVERT,</div>
+<div class="line">    WILL_MOVE,</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> element_p&gt;</div>
+<div class="line"><span class="keyword">class </span>container_t</div>
+<div class="line">{</div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">    <span class="keyword">using</span> element_t = element_p;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">    result_e Push_Back(std::convertible_to&lt;element_t&gt; <span class="keyword">auto</span>&amp; element_to_copy_or_non_element_to_convert)</div>
+<div class="line">    {</div>
+<div class="line">        <span class="keyword">using</span> argument_t = std::remove_cvref_t&lt;<span class="keyword">decltype</span>(element_to_copy_or_non_element_to_convert)&gt;;</div>
+<div class="line"> </div>
+<div class="line">        <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::same_as&lt;argument_t, element_t&gt;) {</div>
+<div class="line">            <span class="keywordflow">return</span> result_e::WILL_COPY;</div>
+<div class="line">        } <span class="keywordflow">else</span> {</div>
+<div class="line">            <span class="keywordflow">return</span> result_e::WILL_CONVERT;</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    result_e Push_Back(std::same_as&lt;element_t&gt; <span class="keyword">auto</span>&amp;&amp; element_to_move)</div>
+<div class="line">    {</div>
+<div class="line">        <span class="keywordflow">return</span> result_e::WILL_MOVE;</div>
+<div class="line">    }</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line">TEST_CASE(<span class="stringliteral">&quot;should select the appropriate overload depending on the type and qualification&quot;</span>)</div>
+<div class="line">{</div>
+<div class="line">    container_t&lt;long long&gt; container;</div>
+<div class="line">    <span class="keywordtype">long</span> <span class="keywordtype">long</span> element_to_copy = 0;</div>
+<div class="line">    <span class="keywordtype">long</span> other_to_convert = 0;</div>
+<div class="line">    <span class="keywordtype">long</span> <span class="keywordtype">long</span> element_to_move = 0;</div>
+<div class="line"> </div>
+<div class="line">    CHECK(container.Push_Back(element_to_copy) == result_e::WILL_COPY);</div>
+<div class="line">    CHECK(container.Push_Back(other_to_convert) == result_e::WILL_CONVERT);</div>
+<div class="line">    CHECK(container.Push_Back(std::move(element_to_move)) == result_e::WILL_MOVE);</div>
+<div class="line">}</div>
+</div><!-- fragment --><p >What happens if the user tries to move an instance that is not <code>element_t</code>?</p>
+<div class="fragment"><div class="line">TEST_CASE(<span class="stringliteral">&quot;will have a confusing compile-time error if we try to move a non-element&quot;</span>)</div>
+<div class="line">{</div>
+<div class="line">    container_t&lt;long long&gt; container;</div>
+<div class="line">    <span class="keywordtype">long</span> other_to_move = 0;</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// ERROR: result_e container_t&lt;__int64&gt;::Push_Back&lt;long&gt;(_T0 &amp;)&#39;: cannot convert argument 1 from &#39;long&#39; to &#39;_T0 &amp;&#39;</span></div>
+<div class="line">    <span class="comment">// container.Push_Back(std::move(other_to_move));</span></div>
+<div class="line">}</div>
+</div><!-- fragment --><p >Without going into the specifics of why this happens, the important take-away here is that the user is not being told what went wrong and may very well think our class is broken. After all he is trying to move an object and for some reason it's going to the copy overload. Furthermore a <code>long</code> can certainly be converted to a <code>long long</code> so maybe in the user's mind it should just work.</p>
+<p >Now, there is really only way to fix this issue as it stands, and that is to add another overload that accepts the opposite of the input we want. We can either use the <code>delete</code> keyword to indicate that the new overload is unavailable, or we can define the overload with a static assert that explains to the user to why it's not available. In either case, we have a problem. How do we logically NOT our move <code>Push_Back</code> constraint?</p>
+<div class="fragment"><div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> element_p&gt;</div>
+<div class="line"><span class="keyword">class </span>container_t</div>
+<div class="line">{</div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">    <span class="keyword">using</span> element_t = element_p;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">    <span class="keywordtype">void</span> Push_Back(std::convertible_to&lt;element_t&gt; <span class="keyword">auto</span>&amp; element_to_copy_or_non_element_to_convert)</div>
+<div class="line">    {</div>
+<div class="line">        <span class="comment">// ...</span></div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordtype">void</span> Push_Back(std::same_as&lt;element_t&gt; <span class="keyword">auto</span>&amp;&amp; element_to_move)</div>
+<div class="line">    {</div>
+<div class="line">        <span class="comment">// ...</span></div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// ERROR: syntax error: &#39;!&#39;</span></div>
+<div class="line">    <span class="comment">// void Push_Back(!std::same_as&lt;element_t&gt; auto&amp;&amp;) = delete;</span></div>
+<div class="line">};</div>
+</div><!-- fragment --><p >As we can see, the obvious solution does not work. In order to define the constraint in the class, we would have to use a totally different syntax. That syntax does solve the problem by producing a better compile-time error for the user, but it also introduces another user-facing problem and that is a more complex and non-symmetric method signature for our API:</p>
+<div class="fragment"><div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> element_p&gt;</div>
+<div class="line"><span class="keyword">class </span>container_t</div>
+<div class="line">{</div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">    <span class="keyword">using</span> element_t = element_p;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">    <span class="keywordtype">void</span> Push_Back(std::convertible_to&lt;element_t&gt; <span class="keyword">auto</span>&amp; element_to_copy_or_non_element_to_convert)</div>
+<div class="line">    {</div>
+<div class="line">        <span class="comment">// ...</span></div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordtype">void</span> Push_Back(std::same_as&lt;element_t&gt; <span class="keyword">auto</span>&amp;&amp; element_to_move)</div>
+<div class="line">    {</div>
+<div class="line">        <span class="comment">// ...</span></div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// inconsist signature with the above method. It may not even be clear to the user that these two methods are related</span></div>
+<div class="line">    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> type_p&gt;</div>
+<div class="line">    <span class="keywordtype">void</span> Push_Back(type_p&amp;&amp;) <span class="keyword">requires</span> (!std::same_as&lt;type_p, element_t&gt;) = <span class="keyword">delete</span>;</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line">TEST_CASE(<span class="stringliteral">&quot;will have a better compile-time error but a worse method signature&quot;</span>)</div>
+<div class="line">{</div>
+<div class="line">    container_t&lt;long long&gt; container;</div>
+<div class="line">    <span class="keywordtype">long</span> other_to_move = 0;</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// ERROR: attempting to reference a deleted function</span></div>
+<div class="line">    <span class="comment">// container.Push_Back(std::move(other_to_move));</span></div>
+<div class="line">}</div>
+</div><!-- fragment --><p >Thankfully we can clean that up too by defining an out of class concept instead:</p>
+<div class="fragment"><div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> a, <span class="keyword">typename</span> b&gt;</div>
+<div class="line"><span class="keyword">concept </span>not_same_as =</div>
+<div class="line">    !std::same_as&lt;a, b&gt;;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> element_p&gt;</div>
+<div class="line"><span class="keyword">class </span>container_t</div>
+<div class="line">{</div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">    <span class="keyword">using</span> element_t = element_p;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">    <span class="keywordtype">void</span> Push_Back(std::convertible_to&lt;element_t&gt; <span class="keyword">auto</span>&amp; element_to_copy_or_non_element_to_convert)</div>
+<div class="line">    {</div>
+<div class="line">        <span class="comment">// ...</span></div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordtype">void</span> Push_Back(std::same_as&lt;element_t&gt; <span class="keyword">auto</span>&amp;&amp; element_to_move)</div>
+<div class="line">    {</div>
+<div class="line">        <span class="comment">// ...</span></div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordtype">void</span> Push_Back(not_same_as&lt;element_t&gt; <span class="keyword">auto</span>&amp;&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line">TEST_CASE(<span class="stringliteral">&quot;will have a better compile-time error but introduces out-of-class concepts to do it&quot;</span>)</div>
+<div class="line">{</div>
+<div class="line">    container_t&lt;long long&gt; container;</div>
+<div class="line">    <span class="keywordtype">long</span> other_to_move = 0;</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// ERROR: attempting to reference a deleted function</span></div>
+<div class="line">    <span class="comment">// container.Push_Back(std::move(other_to_move));</span></div>
+<div class="line">}</div>
+</div><!-- fragment --><p >Now in this simple case maybe it makes sense to have that static concept defined outside of the class because it can probably be used elsewhere. However, this pattern becomes untenable for every custom static concept you define. Does it really make sense to create an additional custom concept for every one you make, just because it could be logically inverted somewhere? For example, what if we actually want our move operator to work with another object that we know can be cheaply converted?</p>
+<div class="fragment"><div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> a, <span class="keyword">typename</span> b, <span class="keyword">typename</span> c&gt;</div>
+<div class="line"><span class="keyword">concept </span>same_as_either =</div>
+<div class="line">    std::same_as&lt;a, b&gt; || std::same_as&lt;a, c&gt;;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> a, <span class="keyword">typename</span> b, <span class="keyword">typename</span> c&gt;</div>
+<div class="line"><span class="keyword">concept </span>not_same_as_either =</div>
+<div class="line">    !same_as_either&lt;a, b, c&gt;;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> element_p&gt;</div>
+<div class="line"><span class="keyword">class </span>container_t</div>
+<div class="line">{</div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">    <span class="keyword">using</span> element_t = element_p;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">    <span class="keyword">class </span>cheap_t</div>
+<div class="line">    {</div>
+<div class="line">    <span class="keyword">public</span>:</div>
+<div class="line">    };</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">    <span class="keywordtype">void</span> Push_Back(std::convertible_to&lt;element_t&gt; <span class="keyword">auto</span>&amp; element_to_copy_or_non_element_to_convert)</div>
+<div class="line">    {</div>
+<div class="line">        <span class="comment">// ...</span></div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordtype">void</span> Push_Back(same_as_either&lt;element_t, cheap_t&gt; <span class="keyword">auto</span>&amp;&amp; element_to_move)</div>
+<div class="line">    {</div>
+<div class="line">        <span class="comment">// ...</span></div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordtype">void</span> Push_Back(not_same_as_either&lt;element_t, cheap_t&gt; <span class="keyword">auto</span>&amp;&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line">};</div>
+</div><!-- fragment --><p >We have to have a better solution than this. We're not really interested in defining concepts that will be used in other contexts, we just want our class to behave a certain way so it's not confusing to our user. We want our API to be easily readable especially at a glance when a user is just trying to get up and running. And maybe we want to easily change our classes methods in the future without worrying about other code that will have used our externally defined concepts. Hence we have <a class="el" href="conceptnkr_1_1tr.html" title="Used to filter a type by its qualifications, and by other types, templates, identities,...">nkr::tr</a>:</p>
+<div class="fragment"><div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> element_p&gt;</div>
+<div class="line"><span class="keyword">class </span>container_t</div>
+<div class="line">{</div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">    <span class="keyword">using</span> element_t = element_p;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">    <span class="keyword">class </span>cheap_t</div>
+<div class="line">    {</div>
+<div class="line">    <span class="keyword">public</span>:</div>
+<div class="line">    };</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">    result_e Push_Back(<a class="code hl_concept" href="conceptnkr_1_1tr.html">nkr::tr</a>&lt;nkr::to_tg, <a class="code hl_typedef" href="namespacenkr.html#aecb8f05af8f5d93778ce60239336d8e3">nkr::t&lt;element_t&gt;</a>&gt; <span class="keyword">auto</span>&amp; element_to_copy_or_non_element_to_convert)</div>
+<div class="line">    {</div>
+<div class="line">        <span class="keyword">using</span> argument_t = std::remove_cvref_t&lt;<span class="keyword">decltype</span>(element_to_copy_or_non_element_to_convert)&gt;;</div>
+<div class="line"> </div>
+<div class="line">        <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::same_as&lt;argument_t, element_t&gt;) {</div>
+<div class="line">            <span class="keywordflow">return</span> result_e::WILL_COPY;</div>
+<div class="line">        } <span class="keywordflow">else</span> {</div>
+<div class="line">            <span class="keywordflow">return</span> result_e::WILL_CONVERT;</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    result_e Push_Back(<a class="code hl_concept" href="conceptnkr_1_1tr.html">nkr::tr</a>&lt;nkr::any_non_const_tg, <a class="code hl_typedef" href="namespacenkr.html#a38a1a30f12686b2cf6312cdc291277b1">nkr::ts&lt;nkr::OR_tg, element_t, cheap_t&gt;</a>&gt; <span class="keyword">auto</span>&amp;&amp; element_to_move)</div>
+<div class="line">    {</div>
+<div class="line">        <span class="keywordflow">return</span> result_e::WILL_MOVE;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    result_e Push_Back(<a class="code hl_concept" href="conceptnkr_1_1tr.html">nkr::tr</a>&lt;nkr::not_any_non_const_tg, <a class="code hl_typedef" href="namespacenkr.html#a38a1a30f12686b2cf6312cdc291277b1">nkr::ts&lt;nkr::AND_tg, element_t, cheap_t&gt;</a>&gt; <span class="keyword">auto</span>&amp;&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line">TEST_CASE(<span class="stringliteral">&quot;should allow for an easier to read API, correct overload resolution, and better compile-time errors&quot;</span>)</div>
+<div class="line">{</div>
+<div class="line">    container_t&lt;long long&gt; container;</div>
+<div class="line">    <span class="keywordtype">long</span> <span class="keywordtype">long</span> element_to_copy = 0;</div>
+<div class="line">    <span class="keywordtype">long</span> other_to_convert = 0;</div>
+<div class="line">    <span class="keywordtype">long</span> <span class="keywordtype">long</span> element_to_move = 0;</div>
+<div class="line">    container_t&lt;long long&gt;::cheap_t cheap_to_use_in_move;</div>
+<div class="line">    <span class="keywordtype">long</span> other_to_move = 0;</div>
+<div class="line"> </div>
+<div class="line">    CHECK(container.Push_Back(element_to_copy) == result_e::WILL_COPY);</div>
+<div class="line">    CHECK(container.Push_Back(other_to_convert) == result_e::WILL_CONVERT);</div>
+<div class="line">    CHECK(container.Push_Back(std::move(element_to_move)) == result_e::WILL_MOVE);</div>
+<div class="line">    CHECK(container.Push_Back(std::move(cheap_to_use_in_move)) == result_e::WILL_MOVE);</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// ERROR: attempting to reference a deleted function</span></div>
+<div class="line">    <span class="comment">// container.Push_Back(std::move(other_to_move));</span></div>
+<div class="line">}</div>
+<div class="ttc" id="anamespacenkr_html_a38a1a30f12686b2cf6312cdc291277b1"><div class="ttname"><a href="namespacenkr.html#a38a1a30f12686b2cf6312cdc291277b1">nkr::ts</a></div><div class="ttdeci">nkr::tr$::ts&lt; operator_p, nkr::tuple::types_t&lt; types_p... &gt; &gt; ts</div><div class="ttdoc">A way to parenthesize and perform logical operations on several types in an nkr::TR expression.</div><div class="ttdef"><b>Definition:</b> tr_dec.h:180</div></div>
+</div><!-- fragment --><p >So we see how <a class="el" href="conceptnkr_1_1tr.html" title="Used to filter a type by its qualifications, and by other types, templates, identities,...">nkr::tr</a> gives us the finer qualities of both C++ syntaxes used to constrain function parameters, but in a neater and more presentable way for our users. It allows us to more easily and cheaply invert our constraints that is more open to change and easier to distinguish from its complement. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->

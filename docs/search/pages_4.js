@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['tools_0',['Tools',['../md_include_pages_tools.html',1,'']]]
+  ['use_2dcases_0',['Use-Cases',['../md_include_pages_use_cases.html',1,'']]]
 ];
