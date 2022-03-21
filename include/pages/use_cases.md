@@ -59,36 +59,36 @@ As we have seen, by using nkr::tr we have cleanly and explicitly constrained our
 
 And that's just scratching the surface of what nkr::tr is capable of. With advanced usage we can constrain to multiple types and templates, their inner `value_types`, duck-typed generics, and even full-fledged interfaces all within a single expression.
 
-### Easy to Logically NOT Concepts
+### Cleanly Negate Concepts
 
-Let's say we have a container class with two overloads for `Push_Back`, each of which accepts an object to add into our container. We have two overloads because we want the first one to copy lvalue references and the second one to move rvalue references. Because the lvalue reference overload has to make a copy, we allow any type that can be converted into an `element_t`, but with the rvalue reference overload we want to keep the argument explicitly moveable so that our function can't turn into a potentially hidden and expensive operation:
+Let's say we have a container class with two overloads for an `Add` method, each of which accepts an element to add into our container. We have two overloads because we want the first one to copy lvalue references and the second one to move rvalue references. Because the lvalue reference overload has to make a copy, we allow any type that can be converted into an `element_t` through the method, but with the rvalue reference overload we want to keep the argument explicitly moveable so that our function can't turn into a potentially hidden and expensive operation:
 
 @snippet "./tr/src/tr.cpp" _4d0e3bec_7bd6_4a17_ae41_691eb0d71080
 
-What happens if the user tries to move an instance that is not `element_t`?
+But what happens if the user tries to move an instance that is not an `element_t`?
 
 @snippet "./tr/src/tr.cpp" _891ccf29_a571_4cf2_b6d6_f4cb1596d13e
 
-Without going into the specifics of why this happens, the important take-away here is that the user is not being told what went wrong and may very well think our class is broken. After all he is trying to move an object and for some reason it's going to the copy overload. Furthermore a `long` can certainly be converted to a `long long` so maybe in the user's mind it should just work.
+Without going into the specifics of why this happens, the important take-away here is that the user is not being told what went wrong and may very well think our class is broken. After all they are trying to *move* an object, but for some reason it's going to the *copy* overload instead. Furthermore a `long` can certainly be converted to a `long long` so maybe in the user's mind it should just work.
 
-Now, there is really only way to fix this issue as it stands, and that is to add another overload that accepts the opposite of the input we want. We can either use the `delete` keyword to indicate that the new overload is unavailable, or we can define the overload with a static assert that explains to the user to why it's not available. In either case, we have a problem. How do we logically NOT our move `Push_Back` constraint?
+Now there is really only one way to fix this issue as it stands, and that is to add another overload that constrains to the opposite of what we want. We can then use the `delete` keyword to indicate that the new overload is unavailable, or we can define the overload with a static assert that explains to the user why it's not available. In either case, we have a problem. How do we logically negate our constraint?
 
 @snippet "./tr/src/tr.cpp" _c7c83cab_5715_4153_b61b_7e2aa3ab2fe4
 
-As we can see, the obvious solution does not work. In order to define the constraint in the class, we would have to use a totally different syntax. That syntax does solve the problem by producing a better compile-time error for the user, but it also introduces another user-facing problem and that is a more complex and non-symmetric method signature for our API:
+As we can see, the obvious solution does not work. We actually have to use a completely different syntax to negate the concept. Doing so will solve our original problem by producing a better compile-time error, but it will also introduce yet another user-oriented issue. Our API will become more complex with the introduction of a second syntax and less intuitive for our users to read:
 
 @snippet "./tr/src/tr.cpp" _71f8326b_8eff_41d5_aaff_159d7b731959
 
-Thankfully we can clean that up too by defining an out of class concept instead:
+Instead of using the different syntax, another option is to define a custom concept outside of the class:
 
 @snippet "./tr/src/tr.cpp" _eb3e5c90_332f_44a4_9a2d_5c42bdc11403
 
-Now in this simple case maybe it makes sense to have that static concept defined outside of the class because it can probably be used elsewhere. However, this pattern becomes untenable for every custom static concept you define. Does it really make sense to create an additional custom concept for every one you make, just because it could be logically inverted somewhere? For example, what if we actually want our move operator to work with another object that we know can be cheaply converted?
+Now in this simple case it might make sense to have a custom concept defined outside of the class because it can probably be used elsewhere. However, this pattern becomes burdensome for every concept we define. Does it really make sense to create an additional concept for every custom one we make, just because it could potentially be negated? For example, what if we want to change our custom concept to additionally constrain to non-const types? After all, if our container template accepts user-defined types as elements then we cannot move them when they are const:
 
 @snippet "./tr/src/tr.cpp" _2e0e2f4b_2dca_45a9_9915_be7041b222f9
 
-We have to have a better solution than this. We're not really interested in defining concepts that will be used in other contexts, we just want our class to behave a certain way so it's not confusing to our user. We want our API to be easily readable especially at a glance when a user is just trying to get up and running. And maybe we want to easily change our classes methods in the future without worrying about other code that will have used our externally defined concepts. Hence we have nkr::tr:
+We really want a better solution than this. We're not interested in defining concepts that will be used in other contexts, we just want our class to behave a certain way so it's not confusing for our users. We also want our API to be easily readable, and maybe in the future we'll want to make adjustments to our method's constraints without worrying about breaking someone else's code. Enter nkr::tr:
 
 @snippet "./tr/src/tr.cpp" _8e9ee60f_0c2c_4d3f_a843_84072362921b
 
-So we see how nkr::tr gives us the finer qualities of both C++ syntaxes used to constrain function parameters, but in a neater and more presentable way for our users. It allows us to more easily and cheaply invert our constraints that is more open to change and easier to distinguish from its complement.
+So we see how nkr::tr gives us neater, more readable, and more robust constraints which can easily be negated.
