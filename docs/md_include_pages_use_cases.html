@@ -89,16 +89,16 @@ var searchBox = new SearchBox("searchBox", "search",'Search','.html');
 </div><!--header-->
 <div class="contents">
 <div class="toc"><h3>Table of Contents</h3>
-<ul><li class="level1"><a href="#autotoc_md29">nkr::tr</a><ul><li class="level2"><a href="#autotoc_md30">Dynamically Define Concepts In-Place</a></li>
-<li class="level2"><a href="#autotoc_md31">Cleanly Negate Concepts</a></li>
+<ul><li class="level1"><a href="#autotoc_md30">nkr::tr</a><ul><li class="level2"><a href="#autotoc_md31">Dynamically Define Concepts In-Place</a></li>
+<li class="level2"><a href="#autotoc_md33">Cleanly Negate Concepts</a></li>
 </ul>
 </li>
 </ul>
 </div>
-<div class="textblock"><p >Examples of how <a class="el" href="namespacenkr.html">nkr</a> can be put to use.</p>
-<h1><a class="anchor" id="autotoc_md29"></a>
+<div class="textblock"><p >In-depth examples of how <a class="el" href="namespacenkr.html">nkr</a> can be put to use. If you are looking for short examples without prose, almost every entity has code samples in the <a href="namespaces.html">reference section</a>.</p>
+<h1><a class="anchor" id="autotoc_md30"></a>
 nkr::tr</h1>
-<h2><a class="anchor" id="autotoc_md30"></a>
+<h2><a class="anchor" id="autotoc_md31"></a>
 Dynamically Define Concepts In-Place</h2>
 <p >Let's take a concrete example. What if we wanted to have a function that takes two <code>std::vectors</code> and combines them? We do not care what their <code>value_types</code> are, only that the second one has a <code>value_type</code> statically convertible to the other. Let's put together a simple algorithm and not worry about exceptions and other validations:</p>
 <div class="fragment"><div class="line"><span class="keywordtype">void</span> Combine(<span class="keyword">auto</span>&amp; vector_a, <span class="keyword">auto</span>&amp; vector_b)</div>
@@ -324,7 +324,8 @@ Dynamically Define Concepts In-Place</h2>
 <div class="line">    Combine_With_Overloads(forward_list_a, forward_list_b);</div>
 <div class="line">}</div>
 </div><!-- fragment --><p >And that's just scratching the surface of what <a class="el" href="conceptnkr_1_1tr.html" title="Used to filter a type by its qualifications, and by other types, templates, identities,...">nkr::tr</a> is capable of. With advanced usage we can constrain to multiple types and templates, their inner <code>value_types</code>, duck-typed generics, and even full-fledged interfaces all within a single expression.</p>
-<h2><a class="anchor" id="autotoc_md31"></a>
+<hr  />
+<h2><a class="anchor" id="autotoc_md33"></a>
 Cleanly Negate Concepts</h2>
 <p >Let's say we have a container class with two overloads for an <code>Add</code> method, each of which accepts an element to add into our container. We have two overloads because we want the first one to copy lvalue references and the second one to move rvalue references. Because the lvalue reference overload has to make a copy, we allow any type that can be converted into an <code>element_t</code> through the method, but with the rvalue reference overload we want to keep the argument explicitly moveable so that our function can't turn into a potentially hidden and expensive operation:</p>
 <div class="fragment"><div class="line"><span class="keyword">enum class</span> result_e</div>

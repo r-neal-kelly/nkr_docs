@@ -3,13 +3,13 @@
 [nkr]:  @ref nkr
 
 @brief
-Examples of how [nkr] can be put to use.
+In-depth examples of how [nkr] can be put to use. If you are looking for short examples without prose, almost every entity has code samples in the [reference section](namespaces.html).
 
 @tableofcontents
 
-## nkr::tr
+# nkr::tr
 
-### Dynamically Define Concepts In-Place
+## Dynamically Define Concepts In-Place
 
 Let's take a concrete example. What if we wanted to have a function that takes two `std::vectors` and combines them? We do not care what their `value_types` are, only that the second one has a `value_type` statically convertible to the other. Let's put together a simple algorithm and not worry about exceptions and other validations:
 
@@ -59,7 +59,9 @@ As we have seen, by using nkr::tr we have cleanly and explicitly constrained our
 
 And that's just scratching the surface of what nkr::tr is capable of. With advanced usage we can constrain to multiple types and templates, their inner `value_types`, duck-typed generics, and even full-fledged interfaces all within a single expression.
 
-### Cleanly Negate Concepts
+---
+
+## Cleanly Negate Concepts
 
 Let's say we have a container class with two overloads for an `Add` method, each of which accepts an element to add into our container. We have two overloads because we want the first one to copy lvalue references and the second one to move rvalue references. Because the lvalue reference overload has to make a copy, we allow any type that can be converted into an `element_t` through the method, but with the rvalue reference overload we want to keep the argument explicitly moveable so that our function can't turn into a potentially hidden and expensive operation:
 
