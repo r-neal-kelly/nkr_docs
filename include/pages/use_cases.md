@@ -94,3 +94,23 @@ We really want a better solution than this. We're not interested in defining con
 @snippet "./tr/src/tr.cpp" _8e9ee60f_0c2c_4d3f_a843_84072362921b
 
 So we see how nkr::tr gives us neater, more readable, and more robust constraints which can easily be negated.
+
+---
+
+## Succinctly Disambiguate Assignment Operators
+
+Perhaps we are designing a safe boolean type that needs to be usable in both a volatile context as well as a non-volatile context. Besides supporting basic functionality such as construction of our type with `bool`, we also need to support all the possible combinations of volatile and non-volatile assignment to ensure that the users of our type have no issues. In other worse, non-volatile instances should be assignable by other non-volatile instances as well as by those that are volatile, and vice-versa:
+
+@snippet "./tr/src/tr.cpp" _bccbe189_fffc_4af0_a71a_8077d835593a
+
+However, depending on the compiler our users build their code with, they may run into an issue when trying to assign our `safe_bool_t` with a standard `bool`:
+
+@snippet "./tr/src/tr.cpp" _797c89f6_f562_4052_9c68_01a7a7be8f37
+
+One fix is to explicitly define the assignment operators for `bool`, but this introduces yet two more assignment operators in our already crowded API:
+
+@snippet "./tr/src/tr.cpp" _3639ae18_40aa_4473_92d7_efc6b93d54ba
+
+nkr::tr offers a more succinct solution. We can achieve non-ambiguity by constraining two of our assignment operators to only accept volatile instances through use of an nkr::tr expression. It works because construction can only ever produce non-volatile values, which never satisfy our new constraint. This allows for the full range of possibilities which our cross-platform users might employ our type for, all while achieving a cleaner and less-repetitious API and implementation:
+
+@snippet "./tr/src/tr.cpp" _16b843a2_25b4_48fa_8dc1_70069b6b22ed

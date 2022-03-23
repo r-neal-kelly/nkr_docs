@@ -89,16 +89,17 @@ var searchBox = new SearchBox("searchBox", "search",'Search','.html');
 </div><!--header-->
 <div class="contents">
 <div class="toc"><h3>Table of Contents</h3>
-<ul><li class="level1"><a href="#autotoc_md30">nkr::tr</a><ul><li class="level2"><a href="#autotoc_md31">Dynamically Define Concepts In-Place</a></li>
-<li class="level2"><a href="#autotoc_md33">Cleanly Negate Concepts</a></li>
+<ul><li class="level1"><a href="#autotoc_md28">nkr::tr</a><ul><li class="level2"><a href="#autotoc_md29">Dynamically Define Concepts In-Place</a></li>
+<li class="level2"><a href="#autotoc_md32">Cleanly Negate Concepts</a></li>
+<li class="level2"><a href="#autotoc_md34">Succinctly Disambiguate Assignment Operators</a></li>
 </ul>
 </li>
 </ul>
 </div>
 <div class="textblock"><p >In-depth examples of how <a class="el" href="namespacenkr.html">nkr</a> can be put to use. If you are looking for short examples without prose, almost every entity has code samples in the <a href="namespaces.html">reference section</a>.</p>
-<h1><a class="anchor" id="autotoc_md30"></a>
+<h1><a class="anchor" id="autotoc_md28"></a>
 nkr::tr</h1>
-<h2><a class="anchor" id="autotoc_md31"></a>
+<h2><a class="anchor" id="autotoc_md29"></a>
 Dynamically Define Concepts In-Place</h2>
 <p >Let's take a concrete example. What if we wanted to have a function that takes two <code>std::vectors</code> and combines them? We do not care what their <code>value_types</code> are, only that the second one has a <code>value_type</code> statically convertible to the other. Let's put together a simple algorithm and not worry about exceptions and other validations:</p>
 <div class="fragment"><div class="line"><span class="keywordtype">void</span> Combine(<span class="keyword">auto</span>&amp; vector_a, <span class="keyword">auto</span>&amp; vector_b)</div>
@@ -325,7 +326,7 @@ Dynamically Define Concepts In-Place</h2>
 <div class="line">}</div>
 </div><!-- fragment --><p >And that's just scratching the surface of what <a class="el" href="conceptnkr_1_1tr.html" title="Used to filter a type by its qualifications, and by other types, templates, identities,...">nkr::tr</a> is capable of. With advanced usage we can constrain to multiple types and templates, their inner <code>value_types</code>, duck-typed generics, and even full-fledged interfaces all within a single expression.</p>
 <hr  />
-<h2><a class="anchor" id="autotoc_md33"></a>
+<h2><a class="anchor" id="autotoc_md32"></a>
 Cleanly Negate Concepts</h2>
 <p >Let's say we have a container class with two overloads for an <code>Add</code> method, each of which accepts an element to add into our container. We have two overloads because we want the first one to copy lvalue references and the second one to move rvalue references. Because the lvalue reference overload has to make a copy, we allow any type that can be converted into an <code>element_t</code> through the method, but with the rvalue reference overload we want to keep the argument explicitly moveable so that our function can't turn into a potentially hidden and expensive operation:</p>
 <div class="fragment"><div class="line"><span class="keyword">enum class</span> result_e</div>
@@ -534,8 +535,218 @@ Cleanly Negate Concepts</h2>
 <div class="line">    <span class="comment">// ERROR: attempting to reference a deleted function</span></div>
 <div class="line">    <span class="comment">// container.Add(std::move(const_element_to_move));</span></div>
 <div class="line">}</div>
-</div><!-- fragment --><p >So we see how <a class="el" href="conceptnkr_1_1tr.html" title="Used to filter a type by its qualifications, and by other types, templates, identities,...">nkr::tr</a> gives us neater, more readable, and more robust constraints which can easily be negated. </p>
-</div></div><!-- contents -->
+</div><!-- fragment --><p >So we see how <a class="el" href="conceptnkr_1_1tr.html" title="Used to filter a type by its qualifications, and by other types, templates, identities,...">nkr::tr</a> gives us neater, more readable, and more robust constraints which can easily be negated.</p>
+<hr  />
+<h2><a class="anchor" id="autotoc_md34"></a>
+Succinctly Disambiguate Assignment Operators</h2>
+<p >Perhaps we are designing a safe boolean type that needs to be usable in both a volatile context as well as a non-volatile context. Besides supporting basic functionality such as construction of our type with <code>bool</code>, we also need to support all the possible combinations of volatile and non-volatile assignment to ensure that the users of our type have no issues. In other worse, non-volatile instances should be assignable by other non-volatile instances as well as by those that are volatile, and vice-versa:</p>
+<div class="fragment"><div class="line"><span class="keyword">class </span>safe_bool_t</div>
+<div class="line">{</div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">    <span class="keywordtype">bool</span> value = <span class="keyword">false</span>;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">    safe_bool_t()</div>
+<div class="line">    {</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    safe_bool_t(<span class="keywordtype">bool</span> value)</div>
+<div class="line">    {</div>
+<div class="line">        <span class="comment">// ...</span></div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    safe_bool_t&amp; operator =(safe_bool_t&amp;&amp; other) <span class="keyword">noexcept</span></div>
+<div class="line">    {</div>
+<div class="line">        <span class="comment">// ...</span></div>
+<div class="line"> </div>
+<div class="line">        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">volatile</span> safe_bool_t&amp; operator =(safe_bool_t&amp;&amp; other) <span class="keyword">volatile</span> <span class="keyword">noexcept</span></div>
+<div class="line">    {</div>
+<div class="line">        <span class="comment">// ...</span></div>
+<div class="line"> </div>
+<div class="line">        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    safe_bool_t&amp; operator =(<span class="keyword">volatile</span> safe_bool_t&amp;&amp; other) <span class="keyword">noexcept</span></div>
+<div class="line">    {</div>
+<div class="line">        <span class="comment">// ...</span></div>
+<div class="line"> </div>
+<div class="line">        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">volatile</span> safe_bool_t&amp; operator =(<span class="keyword">volatile</span> safe_bool_t&amp;&amp; other) <span class="keyword">volatile</span> <span class="keyword">noexcept</span></div>
+<div class="line">    {</div>
+<div class="line">        <span class="comment">// ...</span></div>
+<div class="line"> </div>
+<div class="line">        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line">    }</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line">TEST_CASE(<span class="stringliteral">&quot;should be able to assign value and rvalue references of itself whether volatile or not&quot;</span>)</div>
+<div class="line">{</div>
+<div class="line">    safe_bool_t safe_bool;</div>
+<div class="line">    <span class="keyword">volatile</span> safe_bool_t volatile_safe_bool;</div>
+<div class="line"> </div>
+<div class="line">    safe_bool = safe_bool_t();</div>
+<div class="line">    safe_bool = std::move(safe_bool);</div>
+<div class="line">    safe_bool = std::move(volatile_safe_bool);</div>
+<div class="line">    volatile_safe_bool = safe_bool_t();</div>
+<div class="line">    volatile_safe_bool = std::move(safe_bool);</div>
+<div class="line">    volatile_safe_bool = std::move(volatile_safe_bool);</div>
+<div class="line">}</div>
+</div><!-- fragment --><p >However, depending on the compiler our users build their code with, they may run into an issue when trying to assign our <code>safe_bool_t</code> with a standard <code>bool</code>:</p>
+<div class="fragment"><div class="line">TEST_CASE(<span class="stringliteral">&quot;may fail to disambiguate when implicitly assigning through a constructor&quot;</span>)</div>
+<div class="line">{</div>
+<div class="line">    safe_bool_t safe_bool;</div>
+<div class="line">    <span class="keyword">volatile</span> safe_bool_t volatile_safe_bool;</div>
+<div class="line">    <span class="keywordtype">bool</span> unsafe_bool = <span class="keyword">false</span>;</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// ERROR: &#39;operator =&#39; is ambiguous</span></div>
+<div class="line">    <span class="comment">// safe_bool = bool(false);</span></div>
+<div class="line">    <span class="comment">// safe_bool = unsafe_bool;</span></div>
+<div class="line">    <span class="comment">// volatile_safe_bool = bool(false);</span></div>
+<div class="line">    <span class="comment">// volatile_safe_bool = unsafe_bool;</span></div>
+<div class="line">}</div>
+</div><!-- fragment --><p >One fix is to explicitly define the assignment operators for <code>bool</code>, but this introduces yet two more assignment operators in our already crowded API:</p>
+<div class="fragment"><div class="line"><span class="keyword">class </span>safe_bool_t</div>
+<div class="line">{</div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">    <span class="keywordtype">bool</span> value = <span class="keyword">false</span>;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">    safe_bool_t()</div>
+<div class="line">    {</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    safe_bool_t(<span class="keywordtype">bool</span> value)</div>
+<div class="line">    {</div>
+<div class="line">        <span class="comment">// ...</span></div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// will handle assignment of bool for non-volatile this</span></div>
+<div class="line">    safe_bool_t&amp; operator =(<span class="keywordtype">bool</span> value) <span class="keyword">noexcept</span></div>
+<div class="line">    {</div>
+<div class="line">        <span class="comment">// ...</span></div>
+<div class="line"> </div>
+<div class="line">        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// will handle assignment of bool for volatile this</span></div>
+<div class="line">    <span class="keyword">volatile</span> safe_bool_t&amp; operator =(<span class="keywordtype">bool</span> value) <span class="keyword">volatile</span> <span class="keyword">noexcept</span></div>
+<div class="line">    {</div>
+<div class="line">        <span class="comment">// ...</span></div>
+<div class="line"> </div>
+<div class="line">        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    safe_bool_t&amp; operator =(safe_bool_t&amp;&amp; other) <span class="keyword">noexcept</span></div>
+<div class="line">    {</div>
+<div class="line">        <span class="comment">// ...</span></div>
+<div class="line"> </div>
+<div class="line">        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">volatile</span> safe_bool_t&amp; operator =(safe_bool_t&amp;&amp; other) <span class="keyword">volatile</span> <span class="keyword">noexcept</span></div>
+<div class="line">    {</div>
+<div class="line">        <span class="comment">// ...</span></div>
+<div class="line"> </div>
+<div class="line">        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    safe_bool_t&amp; operator =(<span class="keyword">volatile</span> safe_bool_t&amp;&amp; other) <span class="keyword">noexcept</span></div>
+<div class="line">    {</div>
+<div class="line">        <span class="comment">// ...</span></div>
+<div class="line"> </div>
+<div class="line">        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">volatile</span> safe_bool_t&amp; operator =(<span class="keyword">volatile</span> safe_bool_t&amp;&amp; other) <span class="keyword">volatile</span> <span class="keyword">noexcept</span></div>
+<div class="line">    {</div>
+<div class="line">        <span class="comment">// ...</span></div>
+<div class="line"> </div>
+<div class="line">        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line">    }</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line">TEST_CASE(<span class="stringliteral">&quot;should be able to disambiguate when implicitly assigning through a constructor&quot;</span>)</div>
+<div class="line">{</div>
+<div class="line">    safe_bool_t safe_bool;</div>
+<div class="line">    <span class="keyword">volatile</span> safe_bool_t volatile_safe_bool;</div>
+<div class="line">    <span class="keywordtype">bool</span> unsafe_bool = <span class="keyword">false</span>;</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// works</span></div>
+<div class="line">    safe_bool = bool(<span class="keyword">false</span>);</div>
+<div class="line">    safe_bool = unsafe_bool;</div>
+<div class="line">    volatile_safe_bool = bool(<span class="keyword">false</span>);</div>
+<div class="line">    volatile_safe_bool = unsafe_bool;</div>
+<div class="line">}</div>
+</div><!-- fragment --><p ><a class="el" href="conceptnkr_1_1tr.html" title="Used to filter a type by its qualifications, and by other types, templates, identities,...">nkr::tr</a> offers a more succinct solution. We can achieve non-ambiguity by constraining two of our assignment operators to only accept volatile instances through use of an <a class="el" href="conceptnkr_1_1tr.html" title="Used to filter a type by its qualifications, and by other types, templates, identities,...">nkr::tr</a> expression. It works because construction can only ever produce non-volatile values, which never satisfy our new constraint. This allows for the full range of possibilities which our cross-platform users might employ our type for, all while achieving a cleaner and less-repetitious API and implementation:</p>
+<div class="fragment"><div class="line"><span class="keyword">class </span>safe_bool_t</div>
+<div class="line">{</div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">    <span class="keywordtype">bool</span> value = <span class="keyword">false</span>;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">    safe_bool_t()</div>
+<div class="line">    {</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    safe_bool_t(<span class="keywordtype">bool</span> value)</div>
+<div class="line">    {</div>
+<div class="line">        <span class="comment">// ...</span></div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    safe_bool_t&amp; operator =(safe_bool_t&amp;&amp; other) <span class="keyword">noexcept</span></div>
+<div class="line">    {</div>
+<div class="line">        <span class="comment">// ...</span></div>
+<div class="line"> </div>
+<div class="line">        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">volatile</span> safe_bool_t&amp; operator =(safe_bool_t&amp;&amp; other) <span class="keyword">volatile</span> <span class="keyword">noexcept</span></div>
+<div class="line">    {</div>
+<div class="line">        <span class="comment">// ...</span></div>
+<div class="line"> </div>
+<div class="line">        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// just volatile safe_bool_t will be accepted by this operator</span></div>
+<div class="line">    safe_bool_t&amp; operator =(<a class="code hl_concept" href="conceptnkr_1_1tr.html">nkr::tr</a>&lt;nkr::just_tg, <a class="code hl_typedef" href="namespacenkr.html#aecb8f05af8f5d93778ce60239336d8e3">nkr::t&lt;volatile safe_bool_t&gt;</a>&gt; <span class="keyword">auto</span>&amp;&amp; other) <span class="keyword">noexcept</span></div>
+<div class="line">    {</div>
+<div class="line">        <span class="comment">// ...</span></div>
+<div class="line"> </div>
+<div class="line">        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// just volatile safe_bool_t will be accepted by this operator</span></div>
+<div class="line">    <span class="keyword">volatile</span> safe_bool_t&amp; operator =(<a class="code hl_concept" href="conceptnkr_1_1tr.html">nkr::tr</a>&lt;nkr::just_tg, <a class="code hl_typedef" href="namespacenkr.html#aecb8f05af8f5d93778ce60239336d8e3">nkr::t&lt;volatile safe_bool_t&gt;</a>&gt; <span class="keyword">auto</span>&amp;&amp; other) <span class="keyword">volatile</span> <span class="keyword">noexcept</span></div>
+<div class="line">    {</div>
+<div class="line">        <span class="comment">// ...</span></div>
+<div class="line"> </div>
+<div class="line">        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line">    }</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line">TEST_CASE(<span class="stringliteral">&quot;should work with all assignment possibilities&quot;</span>)</div>
+<div class="line">{</div>
+<div class="line">    safe_bool_t safe_bool;</div>
+<div class="line">    <span class="keyword">volatile</span> safe_bool_t volatile_safe_bool;</div>
+<div class="line">    <span class="keywordtype">bool</span> unsafe_bool = <span class="keyword">false</span>;</div>
+<div class="line"> </div>
+<div class="line">    safe_bool = safe_bool_t();</div>
+<div class="line">    safe_bool = std::move(safe_bool);</div>
+<div class="line">    safe_bool = std::move(volatile_safe_bool);</div>
+<div class="line">    safe_bool = bool(<span class="keyword">false</span>);</div>
+<div class="line">    safe_bool = unsafe_bool;</div>
+<div class="line">    volatile_safe_bool = safe_bool_t();</div>
+<div class="line">    volatile_safe_bool = std::move(safe_bool);</div>
+<div class="line">    volatile_safe_bool = std::move(volatile_safe_bool);</div>
+<div class="line">    volatile_safe_bool = bool(<span class="keyword">false</span>);</div>
+<div class="line">    volatile_safe_bool = unsafe_bool;</div>
+<div class="line">}</div>
+</div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
