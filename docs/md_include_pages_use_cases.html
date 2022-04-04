@@ -89,17 +89,17 @@ var searchBox = new SearchBox("searchBox", "search",'Search','.html');
 </div><!--header-->
 <div class="contents">
 <div class="toc"><h3>Table of Contents</h3>
-<ul><li class="level1"><a href="#autotoc_md28">nkr::tr</a><ul><li class="level2"><a href="#autotoc_md29">Dynamically Define Concepts In-Place</a></li>
-<li class="level2"><a href="#autotoc_md32">Cleanly Negate Concepts</a></li>
-<li class="level2"><a href="#autotoc_md34">Succinctly Disambiguate Assignment Operators</a></li>
+<ul><li class="level1"><a href="#autotoc_md27">nkr::tr</a><ul><li class="level2"><a href="#autotoc_md28">Dynamically Define Concepts In-Place</a></li>
+<li class="level2"><a href="#autotoc_md30">Cleanly Negate Concepts</a></li>
+<li class="level2"><a href="#autotoc_md32">Succinctly Disambiguate Assignment Operators</a></li>
 </ul>
 </li>
 </ul>
 </div>
 <div class="textblock"><p >In-depth examples of how <a class="el" href="namespacenkr.html">nkr</a> can be put to use. If you are looking for short examples without prose, almost every entity has code samples in the <a href="namespaces.html">reference section</a>.</p>
-<h1><a class="anchor" id="autotoc_md28"></a>
+<h1><a class="anchor" id="autotoc_md27"></a>
 nkr::tr</h1>
-<h2><a class="anchor" id="autotoc_md29"></a>
+<h2><a class="anchor" id="autotoc_md28"></a>
 Dynamically Define Concepts In-Place</h2>
 <p >Let's take a concrete example. What if we wanted to have a function that takes two <code>std::vectors</code> and combines them? We do not care what their <code>value_types</code> are, only that the second one has a <code>value_type</code> statically convertible to the other. Let's put together a simple algorithm and not worry about exceptions and other validations:</p>
 <div class="fragment"><div class="line"><span class="keywordtype">void</span> Combine(<span class="keyword">auto</span>&amp; vector_a, <span class="keyword">auto</span>&amp; vector_b)</div>
@@ -264,8 +264,8 @@ Dynamically Define Concepts In-Place</h2>
 <div class="line">    <span class="comment">// Combine_Non_Const_Vectors(const_vector_a, vector_b);</span></div>
 <div class="line">    <span class="comment">// Combine_Non_Const_Vectors(vector_a, const_vector_b);</span></div>
 <div class="line">}</div>
-<div class="ttc" id="aconceptnkr_1_1tr_html"><div class="ttname"><a href="conceptnkr_1_1tr.html">nkr::tr</a></div><div class="ttdoc">Used to filter a type by its qualifications, and by other types, templates, identities,...</div><div class="ttdef"><b>Definition:</b> tr_dec.h:261</div></div>
-<div class="ttc" id="anamespacenkr_html_a5b44c572847cc1f4d65122f867f3bdbf"><div class="ttname"><a href="namespacenkr.html#a5b44c572847cc1f4d65122f867f3bdbf">nkr::tt</a></div><div class="ttdeci">nkr::tr$::tts&lt; AND_tg, nkr::tuple::templates_t&lt; template_p &gt; &gt; tt</div><div class="ttdoc">A way to wrap a single template for use with an nkr::TR expression, to differentiate it from a type.</div><div class="ttdef"><b>Definition:</b> tr_dec.h:188</div></div>
+<div class="ttc" id="aconceptnkr_1_1tr_html"><div class="ttname"><a href="conceptnkr_1_1tr.html">nkr::tr</a></div><div class="ttdoc">Used to filter a type by its qualifications, and by other types, templates, identities,...</div><div class="ttdef"><b>Definition:</b> tr_dec.h:262</div></div>
+<div class="ttc" id="anamespacenkr_html_a5b44c572847cc1f4d65122f867f3bdbf"><div class="ttname"><a href="namespacenkr.html#a5b44c572847cc1f4d65122f867f3bdbf">nkr::tt</a></div><div class="ttdeci">nkr::tr$::tts&lt; AND_tg, nkr::tuple::templates_t&lt; template_p &gt; &gt; tt</div><div class="ttdoc">A way to wrap a single template for use with an nkr::TR expression, to differentiate it from a type.</div><div class="ttdef"><b>Definition:</b> tr_dec.h:189</div></div>
 </div><!-- fragment --><p >There's just one thing missing. Let's add another private and dynamically defined in-place concept within our function body, to make sure that the inner types of the <code>std::vectors</code> are convertible:</p>
 <div class="fragment"><div class="line"><span class="keywordtype">void</span> Combine_Non_Const_Compatible_Vectors(<a class="code hl_concept" href="conceptnkr_1_1tr.html">nkr::tr</a>&lt;nkr::any_non_const_tg, <a class="code hl_typedef" href="namespacenkr.html#a5b44c572847cc1f4d65122f867f3bdbf">nkr::tt&lt;std::vector&gt;</a>&gt; <span class="keyword">auto</span>&amp; vector_a,</div>
 <div class="line">                                          <a class="code hl_concept" href="conceptnkr_1_1tr.html">nkr::tr</a>&lt;nkr::any_non_const_tg, <a class="code hl_typedef" href="namespacenkr.html#a5b44c572847cc1f4d65122f867f3bdbf">nkr::tt&lt;std::vector&gt;</a>&gt; <span class="keyword">auto</span>&amp; vector_b)</div>
@@ -298,7 +298,7 @@ Dynamically Define Concepts In-Place</h2>
 <div class="line">    <span class="comment">// fails with our error message: &quot;the values of vector_b cannot be converted to the value_type of vector_a&quot;</span></div>
 <div class="line">    <span class="comment">// Combine_Non_Const_Compatible_Vectors(vector_a, vector_c);</span></div>
 <div class="line">}</div>
-<div class="ttc" id="anamespacenkr_html_aecb8f05af8f5d93778ce60239336d8e3"><div class="ttname"><a href="namespacenkr.html#aecb8f05af8f5d93778ce60239336d8e3">nkr::t</a></div><div class="ttdeci">nkr::tr$::ts&lt; AND_tg, nkr::tuple::types_t&lt; type_p &gt; &gt; t</div><div class="ttdoc">A way to wrap a single type for use with an nkr::TR expression, to differentiate it from a template.</div><div class="ttdef"><b>Definition:</b> tr_dec.h:175</div></div>
+<div class="ttc" id="anamespacenkr_html_aecb8f05af8f5d93778ce60239336d8e3"><div class="ttname"><a href="namespacenkr.html#aecb8f05af8f5d93778ce60239336d8e3">nkr::t</a></div><div class="ttdeci">nkr::tr$::ts&lt; AND_tg, nkr::tuple::types_t&lt; type_p &gt; &gt; t</div><div class="ttdoc">A way to wrap a single type for use with an nkr::TR expression, to differentiate it from a template.</div><div class="ttdef"><b>Definition:</b> tr_dec.h:176</div></div>
 </div><!-- fragment --><p >As we have seen, by using <a class="el" href="conceptnkr_1_1tr.html" title="Used to filter a type by its qualifications, and by other types, templates, identities,...">nkr::tr</a> we have cleanly and explicitly constrained our function as originally specified. Now we will truly only get non-const <code>std::vectors</code> passing through our function, all without having to statically define an exterior concept. We even use <a class="el" href="conceptnkr_1_1tr.html" title="Used to filter a type by its qualifications, and by other types, templates, identities,...">nkr::tr</a> to ensure that their <code>value_types</code> are compatible. And in the future if we decide to support other types such as <code>std::forward_list</code> we can easily do so:</p>
 <div class="fragment"><div class="line"><span class="keywordtype">void</span> Combine_With_Overloads(<a class="code hl_concept" href="conceptnkr_1_1tr.html">nkr::tr</a>&lt;nkr::any_non_const_tg, <a class="code hl_typedef" href="namespacenkr.html#a5b44c572847cc1f4d65122f867f3bdbf">nkr::tt&lt;std::vector&gt;</a>&gt; <span class="keyword">auto</span>&amp; vector_a,</div>
 <div class="line">                            <a class="code hl_concept" href="conceptnkr_1_1tr.html">nkr::tr</a>&lt;nkr::any_non_const_tg, <a class="code hl_typedef" href="namespacenkr.html#a5b44c572847cc1f4d65122f867f3bdbf">nkr::tt&lt;std::vector&gt;</a>&gt; <span class="keyword">auto</span>&amp; vector_b)</div>
@@ -326,7 +326,7 @@ Dynamically Define Concepts In-Place</h2>
 <div class="line">}</div>
 </div><!-- fragment --><p >And that's just scratching the surface of what <a class="el" href="conceptnkr_1_1tr.html" title="Used to filter a type by its qualifications, and by other types, templates, identities,...">nkr::tr</a> is capable of. With advanced usage we can constrain to multiple types and templates, their inner <code>value_types</code>, duck-typed generics, and even full-fledged interfaces all within a single expression.</p>
 <hr  />
-<h2><a class="anchor" id="autotoc_md32"></a>
+<h2><a class="anchor" id="autotoc_md30"></a>
 Cleanly Negate Concepts</h2>
 <p >Let's say we have a container class with two overloads for an <code>Add</code> method, each of which accepts an element to add into our container. We have two overloads because we want the first one to copy lvalue references and the second one to move rvalue references. Because the lvalue reference overload has to make a copy, we allow any type that can be converted into an <code>element_t</code> through the method, but with the rvalue reference overload we want to keep the argument explicitly moveable so that our function can't turn into a potentially hidden and expensive operation:</p>
 <div class="fragment"><div class="line"><span class="keyword">enum class</span> result_e</div>
@@ -537,7 +537,7 @@ Cleanly Negate Concepts</h2>
 <div class="line">}</div>
 </div><!-- fragment --><p >So we see how <a class="el" href="conceptnkr_1_1tr.html" title="Used to filter a type by its qualifications, and by other types, templates, identities,...">nkr::tr</a> gives us neater, more readable, and more robust constraints which can easily be negated.</p>
 <hr  />
-<h2><a class="anchor" id="autotoc_md34"></a>
+<h2><a class="anchor" id="autotoc_md32"></a>
 Succinctly Disambiguate Assignment Operators</h2>
 <p >Perhaps we are designing a safe boolean type that needs to be usable in both a volatile context as well as a non-volatile context. Besides supporting basic functionality such as construction of our type with <code>bool</code>, we also need to support all the possible combinations of volatile and non-volatile assignment to ensure that the users of our type have no issues. In other worse, non-volatile instances should be assignable by other non-volatile instances as well as by those that are volatile, and vice-versa:</p>
 <div class="fragment"><div class="line"><span class="keyword">class </span>safe_bool_t</div>
